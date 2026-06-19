@@ -19,7 +19,7 @@
 }
 .preview{
   width: 300px;
-  height: 500px;
+  height: 530px;
   border: 1px;
   flex-direction: column;
   border-color: bisque;
@@ -34,6 +34,7 @@
 .preview-text{
   background-color: rgba(255, 0, 191, 0.184);
   border-radius: 10px;
+  height: 100px;
 }
 .preview-tiles{
   /* background-color: rgba(209, 48, 48, 0.49); */
@@ -47,6 +48,33 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
   margin-bottom: 100px;
+}
+
+.voted {
+  display: inline;
+  margin: 0;
+  font-size: 20px;
+  max-height: 3px;
+  max-width: 50px;
+  
+}
+
+.voted-emoji {
+  display: inline;
+  margin: 0 ;
+  font-size: 20px;
+  max-height: 3px;
+  max-width: 10px;
+}
+
+.voted-popup-off {
+  opacity: 0;
+  width: 200px;
+  margin: 0 0 0 180px;
+}
+
+.voted-popup-on {
+  opacity: 1;
 }
 
 @media (width: 250px){

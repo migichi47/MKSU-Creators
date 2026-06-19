@@ -61,7 +61,7 @@ creators = {
   comedians: [
     {
       image: "",
-      name: '',
+      name: 'Innocent',
       followers: "",
       year: "",
     },
@@ -162,12 +162,18 @@ creators = {
 
 
 //generating HTML
-const generateHtml  = (creatorsList) => {
+const generateHtml  = (creatorsList, category) => {
   let html = '';
 
   creatorsList.forEach(creator => { 
+    if(creator.name) {
     html += `
-      <div class="preview" >
+      <div 
+        data-creator-id="${creator.id}"
+        data-creator-name="${creator.name}"
+        data-creator-category="${category}"
+        class="preview "
+        >
         <img class="cover-photo" src="${creator.image || "images/default.png"}" alt="">
         <div class="preview-text">
           <div>
@@ -176,24 +182,58 @@ const generateHtml  = (creatorsList) => {
           <div class="description">
             <p style="display: inline-block;" >${creator.followers / 1000}k followers</p>&#183
             <p style="display: inline-block;" >Year ${creator.year || 'N/A'}</p>
+
+            <div class="voted-popup-off js-voted-popup-${creator.id}-off">
+              <div class="voted-emoji">✅</div>
+              <p class="voted" >Voted</p>
+            </div>
           </div>
         </div>
       </div>
     `
+    }
   })
 
   return html;
 }
 
-document.querySelector(".js-dancers").innerHTML = generateHtml(creators.dancers);
-document.querySelector(".js-vloggers").innerHTML = generateHtml(creators.vloggers);
-document.querySelector(".js-comedians").innerHTML = generateHtml(creators.comedians);
-document.querySelector(".js-influencers").innerHTML = generateHtml(creators.influencers);
-document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musicians);
+//generating random IDs
+Object.keys(creators).forEach(category => {
+  creators[category].forEach(creator => {
+    creator.id = crypto.randomUUID();
+  });
+});
 
+console.log(creators);
 
-document.querySelectorAll('.preview').forEach(preview => {
+document.querySelector(".js-dancers").innerHTML = generateHtml(creators.dancers, 'dancers');
+document.querySelector(".js-vloggers").innerHTML = generateHtml(creators.vloggers, 'vloggers');
+document.querySelector(".js-comedians").innerHTML = generateHtml(creators.comedians, 'comedians');
+document.querySelector(".js-influencers").innerHTML = generateHtml(creators.influencers, 'influencers');
+document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musicians, 'musicians');
+
+const votedCategories = {};
+
+let timeoutId;
+document.querySelectorAll(`.preview`).forEach(preview => {
   preview.addEventListener('click', () => {
-    console.log('Voted!')
+    const {creatorId, creatorName, creatorCategory} = preview.dataset;
+
+    if(votedCategories[creatorCategory]) {
+      alert('You already voted in this category');
+      return;
+    }
+    const confirmed = confirm(`Vote for ${creatorName}`);
+    if (confirmed) {
+      const popup = document.querySelector(`.js-voted-popup-${creatorId}-off`);
+      popup.classList.add('voted-popup-on');
+
+       votedCategories[creatorCategory] = true;
+
+      clearTimeout(popup.timeoutId);
+      timeoutId = setTimeout(() => {
+        popup.classList.remove('voted-popup-on');
+      }, 2000);
+    }
   })
 });
