@@ -1,0 +1,65 @@
+body{
+  background: linear-gradient(to right, rgb(55, 5, 58,0.6), rgb(0,0,0,0.6)), url(images/beautiful-view-sunset-sea_23-2148019892.avif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 740px;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  margin-top: 0;
+}
+
+.Title{
+  color: white;
+  margin-left: 30px;
+}
+ 
+.login-tile{
+  background-color: rgba(154, 1, 230, 0.149);
+  position: absolute;
+  right: 50px;
+  border: 1px solid aqua;
+  border-radius: 20px;
+  width: 250px;
+  height: 400px;
+  margin-left: 0;
+  color: white;
+}
+
+.login-title-div{
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.451);
+  justify-content: center;
+  padding: 0 0 20px 0;
+  height: 30px;
+}
+
+.login-title{
+  padding-left: 85px;
+}
+
+.login-content{
+  padding-top: 30px;
+}
+
+.login-submit{
+  margin-left: 85px;
+  border-radius: 10px;
+  height: 30px;
+  width: 80px;
+}
+
+.login-submit:hover{
+  background-color: rgb(55, 5, 58);
+  color: white;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.username{
+  color: rgb(255, 255, 255);
+}
+
