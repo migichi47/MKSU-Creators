@@ -6,10 +6,8 @@
   justify-content: space-between;
   margin: 0;
   padding-top: 0;
-  max-width: 2000px;
+  max-width: 100%;
   min-width: 50px;
-  flex: 1;
-  height: flex;
   border-bottom: 1px;
   border-style: hidden;
   position: fixed;
@@ -28,7 +26,6 @@
   display: flex;
   border-radius: 50px;
   max-width: 200px;
-  flex: 1;
   min-width: 0;
   justify-content: center;
 }
@@ -38,15 +35,18 @@
   padding: 0;
 }
 
+.left-section,
+.middle-section,
+.right-section {
+  flex: 1;
+}
+
 .left-section{
   min-width: 5px;
   max-width: 225px;
   display: flex;
   flex-direction: row;
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  padding: 20px, 0, 20px, 0;
+  padding: 20px 0 20px 0;
   align-items: center;
   justify-content: center;
   margin-left: 0;
@@ -54,46 +54,37 @@
 }
 
 .middle-section{
-  max-width: 370px;
-  max-height: 150px;
-  height: 150px;
+  max-width: 100%;
   min-height: 0;
   display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
   background-color:rgb(40, 3, 75);
   border-radius: 40px;
-  flex-shrink: 1;
-  margin-left: 0;
-  min-width: 0;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
   margin-top: 10px;
-  position: relative;
 }
 .search-bar{
-  flex: 1;
-  flex-shrink: 1;
-  max-width: 350px;
+  max-width: 100%;
   border-radius: 100px;
   min-width: 0;
   height: 30px;
   border: 3px solid aqua;
-  margin-top: -40px;
 }
 .search-icon{
   border-radius: 100px;
   max-width: 32px;
   display: flex;
-  flex: 1;
-  flex-shrink: 1;
   flex-direction: row;
   min-width: 1px;
-  margin-top: -40px;
   height: 32px;
+}
+
+.search-bar,
+.search-icon {
+  margin-top: -40px;
 }
 
 .search-icon:hover{
@@ -101,11 +92,44 @@
 }
 
 .right-section{
-  padding: 0 0 0 20px;
-  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
   font-size: 20px;
-  height: 100%;
+ max-height: 100%;
   color: white;
-  margin-right: 40px;
-  max-width: 200px;
+  max-width: 300px;
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.view-votes {
+  background-color: rgba(255, 0, 191, 0.184);
+  display: inline-block;
+  max-width: 100px;
+  margin-left: 0;
+  height: 100px;
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0 0 10px;
+  border: solid 1px aqua;
+  border-radius: 50%;
+  padding: 30px 2px 0 2px;
+  transition: transform 0.2s ease;
+}
+
+.vote-count {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+}
+
+.view-votes:hover {
+  color: black;
+  background-color: rgba(0, 255, 255, 0.62);
+  border-color:  rgba(255, 0, 191, 0.184);
+  transform: scale(1.1);  
 }

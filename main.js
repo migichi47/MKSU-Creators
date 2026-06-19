@@ -127,7 +127,7 @@ creators = {
   musicians: [
     {
       image: "",
-      name: '',
+      name: 'Bami Nui',
       followers: "",
       year: "",
     },
@@ -180,8 +180,8 @@ const generateHtml  = (creatorsList, category) => {
             <p class="name" >${creator.name}</p>
           </div>
           <div class="description">
-            <p style="display: inline-block;" >${creator.followers / 1000}k followers</p>&#183
-            <p style="display: inline-block;" >Year ${creator.year || 'N/A'}</p>
+            <p style="display: inline-block;" >${creator.followers > 1000 ?( creator.followers / 1000 + 'k') : 'N/A'} followers</p>&#183
+            <p style="display: inline-block;" >Year ${creator.year || 'N/A'} </p>
 
             <div class="voted-popup-off js-voted-popup-${creator.id}-off">
               <div class="voted-emoji">✅</div>
@@ -204,7 +204,6 @@ Object.keys(creators).forEach(category => {
   });
 });
 
-console.log(creators);
 
 document.querySelector(".js-dancers").innerHTML = generateHtml(creators.dancers, 'dancers');
 document.querySelector(".js-vloggers").innerHTML = generateHtml(creators.vloggers, 'vloggers');
@@ -212,9 +211,18 @@ document.querySelector(".js-comedians").innerHTML = generateHtml(creators.comedi
 document.querySelector(".js-influencers").innerHTML = generateHtml(creators.influencers, 'influencers');
 document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musicians, 'musicians');
 
-const votedCategories = {};
 
-let timeoutId;
+
+const votedCategories = JSON.parse(localStorage.getItem("votesCategory")) || {};
+let voteCount = JSON.parse(localStorage.getItem("votes")) || 0;
+console.log(JSON.parse(localStorage.getItem("votes")));
+
+function updateVoteCount() {
+  return document.querySelector('.js-vote-count').innerText = voteCount;
+}
+
+updateVoteCount();
+
 document.querySelectorAll(`.preview`).forEach(preview => {
   preview.addEventListener('click', () => {
     const {creatorId, creatorName, creatorCategory} = preview.dataset;
@@ -229,9 +237,14 @@ document.querySelectorAll(`.preview`).forEach(preview => {
       popup.classList.add('voted-popup-on');
 
        votedCategories[creatorCategory] = true;
+       localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
+
+       voteCount += 1;
+       localStorage.setItem("votes", JSON.stringify(voteCount));
+       updateVoteCount();
 
       clearTimeout(popup.timeoutId);
-      timeoutId = setTimeout(() => {
+      popup.timeoutId = setTimeout(() => {
         popup.classList.remove('voted-popup-on');
       }, 2000);
     }
