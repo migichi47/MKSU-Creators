@@ -172,6 +172,7 @@ const generateHtml  = (creatorsList, category) => {
         data-creator-id="${creator.id}"
         data-creator-name="${creator.name}"
         data-creator-category="${category}"
+        data-creator-image="${creator.image}"
         class="preview "
         >
         <img class="cover-photo" src="${creator.image || "images/default.png"}" alt="">
@@ -215,7 +216,7 @@ document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musici
 
 const votedCategories = JSON.parse(localStorage.getItem("votesCategory")) || {};
 let voteCount = JSON.parse(localStorage.getItem("votes")) || 0;
-console.log(JSON.parse(localStorage.getItem("votes")));
+const savedCreators = JSON.parse(localStorage.getItem("selectedCreators")) || [];
 
 function updateVoteCount() {
   return document.querySelector('.js-vote-count').innerText = voteCount;
@@ -225,7 +226,7 @@ updateVoteCount();
 
 document.querySelectorAll(`.preview`).forEach(preview => {
   preview.addEventListener('click', () => {
-    const {creatorId, creatorName, creatorCategory} = preview.dataset;
+    const {creatorId, creatorName, creatorCategory, creatorImage} = preview.dataset;
 
     if(votedCategories[creatorCategory]) {
       alert('You already voted in this category');
@@ -239,6 +240,15 @@ document.querySelectorAll(`.preview`).forEach(preview => {
        votedCategories[creatorCategory] = true;
        localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
 
+       savedCreators.push({
+        id: creatorId,
+        name: creatorName,
+        image: creatorImage,
+        category: creatorCategory,
+       });
+
+       localStorage.setItem('selectedCreators', JSON.stringify(savedCreators))
+
        voteCount += 1;
        localStorage.setItem("votes", JSON.stringify(voteCount));
        updateVoteCount();
@@ -250,3 +260,8 @@ document.querySelectorAll(`.preview`).forEach(preview => {
     }
   })
 });
+
+
+document.querySelector('.js-view-votes').addEventListener('click', () => {
+  window.location.href = 'voters.html';
+})
