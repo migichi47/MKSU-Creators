@@ -198,10 +198,9 @@ const generateHtml  = (creatorsList, category) => {
   return html;
 }
 
-//generating random IDs
 Object.keys(creators).forEach(category => {
-  creators[category].forEach(creator => {
-    creator.id = crypto.randomUUID();
+  creators[category].forEach((creator, index) => {
+    creator.id = `${category}-${index}`;
   });
 });
 
@@ -217,6 +216,13 @@ document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musici
 const votedCategories = JSON.parse(localStorage.getItem("votesCategory")) || {};
 let voteCount = JSON.parse(localStorage.getItem("votes")) || 0;
 const savedCreators = JSON.parse(localStorage.getItem("selectedCreators")) || [];
+
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    voteCount = JSON.parse(localStorage.getItem("votes")) || 0;
+    updateVoteCount();
+  }
+});
 
 function updateVoteCount() {
   return document.querySelector('.js-vote-count').innerText = voteCount;
@@ -265,3 +271,9 @@ document.querySelectorAll(`.preview`).forEach(preview => {
 document.querySelector('.js-view-votes').addEventListener('click', () => {
   window.location.href = 'voters.html';
 })
+
+function resetLocalStorage() {
+  localStorage.removeItem("votes");
+  localStorage.removeItem("votesCategory");
+  localStorage.removeItem("selectedCreators");
+}

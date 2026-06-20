@@ -100,8 +100,19 @@ button {
   margin-top: 20px;
 }
 
+.remove-btn {
+  background-color: pink;
+  height: 35px;
+  width: 70px;
+  margin-top: 20px;
+}
+
+.remove-btn:hover{
+  background-color: rgba(229, 167, 178, 0.529);
+  border: white;
+}
+
 .clear-button-container,
 .submit-button-container {
   display: inline;
 }
-

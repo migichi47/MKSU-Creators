@@ -53,10 +53,7 @@ html{
   right: 5;
   bottom: 0;
   z-index: 200;
-  flex: 1;
-  flex-shrink: 1;
   word-spacing: 8px;
-  flex-direction: column;
   height: 25px;
 }
 .voting-button:hover{
