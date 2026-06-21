@@ -25,6 +25,7 @@ function renderSelectedCreators()  {
       </div>
     `;
 });
+
 document.querySelector('.js-voters-grid').innerHTML = html;
 }
 

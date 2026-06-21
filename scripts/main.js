@@ -243,7 +243,7 @@ document.querySelectorAll(`.preview`).forEach(preview => {
       const popup = document.querySelector(`.js-voted-popup-${creatorId}-off`);
       popup.classList.add('voted-popup-on');
 
-       votedCategories[creatorCategory] = true;
+      //  votedCategories[creatorCategory] = true;
        localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
 
        savedCreators.push({
