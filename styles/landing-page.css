@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
 
 .hero,
 .hero img {
@@ -9,10 +14,14 @@
 .hero {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.772), rgba(136, 5, 143, 0.47)), url('../images/Machakos_University.jpg');
   margin: 0 auto;
-  width: 1000px;
+  max-width: 90%;
+  min-width: 600px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1px;
+  border: 1px rgba(250, 235, 215, 0.636) solid;
+  border-radius: 20px;
 }
 
 .hero h1,
@@ -41,5 +50,6 @@ h3 {
 .hero button {
   display: inline;
   height: 40px;
-  max-width: 150px;
+  width: 150px;
 }
+
