@@ -1,3 +1,4 @@
+import { resetLocalStorage } from "./utils/resetLocalStorage.js";
 
 document.querySelector('.js-back').addEventListener('click', () => {
   window.location.href = 'main.html';
@@ -60,9 +61,7 @@ document.querySelectorAll('.js-remove-btn')
 
 
 function clearVotes() {
-  localStorage.removeItem("votes");
-  localStorage.removeItem("votesCategory");
-  localStorage.removeItem("selectedCreators");
+  resetLocalStorage();
   document.querySelector('.js-voters-grid').innerHTML = '';
 }
 

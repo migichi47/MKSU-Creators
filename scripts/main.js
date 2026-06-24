@@ -1,4 +1,5 @@
 import {creators} from "../data/creators.js";
+import { resetLocalStorage } from "./utils/resetLocalStorage.js";
 //generating HTML
 const generateHtml  = (creatorsList, category) => {
   let html = '';
@@ -114,9 +115,3 @@ document.querySelectorAll(`.preview`).forEach(preview => {
 document.querySelector('.js-view-votes').addEventListener('click', () => {
   window.location.href = 'your-votes.html';
 })
-
-function resetLocalStorage() {
-  localStorage.removeItem("votes");
-  localStorage.removeItem("votesCategory");
-  localStorage.removeItem("selectedCreators");
-}
