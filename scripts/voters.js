@@ -64,6 +64,7 @@ function removeCreator(creatorId) {
 
   saveSelectedCreators(); 
   updateVoteCount();
+  toggleButtons();
 }
 
 document.querySelectorAll('.js-remove-btn')
