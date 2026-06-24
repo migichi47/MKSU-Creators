@@ -243,21 +243,21 @@ document.querySelectorAll(`.preview`).forEach(preview => {
       const popup = document.querySelector(`.js-voted-popup-${creatorId}-off`);
       popup.classList.add('voted-popup-on');
 
-      //  votedCategories[creatorCategory] = true;
-       localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
+      votedCategories[creatorCategory] = true;
+      localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
 
-       savedCreators.push({
-        id: creatorId,
-        name: creatorName,
-        image: creatorImage,
-        category: creatorCategory,
-       });
+      savedCreators.push({
+      id: creatorId,
+      name: creatorName,
+      image: creatorImage,
+      category: creatorCategory,
+      });
 
-       localStorage.setItem('selectedCreators', JSON.stringify(savedCreators))
+      localStorage.setItem('selectedCreators', JSON.stringify(savedCreators))
 
-       voteCount += 1;
-       localStorage.setItem("votes", JSON.stringify(voteCount));
-       updateVoteCount();
+      voteCount += 1;
+      localStorage.setItem("votes", JSON.stringify(voteCount));
+      updateVoteCount();
 
       clearTimeout(popup.timeoutId);
       popup.timeoutId = setTimeout(() => {

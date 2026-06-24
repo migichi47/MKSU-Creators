@@ -63,6 +63,7 @@ function removeCreator(creatorId) {
 });
 
   saveSelectedCreators(); 
+  updateVoteCount();
 }
 
 document.querySelectorAll('.js-remove-btn')
