@@ -17,41 +17,23 @@ function saveSelectedCreators() {
   localStorage.setItem('selectedCreators', JSON.stringify(selectedCreators));
 }
 
-function renderSelectedCreators()  {
-  let html = '';
-  selectedCreators.forEach(creator => {
-    html += `
-      <div class="card js-card-${creator.id}">
-        <img src="${creator.image || "images/default.png"}" alt="" />
-        <h2>${creator.name}</h2>
-        <p>Best ${(creator.category).slice(0, -1)}</p>
-        <button class="remove-btn js-remove-btn" data-id="${creator.id}">Remove</button>
-      </div>
-    `;
+let html = '';
+selectedCreators.forEach(creator => {
+  html += `
+    <div class="card js-card-${creator.id}">
+      <img src="${creator.image || "images/default.png"}" alt="" />
+      <h2>${creator.name}</h2>
+      <p>Best ${(creator.category).slice(0, -1)}</p>
+      <button class="remove-btn js-remove-btn" data-id="${creator.id}">Remove</button>
+    </div>
+  `;
 });
 
 document.querySelector('.js-voters-grid').innerHTML = html;
-}
 
-renderSelectedCreators();
+
 toggleButtons();
 
-// document.querySelector('.js-voters-grid').addEventListener('click', (e) => {
-//   if (!e.target.classList.contains('js-remove-btn')) return;
-//   const {id} = e.target.dataset;
-
-//   const removedCreator = selectedCreators.find(creator => creator.id === id);
-//   if (removedCreator) {
-//     delete votedCategories[removedCreator.category];
-//     localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
-//   }
-//   selectedCreators = selectedCreators.filter(creator => creator.id !== id);
-//   saveSelectedCreators();
-  
-//   updateVoteCount();
-//   renderSelectedCreators();
-//   toggleButtons();
-// })
 
 function removeCreator(creatorId) {
   selectedCreators = selectedCreators.filter((creator) => {
