@@ -49,6 +49,11 @@ document.querySelector(".js-comedians").innerHTML = generateHtml(creators.comedi
 document.querySelector(".js-influencers").innerHTML = generateHtml(creators.influencers, 'influencers');
 document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musicians, 'musicians');
 
+document.querySelector('.js-reset-local-storage')
+.addEventListener('click', () => {
+  resetLocalStorage();
+})
+
 
 
 const votedCategories = JSON.parse(localStorage.getItem("votesCategory")) || {};
@@ -107,7 +112,7 @@ document.querySelectorAll(`.preview`).forEach(preview => {
 
 
 document.querySelector('.js-view-votes').addEventListener('click', () => {
-  window.location.href = 'voters.html';
+  window.location.href = 'your-votes.html';
 })
 
 function resetLocalStorage() {
