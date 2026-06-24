@@ -67,9 +67,9 @@ creators = {
     },
     {
       image: "",
-      name: '',
-      followers: "",
-      year: "",
+      name: 'Harrison',
+      followers: "100000",
+      year: "7",
     },
     {
       image: "",
@@ -156,8 +156,6 @@ creators = {
       year: "",
     }
   ],
-
-  
 };
 
 
