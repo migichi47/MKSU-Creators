@@ -15,37 +15,6 @@ html{
   scroll-behavior: smooth;
 }
 
-.category a {
-  font-size: 10px;
-  text-decoration: none;
-  background-color: rgba(240, 248, 255, 0.49);
-  border: 1px solid black;
-  color: aliceblue;
-  font-family: "roboto", Arial;
-  display: flex;
-  height: 40px;
-  border-radius: 80px;
-  max-width: 100px;
-  padding: 10px 10px 0px 10px;
-}
-
-.category a:hover{
-  transition: 0.5s;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-
-.category{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  flex-direction: row;
-  width: 100%;
-  position: absolute;
-  z-index: 200;
-  height: 25px;
-}
-
 .welcome-text{
   color: white;
   font-weight: 700;
