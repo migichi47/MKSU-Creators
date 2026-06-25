@@ -5,10 +5,12 @@
 body{
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.772), rgba(136, 5, 143, 0.47)), url('../images/Machakos_University.jpg');
   background-repeat: no-repeat;
+  background-size: 100%;
   padding-top: 120px;
   margin: 0;
   background-color: rgb(55, 5, 58);
   height: 100%;
+  width: 100%;
 }
 
 html{
@@ -32,8 +34,7 @@ html{
 
 .hero {
   margin: 0 auto;
-  max-width: 90%;
-  min-width: 600px;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
