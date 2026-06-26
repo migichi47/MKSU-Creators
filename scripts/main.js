@@ -112,6 +112,6 @@ document.querySelectorAll(`.preview`).forEach(preview => {
 });
 
 
-document.querySelector('.js-view-votes').addEventListener('click', () => {
+document.querySelector('.js-confirm-votes-btn').addEventListener('click', () => {
   window.location.href = 'your-votes.html';
 })

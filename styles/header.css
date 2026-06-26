@@ -147,6 +147,13 @@
 .view-votes button {
   border-radius: 20px;
   height: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+.view-votes button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.463);
+  transition: 0.2s ease;
 }
 
 .view-votes h4 {
