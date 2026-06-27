@@ -154,6 +154,7 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.463);
   transition: 0.2s ease;
+  cursor: pointer;
 }
 
 .view-votes h4 {

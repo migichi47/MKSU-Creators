@@ -115,3 +115,21 @@ document.querySelectorAll(`.preview`).forEach(preview => {
 document.querySelector('.js-confirm-votes-btn').addEventListener('click', () => {
   window.location.href = 'your-votes.html';
 })
+
+//search-button
+
+let searchBar = document.querySelector('.js-search-bar');
+
+function searchInput() {
+  const notyf = new Notyf();
+  notyf.success('searching ' + searchBar.value);
+  searchBar.value = '';
+}
+
+document.querySelector('.js-search-button').addEventListener('click', () => {
+  searchInput();
+})
+
+searchBar.addEventListener('keydown', (e) => {
+  (e.key === 'Enter') && searchInput();
+})
