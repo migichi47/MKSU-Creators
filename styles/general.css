@@ -1,62 +1,11 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.772), rgba(136, 5, 143, 0.47)), url('../images/Machakos_University.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding-top: 120px;
-  margin: 0;
-  background-color: rgb(55, 5, 58);
-  height: 100%;
-  width: 100%;
-}
 
 html{
   scroll-behavior: smooth;
 }
 
-.welcome-text{
-  color: white;
-  font-weight: 700;
-  font-size: 40px;
-  margin: 0;
-  font-family: "Archivo Black", Arial;
-}
-.welcome-description{
-  color: rgb(229, 216, 216);
-  margin-top: 0;
-}
-#about{
-  color: white;
-}
-
-.hero {
-  margin: 0 auto;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1px;
-  border: 1px rgba(250, 235, 215, 0.636) solid;
-  border-radius: 20px;
-  height: 600px;
-}
-
-.hero h1,
-h3 {
-  color: white;
-  display: block;
-}
-
-.hero h1 {
-  font-weight: 800;
-  font-size: 35px;
-}
-
-
-.hero h1 {
-  display: flex;
-  flex-direction: row;
-}

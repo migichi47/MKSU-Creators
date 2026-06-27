@@ -1,130 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <link rel="icon" type="image/x-icon" href="images/Machakos_University_Logo.png">
-  <title>MKSU Grammys</title>
-  <link rel="stylesheet" href="styles/header.css">
-  <link rel="stylesheet" href="styles/preview.css">
-  <link rel="stylesheet" href="styles/general.css">
+  <head>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/Machakos_University_Logo.png"
+    />
+    <!-- Document Title -->
+    <title>MKSU Grammys</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- css stylesheets -->
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/preview.css" />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/main.css" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-</head>
-<body>
-  <div id="top" class="header">
-    <div class="left-section" >
-      <h1>MKSU Grammys</h1>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Notify stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- header section -->
+    <div id="top" class="header">
+      <div class="left-section">
+        <h1>MKSU Grammys</h1>
+      </div>
+      <div class="middle-section">
+        <div class="category">
+          <a href="#dancers">Best Dancer</a>
+          <a href="#vloggers">Best vlogger</a>
+          <a href="#comedians">Best comedian</a>
+          <a href="#influencers">Best Influencer</a>
+          <a href="#musicians">Best Musician</a>
+        </div>
+        <div class="search-section">
+          <input
+            class="js-search-bar"
+            placeholder="search creator"
+            type="search"
+          />
+          <button class="js-search-button">&#128269;</button>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="view-votes js-view-votes">
+          <div><h4>Your Votes</h4></div>
+          <div class="vote-count js-vote-count"></div>
+          <button class="js-confirm-votes-btn">View votes</button>
+        </div>
+      </div>
     </div>
-    <div class="middle-section" >
-      <div
-        class="category" >
-        <a href="#dancers">Best Dancer</a>
-        <a href="#vloggers">Best vlogger</a>
-        <a href="#comedians">Best comedian</a>
-        <a href="#influencers">Best Influencer</a> 
-        <a href="#musicians">Best Musician</a>
+
+    <!-- clear-local Storage-button -->
+    <button class="js-reset-local-storage">LocalStorage reset</button
+    ><br /><br />
+
+    <!-- Creator card containers -->
+    <div>
+      <div class="tiles-title-div">
+        <h2 id="dancers" class="tiles-title">Pick your dancer of the year</h2>
       </div>
-      <div class="search-section">
-        <input class="js-search-bar" placeholder="search creator" type="search">
-        <button class="js-search-button">&#128269;</button>
-      </div>
-   </div>
-   <div class="right-section">
-      <div class="view-votes js-view-votes">
-        <div><h4>Your Votes</h4></div>
-        <div class="vote-count js-vote-count"></div>
-        <button class="js-confirm-votes-btn">View votes</button>
-      </div>
+      <div class="preview-tiles js-dancers"></div>
     </div>
-  </div>
 
-  <div class="hero" >
-    <p class="welcome-text" >Machakos University Creators</p>
-    <p class="welcome-description" >choose your creator of the year</p>
-    <button class="js-reset-local-storage">LocalStorage reset</button>
-  </div>
+    <div>
+      <div class="tiles-title-div">
+        <h2 id="vloggers" class="tiles-title">Pick your vlogger of the year</h2>
+      </div>
+      <div class="preview-tiles js-vloggers"></div>
+    </div>
 
-<div>
-  <div class="tiles-title-div" >
-    <h2 id="dancers"  class="tiles-title" >Pick your dancer of the year</h2>
-  </div>
-  <div class="preview-tiles js-dancers">
-  </div>
-</div>
+    <div>
+      <div class="tiles-title-div">
+        <h2 id="comedians" class="tiles-title">
+          Pick your Comedian of the year
+        </h2>
+      </div>
+      <div class="preview-tiles js-comedians"></div>
+    </div>
 
-<div>
-  <div class="tiles-title-div" >
-  <h2 id="vloggers" class="tiles-title" >Pick your vlogger of the year</h2>
-</div>
-  <div class="preview-tiles js-vloggers">
-  </div>
-</div>
+    <div>
+      <div class="tiles-title-div">
+        <h2 id="influencers" class="tiles-title">
+          Pick your Influencer of the year
+        </h2>
+      </div>
+      <div class="preview-tiles js-influencers"></div>
+    </div>
 
-<div>
-  <div class="tiles-title-div" >
-  <h2 id="comedians" class="tiles-title" >Pick your Comedian of the year</h2>
-</div>
-  <div class="preview-tiles js-comedians">
-</div>
-</div>
+    <div>
+      <div class="tiles-title-div">
+        <h2 id="musicians" class="tiles-title">
+          Pick your Musician of the year
+        </h2>
+      </div>
+      <div class="preview-tiles js-musicians"></div>
+    </div>
 
-<div>
-  <div class="tiles-title-div" >
-  <h2 id="influencers" class="tiles-title" >Pick your Influencer of the year</h2>
-</div>
-  <div class="preview-tiles js-influencers">
-</div>
-</div>
-
-<div>
-  <div class="tiles-title-div" >
-    <h2 id="musicians" class="tiles-title" >Pick your Musician of the year</h2>
-  </div>
-  <div class="preview-tiles js-musicians">
-  </div>
-</div>
-
-<div id="about" >
-  <section>
-      <h2>About the Awards</h2>
-      <p>The MKSU Creators Awards recognize outstanding achievements in various creative fields, including art, music, literature, and technology. These awards celebrate innovation, creativity, and excellence among creators worldwide.</p>
-    </section>
-
-    <section>
-      <h2>Categories</h2>
-      <ul>
-        <li>Comedian of the Year</li>
-        <li>Dancer of the Year</li>
-        <li>Musician of the Year</li>
-        <li>Vlogger of the Year</li>
-        <li>Influencer of the Year</li>
-      </ul>
-    </section>
-  
-    <section>
-      <h2>Voting</h2>
-      <p>Any Machakos university student can vote for the best creators of their choice.</p>
-    </section>
-    <section>
-      <h2>Award Ceremony</h2>
-      <p>The award ceremony is held annually in a prestigious venue, where winners are announced and celebrated. The event includes performances, speeches, and networking opportunities for creators and industry professionals.</p>
-    </section>
-  </main>
-      <a style="
-      font-size: 20px;
-      font-weight: bold;
-      color: white;" href="#top">&#8593 Back to top</a>
-  <footer>
-    <p>&copy; 2024 MKSU Creators Awards. All rights reserved.</p>
-  </footer>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-<script src="scripts/main.js" type="module" ></script>
-</body>
+    <!-- loading js -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="scripts/main.js" type="module"></script>
+  </body>
 </html>
