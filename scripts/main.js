@@ -1,7 +1,7 @@
 import {creators} from "../data/creators.js";
+import { getVotes, updateVoteCount } from "./utils/getVotes.js";
 import { resetLocalStorage } from "./utils/resetLocalStorage.js";
 import { searchInput } from "./utils/searchBar.js";
-
 // generating id for each creator
 Object.keys(creators).forEach(category => {
   creators[category].forEach((creator, index) => {
@@ -62,59 +62,16 @@ document.querySelector('.js-reset-local-storage')
 
 
 const votedCategories = JSON.parse(localStorage.getItem("votesCategory")) || {};
-let voteCount = JSON.parse(localStorage.getItem("votes")) || 0;
 const savedCreators = JSON.parse(localStorage.getItem("selectedCreators")) || [];
 
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) {
-    voteCount = JSON.parse(localStorage.getItem("votes")) || 0;
     updateVoteCount();
   }
 });
 
-function updateVoteCount() {
-  return document.querySelector('.js-vote-count').innerText = voteCount;
-}
-
 updateVoteCount();
-
-document.querySelectorAll(`.preview`).forEach(preview => {
-  preview.addEventListener('click', () => {
-    const {creatorId, creatorName, creatorCategory, creatorImage} = preview.dataset;
-
-    if(votedCategories[creatorCategory]) {
-      alert('You already voted in this category');
-      return;
-    }
-    const confirmed = confirm(`Vote for ${creatorName}`);
-    if (confirmed) {
-      const popup = document.querySelector(`.js-voted-popup-${creatorId}-off`);
-      popup.classList.add('voted-popup-on');
-
-      votedCategories[creatorCategory] = true;
-      localStorage.setItem("votesCategory", JSON.stringify(votedCategories));
-
-      savedCreators.push({
-      id: creatorId,
-      name: creatorName,
-      image: creatorImage,
-      category: creatorCategory,
-      });
-
-      localStorage.setItem('selectedCreators', JSON.stringify(savedCreators))
-
-      voteCount += 1;
-      localStorage.setItem("votes", JSON.stringify(voteCount));
-      updateVoteCount();
-
-      clearTimeout(popup.timeoutId);
-      popup.timeoutId = setTimeout(() => {
-        popup.classList.remove('voted-popup-on');
-      }, 2000);
-    }
-  })
-});
-
+getVotes(votedCategories, savedCreators);
 
 document.querySelector('.js-confirm-votes-btn').addEventListener('click', () => {
   window.location.href = 'your-votes.html';
