@@ -1,13 +1,23 @@
 import {creators} from "../data/creators.js";
 import { resetLocalStorage } from "./utils/resetLocalStorage.js";
+import { searchInput } from "./utils/searchBar.js";
+
+// generating id for each creator
+Object.keys(creators).forEach(category => {
+  creators[category].forEach((creator, index) => {
+    creator.id = `${category}-${index}`;
+  });
+});
+
 //generating HTML
-const generateHtml  = (creatorsList, category) => {
+function generateHtml(creatorsList, category) {
   let html = '';
 
   creatorsList.forEach(creator => { 
     if(creator.name) {
     html += `
       <div 
+        id = "${creator.id}"
         data-creator-id="${creator.id}"
         data-creator-name="${creator.name}"
         data-creator-category="${category}"
@@ -36,12 +46,6 @@ const generateHtml  = (creatorsList, category) => {
 
   return html;
 }
-
-Object.keys(creators).forEach(category => {
-  creators[category].forEach((creator, index) => {
-    creator.id = `${category}-${index}`;
-  });
-});
 
 
 document.querySelector(".js-dancers").innerHTML = generateHtml(creators.dancers, 'dancers');
@@ -116,20 +120,11 @@ document.querySelector('.js-confirm-votes-btn').addEventListener('click', () => 
   window.location.href = 'your-votes.html';
 })
 
-//search-button
-
-let searchBar = document.querySelector('.js-search-bar');
-
-function searchInput() {
-  const notyf = new Notyf();
-  notyf.success('searching ' + searchBar.value);
-  searchBar.value = '';
-}
-
+// search function
 document.querySelector('.js-search-button').addEventListener('click', () => {
-  searchInput();
+  searchInput(creators);
 })
-
-searchBar.addEventListener('keydown', (e) => {
-  (e.key === 'Enter') && searchInput();
+//search on enter
+document.querySelector('.js-search-bar').addEventListener('keydown', (e) => {
+  (e.key === 'Enter') && searchInput(creators);
 })

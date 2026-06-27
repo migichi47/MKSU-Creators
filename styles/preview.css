@@ -75,6 +75,11 @@
   opacity: 1;
 }
 
+.highlight {
+  outline: 3px solid yellow;
+  transition: 0.3s;
+}
+
 @media (width: 250px){
   .preview-tiles{
     grid-template-columns: 1fr;
