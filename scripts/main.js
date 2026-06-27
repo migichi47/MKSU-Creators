@@ -22,9 +22,9 @@ function generateHtml(creatorsList, category) {
         data-creator-name="${creator.name}"
         data-creator-category="${category}"
         data-creator-image="${creator.image}"
-        class="preview "
+        class="preview"
         >
-        <img class="cover-photo" src="${creator.image || "images/default.png"}" alt="">
+        <img src="${creator.image || "images/default.png"}" alt="">
         <div class="preview-text">
           <div>
             <p class="name" >${creator.name}</p>
