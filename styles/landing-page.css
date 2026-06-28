@@ -1,5 +1,6 @@
 body {
   color: white;
+  font-family: "Archivo Black", Arial;
 }
 
 .main {
@@ -29,46 +30,65 @@ header {
   z-index: 2;
   max-width: 500px;
   background-color: black;
+  border: solid 1px white;
+  border-top: none;
 }
 
-.welcome-text{
+/* MKSU Grammys Text */
+.hero-text{
   color: white;
-  font-weight: 700;
-  font-size: 40px;
-  margin: 0 auto;
-  font-family: "Archivo Black", Arial;
-  margin-top: 40%;
-}
-
-.welcome-description{
-  color: rgb(229, 216, 216);
-  margin-top: 0;
-  margin: 0 auto;
-}
-
-.hero h1,
-h3 {
-  display: block;
-}
-
-.hero h1 {
   font-weight: 800;
-  font-size: 35px;
+  font-size: 40px;
+  padding: 100px 0 0 60px;
 }
 
-
-.hero h1 {
-  display: flex;
-  flex-direction: row;
+.description1, 
+.description2 {
+  color: rgba(255, 255, 255, 0.773);
+  font-size: 18px;
 }
 
-.buttons button {
+.description1 {
+  padding: 120px 0 0 50px;
+}
+
+.description2 {
+  padding: 150px 0 0 60px;
+}
+
+.buttons-container button {
   height: 40px;
   padding: 0 10px;
   max-width: 200px;
+  margin-left: 20px;
 }
 
-.buttons {
-  margin: 75% 0 0 25%;
+.buttons-container {
+  padding: 20px 0 0 110px;
+}
 
+.start-voting-btn {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(253, 60, 111);
+  box-shadow: 0 -2px 3px rgb(255, 255, 255);
+  transition: transform 0.2s ease;
+}
+
+.learn-more-btn {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  transition: transform 0.2s ease;
+}
+
+.start-voting-btn:hover {
+  transform: translateY(-4px);
+}
+
+.learn-more-btn:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  transform: translateY(-4px);
 }
