@@ -24,12 +24,6 @@
   justify-content: center;
 }
 
-.left-section h1{
-  color: white;
-  width: 350px;
-  padding: 0;
-}
-
 .left-section,
 .middle-section,
 .right-section {
@@ -37,13 +31,31 @@
 }
 
 .left-section{
-  flex: 1;
   min-width: 10px;
   max-width: 300px;
-  display: flex;
-  flex-direction: row;
-  padding: 20px 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
+}
+
+.left-section h1{
+  color: white;
+  width: 350px;
+  padding-bottom: 30px;
+}
+
+.back {
+  color: white;
+  transition: transform 0.3s ease;
+  color: aqua;
+  margin-left: 50px;
+  width: 53px;
+}
+
+.back:hover {
+  transform: translateX(-5px);
+  cursor: pointer;
+  color: aquamarine;
 }
 
 .middle-section {
@@ -171,45 +183,49 @@
 
 /* css for phone screens */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-.middle-section {
-  font-size: 8px;
-  width: 100%;
-  align-items: center;
-}
+ .back {
+    margin-left: 20px;
+  }
 
-.category{
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  width: 100%;
-  z-index: 200;
-  height: 20px;
-}
+  .middle-section {
+    font-size: 8px;
+    width: 100%;
+    align-items: center;
+  }
 
-.category a {
-  font-size: 8px;
-  display: flex;
-  border-radius: 80px;
-  width: 50px;
-  height: 40px;
-  align-items: center;
-  text-align: center;
-}
+  .category{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    z-index: 200;
+    height: 20px;
+  }
 
-.left-section h1 {
-  font-size: 20px;
-  width: 100px;
-}
+  .category a {
+    font-size: 8px;
+    display: flex;
+    border-radius: 80px;
+    width: 50px;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+  }
 
-.right-section h4 {
-  font-size: 12px;
-}
+  .left-section h1 {
+    font-size: 20px;
+    width: 100px;
+  }
 
-.right-section button {
-  width: 80px;
-  font-size: 12px;
-  height: 35px;
-}
+  .right-section h4 {
+    font-size: 12px;
+  }
+
+  .right-section button {
+    width: 80px;
+    font-size: 12px;
+    height: 35px;
+  }
 }
