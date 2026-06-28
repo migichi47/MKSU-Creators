@@ -19,6 +19,8 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 55%;
 }
+
+
 @media (min-width: 1200px) {
   .header-details {
     margin-left: 60%;
@@ -64,12 +66,6 @@ header {
   grid-template-rows: 1fr 1fr;
   min-width: 200px;
   margin-left: 40%;
-}
-
-@media (max-width: 700px) {
-  .join-as-creator-section {
-    margin-left: 30%;
-  }
 }
 
 .join-as-creator-section span {
@@ -144,6 +140,10 @@ header {
   padding: 150px 0 0 60px;
 }
 
+.buttons-container {
+  padding: 20px 0 0 110px;
+}
+
 .buttons-container button {
   height: 40px;
   padding: 0 10px;
@@ -153,10 +153,6 @@ header {
 
 .buttons-container button:active {
   transform: translateY(2px);
-}
-
-.buttons-container {
-  padding: 20px 0 0 110px;
 }
 
 .start-voting-btn {
@@ -183,4 +179,37 @@ header {
   background-color: black;
   border: 1px solid white;
   transform: translateY(-4px);
+}
+
+
+@media (max-width: 700px) {
+  .join-as-creator-section {
+    margin-left: 30%;
+  }
+
+  .hero {
+    margin: 100px 0 0 15%;
+    border-radius: 8%;
+    height: 550px;
+    max-width: 400px;
+  }
+
+  .hero-text{
+    padding: 100px 0 0 20px;
+  }
+  
+  .description1 {
+    padding: 120px 0 0 40px;
+    font-size: 15px;
+  }
+
+  .description2 {
+    padding: 100px 0 0 40px;
+    font-size: 15px;
+  }
+
+  .buttons-container {
+    padding: 20px 0 0 65px;
+  }
+
 }
