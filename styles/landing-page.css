@@ -3,6 +3,89 @@ body {
   font-family: "Archivo Black", Arial;
 }
 
+
+header {
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  background-color: black;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.268);
+}
+
+.header-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 55%;
+}
+@media (min-width: 1200px) {
+  .header-details {
+    margin-left: 60%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-details {
+    margin-left: 40%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-details {
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-details {
+    margin-left: 20%;
+  }
+}
+
+.logo {
+  width: 100px;
+  margin-left: 5%;
+}
+
+.rules,
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rules {
+  padding-left: 100%;
+}
+
+.join-as-creator-section {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-width: 200px;
+  margin-left: 40%;
+}
+
+@media (max-width: 700px) {
+  .join-as-creator-section {
+    margin-left: 30%;
+  }
+}
+
+.join-as-creator-section span {
+  margin-top: 15px;
+}
+
+.join-as-creator-section button {
+  max-width: 80px;
+  max-height: 30px;
+  margin-left: 6%;
+}
+
+.about {
+  color: rgba(255, 255, 255, 0.806);
+}
+
 .main {
   padding-top: 80px;
 }
@@ -15,13 +98,18 @@ body {
   object-fit: cover;
 }
 
-header {
-  position: fixed;
-  z-index: 3;
-  background-color: black;
-  height: 80px;
-  width: 100%;
+.overlay {
+  height: 800px;
+  margin-top: 80px;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.7) 100%
+  );
 }
+
 
 .hero {
   position: relative;
