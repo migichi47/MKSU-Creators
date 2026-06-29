@@ -36,20 +36,7 @@
     padding: 0;
   }
 
-  /* Tile styles */
-  .tile {
-    width: 90%;
-    left: 40px;
-  }
-
-  .card-container {
-    left: 15%;
-  }
 }
-
-
-
-
 
 /* small laptops and tablets */
 @media (max-width: 1000px) {
@@ -99,7 +86,6 @@
   .card-container {
     gap: 30px;
     left: 5%;
-    bottom: 50px;
   }
 }
 

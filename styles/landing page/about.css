@@ -68,7 +68,7 @@
   position: absolute;
   width: 90%;
   top: 1100px;
-  left: 10%;
+  left: 5%;
   color: white;
   background: linear-gradient(
     to bottom,
@@ -90,7 +90,7 @@
   display: flex;
   gap: 30px;
   left: 20%;
-  bottom: 50px;
+  bottom:35%;
 }
 
 .card {
