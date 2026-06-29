@@ -45,9 +45,21 @@ header {
   }
 }
 
+/* logo and container */
+
 .logo {
-  width: 100px;
-  margin-left: 5%;
+  width: 90px;
+}
+
+.logo-container {
+  width: 150px;
+}
+
+.rules,
+.about,
+.join-as-creator-section,
+.logo-container {
+  border-right: 1px solid;
 }
 
 .rules,
@@ -58,7 +70,6 @@ header {
 }
 
 .rules {
-  padding-left: 100%;
   color: rgba(255, 255, 255, 0.804);
 }
 
@@ -66,21 +77,22 @@ header {
   display: grid;
   grid-template-rows: 1fr 1fr;
   min-width: 200px;
-  margin-left: 40%;
 }
 
 .join-as-creator-section span {
   margin-top: 15px;
+  padding-left: 15%;
 }
 
 .join-as-creator-section button {
   max-width: 80px;
   max-height: 30px;
-  margin-left: 6%;
+  margin-left: 30%;
 }
 
 .about {
   color: rgba(255, 255, 255, 0.806);
+  border-right: none;
 }
 
 .main {
