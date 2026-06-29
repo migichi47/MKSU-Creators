@@ -1,8 +1,14 @@
 body {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.59),
+    rgba(9, 1, 45, 0.68)
+  ),
+  url('../images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');;
   color: white;
   font-family: "Archivo Black", Arial;
   margin: 0 auto;
-  height: 2000px;
+  height: 3000px;
 }
 
 
@@ -305,4 +311,49 @@ header {
 
 .category-intro {
   padding-top: 30px;
+}
+
+
+
+/* Tile styles */
+
+.tile {
+  position: absolute;
+  top: 1100px;
+  left: 10%;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgb(27, 16, 81),
+    rgb(0, 0, 0)
+  );
+  width: 80%;
+  height: 500px;
+}
+
+.tile-description {
+  position: absolute;
+  top: 120px;
+  left: 5%;
+  width: 90%;
+  font-family: 'roboto';
+}
+
+.card-container {
+  position: absolute;
+  display: flex;
+  gap: 30px;
+  left: 20%;
+  bottom: 50px;
+}
+
+.card {
+  max-width: 300px;
+  background-color: rgb(17, 5, 78);
+  border: 1px solid aqua;
+  width: 200px;
+  height: 200px;
+  font-size: 13px;
+  padding: 20px;
+  border-radius: 20px;
 }
