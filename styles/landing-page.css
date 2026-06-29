@@ -1,6 +1,7 @@
 body {
   color: white;
   font-family: "Archivo Black", Arial;
+  margin: 0 auto;
 }
 
 
@@ -18,31 +19,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 55%;
-}
-
-
-@media (min-width: 1200px) {
-  .header-details {
-    margin-left: 60%;
-  }
-}
-
-@media (max-width: 1200px) {
-  .header-details {
-    margin-left: 40%;
-  }
-}
-
-@media (max-width: 1000px) {
-  .header-details {
-    margin-left: 30%;
-  }
-}
-
-@media (max-width: 600px) {
-  .header-details {
-    margin-left: 20%;
-  }
 }
 
 /* logo and container */
@@ -76,7 +52,7 @@ header {
 .join-as-creator-section {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  min-width: 200px;
+  width: 200px;
 }
 
 .join-as-creator-section span {
@@ -125,7 +101,7 @@ header {
   margin-left: 10%;
   height: 600px;
   z-index: 2;
-  max-width: 500px;
+  width: 500px;
   background-color: black;
   border: solid 1px white;
   border-top: none;
@@ -194,17 +170,69 @@ header {
   transform: translateY(-4px);
 }
 
-
-@media (max-width: 700px) {
-  .join-as-creator-section {
-    margin-left: 30%;
+@media (min-width: 1200px) {
+  .header-details {
+    margin-left: 60%;
   }
 
   .hero {
-    margin: 100px 0 0 15%;
+    width: 800px;
+    height: 670px;
+  }
+
+  .hero-text{
+    padding: 100px 0 0 135px;
+    font-size: 60px;
+  }
+
+  .description1 {
+    padding: 120px 0 0 220px;
+  }
+
+  .description2 {
+    padding: 150px 0 0 220px;
+  }
+  
+  .buttons-container {
+    padding: 20px 0 0 260px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-details {
+    margin-left: 40%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-details {
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 700px) {
+  .join-as-creator-section{
+    width: 136px;
+    font-size: 13px;
+  }
+
+  .join-as-creator-section span {
+    padding-left: 10px;
+  }
+
+  .join-as-creator-section button {
+    margin-left: 20px;
+  }
+
+  .rules {
+    padding-right: 80%;
+  }
+
+  .hero {
+    margin: 100px 0 0 10%;
     border-radius: 8%;
     height: 550px;
-    max-width: 400px;
+    width: 400px;
   }
 
   .hero-text{
