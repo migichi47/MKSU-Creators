@@ -96,59 +96,6 @@ body {
   opacity: 1;
 }
 
-/* phone screen */
-@media (max-width: 600px) {
-  .preview-tiles {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .preview {
-    margin: 0 auto;
-    max-width: 240px;
-    height: 435px;
-    margin-top: 20px;
-  }
-  
-  .preview img {
-    max-width: inherit;
-    height: 343px;
-  }
-
-  .tiles-title-div {
-    max-width: 250px;
-    margin: 0 auto;
-    padding-right: 20px;
-    height: 60px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-
-  .voted-popup-off {
-    margin: -10px 0 0 120px;
-  }
-}
-
-/* tablet screen */
-@media (min-width: 600px) {
-  .preview-tiles {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* small laptop screen */
-@media (min-width: 900px) {
-  .preview-tiles {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-/* big screen */
-@media (min-width: 1200px) {
-  .preview-tiles {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
 .preview:hover, .view-more-tile:hover{
   transform: translateY(-10px); /* moves tile up */
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
