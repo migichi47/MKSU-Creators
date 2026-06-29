@@ -38,7 +38,6 @@ body {
   position: absolute;
   left: 5%;
   top: 130px;
-  height: 600px;
   z-index: 2;
   width: 90%;
   background: linear-gradient(
@@ -47,8 +46,13 @@ body {
     rgba(65, 71, 237, 0.501)
   ),
   url('/images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');
-  border: solid 1px white;
-  border-top: none;
+  border-radius: 30px;
+}
+
+.hero,
+.about-hero,
+.tile {
+  height: 700px;
 }
 
 /* MKSU Grammys Text */
@@ -58,7 +62,6 @@ body {
   font-size: 60px;
   display: flex;
   justify-content: center;
-  padding-top: 100px;
 }
 
 .description1, 
@@ -70,11 +73,11 @@ body {
 }
 
 .description1 {
-  padding: 120px 0 0 0;
+  padding: 250px 0 30px 0;
 }
 
 .description2 {
-  padding: 150px 0 0 0;
+  padding: 150px 0 20px 0;
 }
 
 .buttons-container {
@@ -82,39 +85,9 @@ body {
   justify-content: center;
 }
 
-.buttons-container button {
+.vote-now-btn {
   height: 40px;
-  padding: 0 10px;
-  max-width: 200px;
-  margin-left: 20px;
 }
 
-.buttons-container button:active {
-  transform: translateY(2px);
-}
 
-.start-voting-btn {
-  color: white;
-  font-weight: bold;
-  background-color: rgb(253, 60, 111);
-  box-shadow: 0 -2px 3px rgb(255, 255, 255);
-  transition: transform 0.2s ease;
-}
 
-.learn-more-btn {
-  color: white;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid white;
-  transition:  0.2s ease;
-}
-
-.start-voting-btn:hover {
-  transform: translateY(-4px);
-}
-
-.learn-more-btn:hover {
-  color: white;
-  background-color: black;
-  border: 1px solid white;
-  transform: translateY(-4px);
-}

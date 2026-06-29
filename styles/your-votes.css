@@ -71,9 +71,6 @@ h1 {
 button {
   width: 30%;
   height: 50px;
-  border-radius: 25%; 
-  font-weight: 700;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .clear-button {

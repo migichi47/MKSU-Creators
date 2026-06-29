@@ -3,6 +3,7 @@
   .header-details {
     margin-left: 60%;
   }
+
 }
 
 
@@ -128,28 +129,28 @@
   }
 
   .hero {
-    margin: 100px 0 0 10%;
+    left: 10%;
     border-radius: 8%;
-    height: 550px;
-    width: 400px;
+    width: 80%;
+    height: 500px;
   }
 
   .hero-text{
-    padding: 100px 0 0 20px;
+    font-size: 3rem;
   }
   
   .description1 {
-    padding: 120px 0 0 40px;
+    padding: 120px 0 40px;
     font-size: 15px;
   }
 
   .description2 {
-    padding: 100px 0 0 40px;
+    padding: 100px 0 0 0;
     font-size: 15px;
   }
 
   .buttons-container {
-    padding: 20px 0 0 65px;
+    padding: 20px 0 0 0;
   }
 
 

@@ -1,9 +1,4 @@
-document.querySelector('.js-start-voting-btn')
+document.querySelector('.js-vote-now-btn')
 .addEventListener('click', () => {
   window.location.href = '../main.html'
-})
-
-document.querySelector('.js-learn-more-btn')
-.addEventListener('click', () => {
-  window.location.href = '#about'
 })

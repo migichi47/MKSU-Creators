@@ -90,7 +90,7 @@
 }
 
 .search-section button {
-  width: 40px;
+  max-width: 40px;
   height: 40px;
   border-radius: 50%;
 }
@@ -98,10 +98,6 @@
 .search-bar,
 .search-icon {
   margin-top: -40px;
-}
-
-.search-section button:hover{
-  background-color: rgb(1, 127, 149);
 }
 
 .category a {
@@ -159,15 +155,6 @@
 
 .view-votes button {
   border-radius: 20px;
-  height: 30px;
-  background-color: rgb(255, 255, 255);
-}
-
-.view-votes button:hover {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.463);
-  transition: 0.2s ease;
-  cursor: pointer;
 }
 
 .view-votes h4 {

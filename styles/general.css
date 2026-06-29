@@ -9,3 +9,21 @@ html{
   scroll-behavior: smooth;
 }
 
+button {
+  color: white;
+  flex: 1;
+  max-width: 250px;
+  min-width: none;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #00000000;
+  border: #FFF1B8 solid 1px;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #FFF1B8;
+  color: black;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
