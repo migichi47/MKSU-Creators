@@ -7,14 +7,14 @@
 }
 
 .about-hero {
-  width: 70%;
+  width: 90%;
   max-height: 600px;
   color: black;
   position: absolute;
   display: flex;
   grid-template-columns: 300px 1fr;
   top: 350px;
-  left: 15%;
+  left: 5%;
   border: 1px solid;
 }
 
@@ -38,6 +38,10 @@
 
 .h1-description {
   padding: 20px 0 30px 0;
+}
+
+.category-container {
+  padding-left: 50px;
 }
 
 .category {

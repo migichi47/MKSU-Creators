@@ -3,28 +3,6 @@
   .header-details {
     margin-left: 60%;
   }
-
-  .hero {
-    width: 800px;
-    height: 670px;
-  }
-
-  .hero-text{
-    padding: 100px 0 0 135px;
-    font-size: 60px;
-  }
-
-  .description1 {
-    padding: 120px 0 0 220px;
-  }
-
-  .description2 {
-    padding: 150px 0 0 220px;
-  }
-  
-  .buttons-container {
-    padding: 20px 0 0 260px;
-  }
 }
 
 
