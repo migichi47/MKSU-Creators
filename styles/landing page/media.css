@@ -1,5 +1,10 @@
 
 @media (max-width: 980px) {
+
+  button {
+    border: #FFF1B8 solid 3px;
+  }
+
   /* header section */
   header {
     height: 150px;
@@ -69,110 +74,63 @@
 
 
 
-  .hero {
-    left: 10%;
-    border-radius: 8%;
-    width: 80%;
-    height: 500px;
+
+
+  /* hero section */
+  body {
+    height: 3000px;
   }
 
-  .hero-text{
-    font-size: 2rem;
+  .main {
+    padding-top: 150px;
   }
-  
+
+  .cover-photo {
+    height: 2000px;
+  }
+
+  .overlay {
+    height: 2000px;
+    margin-top: 150px;
+  }
+
+  .hero {
+    height: 50%;
+    left: 10%;
+    top: 25%;
+    width: 80%;
+    border-radius: 80px;
+  }
+
+
+  /* MKSU Grammys Text */
+  .hero-text{
+    font-size: 80px;
+    align-items: center;
+  }
+
+  .description1, 
+  .description2 {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+  }
+
   .description1 {
-    padding: 120px 0 40px;
-    font-size: 15px;
+    padding: 400px 0 30px 0;
   }
 
   .description2 {
-    padding: 100px 0 0 0;
-    font-size: 15px;
+    padding: 200px 0 20px 0;
   }
 
   .buttons-container {
-    padding: 20px 0 0 0;
-  }
-
-  .hero-description {
-    position: absolute;
-    background-color: rgba(7, 4, 21, 0.809);
-    font-size: 12px;
-    width: 100%;
-    padding: 70px 0 10px 50px;
-    border-radius: 25px;
-    height: inherit;
-  }
-
-  .h1-description {
-    padding: 20px 0 30px 0;
-  }
-
-  .about-hero {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    top: 150px;
-    left: 0;
-    height: 510px;
+    justify-content: center;
   }
 
-  .about-image-container {
-    max-width: 100%;
-    height: 100%;
-    border-radius: 25px;
+  .vote-now-btn {
+    height: 100px;
   }
 
-  .category {
-    padding-top: 20px;
-    font-size: 18px;
-  }
-
-  .category-intro {
-    padding-top: 30px;
-  }
-
-
-  .tile {
-    top: 710px;
-    left: 0;
-    width: 100%;
-    height: 600px;
-  }
-
-  .tile-description {
-    position: absolute;
-    top: 20px;
-    left: 5%;
-    width: 90%;
-  }
-
-  .card-container {
-    flex-direction: column;
-    gap: 20px;
-    left: 25%;
-    bottom: 0;
-    top: 120px;
-    max-width: 100%;
-  }
-
-  .card {
-    max-width: 300px;
-    max-height: 145px;
-    font-size: 13px;
-    padding: 5px 0 0 20px;
-    border-radius: 20px;
-  }
-
-  .category-section {
-    top: 1350px;
-  }
-
-  .category-card-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-section {
-    top: 2650px;
-  }
 }
