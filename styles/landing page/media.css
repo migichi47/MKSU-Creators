@@ -27,7 +27,7 @@
   .about,
   .join-as-creator-section,
   .logo-container {
-    height: inherit;
+    height: 150px;
   }
 
   /* .rules,
