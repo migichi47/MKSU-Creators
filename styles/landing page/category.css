@@ -40,3 +40,8 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.category-header hr {
+  width: 100%;
+  border: #FFF1B8 solid 1px;
+}

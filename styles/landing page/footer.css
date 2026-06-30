@@ -1,0 +1,50 @@
+.footer-section {
+  position: absolute;
+  padding-top: 40px;
+  top: 2250px;
+  background-color: rgba(0, 0, 0, 0.741);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.footer {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.collaborator-logo {
+  max-width: 150px;
+}
+
+.collaborator-info {
+  max-width: 200px;
+}
+
+.collaborator-logo img {
+  width: 100%;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-info a {
+  color: white;
+}
+
+hr {
+  width: 30%;
+  margin-bottom: 40px;
+  opacity: 0.5;
+}
+
+footer {
+  color: rgba(255, 255, 255, 0.633);
+}
