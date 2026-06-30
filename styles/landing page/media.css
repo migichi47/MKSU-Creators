@@ -87,6 +87,11 @@
     gap: 30px;
     left: 5%;
   }
+
+  /* category-cards */
+  .category-card-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 
@@ -138,9 +143,6 @@
   .buttons-container {
     padding: 20px 0 0 0;
   }
-
-
-
 
 
 /* main page */
@@ -211,6 +213,11 @@
     font-size: 13px;
     padding: 5px 0 0 20px;
     border-radius: 20px;
+  }
+
+  /* category-cards */
+  .category-card-container {
+    grid-template-columns: 1fr 1fr;
   }
 
 }
