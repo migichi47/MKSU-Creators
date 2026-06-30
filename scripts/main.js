@@ -55,7 +55,7 @@ document.querySelector(".js-influencers").innerHTML = generateHtml(creators.infl
 document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musicians, 'musicians');
 
 document.querySelector('.js-back').addEventListener('click', () => {
-  window.location.href = '../landing-page.html';
+  window.location.href = '../main.html';
 })
 
 document.querySelector('.js-reset-local-storage')
