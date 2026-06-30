@@ -23,12 +23,12 @@
     width: 165px;
   }
 
-  /* .rules,
+  .rules,
   .about,
   .join-as-creator-section,
   .logo-container {
-    border-right: 1px solid rgba(255, 255, 255, 0.639);
-  } */
+    height: inherit;
+  }
 
   /* .rules,
   .about {
@@ -44,7 +44,7 @@
   .join-as-creator-section {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    width: 250px;
+    width: 270px;
   }
 
   .join-as-creator-section span {
