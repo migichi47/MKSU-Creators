@@ -1,9 +1,14 @@
 document.querySelector('.js-vote-now-btn')
 .addEventListener('click', () => {
-  window.location.href = '../main.html'
+  window.location.href = '../main.html';
 })
 
 document.querySelectorAll('.category-card')
-.addEventListener('click', () => {
-  window.location.href = '#top';
+.forEach((card) => {
+  card.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  })
 })
