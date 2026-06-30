@@ -5,15 +5,17 @@ body {
 
 .preview img{
   height: 430px;
-  width: 300px;
+  width: 100%;
   border-radius: 10px;
 }
+
 .description{
   margin-left: 20px;
   display: inline-block;
   color: rgb(202, 191, 191);
   font-size: small;
 }
+
 .name{
   font-size: 20px;
   color: white;
@@ -21,6 +23,7 @@ body {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 .preview{
   width: 300px;
   height: 530px;
@@ -33,8 +36,13 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.highlight {
+  border: 3px solid aqua;
+}
+
 
 .preview-text{
+  padding-top: 20px;
   background-color: rgba(255, 0, 191, 0.184);
   border-radius: 10px;
   height: 100px;
