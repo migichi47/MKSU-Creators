@@ -1,128 +1,78 @@
-/* Big screens */
-@media (min-width: 1200px) {
-  .header-details {
-    margin-left: 60%;
-  }
 
-}
-
-
-
-
-/* Medium laptops */
-@media (max-width: 1200px) {
-  .about-hero {
-    width: 90%;
-    max-height: 500px;
-    left: 5;
-  }
-
-  .about-image-container {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-
-  .hero-description {
-    padding: 20px 0 0 70px;
-    font-size: 12px;
-  }
-
-  .category {
-    font-size: 15px;
-  }
-
-  .category-intro {
-    padding: 0;
-  }
-
-}
-
-/* small laptops and tablets */
-@media (max-width: 1000px) {
-  .header-details {
-    margin-left: 30%;
-  }
-
-  .about-hero {
-    width: 90%;
-    max-height: 500px;
-    top: 350px;
-    left: 5%;
-  }
-
-  .about-image-container {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .hero-description {
-    font-size: 12px;
+@media (max-width: 980px) {
+  /* header section */
+  header {
+    height: 200px;
     width: 100%;
-    padding: 50px 0 0 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.268);
   }
 
-  .category {
-    padding-top: 10px;
-    font-size: 15px;
+  .header-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 55%;
   }
 
-  .category-intro {
-    padding-top: 20px;
-    font-size: 20px;
+  /* logo and container */
+
+  .logo {
+    width: 90px;
   }
 
-
-
-  /* Tile styles */
-
-  .tile {
-    top: 1100px;
-    left: 5%;
-    width: 90%;
+  .logo-container {
+    width: 150px;
   }
 
-  .card-container {
-    gap: 30px;
-    left: 5%;
+  .rules,
+  .about,
+  .join-as-creator-section,
+  .logo-container {
+    border-right: 1px solid rgba(255, 255, 255, 0.639);
   }
 
-  /* category-cards */
-  .category-card-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  
-  /* footer section */
-  .footer-section {
-    top: 2450px;
-  }
-}
-
-
-/* small screens */
-
-/* header */
-@media (max-width: 700px) {
-  .join-as-creator-section{
-    width: 136px;
-    font-size: 13px;
-  }
-
-  .join-as-creator-section span {
-    padding-left: 10px;
-  }
-
-  .join-as-creator-section button {
-    margin-left: 20px;
+  .rules,
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .rules {
-    padding-right: 80%;
+    color: rgba(255, 255, 255, 0.804);
+  }
+
+  .join-as-creator-section {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 200px;
+  }
+
+  .join-as-creator-section span {
+    margin-top: 15px;
+    padding-left: 15%;
+  }
+
+  .join-as-creator-section button {
+    max-width: 80px;
+    max-height: 30px;
+    margin-left: 30%;
+  }
+
+  .about {
+    color: rgba(255, 255, 255, 0.806);
+    border-right: none;
   }
 
 
-/* main page */
+
+
+
+
+
+
+
+
+
 
   .hero {
     left: 10%;
@@ -188,8 +138,6 @@
   }
 
 
-  /* Tile styles */
-
   .tile {
     top: 710px;
     left: 0;
@@ -216,11 +164,11 @@
   .card {
     max-width: 300px;
     max-height: 145px;
-    font-size: 16px;
+    font-size: 13px;
+    padding: 5px 0 0 20px;
     border-radius: 20px;
   }
 
-  /* category-cards */
   .category-section {
     top: 1350px;
   }
@@ -229,14 +177,8 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  /* footer section */
   .footer-section {
-    top: 2200px;
+    top: 2650px;
+    background-color: ye;
   }
-
-  .footer {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
 }
