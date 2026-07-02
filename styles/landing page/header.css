@@ -5,13 +5,13 @@ header {
   display: flex;
   background: rgba(0, 0, 0, 0.824);
   height: 80px;
-  width: 100%;
+  max-width: 100%;
   flex: 1;
 }
 
 .header-details {
   display: flex;
-  margin-left: 28%;
+  margin-left: 70%;
 }
 
 /* logo and container */
