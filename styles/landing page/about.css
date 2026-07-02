@@ -10,7 +10,6 @@
 .about-hero {
   border-radius: 30px;
   width: 90%;
-  color: black;
   position: absolute;
   display: flex;
   grid-template-columns: 300px 1fr;
