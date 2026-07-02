@@ -6,7 +6,6 @@ body {
 .preview img{
   height: 430px;
   width: 100%;
-  border-radius: 10px;
 }
 
 .description{
@@ -31,7 +30,6 @@ body {
   flex-direction: column;
   border-color: bisque;
   border-style: solid;
-  border-radius: 10px;
   display: flex;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -117,3 +115,82 @@ body {
   text-align: center;
   vertical-align: center;
 }
+
+
+
+
+.preview-tiles {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 100%;
+    margin-left: 60px;
+    border: 1px;
+    display: grid;
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+
+  .preview {
+    position: relative;
+    width: 230px;
+    height: 380px;
+    border: 1px solid bisque;
+    border-radius: 40px;
+    margin-bottom: 40px;
+  }
+
+  .preview img{
+    min-height: 80%;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+
+  .preview-text{    
+    padding-top: 5px;
+    background-color: rgba(255, 0, 191, 0.184);
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    height: 20%;
+  }
+
+  .name {
+    font-size: 18px;
+    color: white;
+    margin-left: 30px  }
+
+  .description {
+    padding-top: 2px;
+    margin-left: 30px;
+    font-size: 10px;
+  } 
+
+  .voted {
+    display: inline;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    height: 3px;
+    width: 50px; 
+  }
+
+  .voted-popup-off {
+    position: absolute;
+    opacity: 0;
+    width: 200px;
+    bottom: 26px;
+    left: -50px;
+  }
+  
+
+  .highlight {
+    border: 3px solid aqua;
+  }
+
+  .tiles-title-div{
+    font-size: 15px;
+    height: 50px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-left: 350px;
+  }
+
