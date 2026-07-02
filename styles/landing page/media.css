@@ -116,6 +116,10 @@
 
   .card-container {
     bottom: 10px;
-    max-width: 350px;
   }
+
+  .card {
+    max-width: 350px;
+    font-size: 14px;
+  }  
 }
