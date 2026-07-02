@@ -62,7 +62,7 @@ body {
   font-weight: 800;
   font-size: 60px;
   display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .description1, 
@@ -78,7 +78,7 @@ body {
 }
 
 .description2 {
-  padding: 150px 0 20px 0;
+  padding: 50px 0 20px 0;
 }
 
 .buttons-container {
@@ -91,5 +91,25 @@ body {
   max-width: 200px;
 }
 
+
+
+.join-as-creator-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+  gap: 10px;
+}
+
+.join-as-creator-section span {
+  margin-top: 10px;
+  padding: 0 5px;
+}
+
+.join-as-creator-section button {
+  max-width: 100px;
+  margin-top: 10px;
+
+}
 
 

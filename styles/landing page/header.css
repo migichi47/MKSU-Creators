@@ -26,7 +26,6 @@ header {
 
 .rules,
 .about,
-.join-as-creator-section,
 .logo-container {
   border-right: 1px solid rgba(255, 255, 255, 0.639);
 }
@@ -41,21 +40,6 @@ header {
 
 .rules {
   color: rgba(255, 255, 255, 0.804);
-}
-
-.join-as-creator-section {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  max-width: 200px;
-}
-
-.join-as-creator-section span {
-  margin-top: 10px;
-  padding: 0 5px;
-}
-
-.join-as-creator-section button {
-  margin: 5px 20px;
 }
 
 .about {
