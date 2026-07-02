@@ -111,7 +111,7 @@
 
   .description1, 
   .description2 {
-    font-size: 35px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
   }
@@ -171,7 +171,7 @@
 
 .hero-description {
   position: absolute;
-  background-color: rgba(27, 16, 81, 0.673);
+  background-color: rgba(27, 16, 81, 0.841);
   color: white;
   font-size: 30px;
   height: 1000px;
