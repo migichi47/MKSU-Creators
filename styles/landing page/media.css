@@ -58,7 +58,7 @@
 
   .category {
     padding-top: 20px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
   }
 
@@ -76,7 +76,7 @@
 
   .hero-description {
     height: 100%;
-    font-size: 16px;
+    font-size: 18px;
     padding: 70px 0 0 50px;
     border-radius: inherit;
   }
