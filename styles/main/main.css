@@ -50,13 +50,13 @@ body {
 
 .preview-tiles{
   /* background-color: rgba(209, 48, 48, 0.49); */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 100%;
   margin-left: 10px;
   border: 1px;
   border-radius: 10px;
   box-shadow: 2px -3px 5px  rgba(128, 128, 128, 0.49);
   display: grid;
-  grid-template-columns: 1fr;
   gap: 10px;
   margin-bottom: 100px;
 }
