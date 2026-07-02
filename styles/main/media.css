@@ -13,22 +13,28 @@
 
 
 @media (max-width: 700px) {
-  
+  .header {
+    width: 100%;
+  }
+
   .header-text {
     text-align: center;
-    font-size: 25px;
+    font-size: 18px;
     padding-bottom: 10px;
+    width: 100px;
   }
 
   .back {
     margin-left: 30px;
+    font-size: 14px;
   }
 
 
   .middle-section {
-    max-width: 280px;
+    max-width: 250px;
     border-radius: 40px;
-    padding: 5px  10px 5px;
+    border: none;
+    padding: 10px  5px 5px;
     position: relative;
     margin-left: 10px;
   }
@@ -40,8 +46,8 @@
   }
 
   .search-section input{
-    max-width: 180px;
-    height: 30px;
+    max-width: 150px;
+    height: 28px;
   }
 
   .search-section button {
@@ -50,18 +56,33 @@
   }
 
   .category {
+    background-color: rgba(0, 0, 0, 0.824);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 10px;
     font-size: 15px;
     gap: 5px;
   }
 
   .category-button {
-    height: 45px;
-    width: 48px;
-    font-size: 10px;
+    height: 55px;
+    width: 58px;
+    font-size: 12px;
     border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-left: 3px;
+  }
+
+  .right-section{
+    display: flex;
+    color: white;
+    width: 10px;
+    text-align: center;
+    justify-content: center;
+    margin-right: 240px;
   }
 
   .view-votes {
@@ -86,6 +107,17 @@
 
   .preview-tiles{
     grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
   }
 
+  .tiles-title-div{
+    align-items: center;
+    border-radius: 200px;
+    height: 50px;
+    justify-content: center;
+    max-width: 350px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    margin-left: 80px;
+  }
 }
