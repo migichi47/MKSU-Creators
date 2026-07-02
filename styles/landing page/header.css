@@ -6,13 +6,12 @@ header {
   background: rgba(0, 0, 0, 0.824);
   height: 80px;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.268);
+  flex: 1;
 }
 
 .header-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 55%;
+  display: flex;
+  margin-left: 28%;
 }
 
 /* logo and container */
@@ -22,7 +21,7 @@ header {
 }
 
 .logo-container {
-  width: 150px;
+  max-width: 150px;
 }
 
 .rules,
@@ -37,6 +36,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 80px;
 }
 
 .rules {
@@ -46,16 +46,16 @@ header {
 .join-as-creator-section {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  width: 200px;
+  max-width: 200px;
 }
 
 .join-as-creator-section span {
-  margin-top: 15px;
-  padding-left: 15%;
+  margin-top: 10px;
+  padding: 0 5px;
 }
 
 .join-as-creator-section button {
-  margin: 0 55px 0 40px;
+  margin: 5px 20px;
 }
 
 .about {
