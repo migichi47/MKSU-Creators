@@ -1,4 +1,16 @@
 
+@media (max-width: 1250px) {
+  .preview-tiles{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .preview-tiles{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 
 @media (max-width: 700px) {
   
@@ -52,8 +64,6 @@
     padding-left: 3px;
   }
 
-
-
   .view-votes {
     width: 80px;
     margin-top: 20px;
@@ -73,5 +83,9 @@
   .vote-count {
     font-size: 25px;
   }
-  
+
+  .preview-tiles{
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
