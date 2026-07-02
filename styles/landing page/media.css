@@ -1,0 +1,82 @@
+
+/* small laptops */
+@media (max-width: 1200px) {
+  .header-details {
+    margin-left: 75%;
+  }
+
+  .about-hero {
+  grid-template-columns: 350px 1fr;
+  }
+
+  .hero-description {
+    padding: 80px 0 0 50px;
+  }
+}
+
+/* tablets */
+@media (max-width: 1000px) {
+  .header-details {
+    margin-left: 70%;
+  }
+  
+  /* About section styles */
+
+  .about-hero {
+    border-radius: 30px;
+    width: 90%;
+    position: relative;
+    display: flex;
+    top: 1000px;
+    left: 5%;
+  }
+
+  .about-image-container {
+    position: relative;
+    border-radius: inherit;
+  }
+
+  .about-image-container img {
+    border-radius: inherit;
+  }
+
+  .hero-description {
+    height: 100%;
+    position: absolute;
+    padding: 100px 0 0 50px;
+    border-radius: inherit;
+  }
+
+  .h1-description {
+    padding: 20px 0 30px 0;
+  }
+
+  .category-container {
+    padding-left: 50px;
+  }
+
+  .category {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .category-intro {
+    padding-top: 30px;
+  }
+
+}
+
+/* phones */
+@media (max-width: 800px) {
+  .header-details {
+    margin-left: 45%;
+  }
+
+  .hero-description {
+    height: 100%;
+    font-size: 16px;
+    padding: 100px 0 0 50px;
+    border-radius: inherit;
+  }
+}
