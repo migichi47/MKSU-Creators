@@ -1,6 +1,10 @@
 body {
   padding-top: 120px;
-  background-color: black;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.708)
+  ),
+  url('/images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');
+  border-radius: 30px;
 }
 
 .preview img{
