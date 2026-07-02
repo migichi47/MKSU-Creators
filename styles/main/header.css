@@ -9,6 +9,7 @@
   height: 120px;
 }
 
+
 .header-text {
   color: white;
   height: 100%;
@@ -113,24 +114,17 @@
   font-family: "roboto", Arial;
 }
 
-.category-button:hover {
-  transition: 0.5s;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-
 
 .right-section{
   display: flex;
   color: white;
-  max-width: 300px;
+  width: 300px;
   text-align: center;
   justify-content: center;
 }
 
 .view-votes {
-  max-width: 100px;
+  width: 100px;
   margin-top: 20px;
 }
 
