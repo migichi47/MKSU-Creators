@@ -30,26 +30,29 @@
   }
 
   .middle-section {
-    font-size: 30px;
     width: 100%;
     align-items: center;
   }
 
-  .category{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  .category {
+    background-color: rgba(0, 0, 0, 0.824);
+    display: flex;
+    justify-content: center;
     width: 100%;
-    z-index: 200;
+    gap: 10px;
     height: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 150px;
   }
 
   .category a {
-    font-size: 8px;
+    background-color: rgba(240, 248, 255, 0.49);
     display: flex;
     border-radius: 80px;
-    width: 50px;
-    height: 40px;
+    width: 20%;
+    height: 100%;
     align-items: center;
     text-align: center;
   }
