@@ -1,5 +1,5 @@
 
-@media (max-width: 980px) {
+@media (max-width: 1000px) {
 
   button {
     border: #FFF1B8 solid 3px;
@@ -15,7 +15,7 @@
   .header-details {
     display: grid;
     grid-template-columns: 120px 1fr 100px;
-    margin-left: 32%;
+    margin-left: 200px;
   }
 
   /* logo and container */
