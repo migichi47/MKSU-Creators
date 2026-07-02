@@ -134,17 +134,13 @@
     font-size: 33px;
   }
 
-}
 
 
 
 
 
 
-
-
-
-/* About section styles */
+  /* About section styles */
 
 .about-section {
   top: 1630px;
@@ -205,42 +201,49 @@
 /* Tile styles */
 
 .tile {
+  height: 1000px;
   border-radius: 30px;
   position: absolute;
   width: 90%;
   top: 1800px;
   left: 5%;
-  color: white;
-  background: linear-gradient(
-    to bottom,
-    rgb(27, 16, 81),
-    rgb(0, 0, 0)
-  );
 }
 
 .tile-description {
-  font-size: 18px;
+  font-size: 30px;
   position: absolute;
   top: 120px;
-  left: 5%;
-  width: 90%;
+  left: 30px;
+  width: 800px;
   font-family: 'roboto';
 }
 
 .card-container {
   position: absolute;
   display: flex;
+  flex-direction: column;
   gap: 30px;
-  left: 20%;
-  bottom:35%;
+  left: 120px;
+  bottom: 30px;
 }
 
 .card {
-  max-width: 250px;
+  max-width: 650px;
   background-color: rgb(17, 5, 78);
   border: 1px solid aqua;
-  max-height: 300px;
-  font-size: 16px;
-  padding: 4px 10px 10px 20px;
+  max-height: 250px;
+  font-size: 25px;
+  padding: 4px 10px 10px 40px;
   border-radius: 20px;
 }
+
+}
+
+
+
+
+
+
+
+
+

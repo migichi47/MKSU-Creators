@@ -6,7 +6,7 @@ body {
   ),
   url('/images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');;
   color: white;
-  height: 3000px;
+  height: auto;
 }
 
 .main {
@@ -87,6 +87,7 @@ body {
 
 .vote-now-btn {
   height: 40px;
+  max-width: 200px;
 }
 
 
