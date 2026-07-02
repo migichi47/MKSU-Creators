@@ -1,27 +1,28 @@
 body {
   background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.59),
-    rgba(9, 1, 45, 0.68)
+    to bottom,
+    rgba(0, 0, 0, 0.774)
   ),
-  url('/images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');;
+  url('/images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');
   color: white;
-  height: auto;
+  width: 542px;
 }
 
 .main {
   padding-top: 80px;
+  width: 100%;
 }
 
 .cover-photo {
   position: absolute;
   z-index: 0;
-  width: 100%;
+  width: 542px;
   height: 800px;
   object-fit: cover;
 }
 
 .overlay {
+  width: 542px;
   height: 800px;
   margin-top: 80px;
   position: absolute;
@@ -36,10 +37,10 @@ body {
 
 .hero {
   position: absolute;
-  left: 5%;
+  left: 26px;
   top: 130px;
   z-index: 2;
-  width: 90%;
+  width: 472px;
   background: linear-gradient(
     to right,
     rgb(0, 0, 0),
