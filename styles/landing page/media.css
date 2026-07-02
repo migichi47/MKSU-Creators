@@ -1,5 +1,5 @@
 
-@media (max-width: 1000px) {
+@media (max-width: 980px) {
 
   button {
     border: #FFF1B8 solid 3px;
@@ -58,9 +58,9 @@
   }
 
   .join-as-creator-section button {
-    width: 70%;
+    width: 170px;
     max-height: 50px;
-    margin-left: 15%;
+    margin-left: 50px;
   }
 
 
@@ -97,7 +97,7 @@
   .hero {
     height: 1000px;
     left: 10%;
-    top: 25%;
+    top: 500px;
     width: 80%;
     border-radius: 80px;
   }
@@ -158,13 +158,13 @@
 
 .about-image-container {
   width: 100%;
-  height: 100%;
+  height: 1000px;
   border-radius: inherit;
 }
 
 .about-image-container img {
   width: 100%;
-  height: 100%;
+  height: 1000px;
   border-radius: inherit;
 }
 
@@ -173,7 +173,7 @@
   background-color: rgba(27, 16, 81, 0.673);
   color: white;
   font-size: 33px;
-  height: 100%;
+  height: 1000px;
   padding: 100px 0 0 50px;
   border-radius: inherit;
 }
