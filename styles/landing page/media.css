@@ -12,6 +12,16 @@
   .hero-description {
     padding: 80px 0 0 50px;
   }
+
+  .card-container {
+    gap: 30px;
+    left: 10%;
+    bottom:35%;
+  }
+
+  .card {
+    min-width: 200px;
+  }
 }
 
 /* tablets */
@@ -66,6 +76,29 @@
     padding-top: 30px;
   }
 
+
+
+/* Tile styles */
+
+  .tile-description {
+    font-size: 15px;
+    position: absolute;
+    top: 120px;
+    left: 5%;
+    width: 90%;
+    font-family: 'roboto';
+  }
+  .card-container {
+    flex-direction: column;
+    gap: 30px;
+    left: 10%;
+    bottom: 70px;
+  }
+
+  .card {
+    max-width: 500px;
+    max-height: 140px;
+  }  
 }
 
 /* phones */
@@ -79,5 +112,10 @@
     font-size: 18px;
     padding: 30px 0 0 50px;
     border-radius: inherit;
+  }
+
+  .card-container {
+    bottom: 10px;
+    max-width: 350px;
   }
 }
