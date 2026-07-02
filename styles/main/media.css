@@ -13,6 +13,7 @@
   }
 
   .preview {
+    position: relative;
     width: 380px;
     height: 630px;
     border: 1px solid bisque;
@@ -21,44 +22,46 @@
   }
 
   .preview img{
-    min-height: 480px;
+    min-height: 530px;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
   }
 
   .preview-text{    
-    padding-top: 20px;
+    padding-top: 10px;
     background-color: rgba(255, 0, 191, 0.184);
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
-    height: 200px;
+    height: 100px;
   }
 
   .name {
     font-size: 35px;
     color: white;
-    margin-left: 70px;
-  }
+    margin-left: 30px  }
 
   .description {
     padding-top: 2px;
-    margin-left: 70px;
-    font-size: 23px;
+    margin-left: 30px;
+    font-size: 20px;
   } 
 
   .voted {
     display: inline;
     margin: 0;
     font-size: 28px;
+    font-weight: bold;
     height: 3px;
     width: 50px; 
   }
 
   .voted-popup-off {
+    position: absolute;
     opacity: 1;
     width: 200px;
     font-size: 30px;
-    margin: 0 0 0 180px;
+    bottom: 50px;
+    left: 70px;
   }
   
 
