@@ -122,4 +122,15 @@
     max-width: 350px;
     font-size: 14px;
   }  
+
+  .category-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+ 
+
+  .footer-section {
+    top: 3650px;
+  }  
 }
