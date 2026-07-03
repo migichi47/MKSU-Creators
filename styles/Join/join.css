@@ -51,6 +51,7 @@ input {
   border-bottom: 1px solid bisque;
   background: none;
   height: 25px;
+  color: white;
 }
 
 select {
