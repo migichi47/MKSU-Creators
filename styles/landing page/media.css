@@ -103,6 +103,21 @@
 
 /* phones */
 @media (max-width: 800px) {
+  
+  .hero-text{
+    font-size: 3rem;
+  }
+
+  .description1 {
+    padding-top: 40%;
+  }
+
+  .description1,
+  .description2 {
+    font-size: 100%;
+    text-align: center;
+  }
+
   .header-details {
     margin-left: 45%;
   }
