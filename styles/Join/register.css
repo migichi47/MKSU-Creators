@@ -84,7 +84,7 @@ p {
   width: 200px;
   height: 180px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 h2 {
@@ -108,16 +108,20 @@ h2 {
     rgba(5, 8, 87, 0.788)
   );
   width: 65%;
-  height: 400px;
+  height: 480px;
   border: 1px solid rgba(0, 255, 255, 0.388);
   border-radius: 40px;
   margin: 0 auto;
   margin-top: 60px;
 }
 
+.screenshot-tile h1 {
+  font-size: 30px;
+}
+
 button {
   position: absolute;
-  top: 520px;
+  top: 570px;
   width: 100px;
   height: 30px;
   left: 200px;
