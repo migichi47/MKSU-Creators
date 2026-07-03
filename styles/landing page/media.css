@@ -109,7 +109,7 @@
   }
 
   .description1 {
-    padding-top: 40%;
+    padding-top: 45%;
   }
 
   .description1,
@@ -152,4 +152,11 @@
   .footer-section {
     top: 3650px;
   }  
+}
+
+
+@media (max-width: 400px) {
+  .header-details {
+    margin-left: 38%;
+  }
 }
