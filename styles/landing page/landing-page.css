@@ -30,7 +30,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(65, 71, 237, 0.33) 0%,
-    rgba(0, 0, 0, 0.698) 100%
+    rgba(0, 0, 0, 0.834) 100%
   );
 }
 
@@ -43,8 +43,8 @@ body {
   width: 90%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.869),
-    rgba(8, 14, 181, 0.592)
+    rgba(0, 0, 0, 0.908),
+    rgba(5, 8, 87, 0.788)
   );
   border-radius: 30px;
 }
