@@ -6,3 +6,8 @@ document.querySelectorAll('.js-category-card')
     console.log(`Chose ${category}`);
   })
 })
+
+
+document.querySelector('.js-back').addEventListener('click', () => {
+  window.location.href = '/join.html';
+})

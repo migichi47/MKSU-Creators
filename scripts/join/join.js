@@ -16,3 +16,7 @@ function getDetails() {
   
   console.log(name, admission, year, platform, followers, handle);
 }
+
+document.querySelector('.js-back').addEventListener('click', () => {
+  window.location.href = '../index.html';
+})

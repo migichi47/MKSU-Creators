@@ -16,6 +16,12 @@ body {
   width: 50%;
 }
 
+.back {
+  position: fixed;
+  top: 30px;
+  right: 410px;
+}
+
 h1 {
   margin: 0 auto;
   display: flex;
