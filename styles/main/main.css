@@ -28,8 +28,6 @@ body {
 }
 
 .preview{
-  width: 300px;
-  height: 530px;
   border: 1px;
   flex-direction: column;
   border-color: bisque;
@@ -123,7 +121,7 @@ body {
 
 
 
-.preview-tiles {
+  .preview-tiles {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     max-width: 100%;
     margin-left: 60px;
