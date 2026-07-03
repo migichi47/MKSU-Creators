@@ -1,0 +1,79 @@
+.header {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.header img {
+  width: 50%;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 10%;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.908),
+    rgba(5, 8, 87, 0.788)
+  );
+  border: 1px solid rgba(0, 255, 255, 0.388);
+  border-radius: 30px;
+  font-size: 20px;
+  position: absolute;
+  left: 15%;
+  top: 250px;
+  height: 500px;
+  width: 70%;
+}
+
+h1 {
+  font-size: 30px;
+  margin-left: 15%;
+  margin-bottom: 40px;
+  padding-top: 15px;
+}
+
+p {
+  font-weight: 100;
+  font-size: 15px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  color: rgba(240, 248, 255, 0.824);
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid bisque;
+  background: none;
+  height: 25px;
+}
+
+select {
+  height: 20px;
+}
+
+label {
+  color: rgba(240, 248, 255, 0.918);
+  font-size: 12px;
+}
+
+
+
+button {
+  max-height: 50px;
+  max-width: 150px;
+  margin-left: 18%;
+  margin-top: 20px;
+}
+
+.tile div {
+  max-height: 30px;
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}

@@ -12,6 +12,10 @@ body {
   font-size: 20px;
 }
 
+.header img {
+  width: 50%;
+}
+
 h1 {
   margin: 0 auto;
   display: flex;
@@ -28,10 +32,6 @@ p {
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 20px;
-}
-
-.header img {
-  width: 50%;
 }
 
 .category-card-container {
