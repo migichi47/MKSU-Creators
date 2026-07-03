@@ -152,6 +152,32 @@
   .footer-section {
     top: 3650px;
   }  
+
+
+  /* hero section */
+  .hero-description {
+    font-size: 100%;
+    width: 100%;
+    padding: 10% 2% 0 5%;
+  }
+
+  .h1-description {
+    padding: 20px 0 30px 0;
+  }
+
+  .category-container {
+    padding-left: 50px;
+  }
+
+  .category {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .category-intro {
+    padding-top: 30px;
+  }
 }
 
 /* smaller phone-width */
@@ -159,9 +185,5 @@
   .header-details {
     margin-left: 38%;
   }
-
-  .about-hero {
-    width: 100%;
-    left: 0;
-  }
+  
 }
