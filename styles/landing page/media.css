@@ -125,8 +125,12 @@
   .hero-description {
     height: 100%;
     font-size: 18px;
-    padding: 30px 0 0 50px;
+    padding: 30px 0 0 0;
     border-radius: inherit;
+  }
+
+  .join-as-creator-section {
+    margin-top: 15%;
   }
 
   .card-container {
