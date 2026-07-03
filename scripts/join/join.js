@@ -12,5 +12,7 @@ function getDetails() {
   const platform = document.querySelector('.js-platform').value;
   const followers = document.querySelector('.js-followers').value;
   const handle = document.querySelector('.js-handle').value;
+  const contact = document.querySelector('.js-contact').value;
+  
   console.log(name, admission, year, platform, followers, handle);
 }
