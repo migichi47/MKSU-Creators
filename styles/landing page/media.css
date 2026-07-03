@@ -159,4 +159,9 @@
   .header-details {
     margin-left: 38%;
   }
+
+  .about-hero {
+    width: 100%;
+    left: 0;
+  }
 }
