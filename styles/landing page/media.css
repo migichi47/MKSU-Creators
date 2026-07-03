@@ -92,7 +92,7 @@
     flex-direction: column;
     gap: 30px;
     left: 10%;
-    bottom: 70px;
+    bottom: 20px;
   }
 
   .card {
@@ -109,7 +109,7 @@
   }
 
   .description1 {
-    padding-top: 45%;
+    padding-top: 200px;
   }
 
   .description1,
@@ -161,22 +161,10 @@
     padding: 10% 2% 0 5%;
   }
 
-  .h1-description {
-    padding: 20px 0 30px 0;
-  }
-
-  .category-container {
-    padding-left: 50px;
-  }
-
-  .category {
-    padding-top: 20px;
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .category-intro {
-    padding-top: 30px;
+  /* tile hero */
+  
+  .tile-description {
+    top: 100px;
   }
 }
 
@@ -185,5 +173,14 @@
   .header-details {
     margin-left: 38%;
   }
+
+  .tile-description {
+    top: 80px;
+  }
+
+  .card {
+    max-width: 300px;
+    font-size: 14px;
+  }  
   
 }
