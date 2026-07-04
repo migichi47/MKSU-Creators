@@ -46,11 +46,12 @@ function generateScreenshotHTML() {
       <div class="screenshot-section">
         <input type="file" name="screenshot" accept="image/*" required>
       </div>
+      <button type="submit">Finish</button>
     </div>
-    <button type="submit">Finish</button>
   `;
 
   container.innerHTML = generatedHTML;
+  container.classList.add('container');
 }
 
 document.querySelectorAll('.js-category-card')

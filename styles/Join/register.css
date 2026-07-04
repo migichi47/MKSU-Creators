@@ -3,6 +3,11 @@ body {
   color: white;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .back {
   width: 100px;
   position: fixed;
@@ -72,6 +77,22 @@ p {
 
 
 /* generated HTML */
+.screenshot-tile {
+  position: relative;
+  top: 120px;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.908),
+    rgba(5, 8, 87, 0.788)
+  );
+  width: 65%;
+  max-width: 400px;
+  height: 480px;
+  border: 1px solid rgba(0, 255, 255, 0.388);
+  border-radius: 40px;
+  margin-top: 60px;
+}
+
 .screenshot-section {
   border: 1px dashed grey;
   display: flex;
@@ -94,23 +115,9 @@ h2 {
 }
 
 .screenshot-section input {
-  width: 80px;
+  width: 90%;
 }
 
-.screenshot-tile {
-  position: relative;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.908),
-    rgba(5, 8, 87, 0.788)
-  );
-  width: 65%;
-  height: 480px;
-  border: 1px solid rgba(0, 255, 255, 0.388);
-  border-radius: 40px;
-  margin: 0 auto;
-  margin-top: 60px;
-}
 
 .screenshot-tile h1 {
   font-size: 30px;
@@ -118,8 +125,8 @@ h2 {
 
 button {
   position: absolute;
-  top: 570px;
-  width: 100px;
+  top: 400px;
+  width: 50%;
   height: 30px;
-  left: 200px;
+  right: 25%;
 }
