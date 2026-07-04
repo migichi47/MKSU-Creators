@@ -20,10 +20,14 @@
   height: 90%;
 }
 
-.back {
-  position: fixed;
-  top: 30px;
-  right: 85%;
+.back-container {
+  margin-top: 30px;
+  margin-left: -2%;
+  width: 100px;
+}
+
+.back:hover {
+  color: yellow;
 }
 
 hr {
