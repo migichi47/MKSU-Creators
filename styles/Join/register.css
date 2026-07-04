@@ -3,23 +3,12 @@ body {
   color: white;
 }
 
-.header {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.header img {
-  width: 50%;
-}
-
 .back {
-  position: fixed;
+  width: 100px;
+  position: absolute;
+  z-index: 1050;
   top: 30px;
-  right: 410px;
+  right: 78%;
 }
 
 h1 {

@@ -1,40 +1,10 @@
-.header {
-  width: 70%;
-  height: 100px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
 
-.header h1 {
-  margin: 0;
-  display: flex;
-  max-width: 200px;
-  font-size: 22px;
-}
-
-.header img {
-  width: 100px;
-  height: 90%;
-}
 
 .back {
   width: 100px;
   position: fixed;
   top: 30px;
   right: 78%;
-}
-
-.back:hover {
-  color: yellow;
-}
-
-hr {
-  opacity: 0.5;
-  width: 60%;
-  margin: 0 auto;
 }
 
 .intro {
