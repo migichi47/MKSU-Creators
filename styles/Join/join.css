@@ -21,9 +21,10 @@
 }
 
 .back {
+  width: 100px;
   position: fixed;
   top: 30px;
-  right: 85%;
+  right: 78%;
 }
 
 .back:hover {
