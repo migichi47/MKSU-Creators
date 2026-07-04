@@ -1,0 +1,22 @@
+@media (min-width: 700px) {
+  .tile {
+    left: 25%;
+    width: 50%;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .back {
+    right: 70%;
+  }
+
+  input {
+    width: 200px;
+  }
+  
+  .tile {
+    left: 35%;
+    width: 30%;
+  }
+}

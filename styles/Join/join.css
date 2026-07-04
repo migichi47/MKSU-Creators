@@ -1,21 +1,54 @@
 .header {
-  width: 50%;
+  width: 100%;
+  height: 100px;
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
-  font-weight: 600;
-  font-size: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  display: flex;
+  max-width: 200px;
+  font-size: 22px;
 }
 
 .header img {
-  width: 50%;
+  width: 100px;
+  height: 90%;
+}
+
+.back {
+  position: fixed;
+  top: 30px;
+  right: 85%;
+}
+
+hr {
+  opacity: 0.5;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
 }
 
 .tile {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-left: 10%;
+  align-items: center;
   background: linear-gradient(
     to left,
     rgba(0, 0, 0, 0.908),
@@ -26,22 +59,18 @@
   font-size: 20px;
   position: absolute;
   left: 15%;
-  top: 250px;
+  top: 230px;
   height: 500px;
   width: 70%;
 }
 
-.back {
-  position: fixed;
-  top: 30px;
-  right: 420px;
-}
+
 
 h1 {
   font-size: 30px;
   margin-left: 5%;
   margin-bottom: 20px;
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 p {
@@ -54,6 +83,7 @@ p {
 
 input {
   border: 0;
+  width: 180px;
   border-bottom: 1px solid bisque;
   background: none;
   height: 25px;
@@ -73,8 +103,7 @@ label {
 
 button {
   max-height: 50px;
-  max-width: 150px;
-  margin-left: 18%;
+  width: 150px;
   margin-top: 20px;
 }
 
