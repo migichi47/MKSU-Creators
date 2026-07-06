@@ -26,8 +26,11 @@
 }
 
 .header img {
+  position: absolute;
+  top: 7px;
+  left: 20px;
   width: 70px;
-  height: 90%;
+  height: 70px;
 }
 
 .header-hr {
@@ -42,7 +45,7 @@
 
 .search-section {
   position: fixed;
-  top: 65px;
+  top: 60px;
   z-index: 200;
   width: 100%;
   display: flex;
@@ -81,17 +84,24 @@
 }
 
 .view-votes {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  z-index: 200;
   width: 100px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .view-votes button {
   border-radius: 20px;
   padding: 5px;
-}
-
-.view-votes h4 {
-  margin: 0;
+  min-width: 0;
+  max-width: 80px;
+  font-size: 12px;
 }
 
 .vote-count {
@@ -99,5 +109,5 @@
   text-decoration: none;
   font-weight: 700;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 22px;
+  font-size: 30px;
 }

@@ -14,13 +14,6 @@ body {
   font-size: small;
 }
 
-.name{
-  font-size: 20px;
-  color: white;
-  margin-left: 20px;
-  margin-bottom: 0;
-  margin-top: 0;
-}
 
 
 .highlight {
@@ -44,31 +37,6 @@ body {
 }
 
 
-.voted {
-  display: inline;
-  margin: 0;
-  font-size: 20px;
-  height: 3px;
-  width: 50px;
-}
-
-.voted-emoji {
-  display: inline;
-  margin: 0 ;
-  font-size: 20px;
-  max-height: 3px;
-  max-width: 10px;
-}
-
-.voted-popup-off {
-  opacity: 0;
-  width: 200px;
-  margin: 0 0 0 180px;
-}
-
-.voted-popup-on {
-  opacity: 1;
-}
 
 .preview:hover, .view-more-tile:hover{
   transform: translateY(-10px); /* moves tile up */
@@ -126,16 +94,22 @@ body {
     height: 20%;
   }
 
+  .voted-popup-off {
+    opacity: 0;
+    width: 200px;
+    margin: 0 0 0 180px;
+  }
+  
   .name {
     font-size: 18px;
     color: white;
     margin-left: 30px  }
-
+    
   .description {
     padding-top: 2px;
     margin-left: 30px;
     font-size: 10px;
-  } 
+  }
 
   .voted {
     display: inline;
@@ -147,16 +121,23 @@ body {
   }
 
   .voted-popup-off {
+    max-height: 3px;
+    max-width: 10px;
+    font-size: 20px;
+    display: inline;
     position: absolute;
     opacity: 0;
     width: 200px;
     bottom: 26px;
     left: -50px;
   }
+
+  .voted-popup-on {
+    opacity: 1;
+  }
   
 
   .highlight {
     border: 3px solid aqua;
   }
-
 
