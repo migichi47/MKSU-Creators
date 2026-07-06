@@ -70,7 +70,7 @@ body {
     flex-direction: column;
     position: relative;
     width: 200px;
-    height: 320px;
+    height: 340px;
     border: 1px solid bisque;
     border-radius: 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -92,12 +92,6 @@ body {
     height: 20%;
   }
 
-  .voted-popup-off {
-    opacity: 0;
-    width: 200px;
-    margin: 0 0 0 180px;
-  }
-  
   .name {
     font-size: 18px;
     color: white;
@@ -112,22 +106,19 @@ body {
   .voted {
     display: inline;
     margin: 0;
-    font-size: 20px;
     font-weight: bold;
     height: 3px;
-    width: 50px; 
+  }
+
+  .voted-emoji {
+    font-size: 25px;
   }
 
   .voted-popup-off {
-    max-height: 3px;
-    max-width: 10px;
-    font-size: 20px;
-    display: inline;
     position: absolute;
     opacity: 0;
-    width: 200px;
-    bottom: 26px;
-    left: -50px;
+    bottom: 20px;
+    left: 140px;
   }
 
   .voted-popup-on {

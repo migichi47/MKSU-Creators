@@ -37,7 +37,6 @@ function generateHtml(creatorsList, category) {
 
             <div class="voted-popup-off js-voted-popup-${creator.id}-off">
               <div class="voted-emoji">✅</div>
-              <p class="voted" >Voted</p>
             </div>
           </div>
         </div>
