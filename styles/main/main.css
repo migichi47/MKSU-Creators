@@ -56,7 +56,6 @@ body {
   .preview-tiles {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    max-width: 100%;
     display: grid;
     margin-bottom: 20px;
   }

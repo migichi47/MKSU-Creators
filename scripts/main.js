@@ -92,4 +92,4 @@ document.querySelector('.js-search-bar').addEventListener('keydown', (e) => {
 
 
 // Display when page is under development
-isUnderDevelopment(false);
+isUnderDevelopment(true);
