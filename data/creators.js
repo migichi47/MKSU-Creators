@@ -19,7 +19,7 @@ export const creators = {
       year: 1,
     },
     {
-      image: "images/mwende.jpg",
+      image: "/images/mwende.jpg",
       name: 'Mwende',
       followers: 1100,
       year: 3,
@@ -92,6 +92,12 @@ export const creators = {
   ],
 
   influencers: [
+    {
+      image: "/images/heismaema.png",
+      name: 'Heismaema',
+      followers: "27100",
+      year: "2",
+    },
     {
       image: "images/gym reaper.jpg",
       name: 'Gym Reaper',
