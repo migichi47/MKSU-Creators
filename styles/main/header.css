@@ -112,3 +112,9 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
 }
+
+.back {
+  position: fixed;
+  right: 84%;
+  top: 78px;
+}

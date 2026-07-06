@@ -92,3 +92,8 @@ document.querySelector('.js-search-bar').addEventListener('keydown', (e) => {
 
 // Display when page is under development
 isUnderDevelopment(false);
+
+// back button
+document.querySelector('.js-back').addEventListener('click', () => {
+  window.location.href = '../index.html';
+})

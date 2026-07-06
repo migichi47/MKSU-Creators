@@ -81,8 +81,6 @@ button:hover {
   color: white;
   transition: transform 0.3s ease;
   color: aqua;
-  margin-left: 50px;
-  width: 53px;
 }
 
 .back:hover {
