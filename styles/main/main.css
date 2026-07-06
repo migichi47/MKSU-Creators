@@ -37,13 +37,6 @@ body {
 }
 
 
-
-.preview:hover, .view-more-tile:hover{
-  transform: translateY(-10px); /* moves tile up */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  cursor: pointer;
-}
-
 .tiles-title{
   display: flex;
   flex-direction: row;
@@ -53,11 +46,17 @@ body {
 
 
 
-  .preview-tiles {
+.preview-tiles {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     display: grid;
     margin-bottom: 20px;
+  }
+  
+  .preview:hover {
+    transform: translateY(-10px); /* moves tile up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
   }
 
   .preview-tiles-container {
@@ -70,8 +69,8 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 150px;
-    height: 245px;
+    width: 200px;
+    height: 320px;
     border: 1px solid bisque;
     border-radius: 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
