@@ -7,11 +7,6 @@ body {
   border-radius: 30px;
 }
 
-.preview img{
-  height: 430px;
-  width: 100%;
-}
-
 .description{
   margin-left: 20px;
   display: inline-block;
@@ -27,52 +22,27 @@ body {
   margin-top: 0;
 }
 
-.preview{
-  border: 1px;
-  flex-direction: column;
-  border-color: bisque;
-  border-style: solid;
-  display: flex;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .highlight {
   border: 3px solid aqua;
 }
 
-
-.preview-text{
-  padding-top: 20px;
-  background-color: rgba(255, 0, 191, 0.184);
-  border-radius: 10px;
-  height: 100px;
-}
-
-.preview-tiles{
-  /* background-color: rgba(209, 48, 48, 0.49); */
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 100%;
-  margin-left: 10px;
-  border: 1px;
-  display: grid;
-  gap: 10px;
-  margin-bottom: 100px;
-}
-
 .tiles-title-div{
   background-color: aliceblue;
+  color: black;
+  font-size: 15px;
   display: flex;
-  flex: 1;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
   border-radius: 200px;
-  height: 80px;
-  margin-bottom: 20px;
-  justify-content: center;
-  max-width: 1000px;
+  height: 50px;
   margin: 0 auto;
   margin-bottom: 20px;
+  justify-content: center;
+  max-width: 300px;
+  
 }
+
 
 .voted {
   display: inline;
@@ -108,43 +78,45 @@ body {
 
 .tiles-title{
   display: flex;
-  flex: 1;
-  flex-shrink: 1;
   flex-direction: row;
-  min-width: 0;
-  max-width: 380px;
-  margin-left: 28px;
   text-align: center;
   vertical-align: center;
 }
 
 
 
-
   .preview-tiles {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     max-width: 100%;
-    margin-left: 60px;
-    border: 1px;
     display: grid;
-    gap: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
+  }
+
+  .preview-tiles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .preview {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    width: 230px;
-    height: 380px;
+    width: 150px;
+    height: 245px;
     border: 1px solid bisque;
     border-radius: 40px;
-    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .preview img{
-    min-height: 80%;
+    height: 80%;
+    max-width: 100%;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
   }
+
 
   .preview-text{    
     padding-top: 5px;
@@ -187,12 +159,4 @@ body {
     border: 3px solid aqua;
   }
 
-  .tiles-title-div{
-    font-size: 15px;
-    height: 50px;
-    max-width: 400px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-left: 350px;
-  }
 
