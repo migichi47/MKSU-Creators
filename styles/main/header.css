@@ -18,19 +18,16 @@
 }
 
 .header h1 {
-  margin: 0;
-  display: flex;
-  max-width: 200px;
-  font-size: 16px;
-  padding: 0;
+  opacity: 0;
 }
 
 .header img {
+  opacity: 0;
   position: absolute;
-  top: 7px;
-  left: 20px;
-  width: 70px;
-  height: 70px;
+  top: 15px;
+  left: 70px;
+  width: 60px;
+  height: 60px;
 }
 
 .header-hr {
@@ -45,7 +42,7 @@
 
 .search-section {
   position: fixed;
-  top: 60px;
+  top: 35px;
   z-index: 200;
   width: 100%;
   display: flex;
@@ -59,7 +56,7 @@
 .search-section input{
   display: flex;
   flex-direction: row;
-  max-width: 200px;
+  max-width: 120px;
   border-radius: 100px;
   height: 30px;
   border: 3px solid aqua;
@@ -115,6 +112,6 @@
 
 .back {
   position: fixed;
-  right: 84%;
-  top: 78px;
+  right: 87%;
+  top: 42px;
 }

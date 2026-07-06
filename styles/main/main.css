@@ -130,3 +130,9 @@ body {
     border: 3px solid aqua;
   }
 
+.js-reset-local-storage {
+  font-size: smaller;
+  width: 80px;
+  height: 30px;
+  padding: 0;
+}

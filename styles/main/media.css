@@ -37,10 +37,13 @@
 /* main body styling */
   .tiles-title-div{
     max-width: 80%;
+    margin-bottom: 40px;
   }
 
   .preview-tiles {
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 100px;
   }
 
   .preview-tiles-container {
