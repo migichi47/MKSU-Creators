@@ -17,3 +17,12 @@ document.querySelectorAll('.category-card')
     })
   })
 })
+
+document.querySelector('.js-header-section')
+.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+  
+})
