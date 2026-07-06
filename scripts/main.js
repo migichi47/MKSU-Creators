@@ -2,6 +2,8 @@ import {creators} from "../data/creators.js";
 import { getVotes, updateVoteCount } from "./utils/getVotes.js";
 import { resetLocalStorage } from "./utils/resetLocalStorage.js";
 import { searchInput } from "./utils/searchBar.js";
+import { isUnderDevelopment } from "./utils/underDevelopment.js";
+
 // generating id for each creator
 Object.keys(creators).forEach(category => {
   creators[category].forEach((creator, index) => {
@@ -54,9 +56,7 @@ document.querySelector(".js-comedians").innerHTML = generateHtml(creators.comedi
 document.querySelector(".js-influencers").innerHTML = generateHtml(creators.influencers, 'influencers');
 document.querySelector(".js-musicians").innerHTML = generateHtml(creators.musicians, 'musicians');
 
-document.querySelector('.js-back').addEventListener('click', () => {
-  window.location.href = '../index.html';
-})
+
 
 document.querySelector('.js-reset-local-storage')
 .addEventListener('click', () => {
@@ -89,3 +89,7 @@ document.querySelector('.js-search-button').addEventListener('click', () => {
 document.querySelector('.js-search-bar').addEventListener('keydown', (e) => {
   (e.key === 'Enter') && searchInput(creators);
 })
+
+
+// Display when page is under development
+isUnderDevelopment(true);
