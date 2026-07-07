@@ -13,17 +13,25 @@ export const creators = {
       year: 1,
     },
     {
-      image: "images/cute-adorable-little-girl-character-avatar-isolated_925324-1724.avif",
-      name: 'Mourine',
-      followers: 3400,
-      year: 1,
+      image: '/images/wanja_rachael.png',
+      name: 'Wanja Rachael',
+      followers: 2500,
+      year: 3,
     },
+    
     {
       image: "/images/mwende.jpg",
       name: 'Mwende',
       followers: 1100,
       year: 3,
-    }
+    },
+    {
+      image: "images/cute-adorable-little-girl-character-avatar-isolated_925324-1724.avif",
+      name: 'Mourine',
+      followers: 3400,
+      year: 1,
+    },
+    
   ],
 
   vloggers: [
@@ -50,20 +58,15 @@ export const creators = {
       name: 'Marrion',
       followers: 6800,
     },
-    {
-      image: '',
-      name: 'Mksu Vibes',
-      followers: 3400,
-      year: false,
-    }
+    
   ],
 
   comedians: [
     {
-      image: "",
-      name: 'Innocent',
-      followers: "",
-      year: "",
+      image: "/images/colonizer.png",
+      name: 'Colonizer',
+      followers: "2200",
+      year: "3",
     },
     {
       image: "",
