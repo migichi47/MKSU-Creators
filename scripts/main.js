@@ -4,6 +4,9 @@ import { resetLocalStorage } from "./utils/resetLocalStorage.js";
 import { searchInput } from "./utils/searchBar.js";
 import { isUnderDevelopment } from "./utils/underDevelopment.js";
 
+// Display when page is under development
+isUnderDevelopment(false);
+
 // generating id for each creator
 Object.keys(creators).forEach(category => {
   creators[category].forEach((creator, index) => {
@@ -34,7 +37,6 @@ function generateHtml(creatorsList, category) {
           <div class="description">
             <p style="display: inline-block;" >${creator.followers > 1000 ?( creator.followers / 1000 + 'k') : 'N/A'} followers</p>&#183
             <p style="display: inline-block;" >Year ${creator.year || 'N/A'} </p>
-
             <div class="voted-popup-off js-voted-popup-${creator.id}-off">
               <div class="voted-emoji">✅</div>
             </div>
@@ -67,12 +69,6 @@ document.querySelector('.js-reset-local-storage')
 const votedCategories = JSON.parse(localStorage.getItem("votesCategory")) || {};
 const savedCreators = JSON.parse(localStorage.getItem("selectedCreators")) || [];
 
-document.addEventListener('visibilitychange', () => {
-  if (!document.hidden) {
-    updateVoteCount();
-  }
-});
-
 updateVoteCount();
 getVotes(votedCategories, savedCreators);
 
@@ -88,10 +84,6 @@ document.querySelector('.js-search-button').addEventListener('click', () => {
 document.querySelector('.js-search-bar').addEventListener('keydown', (e) => {
   (e.key === 'Enter') && searchInput(creators);
 })
-
-
-// Display when page is under development
-isUnderDevelopment(false);
 
 // back button
 document.querySelector('.js-back').addEventListener('click', () => {
