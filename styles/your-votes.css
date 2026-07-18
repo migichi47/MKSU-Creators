@@ -25,6 +25,7 @@ button {
 }
 
 h1 {
+  margin-top: 20px;
   margin-bottom: 30px;
   color: white;
 }
@@ -33,13 +34,13 @@ h1 {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 90%;
+  gap: 5%;
+  width: 300px;
 }
 
 .card {
   position: relative;
-  max-width: 150px;
+  width: 150px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
@@ -60,7 +61,7 @@ h1 {
 }
 
 .card-details {
-  background-color: rgba(194, 194, 194, 0.86);
+  background-color: rgba(32, 1, 32, 0.872);
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -70,14 +71,17 @@ h1 {
 }
 
 .card h2 {
+  margin: 5px 0;
   z-index: 1;
-  font-size: 20px;
+  font-size: 18px;
+  color: white;
 }
 
 .card p {
   z-index: 1;
-  color: rgb(64, 62, 62);
-  font-size: 13px;
+  color: white;
+  opacity: 0.6;
+  font-size: 12px;
 }
 
 .remove-btn {
@@ -91,6 +95,7 @@ h1 {
 }
 
 .back {
+  margin-left: 10px;
   color: white;
   transition: transform 0.3s ease;
   color: aqua;
@@ -106,6 +111,7 @@ h1 {
 .clear-button {
   background-color: rgba(255, 0, 0, 0.769);
   color: white;
+  margin-top: 40px;
 }
 
 .clear-button:hover {
