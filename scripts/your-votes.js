@@ -23,9 +23,11 @@ selectedCreators.forEach(creator => {
   html += `
     <div class="card js-card-${creator.id}">
       <img src="${creator.image || "images/default.png"}" alt="" />
-      <h2>${creator.name}</h2>
-      <p>Best ${(creator.category).slice(0, -1)}</p>
-      <button class="remove-btn js-remove-btn" data-id="${creator.id}">Remove</button>
+      <button class="remove-btn js-remove-btn" data-id="${creator.id}">X</button>
+      <div class="card-details">
+        <h2>${creator.name}</h2>
+        <p>Best ${(creator.category).slice(0, -1)}</p>
+      </div>
     </div>
   `;
 });
@@ -66,7 +68,7 @@ function clearVotes() {
 }
 
 function toggleButtons() {
-   if(!selectedCreators.length) {
+  if(!selectedCreators.length) {
     document.querySelector('.js-clear-button-container').innerHTML = '';
     document.querySelector('.js-submit-button-container').innerHTML = '';
   }
