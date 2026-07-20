@@ -14,13 +14,13 @@ export function JoinAsCreatorOne() {
         <div>Get votes from your followers</div>
       </div>
 
-      <div className="tile">
-        <h1>Creator details</h1>
+      <div className="join-tile">
+        <h1 className="join-tile-title">Creator details</h1>
 
         <div className="name-section">
-          &#8226
+          {"\u2022"}
           <input
-            className="js-name"
+            className="join-tile-input js-name"
             type="text"
             placeholder="Name"
             name=""
@@ -29,22 +29,31 @@ export function JoinAsCreatorOne() {
         </div>
 
         <div className="admission-section">
-          &#8226
+          {"\u2022"}
           <input
-            className="js-admission"
+            className="join-tile-input js-admission"
             type="text"
             placeholder="Adm. eg. J17-0458-2025"
           />
         </div>
 
         <div className="contact-section">
-          &#8226
-          <input className="js-contact" type="text" placeholder="Phone no." />
+          {"\u2022"}
+          <input
+            className="join-tile-input js-contact"
+            type="text"
+            placeholder="Phone no."
+          />
         </div>
 
         <div className="academic-year-section">
-          &#8226<p>Academic year</p>
-          <select title="year" className="js-year" name="" id="">
+          <p className="join-tile-text">{"\u2022"} Academic year</p>
+          <select
+            title="year"
+            className="join-tile-select js-year"
+            name=""
+            id=""
+          >
             <option value="1">Year 1</option>
             <option value="2">Year 2</option>
             <option value="3">Year 3</option>
@@ -55,33 +64,39 @@ export function JoinAsCreatorOne() {
         </div>
 
         <div className="platform-section">
-          &#8226<p>Platform</p>
-          <select title="year" className="js-platform" name="" id="">
+          {"\u2022"}
+          <p className="join-tile-text">Platform</p>
+          <select
+            title="year"
+            className="join-tile-select js-platform"
+            name=""
+            id=""
+          >
             <option value="tiktok">TikTok</option>
             <option value="instagram">Instagram</option>
           </select>
         </div>
 
         <div className="followers-section">
-          &#8226
+          {"\u2022"}
           <input
-            className="js-followers"
+            className="join-tile-input js-followers"
             type="text"
             placeholder="Followers eg. 6700"
           />
         </div>
 
         <div className="handle-section">
-          &#8226
+          {"\u2022"}
           <input
-            className="js-handle"
+            className="join-tile-input js-handle"
             type="text"
             placeholder="handle   eg. @omondi"
             name=""
             id=""
           />
         </div>
-        <button className="js-lets-go-btn">Let's Go</button>
+        <button className="lets-go-btn js-lets-go-btn">Let's Go</button>
       </div>
     </>
   );

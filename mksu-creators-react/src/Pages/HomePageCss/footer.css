@@ -39,12 +39,12 @@
   color: white;
 }
 
-hr {
+.footer-hr {
   width: 30%;
   margin-bottom: 40px;
   opacity: 0.5;
 }
 
-footer {
+.footer-details {
   color: rgba(255, 255, 255, 0.633);
 }

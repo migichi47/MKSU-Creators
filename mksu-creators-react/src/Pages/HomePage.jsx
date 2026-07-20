@@ -30,15 +30,15 @@ export function HomePage() {
             <button className="vote-now-btn js-vote-now-btn">Vote Now</button>
           </div>
           <div className="join-as-creator-section">
-            <span>Are you a Creator ?</span>
-            <button className="js-join-as-creator">Join now</button>
+            <span className="join-as-creator-text">Are you a Creator ?</span>
+            <button className="join-as-creator-button js-join-as-creator">Join now</button>
           </div>
         </div>
 
         <div className="about-section">
           <div className="about-hero">
             <div className="about-image-container">
-              <img src="images/best-content-creator.webp" alt="" />
+              <img className="about-image" src="images/best-content-creator.webp" alt="" />
             </div>
             <div className="hero-description">
               <h1>Representation matters.</h1>
@@ -87,7 +87,7 @@ export function HomePage() {
 
             <div className="card-container">
               <section className="card">
-                <h2>Categories</h2>
+                <h2 className="card-header">Categories</h2>
                 <ul>
                   <li>Comedian of the Year</li>
                   <li>Dancer of the Year</li>
@@ -158,10 +158,10 @@ export function HomePage() {
                 <a href="">Contact Sponsors</a>
               </div>
             </div>
-            <hr />
+            <hr className="footer-hr" />
             <a href="#top">&#8593 Back to top</a>
             <br />
-            <footer>
+            <footer className="footer-details">
               <p>&copy; 2024 MKSU Creators Awards. All rights reserved.</p>
             </footer>
           </div>

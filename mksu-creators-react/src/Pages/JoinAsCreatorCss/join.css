@@ -17,7 +17,7 @@
 
 }
 
-.tile {
+.join-tile {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -39,14 +39,13 @@
 
 
 
-h1 {
+.join-tile-title {
   font-size: 30px;
-  margin-left: 5%;
   margin-bottom: 20px;
   padding-top: 25px;
 }
 
-p {
+.platform-text {
   font-weight: 100;
   font-size: 15px;
   margin-bottom: 30px;
@@ -54,7 +53,7 @@ p {
   color: rgba(240, 248, 255, 0.824);
 }
 
-input {
+.join-tile-input {
   border: 0;
   width: 180px;
   border-bottom: 1px solid bisque;
@@ -63,24 +62,18 @@ input {
   color: white;
 }
 
-select {
+.join-tile-select {
   height: 20px;
+  border-radius: 5px;
 }
 
-label {
-  color: rgba(240, 248, 255, 0.918);
-  font-size: 12px;
-}
-
-
-
-button {
+.lets-go-btn {
   max-height: 50px;
   width: 150px;
   margin-top: 20px;
 }
 
-.tile div {
+.join-tile div {
   max-height: 30px;
   display: flex;
   gap: 5px;
