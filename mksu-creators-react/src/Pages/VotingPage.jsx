@@ -1,6 +1,5 @@
 import { Header } from "./components/Header";
 
-import "./VotingPageCss/header.css";
 import "./VotingPageCss/main.css";
 import "./VotingPageCss/media.css";
 
