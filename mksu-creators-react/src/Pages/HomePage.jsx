@@ -1,9 +1,8 @@
-
-import "./home-page-css/HomePage.css"
-import "./home-page-css/category.css"
-import "./home-page-css/about.css"
-import "./home-page-css/footer.css"
-import "./home-page-css/media.css"
+import "./HomePageCss/HomePage.css";
+import "./HomePageCss/category.css";
+import "./HomePageCss/about.css";
+import "./HomePageCss/footer.css";
+import "./HomePageCss/media.css";
 
 export function HomePage() {
   return (
@@ -17,7 +16,11 @@ export function HomePage() {
       </div>
 
       <div className="main">
-        <img className="cover-photo" src="images/Machakos_University.jpg" alt="" />
+        <img
+          className="cover-photo"
+          src="images/Machakos_University.jpg"
+          alt=""
+        />
         <div className="overlay"></div>
 
         <div id="top" className="hero">
@@ -47,7 +50,9 @@ export function HomePage() {
               <p className="h1-description">
                 Seeing our faces in the media means everything
               </p>
-              <h1 className="category-intro">MKSU Grammys therefore recognize:</h1>
+              <h1 className="category-intro">
+                MKSU Grammys therefore recognize:
+              </h1>
               <ul className="category-container">
                 <li className="category">Comedian of the Year 😂🤡</li>
                 <p className="category-description">
@@ -159,9 +164,7 @@ export function HomePage() {
               </div>
             </div>
             <hr />
-            <a href="#top" >
-              &#8593 Back to top
-            </a>
+            <a href="#top">&#8593 Back to top</a>
             <br />
             <footer>
               <p>&copy; 2024 MKSU Creators Awards. All rights reserved.</p>
