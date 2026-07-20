@@ -86,7 +86,7 @@ export function HomePage() {
             </p>
 
             <div className="card-container">
-              <section className="card">
+              <section className="home-page-card">
                 <h2 className="card-header">Categories</h2>
                 <ul>
                   <li>Comedian of the Year</li>
@@ -97,7 +97,7 @@ export function HomePage() {
                 </ul>
               </section>
 
-              <section className="card">
+              <section className="home-page-card">
                 <h2>Voting</h2>
                 <p>
                   Any Machakos university student can vote for the best creators
@@ -106,7 +106,7 @@ export function HomePage() {
                 </p>
               </section>
 
-              <section className="card">
+              <section className="home-page-card">
                 <h2>Award Ceremony</h2>
                 <p>
                   The award ceremony is held annually in a prestigious venue.

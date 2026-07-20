@@ -10,9 +10,9 @@ export function JoinAsCreatorTwo() {
       <Header />
 
       <div className="js-container">
-        <div className="description">
-          <h1>Choose your Category</h1>
-          <p>
+        <div className="join-as-creator-description">
+          <h1 className="choose-your-category-title">Choose your Category</h1>
+          <p className="choose-your-category-text">
             Pick your content category. Make sure you choose carefully, to avoid
             any future inconveniences
           </p>

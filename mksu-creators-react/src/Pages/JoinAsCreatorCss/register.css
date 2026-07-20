@@ -14,7 +14,7 @@ body {
   right: 82%;
 }
 
-h1 {
+.choose-your-category-title {
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -22,7 +22,7 @@ h1 {
   font-size: 32px;
 }
 
-p {
+.choose-your-category-text {
   font-family: sans-serif;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.829);
@@ -33,7 +33,7 @@ p {
   max-width: 300px;
 }
 
-.description {
+.join-as-creator-description {
   margin-top: 120px;
 }
 
@@ -104,15 +104,6 @@ p {
   margin-top: 70px;
 }
 
-h2 {
-  margin: 0 auto;
-  font-size: 12px;
-  font-weight: 100;
-  width: 150px;
-  margin-top: 10px;
-  text-align: center;
-}
-
 .screenshot-section input {
   width: 90%;
 }
@@ -120,12 +111,4 @@ h2 {
 
 .screenshot-tile h1 {
   font-size: 30px;
-}
-
-button {
-  position: absolute;
-  top: 400px;
-  width: 50%;
-  height: 30px;
-  right: 25%;
 }

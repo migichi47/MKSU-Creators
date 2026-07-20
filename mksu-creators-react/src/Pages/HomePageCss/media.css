@@ -15,7 +15,7 @@
     bottom:35%;
   }
 
-  .card {
+  .home-page-card {
     min-width: 200px;
   }
 }
@@ -89,7 +89,7 @@
     bottom: 20px;
   }
 
-  .card {
+  .home-page-card {
     max-width: 500px;
     max-height: 140px;
   }  
@@ -128,7 +128,7 @@
     bottom: 10px;
   }
 
-  .card {
+  .home-page-card {
     max-width: 350px;
     font-size: 14px;
   }  
@@ -167,7 +167,7 @@
     top: 80px;
   }
 
-  .card {
+  .home-page-card {
     max-width: 300px;
     font-size: 14px;
   }  

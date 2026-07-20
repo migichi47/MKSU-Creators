@@ -1,5 +1,5 @@
 @media (min-width: 700px) {
-  .tile {
+  .join-tile {
     left: 25%;
     width: 50%;
   }
@@ -13,11 +13,6 @@
   .screenshot-tile {
     height: 550px;
   }
-
-  button {
-    margin-top: 20px;
-    height: 40px;
-  }
 }
 
 
@@ -26,11 +21,11 @@
     right: 70%;
   }
 
-  input {
+  .join-tile-input {
     width: 200px;
   }
   
-  .tile {
+  .join-tile {
     left: 35%;
     width: 30%;
   }

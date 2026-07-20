@@ -41,6 +41,10 @@
   font-weight: bold;
 }
 
+.category-header {  
+  margin-top: -20px;
+}
+
 .category-header hr {
   width: 100%;
   border: #FFF1B8 solid 1px;

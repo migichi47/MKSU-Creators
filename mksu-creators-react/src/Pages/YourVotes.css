@@ -1,30 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
 
-body {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.774)
-  ),
-  url('/images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp');
-  width: 100%;
-  padding-top: 40px;
-}
-
-button {
-  width: 30%;
-  height: 50px;
-}
-
-.container {
+.your-votes-container {
   text-align: center;
 }
 
-h1 {
+.your-votes-title {
   margin-top: 20px;
   margin-bottom: 30px;
   color: white;
@@ -111,7 +90,6 @@ h1 {
 .clear-button {
   background-color: rgba(255, 0, 0, 0.769);
   color: white;
-  margin-top: 40px;
 }
 
 .clear-button:hover {
@@ -127,9 +105,17 @@ h1 {
   background-color: rgba(5, 127, 5, 0.769);
 }
 
+.your-votes-button {
+  width: 150px;
+  height: 50px;
+}
+
 .button-container {
-  display: block;
-  height: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 320px;
+  gap: 20px;
+  margin: 0 auto;
   margin-top: 20px;
 }
 
