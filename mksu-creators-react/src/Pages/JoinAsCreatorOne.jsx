@@ -1,22 +1,16 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="styles/general.css" />
-    <link rel="stylesheet" href="styles/Join/join.css" />
-    <link rel="stylesheet" href="styles/Join/media.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join as a creator</title>
-  </head>
-  <body>
-      <div class="back js-back">&#8592 Back</div>
-    <div>
 
-      <!-- universal header -->
+import "./JoinAsCreatorCss/join.css";
+import "./JoinAsCreatorCss/media.css";
+
+
+export function JoinAsCreatorOne() {
+  return (
+    <>
+      <div class="back js-back">&#8592 Back</div>
       <div class="header">
         <img src="images/Machakos_University_Logo.png" alt="" />
         <h1>MKSU CREATORS AWARDS</h1>
-        <hr class="header-hr">
+        <hr class="header-hr" />
       </div>
 
       <div class="intro">
@@ -28,15 +22,22 @@
         <h1>Creator details</h1>
 
         <div class="name-section">
-          &#8226<input class="js-name" type="text" placeholder="Name" name="" id="" />
+          &#8226
+          <input class="js-name" type="text" placeholder="Name" name="" id="" />
         </div>
 
         <div class="admission-section">
-          &#8226<input class="js-admission" type="text" placeholder="Adm. eg. J17-0458-2025" />
+          &#8226
+          <input
+            class="js-admission"
+            type="text"
+            placeholder="Adm. eg. J17-0458-2025"
+          />
         </div>
 
         <div class="contact-section">
-          &#8226<input class="js-contact" type="text" placeholder="Phone no." />
+          &#8226
+          <input class="js-contact" type="text" placeholder="Phone no." />
         </div>
 
         <div class="academic-year-section">
@@ -60,11 +61,17 @@
         </div>
 
         <div class="followers-section">
-          &#8226<input class="js-followers" type="text" placeholder="Followers eg. 6700" />
+          &#8226
+          <input
+            class="js-followers"
+            type="text"
+            placeholder="Followers eg. 6700"
+          />
         </div>
 
         <div class="handle-section">
-          &#8226<input
+          &#8226
+          <input
             class="js-handle"
             type="text"
             placeholder="handle   eg. @omondi"
@@ -74,8 +81,6 @@
         </div>
         <button class="js-lets-go-btn">Let's Go</button>
       </div>
-    </div>
-
-    <script src="scripts/join/join.js"></script>
-  </body>
-</html>
+    </>
+  );
+}

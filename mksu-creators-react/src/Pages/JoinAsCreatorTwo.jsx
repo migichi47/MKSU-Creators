@@ -1,42 +1,36 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+import "./JoinAsCreatorCss/register.css";
+import "./JoinAsCreatorCss/media.css";
 
-    <link rel="stylesheet" href="styles/general.css" />
-    <link rel="stylesheet" href="styles/Join/register.css" />
-    <link rel="stylesheet" href="styles/Join/media.css">
-  </head>
-  <body>
-    <div class="back js-back">&#8592 Back</div>
-    
-    <!-- universal header -->
+export function JoinAsCreatorTwo() {
+  return (
+    <>
+      <div class="back js-back">&#8592 Back</div>
       <div class="header">
         <div class="header-section js-header-section">
           <img src="images/Machakos_University_Logo.png" alt="" />
           <h1>MKSU CREATORS AWARDS</h1>
-
         </div>
-        <hr class="header-hr">
+        <hr class="header-hr" />
       </div>
 
-    <div class="js-container">
-      <div class="description">
-        <h1>Choose your Category</h1>
-        <p>
-          Pick your content category. Make sure you choose carefully, to avoid any
-          future inconveniences
-        </p>
-      </div>
+      <div class="js-container">
+        <div class="description">
+          <h1>Choose your Category</h1>
+          <p>
+            Pick your content category. Make sure you choose carefully, to avoid
+            any future inconveniences
+          </p>
+        </div>
 
         <div class="category-card-container">
           <div class="category-card js-category-card" data-category="dancing">
             <img src="images/dance.png" alt="" />
             <div>Dancing</div>
           </div>
-          <div class="category-card js-category-card" data-category="influencer">
+          <div
+            class="category-card js-category-card"
+            data-category="influencer"
+          >
             <img src="images/influencer.png" alt="" />
             <div>Social Influencer</div>
           </div>
@@ -52,9 +46,8 @@
             <img src="images/music-note.png" alt="" />
             <div>Music</div>
           </div>
+        </div>
       </div>
-    </div>
-
-    <script src="scripts/join/register.js"></script>
-  </body>
-</html>
+    </>
+  );
+}
