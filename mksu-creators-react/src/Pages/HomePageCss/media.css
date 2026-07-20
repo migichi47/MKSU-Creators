@@ -1,10 +1,6 @@
 
 /* small laptops */
 @media (max-width: 1200px) {
-  .header-details {
-    margin-left: 75%;
-  }
-
   .about-hero {
   grid-template-columns: 350px 1fr;
   }
@@ -26,9 +22,7 @@
 
 /* tablets */
 @media (max-width: 1000px) {
-  .header-details {
-    margin-left: 70%;
-  }
+
   
   /* About section styles */
 
@@ -118,9 +112,6 @@
     text-align: center;
   }
 
-  .header-details {
-    margin-left: 40%;
-  }
 
   .hero-description {
     height: 100%;
@@ -170,9 +161,7 @@
 
 /* smaller phone-width */
 @media (max-width: 400px) {
-  .header-details {
-    margin-left: 38%;
-  }
+
 
   .tile-description {
     top: 80px;

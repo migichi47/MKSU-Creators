@@ -5,55 +5,11 @@
 }
 
 body {
-  background-color: black;
   color: white;
 }
 
 html{
   scroll-behavior: smooth;
-}
-
-.header {
-  top: 0;
-  height: 100px;
-  position: fixed;
-  z-index: 200;
-  background-color: black;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.header-section {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  width: 300px;
-  height: 100%;
-}
-
-.header h1 {
-  margin: 0;
-  display: flex;
-  max-width: 200px;
-  font-size: 16px;
-  padding: 0;
-}
-
-.header img {
-  width: 100px;
-  height: 90%;
-}
-
-.header-hr {
-  position: absolute;
-  bottom: 0;
-  opacity: 0.5;
-  width: 60%;
-  margin: 0 auto;
-  z-index: 250;
 }
 
 button {
@@ -63,7 +19,7 @@ button {
   max-height: 200px;
   font-size: 15px;
   font-weight: 600;
-  background-color: #00000000;
+  background: none;
   border: #FFF1B8 solid 1px;
   border-radius: 8px;
 }

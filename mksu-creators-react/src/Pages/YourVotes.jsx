@@ -1,3 +1,5 @@
+import { Header } from "./components/Header";
+
 import "./YourVotes.css";
 
 export function YourVotes() {
@@ -5,6 +7,8 @@ export function YourVotes() {
     <>
       <div className="container">
         <div className="back js-back">&#8592 Back</div>
+        <Header />
+        
         <h1>My Selected Creators</h1>
 
         <div className="voters-grid js-voters-grid"></div>

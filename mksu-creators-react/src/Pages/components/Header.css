@@ -1,0 +1,42 @@
+.header {
+  top: 0;
+  height: 100px;
+  position: fixed;
+  z-index: 200;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.header-section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+}
+
+.header h1 {
+  margin: 0;
+  display: flex;
+  max-width: 200px;
+  font-size: 16px;
+  padding: 0;
+}
+
+.header img {
+  width: 300px;
+  height: 90%;
+}
+
+.header-hr {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.5;
+  width: 60%;
+  margin: 0 auto;
+  z-index: 250;
+}

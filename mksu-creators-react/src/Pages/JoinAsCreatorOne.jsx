@@ -1,3 +1,5 @@
+import { Header } from "./components/Header";
+
 import "./JoinAsCreatorCss/join.css";
 import "./JoinAsCreatorCss/media.css";
 
@@ -5,11 +7,7 @@ export function JoinAsCreatorOne() {
   return (
     <>
       <div className="back js-back">&#8592 Back</div>
-      <div className="header">
-        <img src="images/Machakos_University_Logo.png" alt="" />
-        <h1>MKSU CREATORS AWARDS</h1>
-        <hr className="header-hr" />
-      </div>
+      <Header />
 
       <div className="intro">
         <div>Join as a creator</div>

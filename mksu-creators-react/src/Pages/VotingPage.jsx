@@ -1,3 +1,5 @@
+import { Header } from "./components/Header";
+
 import "./VotingPageCss/header.css";
 import "./VotingPageCss/main.css";
 import "./VotingPageCss/media.css";
@@ -6,14 +8,7 @@ export function VotingPage() {
   return (
     <>
       <div className="back js-back">{"\u2190"} Back</div>
-
-      <div className="header">
-        <div className="header-section js-header-section">
-          <img src="images/Machakos_University_Logo.png" alt="" />
-          <h1>MKSU CREATORS AWARDS</h1>
-        </div>
-        <hr className="header-hr" />
-      </div>
+      <Header />
 
       <div className="search-section">
         <input

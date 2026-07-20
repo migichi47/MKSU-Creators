@@ -1,3 +1,5 @@
+import { Header } from "./components/Header";
+
 import "./HomePageCss/HomePage.css";
 import "./HomePageCss/category.css";
 import "./HomePageCss/about.css";
@@ -7,14 +9,7 @@ import "./HomePageCss/media.css";
 export function HomePage() {
   return (
     <>
-      <div className="header">
-        <div className="header-section js-header-section">
-          <img src="images/Machakos_University_Logo.png" alt="" />
-          <h1>MKSU CREATORS AWARDS</h1>
-        </div>
-        <hr className="header-hr" />
-      </div>
-
+      <Header />
       <div className="main">
         <img
           className="cover-photo"
