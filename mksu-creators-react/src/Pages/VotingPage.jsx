@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import Back from "./components/Back";
+import { CreatorCard } from "./components/CreatorCard";
 
 
 import "./VotingPageCss/main.css";
@@ -12,27 +13,6 @@ export function VotingPage() {
       <Back navigate="/"/>
       <Header />
 
-      <div className="search-section">
-        <input
-          className="js-search-bar"
-          placeholder="search creator"
-          type="search"
-        />
-        <button className="js-search-button">&#128269;</button>
-      </div>
-
-      <div className="view-votes js-view-votes">
-        <div>
-          <h4>Your Votes</h4>
-        </div>
-        <div className="vote-count js-vote-count"></div>
-        <button className="js-confirm-votes-btn">View votes</button>
-      </div>
-
-      <button className="js-reset-local-storage">dev tools</button>
-      <br />
-      <br />
-
       <div className="preview-tiles-container">
         <div>
           <div className="tiles-title-div">
@@ -40,7 +20,9 @@ export function VotingPage() {
               Pick your dancer of the year
             </h2>
           </div>
-          <div className="preview-tiles js-dancers"></div>
+          <div className="preview-tiles js-dancers">
+            <CreatorCard />
+          </div>
         </div>
 
         <div>
