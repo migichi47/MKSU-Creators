@@ -1,17 +1,17 @@
 import "./CreatorCard.css";
 
-export function CreatorCard() {
+export function CreatorCard(props) {
   return (
     <div className="creator-card">
-      <img src="images/WhatsApp Image 2026-04-21 at 2.53.05 PM (1).jpeg" />
+      <img src={props.image} />
       <div className="creator-card-text">
         <div>
-          <p className="name">Migichi</p>
+          <p className="name">{props.name}</p>
         </div>
         <div className="creator-card-description">
-          <p>3k followers</p>
+          <p>{props.followers}k followers</p>
           <small>{'\u25CF'}</small>
-          <p>Year 2 </p>
+          <p>Year {props.year} </p>
         </div>
       </div>
     </div>
