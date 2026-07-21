@@ -1,5 +1,7 @@
-
+import { creators } from "../../../data/creators";
 import { CreatorCard } from "./CreatorCard";
+
+import "./CategorySection.css";
 
 export function CategorySection(props) {
   return (
@@ -9,19 +11,15 @@ export function CategorySection(props) {
           Pick your {props.category} of the year
         </h2>
       </div>
-      <div className="preview-tiles js-dancers">
-        <CreatorCard
-          name="Migichi"
-          followers="3"
-          year="2"
-          image="images/WhatsApp Image 2026-04-21 at 2.53.05 PM (1).jpeg"
-        />
-        <CreatorCard
-          name="Mukeli"
-          followers="5"
-          year="2"
-          image="images/mukeli.jpg"
-        />
+      <div className="preview-tiles">
+        {creators[props.category].map((creator) => (
+          <CreatorCard
+          image={creator.image}
+          name={creator.name}
+          followers={Number(creator.followers / 1000)}
+          key={crypto.randomUUID()}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { creators } from "../../data/creators";
+
 import { Header } from "./components/Header";
 import Back from "./components/Back";
 import { CategorySection } from "./components/CategorySection";
@@ -12,9 +14,11 @@ export function VotingPage() {
       <Header />
 
       <div className="preview-tiles-container">
-        <CategorySection category="dancer" />
-        <CategorySection category="vlogger" />
-        <CategorySection category="influencer" />
+        {
+          Object.keys(creators).map((category) => (
+            <CategorySection category={category} />
+          ))
+        }
       </div>
     </>
   );
