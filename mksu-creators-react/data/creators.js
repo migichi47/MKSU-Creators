@@ -136,7 +136,7 @@ export const creators = {
   musicians: [
     {
       image: "",
-      name: 'Bami Nui',
+      name: '',
       followers: "",
       year: "",
     },
