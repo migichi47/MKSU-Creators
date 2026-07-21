@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
+import Back from "./components/Back";
 
 
 import "./JoinAsCreatorCss/join.css";
@@ -10,7 +11,7 @@ export function JoinAsCreatorOne() {
 
   return (
     <>
-      <div className="back" onClick={() => navigate("/")}>&#8592 Back</div>
+      <Back navigate="/"/>
       <Header />
 
       <div className="intro">
