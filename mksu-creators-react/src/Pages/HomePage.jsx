@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { useNavigate } from "react-router-dom";
 
 import "./HomePageCss/HomePage.css";
 import "./HomePageCss/category.css";
@@ -7,6 +8,9 @@ import "./HomePageCss/footer.css";
 import "./HomePageCss/media.css";
 
 export function HomePage() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <Header />
@@ -27,11 +31,14 @@ export function HomePage() {
             Vote for your favourite creators of the year
           </p>
           <div className="buttons-container">
-            <button className="vote-now-btn js-vote-now-btn">Vote Now</button>
+            <button 
+              className="vote-now-btn"
+              onClick={() => navigate("voting")}
+            >Vote Now</button>
           </div>
           <div className="join-as-creator-section">
             <span className="join-as-creator-text">Are you a Creator ?</span>
-            <button className="join-as-creator-button js-join-as-creator">Join now</button>
+            <button className="join-as-creator-button" onClick={() => {navigate("join-as-creator-one")}}>Join now</button>
           </div>
         </div>
 

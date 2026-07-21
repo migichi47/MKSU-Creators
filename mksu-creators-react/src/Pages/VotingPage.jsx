@@ -1,12 +1,16 @@
 import { Header } from "./components/Header";
+import { useNavigate } from "react-router-dom";
+
 
 import "./VotingPageCss/main.css";
 import "./VotingPageCss/media.css";
 
 export function VotingPage() {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className="back js-back">{"\u2190"} Back</div>
+      <div className="back" onClick={() => navigate("/")}>{"\u2190"} Back</div>
       <Header />
 
       <div className="search-section">

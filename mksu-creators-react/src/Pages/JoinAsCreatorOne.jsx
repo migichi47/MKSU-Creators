@@ -1,12 +1,16 @@
 import { Header } from "./components/Header";
+import { useNavigate } from "react-router-dom";
+
 
 import "./JoinAsCreatorCss/join.css";
 import "./JoinAsCreatorCss/media.css";
 
 export function JoinAsCreatorOne() {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className="back js-back">&#8592 Back</div>
+      <div className="back" onClick={() => navigate("/")}>&#8592 Back</div>
       <Header />
 
       <div className="intro">
@@ -96,7 +100,7 @@ export function JoinAsCreatorOne() {
             id=""
           />
         </div>
-        <button className="lets-go-btn js-lets-go-btn">Let's Go</button>
+        <button className="lets-go-btn" onClick={() => navigate("/join-as-creator-two")}>Let's Go</button>
       </div>
     </>
   );

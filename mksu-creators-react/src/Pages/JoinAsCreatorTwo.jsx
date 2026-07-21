@@ -1,12 +1,16 @@
 import { Header } from "./components/Header";
+import { useNavigate } from "react-router-dom";
+
 
 import "./JoinAsCreatorCss/register.css";
 import "./JoinAsCreatorCss/media.css";
 
 export function JoinAsCreatorTwo() {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className="back js-back">&#8592 Back</div>
+      <div className="back" onClick={() => navigate("/join-as-creator-one")}>&#8592 Back</div>
       <Header />
 
       <div className="js-container">
