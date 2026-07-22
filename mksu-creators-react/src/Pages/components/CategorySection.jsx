@@ -9,7 +9,7 @@ export function CategorySection(props) {
       {creators[props.category]?.length > 0 && (
         <div className="tiles-title-div">
         <h2 id="dancers" className="tiles-title">
-          Pick your {props.category} of the year
+          Pick your {props.category.slice(0, -1)} of the year
         </h2>
       </div>
       )}
