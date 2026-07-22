@@ -1,0 +1,12 @@
+.back {
+  z-index: 250;
+  color: white;
+  transition: transform 0.3s ease;
+  color: aqua;
+}
+
+.back:hover {
+  transform: translateX(-5px);
+  cursor: pointer;
+  color: aquamarine;
+}

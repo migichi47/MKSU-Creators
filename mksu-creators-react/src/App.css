@@ -6,7 +6,13 @@
 
 body {
   color: white;
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.884), rgba(0, 0, 29, 0.614)),
+    url(images/2026_grammys_68th_grammy_awards_Key-Dates_V5_1644x925.webp);
+  background-size: cover;
+  background-position: center;
 }
+
 
 html{
   scroll-behavior: smooth;
@@ -29,18 +35,4 @@ button:hover {
   color: black;
   transition: 0.3s ease;
   cursor: pointer;
-}
-
-
-.back {
-  z-index: 250;
-  color: white;
-  transition: transform 0.3s ease;
-  color: aqua;
-}
-
-.back:hover {
-  transform: translateX(-5px);
-  cursor: pointer;
-  color: aquamarine;
 }
