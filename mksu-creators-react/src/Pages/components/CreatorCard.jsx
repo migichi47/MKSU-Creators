@@ -3,7 +3,7 @@ import "./CreatorCard.css";
 export function CreatorCard(props) {
   return (
     <div className="creator-card">
-      <img src={props.image} />
+      <img className={!props.image && "default-image"} src={props.image || "images/default.png"} />
       <div className="creator-card-text">
         <div>
           <p className="name">{props.name}</p>

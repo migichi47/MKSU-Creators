@@ -20,7 +20,7 @@ export const creators = {
     },
     
     {
-      image: "/images/mwende.jpg",
+      image: "/images/Mwende.jpg",
       name: 'Mwende',
       followers: 1100,
       year: 3,
@@ -136,7 +136,7 @@ export const creators = {
   musicians: [
     {
       image: "",
-      name: '',
+      name: 'Bami Nui',
       followers: "",
       year: "",
     },
@@ -148,7 +148,7 @@ export const creators = {
     },
     {
       image: "",
-      name: '',
+      name: 'Alexandrea',
       followers: "",
       year: "",
     },

@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 180px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -11,6 +12,7 @@
   border-radius: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: white;
+  overflow: hidden;
 }
 
 .creator-card:hover {
@@ -20,9 +22,13 @@ cursor: pointer;
 }
 
 .creator-card img{
-  height: 100%;
-  max-width: 100%;
+  width: 100%;
   border-radius: 40px;
+  min-height: inherit;
+}
+
+.default-image {
+  height: 100%;
 }
 
 
