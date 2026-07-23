@@ -4,22 +4,17 @@
 
 .voters-grid {
   margin: 0 auto;
+  margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5%;
-  width: 300px;
+  width: 400px;
 }
 
-.remove-btn {
-  position: absolute;
-  left: 0;
-  color: red;
-  font-size: 20px;
-  height: 25px;
-  width: 30px;
-  border-radius: 50%;
+.your-votes-button {
+  width: 150px;
+  height: 50px;
 }
-
 
 .clear-button {
   background-color: rgba(255, 0, 0, 0.769);
@@ -39,10 +34,6 @@
   background-color: rgba(5, 127, 5, 0.769);
 }
 
-.your-votes-button {
-  width: 150px;
-  height: 50px;
-}
 
 .button-container {
   display: grid;
@@ -52,15 +43,3 @@
   margin: 0 auto;
   margin-top: 20px;
 }
-
-
-.remove-btn:hover{
-  background-color: rgba(229, 167, 178, 0.529);
-  border: white;
-}
-
-.clear-button-container,
-.submit-button-container {
-  display: inline;
-}
-
