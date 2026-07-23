@@ -40,6 +40,7 @@ export function VotingPage() {
             selectedCreators={selectedCreators}
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
+            key={category}
           />
         ))}
       </div>
