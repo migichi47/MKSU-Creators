@@ -10,15 +10,17 @@
   height: 240px;
   border: 1px solid bisque;
   border-radius: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: white;
   overflow: hidden;
 }
 
-.creator-card:hover {
-transform: translateY(-10px); /* moves tile up */
-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-cursor: pointer;
+.creator-card button {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  max-width: 70px;
+  padding: 5px 15px;
+  font-size: 12px;
 }
 
 .creator-card img{
