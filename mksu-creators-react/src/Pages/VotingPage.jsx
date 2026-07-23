@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 import { creators } from "../../data/creators";
 import { Header } from "./components/Header";
 import Back from "./components/Back";
@@ -15,10 +14,13 @@ export function VotingPage() {
     return JSON.parse(localStorage.getItem("selectedCreators")) || [];
   });
 
+  const [selectedCategories, setSelectedCategories] = useState(() => {
+    return JSON.parse(localStorage.getItem("selectedCategories")) || []
+  });
+
   const navigate = useNavigate();
   let voteCount = selectedCreators.length;
 
-  console.log(selectedCreators);
   return (
     <>
       <Back navigate="/" />
@@ -36,6 +38,8 @@ export function VotingPage() {
             category={category}
             setSelectedCreators={setSelectedCreators}
             selectedCreators={selectedCreators}
+            selectedCategories={selectedCategories}
+            setSelectedCategories={setSelectedCategories}
           />
         ))}
       </div>

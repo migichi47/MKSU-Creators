@@ -27,6 +27,8 @@ export function CategorySection(props) {
                 selectedCreators={props.selectedCreators}
                 isVotingPage={true}
                 category={props.category}
+                setSelectedCategories={props.setSelectedCategories}
+                selectedCategories={props.selectedCategories}
               />
             );
           }

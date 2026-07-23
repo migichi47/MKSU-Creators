@@ -1,6 +1,6 @@
 import "./Header.css";
 
-export function Header(props) {
+export function Header() {
   return (
     <div className="header">
       <div className="header-section js-header-section">

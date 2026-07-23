@@ -1,21 +1,47 @@
 import "./CreatorCard.css";
 
 export function CreatorCard(props) {
-  const { name, followers, image, setSelectedCreators, selectedCreators, category } =
-    props;
+  const {
+    name,
+    followers,
+    image,
+    setSelectedCreators,
+    selectedCreators,
+    category,
+    selectedCategories,
+    setSelectedCategories,
+  } = props;
 
   function selectCreator() {
-    const newSelectedCreators = [
+    if (selectedCategories.includes(category)) {
+      alert("Already voted in this category");
+      return;
+    }
+
+    // update useState
+    setSelectedCreators([
       ...selectedCreators,
       { image, name, followers, category },
-    ];
-    setSelectedCreators(newSelectedCreators);
+    ]);
 
+    setSelectedCategories([...selectedCategories, category]);
+
+    // update local storage on categories
     localStorage.setItem(
       "selectedCreators",
-      JSON.stringify(newSelectedCreators),
+      JSON.stringify([
+        ...selectedCreators,
+        { image, name, followers, category },
+      ]),
+    );
+
+    localStorage.setItem(
+      "selectedCategories",
+      JSON.stringify([...selectedCategories, category]),
     );
   }
+
+  console.log(selectedCategories);
 
   return (
     <div className="creator-card">
