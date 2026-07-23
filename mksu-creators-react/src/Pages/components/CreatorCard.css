@@ -36,14 +36,15 @@ cursor: pointer;
   position: absolute;
   bottom: 0;
   padding-top: 5px;
-  background-color: rgba(32, 1, 32, 0.872);
+  background-color: rgba(0, 0, 0, 0.809);
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
-  height: 20%;
+  height: 30%;
   width: 100%;
 }
 
 .name {
+  padding-top: 5px;
   font-size: 18px;
   color: white;
   margin-left: 30px  }
@@ -52,7 +53,8 @@ cursor: pointer;
   display: flex;
   flex-direction: row;
   gap: 5px;
-  padding-top: 2px;
+  padding-top: 10px;
   margin-left: 30px;
   font-size: 10px;
+  opacity: 0.9;
 }
