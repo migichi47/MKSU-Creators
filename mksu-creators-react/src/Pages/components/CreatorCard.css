@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.creator-card button {
+.vote-btn {
   position: absolute;
   right: 20px;
   bottom: 12px;
@@ -35,6 +35,22 @@
 .selected {
   border: 5px solid green;
   background: #f0fff4;
+}
+
+.selected-remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  width: 60px;
+  right: 12px;
+  bottom: 8px;
+  padding: 5px;
+  font-size: 11px;
+}
+
+.selected-remove-btn:hover {
+  background-color: white;
 }
 
 .creator-card img{

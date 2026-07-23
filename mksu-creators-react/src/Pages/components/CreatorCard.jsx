@@ -62,9 +62,14 @@ export function CreatorCard(props) {
                 selectCreator();
               }}
               disabled={isCategoryUsed}
-              className={isCategoryUsed ? "voted" : ""}
+              className={`
+                vote-btn
+                ${isCategoryUsed && "voted"}
+                ${isSelected && "selected-remove-btn"}
+              `}
             >
               {isCategoryUsed ? "" : "vote"}
+              {isSelected && "remove"}
             </button>
           )}
         </div>
