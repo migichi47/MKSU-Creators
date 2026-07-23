@@ -10,6 +10,7 @@ export function CreatorCard(props) {
     category,
     selectedCategories,
     setSelectedCategories,
+    isCategoryUsed,
   } = props;
 
   function selectCreator() {
@@ -23,7 +24,6 @@ export function CreatorCard(props) {
       ...selectedCreators,
       { image, name, followers, category },
     ]);
-
     setSelectedCategories([...selectedCategories, category]);
 
     // update local storage on categories
@@ -34,14 +34,13 @@ export function CreatorCard(props) {
         { image, name, followers, category },
       ]),
     );
-
     localStorage.setItem(
       "selectedCategories",
       JSON.stringify([...selectedCategories, category]),
     );
   }
 
-  console.log(selectedCategories);
+
 
   return (
     <div className="creator-card">
@@ -60,8 +59,10 @@ export function CreatorCard(props) {
               onClick={() => {
                 selectCreator();
               }}
+              disabled={isCategoryUsed}
+              className={isCategoryUsed ? "voted" : ""}
             >
-              Vote
+              {isCategoryUsed ? "" : "vote"}
             </button>
           )}
         </div>

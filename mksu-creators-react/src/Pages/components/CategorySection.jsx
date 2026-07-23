@@ -4,6 +4,7 @@ import { CreatorCard } from "./CreatorCard";
 import "./CategorySection.css";
 
 export function CategorySection(props) {
+
   return (
     <div>
       {creators[props.category]?.length > 0 && (
@@ -16,6 +17,9 @@ export function CategorySection(props) {
 
       <div className="preview-tiles">
         {creators[props.category].map((creator) => {
+          const isCategoryUsed = props.selectedCategories.includes(props.category);
+
+
           if (creator.name) {
             return (
               <CreatorCard
@@ -29,6 +33,7 @@ export function CategorySection(props) {
                 category={props.category}
                 setSelectedCategories={props.setSelectedCategories}
                 selectedCategories={props.selectedCategories}
+                isCategoryUsed={isCategoryUsed}
               />
             );
           }

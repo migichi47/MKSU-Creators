@@ -23,6 +23,10 @@
   font-size: 12px;
 }
 
+.voted {
+  border: none;
+}
+
 .creator-card img{
   width: 100%;
   border-radius: 40px;
