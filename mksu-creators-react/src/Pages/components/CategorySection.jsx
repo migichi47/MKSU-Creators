@@ -24,6 +24,8 @@ export function CategorySection(props) {
                 followers={Number(creator.followers / 1000)}
                 year={creator.year}
                 key={crypto.randomUUID()}
+                setVoteCount={props.setVoteCount}
+                voteCount={props.voteCount}
               />
             );
           }

@@ -1,6 +1,9 @@
 import "./Header.css";
 
-export function Header() {
+export function Header(props) {
+  
+  const voteCount = props.voteCount;
+  
   return (
     <div className="header">
       <div className="header-section js-header-section">
@@ -13,7 +16,7 @@ export function Header() {
       </div>
       <div>
         <div className="confirm-votes">
-          <div className="vote-count">0</div>
+          <div className="vote-count">{voteCount}</div>
           <p>votes</p>
           <button>confirm</button>
         </div>

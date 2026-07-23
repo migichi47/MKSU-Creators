@@ -1,5 +1,6 @@
-import { creators } from "../../data/creators";
+import { useState } from "react";
 
+import { creators } from "../../data/creators";
 import { Header } from "./components/Header";
 import Back from "./components/Back";
 import { CategorySection } from "./components/CategorySection";
@@ -8,17 +9,16 @@ import "./VotingPageCss/main.css";
 import "./VotingPageCss/media.css";
 
 export function VotingPage() {
+  const [voteCount, setVoteCount] = useState(0);
   return (
     <>
       <Back navigate="/" />
-      <Header />
+      <Header voteCount={voteCount} />
 
       <div className="preview-tiles-container">
-        {
-          Object.keys(creators).map((category) => (
-            <CategorySection category={category} />
-          ))
-        }
+        {Object.keys(creators).map((category) => (
+          <CategorySection category={category} setVoteCount={setVoteCount} voteCount={voteCount}/>
+        ))}
       </div>
     </>
   );
