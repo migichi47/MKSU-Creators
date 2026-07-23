@@ -14,8 +14,6 @@ export function CreatorCard(props) {
         </div>
         <div className="creator-card-description">
           <p>{props.followers}k followers</p>
-          <small>{"\u25CF"}</small>
-          <p>Year {props.year || "N/A"} </p>
         </div>
       </div>
     </div>
