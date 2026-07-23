@@ -8,12 +8,12 @@ export function CategorySection(props) {
     <div>
       {creators[props.category]?.length > 0 && (
         <div className="tiles-title-div">
-        <h2 id="dancers" className="tiles-title">
-          Pick your {props.category.slice(0, -1)} of the year
-        </h2>
-      </div>
+          <h2 id="dancers" className="tiles-title">
+            Pick your {props.category.slice(0, -1)} of the year
+          </h2>
+        </div>
       )}
-      
+
       <div className="preview-tiles">
         {creators[props.category].map((creator) => {
           if (creator.name) {
@@ -25,6 +25,8 @@ export function CategorySection(props) {
                 key={crypto.randomUUID()}
                 setVoteCount={props.setVoteCount}
                 voteCount={props.voteCount}
+                setSelectedCreators={props.setSelectedCreators}
+                selectedCreators={props.selectedCreators}
               />
             );
           }

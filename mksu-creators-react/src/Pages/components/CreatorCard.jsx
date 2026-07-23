@@ -1,20 +1,38 @@
 import "./CreatorCard.css";
 
 export function CreatorCard(props) {
-  const { setVoteCount, voteCount } = props;
+  const {
+    setVoteCount,
+    voteCount,
+    name,
+    followers,
+    image,
+    setSelectedCreators,
+    selectedCreators,
+  } = props;
   return (
     <div className="creator-card">
       <img
-        className={!props.image && "default-image"}
-        src={props.image || "images/default.png"}
+        className={!image && "default-image"}
+        src={image || "images/default.png"}
       />
       <div className="creator-card-text">
         <div>
-          <p className="name">{props.name}</p>
+          <p className="name">{name}</p>
         </div>
         <div className="creator-card-description">
-          <p>{props.followers}k followers</p>
-          <button onClick={() => setVoteCount(voteCount + 1)}>Vote</button>
+          <p>{followers}k followers</p>
+          <button
+            onClick={() => {
+              setVoteCount(voteCount + 1);
+              setSelectedCreators([...selectedCreators, {
+                image,
+                name,
+              }]);
+            }}
+          >
+            Vote
+          </button>
         </div>
       </div>
     </div>

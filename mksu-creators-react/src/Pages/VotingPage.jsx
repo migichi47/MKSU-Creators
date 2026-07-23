@@ -10,6 +10,9 @@ import "./VotingPageCss/media.css";
 
 export function VotingPage() {
   const [voteCount, setVoteCount] = useState(0);
+  const [selectedCreators, setSelectedCreators] = useState([]);
+
+  console.log(selectedCreators);
   return (
     <>
       <Back navigate="/" />
@@ -17,7 +20,13 @@ export function VotingPage() {
 
       <div className="preview-tiles-container">
         {Object.keys(creators).map((category) => (
-          <CategorySection category={category} setVoteCount={setVoteCount} voteCount={voteCount}/>
+          <CategorySection
+            category={category}
+            setVoteCount={setVoteCount}
+            voteCount={voteCount}
+            setSelectedCreators={setSelectedCreators}
+            selectedCreators={selectedCreators}
+          />
         ))}
       </div>
     </>
