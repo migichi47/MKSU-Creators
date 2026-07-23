@@ -1,19 +1,14 @@
-import { useEffect } from "react";
 import "./CreatorCard.css";
 
 export function CreatorCard(props) {
-  const {
-    setVoteCount,
-    voteCount,
-    name,
-    followers,
-    image,
-    setSelectedCreators,
-    selectedCreators,
-  } = props;
+  const { name, followers, image, setSelectedCreators, selectedCreators } =
+    props;
 
   function selectCreator() {
-    const newSelectedCreators = [...selectedCreators, { image, name }];
+    const newSelectedCreators = [
+      ...selectedCreators,
+      { image, name, followers },
+    ];
     setSelectedCreators(newSelectedCreators);
 
     localStorage.setItem(
@@ -21,9 +16,6 @@ export function CreatorCard(props) {
       JSON.stringify(newSelectedCreators),
     );
   }
-
-  useEffect(() => {
-  }, [selectedCreators]);
 
   return (
     <div className="creator-card">
@@ -37,14 +29,15 @@ export function CreatorCard(props) {
         </div>
         <div className="creator-card-description">
           <p>{followers}k followers</p>
-          <button
-            onClick={() => {
-              setVoteCount(voteCount + 1);
-              selectCreator();
-            }}
-          >
-            Vote
-          </button>
+          {props.isVotingPage && (
+            <button
+              onClick={() => {
+                selectCreator();
+              }}
+            >
+              Vote
+            </button>
+          )}
         </div>
       </div>
     </div>

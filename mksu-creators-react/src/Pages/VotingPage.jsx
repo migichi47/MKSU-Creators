@@ -9,10 +9,11 @@ import "./VotingPageCss/main.css";
 import "./VotingPageCss/media.css";
 
 export function VotingPage() {
-  const [voteCount, setVoteCount] = useState(0);
   const [selectedCreators, setSelectedCreators] = useState(() => {
     return JSON.parse(localStorage.getItem('selectedCreators')) || [];
   });
+
+  let voteCount = selectedCreators.length;
 
   console.log(selectedCreators);
   return (
@@ -24,8 +25,6 @@ export function VotingPage() {
         {Object.keys(creators).map((category) => (
           <CategorySection
             category={category}
-            setVoteCount={setVoteCount}
-            voteCount={voteCount}
             setSelectedCreators={setSelectedCreators}
             selectedCreators={selectedCreators}
           />

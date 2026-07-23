@@ -17,7 +17,7 @@ export function Header(props) {
       </div>
       <div>
         <div className="confirm-votes">
-          <div className="vote-count">{voteCount}</div>
+          <div className="vote-count">{voteCount ?? 0}</div>
           <p>votes</p>
           <button onClick={() => navigate("/your-votes")}>confirm</button>
         </div>
