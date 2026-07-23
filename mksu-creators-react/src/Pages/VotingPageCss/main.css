@@ -20,7 +20,7 @@
 }
 
 .confirm-votes {
-  position: absolute;
+  position: fixed;
   z-index: 200;
   right: 10%;
   top: 10px;
