@@ -13,6 +13,8 @@ export function CreatorCard(props) {
     isCategoryUsed,
   } = props;
 
+  const isSelected = selectedCreators.some((creator) => creator.name === name);
+
   function selectCreator() {
     if (selectedCategories.includes(category)) {
       alert("Already voted in this category");
@@ -43,7 +45,7 @@ export function CreatorCard(props) {
 
 
   return (
-    <div className="creator-card">
+    <div className={`creator-card ${isSelected && "selected"}`}>
       <img
         className={image ? "" : "default-image"}
         src={image || "images/default.png"}

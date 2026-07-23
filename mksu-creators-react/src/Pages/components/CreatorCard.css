@@ -27,6 +27,16 @@
   border: none;
 }
 
+.voted:hover {
+  background: none;
+  cursor: default;
+}
+
+.selected {
+  border: 5px solid green;
+  background: #f0fff4;
+}
+
 .creator-card img{
   width: 100%;
   border-radius: 40px;
