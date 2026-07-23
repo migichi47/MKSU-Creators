@@ -6,13 +6,14 @@ export function CreatorCard(props) {
     followers,
     image,
     setSelectedCreators,
-    selectedCreators,
     category,
     selectedCategories,
     setSelectedCategories,
     isCategoryUsed,
   } = props;
 
+  console.log(props.category);
+  const selectedCreators = JSON.parse(localStorage.getItem('selectedCreators'))
   const isSelected = selectedCreators.some((creator) => creator.name === name);
 
   function selectCreator() {
@@ -45,7 +46,7 @@ export function CreatorCard(props) {
 
 
   return (
-    <div className={`creator-card ${isSelected && "selected"}`}>
+    <div className={`creator-card ${isSelected ? "selected" : ""}`}>
       <img
         className={image ? "" : "default-image"}
         src={image || "images/default.png"}
@@ -68,8 +69,7 @@ export function CreatorCard(props) {
                 ${isSelected && "selected-remove-btn"}
               `}
             >
-              {isCategoryUsed ? "" : "vote"}
-              {isSelected && "remove"}
+              {isSelected ? "remove" : isCategoryUsed ? "" : "vote"}
             </button>
           )}
         </div>

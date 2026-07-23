@@ -19,7 +19,6 @@ export function CategorySection(props) {
         {creators[props.category].map((creator) => {
           const isCategoryUsed = props.selectedCategories.includes(props.category);
 
-
           if (creator.name) {
             return (
               <CreatorCard
