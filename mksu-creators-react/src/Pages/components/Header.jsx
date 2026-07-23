@@ -1,7 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 export function Header(props) {
-  
+  const navigate = useNavigate()
   const voteCount = props.voteCount;
   
   return (
@@ -18,7 +19,7 @@ export function Header(props) {
         <div className="confirm-votes">
           <div className="vote-count">{voteCount}</div>
           <p>votes</p>
-          <button>confirm</button>
+          <button onClick={() => navigate("/your-votes")}>confirm</button>
         </div>
       </div>
       <hr className="header-hr" />

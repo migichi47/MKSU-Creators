@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./CreatorCard.css";
 
 export function CreatorCard(props) {
@@ -10,10 +11,24 @@ export function CreatorCard(props) {
     setSelectedCreators,
     selectedCreators,
   } = props;
+
+  function selectCreator() {
+    const newSelectedCreators = [...selectedCreators, { image, name }];
+    setSelectedCreators(newSelectedCreators);
+
+    localStorage.setItem(
+      "selectedCreators",
+      JSON.stringify(newSelectedCreators),
+    );
+  }
+
+  useEffect(() => {
+  }, [selectedCreators]);
+
   return (
     <div className="creator-card">
       <img
-        className={!image && "default-image"}
+        className={image ? "" : "default-image"}
         src={image || "images/default.png"}
       />
       <div className="creator-card-text">
@@ -25,10 +40,7 @@ export function CreatorCard(props) {
           <button
             onClick={() => {
               setVoteCount(voteCount + 1);
-              setSelectedCreators([...selectedCreators, {
-                image,
-                name,
-              }]);
+              selectCreator();
             }}
           >
             Vote

@@ -10,7 +10,9 @@ import "./VotingPageCss/media.css";
 
 export function VotingPage() {
   const [voteCount, setVoteCount] = useState(0);
-  const [selectedCreators, setSelectedCreators] = useState([]);
+  const [selectedCreators, setSelectedCreators] = useState(() => {
+    return JSON.parse(localStorage.getItem('selectedCreators')) || [];
+  });
 
   console.log(selectedCreators);
   return (
