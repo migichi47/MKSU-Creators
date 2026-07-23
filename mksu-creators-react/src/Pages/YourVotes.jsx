@@ -17,11 +17,14 @@ export function YourVotes() {
         <div className="voters-grid js-voters-grid">
           {selectedCreators &&
             selectedCreators.map((creator) => (
-              <CreatorCard
-                name={creator.name}
-                image={creator.image}
-                followers={creator.followers}
-              />
+              <div className="selected-creator-container">
+                <div className="selected-creator-title" >Best {creator.category.slice(0, -1)}</div>
+                <CreatorCard
+                  name={creator.name}
+                  image={creator.image}
+                  followers={creator.followers}
+                />
+              </div>
             ))}
         </div>
         <div className="button-container">

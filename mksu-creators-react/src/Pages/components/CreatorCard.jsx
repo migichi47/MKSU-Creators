@@ -1,13 +1,13 @@
 import "./CreatorCard.css";
 
 export function CreatorCard(props) {
-  const { name, followers, image, setSelectedCreators, selectedCreators } =
+  const { name, followers, image, setSelectedCreators, selectedCreators, category } =
     props;
 
   function selectCreator() {
     const newSelectedCreators = [
       ...selectedCreators,
-      { image, name, followers },
+      { image, name, followers, category },
     ];
     setSelectedCreators(newSelectedCreators);
 
