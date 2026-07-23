@@ -12,8 +12,8 @@ export function CreatorCard(props) {
     isCategoryUsed,
   } = props;
 
-  console.log(props.category);
-  const selectedCreators = JSON.parse(localStorage.getItem('selectedCreators'))
+
+  const selectedCreators = JSON.parse(localStorage.getItem("selectedCreators")) || [];
   const isSelected = selectedCreators.some((creator) => creator.name === name);
 
   function selectCreator() {
@@ -43,7 +43,15 @@ export function CreatorCard(props) {
     );
   }
 
+  function removeCreator() {
+    const data = JSON.parse(localStorage.getItem("selectedCreators"));
+    const updated = data.filter((creator) => creator.name !== name)
 
+    console.log(name);
+    console.log(updated);
+
+    localStorage.setItem("selectedCreators", JSON.stringify(updated));
+  }
 
   return (
     <div className={`creator-card ${isSelected ? "selected" : ""}`}>
@@ -59,10 +67,13 @@ export function CreatorCard(props) {
           <p>{followers}k followers</p>
           {props.isVotingPage && (
             <button
-              onClick={() => {
-                selectCreator();
-              }}
-              disabled={isCategoryUsed}
+              onClick={
+                isSelected
+                  ? () => {removeCreator()}
+                  : () => {
+                      selectCreator();
+                    }
+              }
               className={`
                 vote-btn
                 ${isCategoryUsed && "voted"}
