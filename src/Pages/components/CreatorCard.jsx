@@ -13,7 +13,7 @@ export function CreatorCard(props) {
     isCategoryUsed,
   } = props;
 
-  const isSelected = selectedCreators.some((creator) => creator.name === name);
+  const isSelected = (selectedCreators || []).some((creator) => creator.name === name);
 
   function selectCreator() {
     if (selectedCategories.includes(category)) {
