@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { creators } from "../../data/creators";
@@ -9,16 +8,11 @@ import { CategorySection } from "./components/CategorySection";
 import "./VotingPageCss/main.css";
 import "./VotingPageCss/media.css";
 
-export function VotingPage() {
-  const [selectedCreators, setSelectedCreators] = useState(() => {
-    return JSON.parse(localStorage.getItem("selectedCreators")) || [];
-  });
-
-  const [selectedCategories, setSelectedCategories] = useState(() => {
-    return JSON.parse(localStorage.getItem("selectedCategories")) || []
-  });
-
+export function VotingPage(props) {
+  const { selectedCreators, setSelectedCreators, selectedCategories, setSelectedCategories } = props;
+  
   const navigate = useNavigate();
+
   let voteCount = selectedCreators.length;
 
   return (
