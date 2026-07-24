@@ -6,11 +6,15 @@ import Back from "./components/Back";
 import { CategorySection } from "./components/CategorySection";
 
 import "./VotingPageCss/main.css";
-import "./VotingPageCss/media.css";
 
 export function VotingPage(props) {
-  const { selectedCreators, setSelectedCreators, selectedCategories, setSelectedCategories } = props;
-  
+  const {
+    selectedCreators,
+    setSelectedCreators,
+    selectedCategories,
+    setSelectedCategories,
+  } = props;
+
   const navigate = useNavigate();
 
   let voteCount = selectedCreators.length;

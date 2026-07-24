@@ -1,22 +1,7 @@
 
 .preview-tiles-container {
   margin-top: 100px;
-}
-
-
-.highlight {
-  border: 3px solid aqua;
-}
-
-.highlight {
-  border: 3px solid aqua;
-}
-
-.js-reset-local-storage {
-  font-size: smaller;
-  width: 80px;
-  height: 30px;
-  padding: 0;
+  position: relative;
 }
 
 .confirm-votes {
