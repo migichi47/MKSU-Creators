@@ -7,6 +7,13 @@ import "./YourVotes.css";
 export function YourVotes() {
   const selectedCreators = JSON.parse(localStorage.getItem("selectedCreators"));
 
+  function clearSelectedCreators() {
+    console.log(selectedCreators);
+    localStorage.removeItem("selectedCreators");
+    localStorage.removeItem("selectedCategories")
+    console.log(selectedCreators);
+  }
+
   return (
     <>
       <div className="your-votes-container">
@@ -18,7 +25,9 @@ export function YourVotes() {
           {selectedCreators &&
             selectedCreators.map((creator) => (
               <div className="selected-creator-container">
-                <div className="selected-creator-title" >Best {creator.category.slice(0, -1)}</div>
+                <div className="selected-creator-title">
+                  Best {creator.category.slice(0, -1)}
+                </div>
                 <CreatorCard
                   name={creator.name}
                   image={creator.image}
@@ -34,7 +43,10 @@ export function YourVotes() {
             </button>
           </div>
           <div className="clear-button-container js-clear-button-container">
-            <button className="your-votes-button clear-button js-clear-button">
+            <button
+              className="your-votes-button clear-button js-clear-button"
+              onClick={() => clearSelectedCreators()}
+            >
               Clear List
             </button>
           </div>
