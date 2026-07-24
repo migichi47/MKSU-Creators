@@ -18,7 +18,7 @@ export function CreatorCard(props) {
   );
 
   function selectCreator() {
-    if (selectedCategories.includes(category)) {
+    if ((selectedCategories || []).includes(category)) {
       alert("Already voted in this category");
       return;
     }
@@ -80,24 +80,25 @@ export function CreatorCard(props) {
           {props.isVotingPage ? (
             <button
               onClick={
-                isSelected
-                  ? () => {
-                      removeCreator();
-                    }
-                  : () => {
-                      selectCreator();
-                    }
+                isSelected ? removeCreator : selectCreator
               }
               className={`
                 vote-btn
-                ${isCategoryUsed && "voted"}
-                ${isSelected && "selected-remove-btn"}
+                ${isCategoryUsed ? "voted" : ""}
+                ${isSelected ? "selected-remove-btn" : ""}
               `}
             >
               {isSelected ? "remove" : isCategoryUsed ? "" : "vote"}
             </button>
           ) : (
-            <button className="selected-remove-btn">remove</button>
+            <button
+              className="selected-remove-btn"
+              onClick={() => {
+                removeCreator();
+              }}
+            >
+              remove
+            </button>
           )}
         </div>
       </div>
