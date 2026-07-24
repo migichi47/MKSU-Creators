@@ -3,27 +3,3 @@
   margin-top: 100px;
   position: relative;
 }
-
-.confirm-votes {
-  position: fixed;
-  z-index: 200;
-  right: 10%;
-  top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.vote-count {
-  font-size: 25px;
-}
-
-.confirm-votes p {
-  font-size: 12px;
-}
-
-.confirm-votes button {
-  margin-top: 10px;
-  padding: 2px;
-  font-size: 14px;
-}
