@@ -5,8 +5,12 @@ import { Header } from "./components/Header";
 import "./YourVotes.css";
 
 export function YourVotes(props) {
-  const { selectedCreators, setSelectedCreators, setSelectedCategories } =
-    props;
+  const {
+    selectedCreators,
+    setSelectedCreators,
+    selectedCategories,
+    setSelectedCategories,
+  } = props;
 
   // clear selected creators
   function clearSelectedCreators() {
@@ -16,6 +20,27 @@ export function YourVotes(props) {
     localStorage.removeItem("selectedCreators");
     localStorage.removeItem("selectedCategories");
   }
+
+  function removeSelectedCreator(name, category) {
+    const updatedCreators = selectedCreators.filter((creator) => {
+      return creator.name !== name;
+    });
+
+    const updatedCategories = selectedCategories.filter(
+      (cat) => cat !== category,
+    );
+
+
+    setSelectedCreators(updatedCreators);
+    setSelectedCategories(updatedCategories);
+
+    localStorage.setItem("selectedCreators", JSON.stringify(updatedCreators));
+    localStorage.setItem(
+      "selectedCategories",
+      JSON.stringify(updatedCategories),
+    );
+  }
+
 
   return (
     <>
@@ -35,6 +60,9 @@ export function YourVotes(props) {
                   name={creator.name}
                   image={creator.image}
                   followers={creator.followers}
+                  category={creator.category}
+                  key={creator.name}
+                  removeSelectedCreator={removeSelectedCreator}
                 />
               </div>
             ))}

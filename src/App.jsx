@@ -36,6 +36,7 @@ export default function App() {
       <Route path="join-as-creator-two" element={<JoinAsCreatorTwo />} />
       <Route path="your-votes" element={<YourVotes
             selectedCreators={selectedCreators}
+            selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
             setSelectedCreators={setSelectedCreators}
           />} />

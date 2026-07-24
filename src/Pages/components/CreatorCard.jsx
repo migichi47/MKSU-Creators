@@ -11,7 +11,9 @@ export function CreatorCard(props) {
     selectedCategories,
     setSelectedCategories,
     isCategoryUsed,
+    removeSelectedCreator,
   } = props;
+
 
   const isSelected = (selectedCreators || []).some(
     (creator) => creator.name === name,
@@ -79,9 +81,7 @@ export function CreatorCard(props) {
           <p>{followers}k followers</p>
           {props.isVotingPage ? (
             <button
-              onClick={
-                isSelected ? removeCreator : selectCreator
-              }
+              onClick={isSelected ? removeCreator : selectCreator}
               className={`
                 vote-btn
                 ${isCategoryUsed ? "voted" : ""}
@@ -93,9 +93,7 @@ export function CreatorCard(props) {
           ) : (
             <button
               className="selected-remove-btn"
-              onClick={() => {
-                removeCreator();
-              }}
+              onClick={() => removeSelectedCreator(name, category)}
             >
               remove
             </button>
