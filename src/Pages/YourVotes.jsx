@@ -4,14 +4,20 @@ import { Header } from "./components/Header";
 
 import "./YourVotes.css";
 
-export function YourVotes() {
-  const selectedCreators = JSON.parse(localStorage.getItem("selectedCreators"));
+export function YourVotes(props) {
+  const {
+    selectedCreators,
+    setSelectedCreators,
+    setSelectedCategories,
+  } = props;
 
+  // clear selected creators
   function clearSelectedCreators() {
-    console.log(selectedCreators);
+    setSelectedCreators([]);
+    setSelectedCategories([]);
+
     localStorage.removeItem("selectedCreators");
-    localStorage.removeItem("selectedCategories")
-    console.log(selectedCreators);
+    localStorage.removeItem("selectedCategories");
   }
 
   return (
