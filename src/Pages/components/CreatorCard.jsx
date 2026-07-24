@@ -43,15 +43,24 @@ export function CreatorCard(props) {
   }
 
   function removeCreator() {
-    console.log(selectedCreators);
     const updatedCreators = selectedCreators.filter(
       (creator) => creator.name !== name,
     );
     const updatedCategories = selectedCategories.filter(
       (cat) => cat !== category,
     );
+
+    // update UI
     setSelectedCreators(updatedCreators);
     setSelectedCategories(updatedCategories);
+
+    // update localStorage
+    localStorage.setItem(
+      "selectedCategories",
+      JSON.stringify(updatedCategories),
+    );
+
+    localStorage.setItem("selectedCreators", JSON.stringify(updatedCreators));
   }
 
   return (
