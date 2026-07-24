@@ -5,11 +5,8 @@ import { Header } from "./components/Header";
 import "./YourVotes.css";
 
 export function YourVotes(props) {
-  const {
-    selectedCreators,
-    setSelectedCreators,
-    setSelectedCategories,
-  } = props;
+  const { selectedCreators, setSelectedCreators, setSelectedCategories } =
+    props;
 
   // clear selected creators
   function clearSelectedCreators() {
@@ -25,8 +22,8 @@ export function YourVotes(props) {
       <div className="your-votes-container">
         <Back navigate="/voting" />
         <Header />
-
         <h1 className="your-votes-title">My Selected Creators</h1>
+
         <div className="voters-grid js-voters-grid">
           {selectedCreators &&
             selectedCreators.map((creator) => (
@@ -42,6 +39,7 @@ export function YourVotes(props) {
               </div>
             ))}
         </div>
+
         <div className="button-container">
           <div className="submit-button-container js-submit-button-container">
             <button className="your-votes-button submit-button js-submit-button">

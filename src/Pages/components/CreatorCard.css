@@ -38,15 +38,17 @@
 }
 
 .selected-remove-btn {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid red;
-  width: 60px;
+  max-width: 60px;
   right: 12px;
-  bottom: 8px;
+  bottom: 15px;
   padding: 5px;
   font-size: 11px;
+  margin-left: 5px;
 }
 
 .selected-remove-btn:hover {

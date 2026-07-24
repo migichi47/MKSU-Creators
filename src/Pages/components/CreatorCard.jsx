@@ -13,7 +13,9 @@ export function CreatorCard(props) {
     isCategoryUsed,
   } = props;
 
-  const isSelected = (selectedCreators || []).some((creator) => creator.name === name);
+  const isSelected = (selectedCreators || []).some(
+    (creator) => creator.name === name,
+  );
 
   function selectCreator() {
     if (selectedCategories.includes(category)) {
@@ -75,7 +77,7 @@ export function CreatorCard(props) {
         </div>
         <div className="creator-card-description">
           <p>{followers}k followers</p>
-          {props.isVotingPage && (
+          {props.isVotingPage ? (
             <button
               onClick={
                 isSelected
@@ -94,6 +96,8 @@ export function CreatorCard(props) {
             >
               {isSelected ? "remove" : isCategoryUsed ? "" : "vote"}
             </button>
+          ) : (
+            <button className="selected-remove-btn">remove</button>
           )}
         </div>
       </div>
