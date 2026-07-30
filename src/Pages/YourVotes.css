@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5%;
+  padding-bottom: 100px;
   width: 400px;
 }
 
