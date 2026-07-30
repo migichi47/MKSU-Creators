@@ -102,6 +102,19 @@ export function YourVotes(props) {
             <div>
               Return to <Link to="/voting">Voting Page</Link>
             </div>
+            <button
+              className="dev-tools"
+              onClick={() => {
+                localStorage.clear();
+                setSelectedCategories([]);
+                // localStorage.removeItem("selectedCategories");
+                setTimeout(() => {
+                    alert("local storage cleared");
+                  }, 1);
+              }}
+            >
+              Dev tools
+            </button>
           </div>
         )}
       </div>
