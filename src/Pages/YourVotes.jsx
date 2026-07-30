@@ -107,10 +107,6 @@ export function YourVotes(props) {
               onClick={() => {
                 localStorage.clear();
                 setSelectedCategories([]);
-                // localStorage.removeItem("selectedCategories");
-                setTimeout(() => {
-                    alert("local storage cleared");
-                  }, 1);
               }}
             >
               Dev tools
