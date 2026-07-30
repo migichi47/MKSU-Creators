@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Back from "./components/Back";
 import { CreatorCard } from "./components/CreatorCard";
 import { Header } from "./components/Header";
@@ -30,7 +31,6 @@ export function YourVotes(props) {
       (cat) => cat !== category,
     );
 
-
     setSelectedCreators(updatedCreators);
     setSelectedCategories(updatedCategories);
 
@@ -40,7 +40,6 @@ export function YourVotes(props) {
       JSON.stringify(updatedCategories),
     );
   }
-
 
   return (
     <>
@@ -66,21 +65,28 @@ export function YourVotes(props) {
             ))}
         </div>
 
-        <div className="button-container">
-          <div className="submit-button-container js-submit-button-container">
-            <button className="your-votes-button submit-button js-submit-button">
-              Confirm & Vote
-            </button>
+        {selectedCreators.length !== 0 ? (
+          <div className="button-container">
+            <div className="submit-button-container js-submit-button-container">
+              <button className="your-votes-button submit-button js-submit-button">
+                Confirm & Vote
+              </button>
+            </div>
+            <div className="clear-button-container js-clear-button-container">
+              <button
+                className="your-votes-button clear-button js-clear-button"
+                onClick={() => clearSelectedCreators()}
+              >
+                Clear List
+              </button>
+            </div>
           </div>
-          <div className="clear-button-container js-clear-button-container">
-            <button
-              className="your-votes-button clear-button js-clear-button"
-              onClick={() => clearSelectedCreators()}
-            >
-              Clear List
-            </button>
+        ) : (
+          <div className="your-votes-return-home">
+            <div>Nothing here!</div>
+            <div>Return to <Link to="/voting">Voting Page</Link></div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

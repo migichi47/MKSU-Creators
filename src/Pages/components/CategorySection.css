@@ -38,7 +38,7 @@
 
 /* customize scrollbar */
 .preview-tiles::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
 
 .preview-tiles::-webkit-scrollbar-thumb {
