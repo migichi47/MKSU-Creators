@@ -47,8 +47,6 @@ export function YourVotes(props) {
       <div className="your-votes-container">
         <Back navigate="/voting" />
         <Header />
-        <h1 className="your-votes-title">My Selected Creators</h1>
-
         <div className="voters-grid js-voters-grid">
           {selectedCreators &&
             selectedCreators.map((creator) => (
