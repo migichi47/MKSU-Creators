@@ -4,6 +4,7 @@ import { CreatorCard } from "./components/CreatorCard";
 import { Header } from "./components/Header";
 
 import "./YourVotes.css";
+import { DevTools } from "./components/DevTools";
 
 export function YourVotes(props) {
   const {
@@ -102,15 +103,7 @@ export function YourVotes(props) {
             <div>
               Return to <Link to="/voting">Voting Page</Link>
             </div>
-            <button
-              className="dev-tools"
-              onClick={() => {
-                localStorage.clear();
-                setSelectedCategories([]);
-              }}
-            >
-              Dev tools
-            </button>
+            <DevTools />
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Back from "./components/Back";
 
 
-import "./JoinAsCreatorCss/join.css";
+import "./JoinAsCreatorCss/1.css";
 import "./JoinAsCreatorCss/media.css";
 
 export function JoinAsCreatorOne() {

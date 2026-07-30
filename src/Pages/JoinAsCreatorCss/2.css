@@ -73,42 +73,27 @@ body {
   padding-top: 10px;
 }
 
-
-
-/* generated HTML */
-.screenshot-tile {
-  position: relative;
-  top: 120px;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.908),
-    rgba(5, 8, 87, 0.788)
-  );
+.upload-section {
   width: 65%;
   max-width: 400px;
   height: 480px;
-  border: 1px solid rgba(0, 255, 255, 0.388);
-  border-radius: 40px;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
 }
 
-.screenshot-section {
-  border: 1px dashed grey;
+.upload-section input {
+  width: 90%;
+  background: none;
+}
+
+.passport-section {
+  border: 1px dashed aqua;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 180px;
-  margin: 0 auto;
-  margin-top: 70px;
-}
-
-.screenshot-section input {
-  width: 90%;
-}
-
-
-.screenshot-tile h1 {
-  font-size: 30px;
+  min-height: 200px;
 }
