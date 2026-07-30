@@ -2,7 +2,7 @@ export function DevTools(props) {
   const { setSelectedCategories } = props;
   return (
     <button
-      className="dev-tools"
+      className="dev-tools dev-tools-join2"
       onClick={() => {
         localStorage.clear();
         setSelectedCategories && setSelectedCategories([]);

@@ -26,49 +26,47 @@ export function JoinAsCreatorTwo() {
           </p>
         </div>
 
-        <div className="category-card-container">
-          {clickedCategory === "false" ? (
-            <>
-              <CategoryCard
-                name="dancing"
-                image="images/dance.png"
-                setClickedCategory={setClickedCategory}
-              />
-              <CategoryCard
-                name="Social Influencer"
-                image="images/influencer.png"
-                setClickedCategory={setClickedCategory}
-              />
-              <CategoryCard
-                name="Comedy"
-                image="images/masks.png"
-                setClickedCategory={setClickedCategory}
-              />
-              <CategoryCard
-                name="Vlogging"
-                image="images/camera.png"
-                setClickedCategory={setClickedCategory}
-              />
-              <CategoryCard
-                name="Music"
-                image="images/music-note.png"
-                setClickedCategory={setClickedCategory}
-              />
-            </>
-          ) : (
-            <>
-              <div className="join-tile upload-section">
-                <div className="upload-section-title">
-                  Upload a passport of yourself
-                </div>
-                <div className="passport-section">
-                  <input type="file" accept="image/*" />
-                </div>
+        {clickedCategory === "false" ? (
+          <div className="category-card-container">
+            <CategoryCard
+              name="dancing"
+              image="images/dance.png"
+              setClickedCategory={setClickedCategory}
+            />
+            <CategoryCard
+              name="Social Influencer"
+              image="images/influencer.png"
+              setClickedCategory={setClickedCategory}
+            />
+            <CategoryCard
+              name="Comedy"
+              image="images/masks.png"
+              setClickedCategory={setClickedCategory}
+            />
+            <CategoryCard
+              name="Vlogging"
+              image="images/camera.png"
+              setClickedCategory={setClickedCategory}
+            />
+            <CategoryCard
+              name="Music"
+              image="images/music-note.png"
+              setClickedCategory={setClickedCategory}
+            />
+          </div>
+        ) : (
+          <div className="upload-section-container">
+            <div className="join-tile upload-section">
+              <div className="upload-section-title">
+                Upload a passport of yourself
               </div>
-              <DevTools />
-            </>
-          )}
-        </div>
+              <div className="passport-section">
+                <input type="file" accept="image/*" />
+              </div>
+            </div>
+            <DevTools />
+          </div>
+        )}
       </div>
     </>
   );

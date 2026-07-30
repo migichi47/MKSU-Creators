@@ -97,3 +97,10 @@ body {
   width: 200px;
   min-height: 200px;
 }
+
+.upload-section-container button {
+  position: relative;
+  width: 20%;
+  left: 40%;
+  margin-top: 500px;
+}
