@@ -80,7 +80,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 60px;
 }
 
 .upload-section input {
@@ -98,9 +97,8 @@ body {
   min-height: 200px;
 }
 
-.upload-section-container button {
-  position: relative;
-  width: 20%;
-  left: 40%;
-  margin-top: 500px;
+.submit-button-join2 {
+  position: absolute;
+  bottom: 50px;
+  padding: 10px;
 }

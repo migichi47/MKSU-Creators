@@ -63,6 +63,7 @@ export function JoinAsCreatorTwo() {
               <div className="passport-section">
                 <input type="file" accept="image/*" />
               </div>
+            <button className="submit-button-join2">Submit</button>
             </div>
             <DevTools />
           </div>
