@@ -13,6 +13,13 @@ export function YourVotes(props) {
     setSelectedCategories,
   } = props;
 
+  // get selected creators after user confirms
+  function confirmSelectedVotes() {
+    console.log("voted successfully!");
+    setSelectedCreators([]);
+    localStorage.removeItem("selectedCreators");
+  }
+
   // clear selected creators
   function clearSelectedCreators() {
     setSelectedCreators([]);
@@ -68,7 +75,15 @@ export function YourVotes(props) {
         {selectedCreators.length !== 0 ? (
           <div className="button-container">
             <div className="submit-button-container js-submit-button-container">
-              <button className="your-votes-button submit-button js-submit-button">
+              <button
+                className="your-votes-button submit-button js-submit-button"
+                onClick={() => {
+                  confirmSelectedVotes();
+                  setTimeout(() => {
+                    alert("All votes submitted successfully");
+                  }, 100);
+                }}
+              >
                 Confirm & Vote
               </button>
             </div>
@@ -84,7 +99,9 @@ export function YourVotes(props) {
         ) : (
           <div className="your-votes-return-home">
             <div>Nothing here!</div>
-            <div>Return to <Link to="/voting">Voting Page</Link></div>
+            <div>
+              Return to <Link to="/voting">Voting Page</Link>
+            </div>
           </div>
         )}
       </div>
