@@ -1,15 +1,22 @@
-import { creators } from "../../../data/creators";
 import { CreatorCard } from "./CreatorCard";
 
 import "./CategorySection.css";
 
 export function CategorySection(props) {
+  const {
+    creators,
+    category,
+    selectedCategories,
+    setSelectedCategories,
+    setSelectedCreators,
+    selectedCreators,
+  } = props;
   return (
     <div>
       {creators?.length > 0 && (
         <div className="tiles-title-div">
           <h2 id="dancers" className="tiles-title">
-            Pick your {props.category} of the year
+            Pick your {category} of the year
           </h2>
         </div>
       )}
@@ -17,23 +24,21 @@ export function CategorySection(props) {
       <div className="scroll">Scroll &gt;&gt;</div>
       <div className="preview-tiles">
         {creators.map((creator) => {
-          const isCategoryUsed = props.selectedCategories.includes(
-            creator.category,
-          );
+          const isCategoryUsed = selectedCategories.includes(creator.category);
 
-          if (creator.name && props.category.includes(creator.category)) {
+          if (creator.name && category.includes(creator.category)) {
             return (
               <CreatorCard
                 image={creator.image}
                 name={creator.name}
                 followers={Number(creator.followers / 1000)}
                 key={crypto.randomUUID()}
-                setSelectedCreators={props.setSelectedCreators}
-                selectedCreators={props.selectedCreators}
+                setSelectedCreators={setSelectedCreators}
+                selectedCreators={selectedCreators}
                 isVotingPage={true}
-                category={props.category}
-                setSelectedCategories={props.setSelectedCategories}
-                selectedCategories={props.selectedCategories}
+                category={category}
+                setSelectedCategories={setSelectedCategories}
+                selectedCategories={selectedCategories}
                 isCategoryUsed={isCategoryUsed}
               />
             );

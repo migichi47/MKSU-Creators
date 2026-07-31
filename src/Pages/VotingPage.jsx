@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-import { creators } from "../../data/creators";
 import { Header } from "./components/Header";
 import Back from "./components/Back";
 import { CategorySection } from "./components/CategorySection";
@@ -9,13 +8,20 @@ import "./VotingPageCss/main.css";
 
 export function VotingPage(props) {
   const {
+    creators,
     selectedCreators,
     setSelectedCreators,
     selectedCategories,
     setSelectedCategories,
   } = props;
 
-  const categories = ["dancer", "vlogger", "influencer", "comedian", "musician"]
+  const categories = [
+    "dancer",
+    "vlogger",
+    "influencer",
+    "comedian",
+    "musician",
+  ];
 
   const navigate = useNavigate();
   let voteCount = selectedCreators.length;
@@ -40,6 +46,7 @@ export function VotingPage(props) {
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
             key={category}
+            creators={creators}
           />
         ))}
       </div>

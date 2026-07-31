@@ -19,6 +19,7 @@ export default function App() {
     return JSON.parse(localStorage.getItem("selectedCategories")) || [];
   });
 
+  // from backend
   const [creators, setCreators] = useState([]);
 
   useEffect(() => {
@@ -26,7 +27,6 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => setCreators(data));
   }, []);
-  console.log(creators);
 
   // add auto-confirm of votes
   if (selectedCreators.length !== 0) {
@@ -48,6 +48,7 @@ export default function App() {
               selectedCategories={selectedCategories}
               setSelectedCategories={setSelectedCategories}
               setSelectedCreators={setSelectedCreators}
+              creators={creators}
             />
           }
         />
