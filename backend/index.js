@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import multer from "multer";
 
 import { Creator } from "./mongoose/schemas.js";
 
@@ -10,11 +11,21 @@ const PORT = 3000;
 // middleware
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
 mongoose
   .connect("mongodb://localhost/MKSU_Creators")
   .then(() => console.log("connected to database"))
   .catch((err) => console.log(`Error: ${err}`));
+
+const storage = multer.diskStorage({
+  destination: "uploads/",
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage });
 
 // test route
 app.get("/", (req, res) => {
@@ -35,12 +46,15 @@ app.get("/creators", async (request, response) => {
   }
 });
 
-app.post("/creators", async (request, response) => {
+app.post("/creators", upload.single("image"), async (request, response) => {
   try {
-    const creator = new Creator(request.body);
+    const creator = new Creator({
+      ...request.body,
+      image: request.file.filename,
+    });
     await creator.save();
 
-    response.status(201).send(creator);
+    response.status(201).json(creator);
   } catch (err) {
     response.status(500).json({ error: err.message });
   }

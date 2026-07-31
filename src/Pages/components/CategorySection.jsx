@@ -11,6 +11,7 @@ export function CategorySection(props) {
     setSelectedCreators,
     selectedCreators,
   } = props;
+
   return (
     <div>
       {creators?.length > 0 && (
@@ -26,11 +27,11 @@ export function CategorySection(props) {
         {creators.map((creator) => {
           const isCategoryUsed = selectedCategories.includes(creator.category);
 
-          if (creator.name && category.includes(creator.category)) {
+          if (creator.username && category.includes(creator.category)) {
             return (
               <CreatorCard
                 image={creator.image}
-                name={creator.name}
+                name={creator.username}
                 followers={Number(creator.followers / 1000)}
                 key={crypto.randomUUID()}
                 setSelectedCreators={setSelectedCreators}

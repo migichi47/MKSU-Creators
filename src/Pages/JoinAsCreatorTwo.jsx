@@ -14,7 +14,7 @@ export function JoinAsCreatorTwo() {
   const [upload, setUpload] = useState();
 
   const [formData, setFormData] = useState(
-    JSON.parse(localStorage.getItem("formData")),
+    JSON.parse(localStorage.getItem("formData")) || {},
   );
 
   const [clickedCategory, setClickedCategory] = useState(
@@ -23,12 +23,24 @@ export function JoinAsCreatorTwo() {
 
   const navigate = useNavigate();
 
-  function finishUpload() {
-    const updatedForm = {
-      ...formData,
-      upload: upload,
-    };
-    console.log(updatedForm);
+  async function finishUpload() {
+    const form = new FormData();
+
+    Object.keys(formData).forEach((key) => {
+      form.append(key, formData[key]);
+    });
+
+    form.append("image", upload);
+    console.log(formData);
+
+    const response = await fetch("http://localhost:3000/creators", {
+      method: "POST",
+      body: form,
+    });
+
+    const data = await response.json();
+    console.log(data);
+
     toast("Details uploaded and are under review");
     setTimeout(() => {
       navigate("/");
@@ -52,35 +64,35 @@ export function JoinAsCreatorTwo() {
         {clickedCategory === "false" ? (
           <div className="category-card-container">
             <CategoryCard
-              name="dancing"
+              name="dancer"
               image="images/dance.png"
               setClickedCategory={setClickedCategory}
               setFormData={setFormData}
               formData={formData}
             />
             <CategoryCard
-              name="Social Influencer"
+              name="influencer"
               image="images/influencer.png"
               setClickedCategory={setClickedCategory}
               setFormData={setFormData}
               formData={formData}
             />
             <CategoryCard
-              name="Comedy"
+              name="comedian"
               image="images/masks.png"
               setClickedCategory={setClickedCategory}
               setFormData={setFormData}
               formData={formData}
             />
             <CategoryCard
-              name="Vlogging"
+              name="vlogger"
               image="images/camera.png"
               setClickedCategory={setClickedCategory}
               setFormData={setFormData}
               formData={formData}
             />
             <CategoryCard
-              name="Music"
+              name="musician"
               image="images/music-note.png"
               setClickedCategory={setClickedCategory}
               setFormData={setFormData}
