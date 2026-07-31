@@ -6,7 +6,7 @@ export function Header() {
       <div className="header-section js-header-section">
         <img
           className="header-image"
-          src="images/Machakos_University_Logo.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLN-ym3nfLTARYaYOaAr5gEL0pHcpAHGqYqiFQcsF6ZL2OLgmt-hGmx-k&s=10"
           alt=""
         />
         <h1 className="header-title">MKSU CREATORS AWARDS</h1>

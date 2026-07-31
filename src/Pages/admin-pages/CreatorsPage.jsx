@@ -1,15 +1,13 @@
-import { Header } from "./components/Header";
-import { AdminSidebar } from "./utils/AdminSidebar";
-import "./AdminPage.css/general.css";
+import { Header } from "../components/Header";
+import { AdminSidebar } from "../utils/AdminSidebar";
 
-export function AdminPage(props) {
+export function CreatorsPage(props) {
   const { creators } = props;
 
   return (
     <>
-      <Header />
       <AdminSidebar />
-
+      <Header />
       <div className="creator-table-container">
         <p className="creator-table-title">Creators</p>
         <hr />
