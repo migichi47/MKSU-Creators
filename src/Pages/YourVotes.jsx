@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 
 import "./YourVotes.css";
 import { DevTools } from "./components/DevTools";
+import { toast } from "react-toastify";
 
 export function YourVotes(props) {
   const {
@@ -16,7 +17,6 @@ export function YourVotes(props) {
 
   // get selected creators after user confirms
   function confirmSelectedVotes() {
-    console.log("voted successfully!");
     setSelectedCreators([]);
     localStorage.removeItem("selectedCreators");
   }
@@ -49,6 +49,8 @@ export function YourVotes(props) {
     );
   }
 
+  
+
   return (
     <>
       <div className="your-votes-container">
@@ -80,9 +82,7 @@ export function YourVotes(props) {
                 className="your-votes-button submit-button js-submit-button"
                 onClick={() => {
                   confirmSelectedVotes();
-                  setTimeout(() => {
-                    alert("All votes submitted successfully");
-                  }, 100);
+                  toast("Votes submitted successfully")
                 }}
               >
                 Confirm & Vote
