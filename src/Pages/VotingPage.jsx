@@ -16,16 +16,7 @@ export function VotingPage(props) {
   } = props;
 
   const navigate = useNavigate();
-
   let voteCount = selectedCreators.length;
-
-  // add auto-confirm of votes
-  if (selectedCreators.length !== 0) {
-    setTimeout(() => {
-      setSelectedCreators([]);
-      localStorage.removeItem("selectedCreators");
-    }, 60000 * 20);
-  }
 
   return (
     <>

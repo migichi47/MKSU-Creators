@@ -49,13 +49,6 @@ export function YourVotes(props) {
     );
   }
 
-  // add auto-confirm of votes
-  if (selectedCreators.length !== 0) {
-    setTimeout(() => {
-      confirmSelectedVotes();
-    }, 60000 * 20);
-  }
-
   return (
     <>
       <div className="your-votes-container">

@@ -19,6 +19,14 @@ export default function App() {
     return JSON.parse(localStorage.getItem("selectedCategories")) || [];
   });
 
+  // add auto-confirm of votes
+  if (selectedCreators.length !== 0) {
+    setTimeout(() => {
+      setSelectedCreators([]);
+      localStorage.removeItem("selectedCreators");
+    }, 60000 * 20);
+  }
+
   return (
     <>
       <Routes>
