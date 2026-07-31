@@ -1,6 +1,8 @@
 import { Header } from "../components/Header";
 import { AdminSidebar } from "../utils/AdminSidebar";
 
+import "./creator-page.css";
+
 export function CreatorsPage(props) {
   const { creators } = props;
 
