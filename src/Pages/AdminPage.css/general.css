@@ -1,0 +1,28 @@
+.admin-sidebar {
+  transition: transform 0.3s ease;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10px;
+  gap: 20px;
+  top: 100px;
+  height: 100vh;
+  width: 130px;
+  background-color: rgba(0, 0, 0, 0.759);
+}
+
+.admin-sidebar div:hover {
+  background-color: rgba(162, 161, 161, 0.449);
+  cursor: pointer;
+}
+
+.admin-sidebar-closed {
+  width: 50px;
+  overflow-x: hidden;
+}
+
+.hambugger-menu {
+  position: absolute;
+  top: 0;
+  padding: 1px 8px;
+}

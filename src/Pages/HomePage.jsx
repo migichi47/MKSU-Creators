@@ -8,7 +8,6 @@ import "./HomePageCss/footer.css";
 import "./HomePageCss/media.css";
 
 export function HomePage() {
-
   const navigate = useNavigate();
 
   return (
@@ -31,21 +30,31 @@ export function HomePage() {
             Vote for your favourite creators of the year
           </p>
           <div className="buttons-container">
-            <button 
-              className="vote-now-btn"
-              onClick={() => navigate("voting")}
-            >Vote Now</button>
+            <button className="vote-now-btn" onClick={() => navigate("voting")}>
+              Vote Now
+            </button>
           </div>
           <div className="join-as-creator-section">
             <span className="join-as-creator-text">Are you a Creator ?</span>
-            <button className="join-as-creator-button" onClick={() => {navigate("join-as-creator-one")}}>Join now</button>
+            <button
+              className="join-as-creator-button"
+              onClick={() => {
+                navigate("join-as-creator-one");
+              }}
+            >
+              Join now
+            </button>
           </div>
         </div>
 
         <div className="about-section">
           <div className="about-hero">
             <div className="about-image-container">
-              <img className="about-image" src="images/best-content-creator.webp" alt="" />
+              <img
+                className="about-image"
+                src="images/best-content-creator.webp"
+                alt=""
+              />
             </div>
             <div className="hero-description">
               <h1>Representation matters.</h1>
@@ -171,6 +180,12 @@ export function HomePage() {
             <footer className="footer-details">
               <p>&copy; 2024 MKSU Creators Awards. All rights reserved.</p>
             </footer>
+            <button
+              className="admin-btn"
+              onClick={() => navigate("/admin")}
+            >
+              Admin
+            </button>
           </div>
         </div>
       </div>

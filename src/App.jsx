@@ -9,6 +9,7 @@ import { JoinAsCreatorOne } from "./Pages/JoinAsCreatorOne";
 import { JoinAsCreatorTwo } from "./Pages/JoinAsCreatorTwo";
 import { YourVotes } from "./Pages/YourVotes";
 import "./App.css";
+import { AdminPage } from "./Pages/AdminPage";
 
 export default function App() {
   const [selectedCreators, setSelectedCreators] = useState(() => {
@@ -65,6 +66,7 @@ export default function App() {
             />
           }
         />
+        <Route path="admin" element={<AdminPage />} />
       </Routes>
       <ToastContainer />
     </>

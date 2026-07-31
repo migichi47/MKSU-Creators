@@ -48,3 +48,8 @@
 .footer-details {
   color: rgba(255, 255, 255, 0.633);
 }
+
+.admin-btn {
+  padding: 5px 10px;
+  margin-top: 20px;
+}
