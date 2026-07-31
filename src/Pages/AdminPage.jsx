@@ -2,18 +2,15 @@ import { Header } from "./components/Header";
 import "./AdminPage.css/general.css";
 import { useState } from "react";
 
-export function AdminPage() {
+export function AdminPage(props) {
+  const { creators } = props;
+  console.log(creators);
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleMenu() {
     setIsOpen(!isOpen);
   }
 
-  const users = [
-    { id: 1, name: "John", role: "Admin" },
-    { id: 2, name: "Jane", role: "Editor" },
-    { id: 3, name: "Mike", role: "User" },
-  ];
   return (
     <>
       <Header />
@@ -29,24 +26,25 @@ export function AdminPage() {
       <div className="creator-table-container">
         <table className="creator-table">
           <thead>
-            <tr>
-              <th>Name</th>
-              <th>handle</th>
-              <th>Category</th>
-              <th>platform</th>
-              <th>followers</th>
-            </tr>
+            <th>Name</th>
+            <th>handle</th>
+            <th>Category</th>
+            <th>platform</th>
+            <th>followers</th>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.role}</td>
-                <td>tiktok</td>
-                <td>30000</td>
-              </tr>
-            ))}
+            {creators.map((user) => {
+              const { name, username, category, followers, platform } = user;
+              return (
+                <tr>
+                  <td>{name}</td>
+                  <td>{username}</td>
+                  <td>{category}</td>
+                  <td>{platform}</td>
+                  <td>{followers}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
