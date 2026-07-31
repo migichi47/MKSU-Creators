@@ -28,7 +28,7 @@ export function AdminPage() {
       <AdminSidebar />
       <div className="dashboard-card-container">
         <div className="dashboard-card sign-ups-card">
-          <p>Sign ups</p>
+          <p>Registered creators</p>
           <p>23</p>
         </div>
         <div className="dashboard-card most-voted-card">
