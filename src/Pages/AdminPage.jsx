@@ -19,10 +19,12 @@ export function AdminPage(props) {
         </button>
         <div>{isOpen ? "Dashboard" : "🏠"}</div>
         <div>{isOpen ? "Creators" : "👥"}</div>
-        <div>{isOpen ? "Dashboard" : "📈"}</div>
+        <div>{isOpen ? "Analytics" : "📈"}</div>
       </div>
 
       <div className="creator-table-container">
+        <p className="creator-table-title">Creators</p>
+        <hr />
         <table className="creator-table">
           <thead>
             <tr>
