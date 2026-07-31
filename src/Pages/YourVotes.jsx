@@ -59,7 +59,7 @@ export function YourVotes(props) {
             selectedCreators.map((creator) => (
               <div className="selected-creator-container">
                 <div className="selected-creator-title">
-                  Best {creator.category.slice(0, -1)}
+                  Best {creator.category}
                 </div>
                 <CreatorCard
                   name={creator.name}

@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 
 import { Creator } from "./mongoose/schemas.js";
 
@@ -7,6 +8,7 @@ const app = express();
 const PORT = 3000;
 
 // middleware
+app.use(cors());
 app.use(express.json());
 
 mongoose

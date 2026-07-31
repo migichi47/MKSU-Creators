@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -18,6 +18,15 @@ export default function App() {
   const [selectedCategories, setSelectedCategories] = useState(() => {
     return JSON.parse(localStorage.getItem("selectedCategories")) || [];
   });
+
+  const [creators, setCreators] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/creators")
+      .then((response) => response.json())
+      .then((data) => setCreators(data));
+  }, []);
+  console.log(creators);
 
   // add auto-confirm of votes
   if (selectedCreators.length !== 0) {

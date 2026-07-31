@@ -15,6 +15,8 @@ export function VotingPage(props) {
     setSelectedCategories,
   } = props;
 
+  const categories = ["dancer", "vlogger", "influencer", "comedian", "musician"]
+
   const navigate = useNavigate();
   let voteCount = selectedCreators.length;
 
@@ -30,7 +32,7 @@ export function VotingPage(props) {
       </div>
 
       <div className="preview-tiles-container">
-        {Object.keys(creators).map((category) => (
+        {categories.map((category) => (
           <CategorySection
             category={category}
             setSelectedCreators={setSelectedCreators}
