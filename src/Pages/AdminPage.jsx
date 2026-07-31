@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export function AdminPage(props) {
   const { creators } = props;
-  console.log(creators);
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleMenu() {
@@ -26,17 +25,19 @@ export function AdminPage(props) {
       <div className="creator-table-container">
         <table className="creator-table">
           <thead>
-            <th>Name</th>
-            <th>handle</th>
-            <th>Category</th>
-            <th>platform</th>
-            <th>followers</th>
+            <tr>
+              <th>Name</th>
+              <th>handle</th>
+              <th>Category</th>
+              <th>platform</th>
+              <th>followers</th>
+            </tr>
           </thead>
           <tbody>
             {creators.map((user) => {
               const { name, username, category, followers, platform } = user;
               return (
-                <tr>
+                <tr key={username}>
                   <td>{name}</td>
                   <td>{username}</td>
                   <td>{category}</td>

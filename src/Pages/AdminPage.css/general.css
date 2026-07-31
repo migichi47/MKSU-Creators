@@ -40,8 +40,20 @@
   position: absolute;
   top: 150px;
   height: 80vh;
+  padding: 20px;
 }
 
 .creator-table {
   width: 100%;
 }
+
+.creator-table td {
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.creator-table tr {
+  background-color: rgba(240, 248, 255, 0.084);
+  height: 40px;
+}
+
