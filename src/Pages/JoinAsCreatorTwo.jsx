@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 import { Header } from "./components/Header";
 import Back from "./components/Back";
 import { CategoryCard } from "./components/CategoryCard";
@@ -8,9 +11,29 @@ import "./JoinAsCreatorCss/2.css";
 import "./JoinAsCreatorCss/media.css";
 
 export function JoinAsCreatorTwo() {
+  const [upload, setUpload] = useState();
+
+  const [formData, setFormData] = useState(
+    JSON.parse(localStorage.getItem("formData")),
+  );
+
   const [clickedCategory, setClickedCategory] = useState(
     JSON.parse(localStorage.getItem("clickedCategory")) || "false",
   );
+
+  const navigate = useNavigate();
+
+  function finishUpload() {
+    const updatedForm = {
+      ...formData,
+      upload: upload,
+    };
+    console.log(updatedForm);
+    toast("Details uploaded and are under review");
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
+  }
 
   return (
     <>
@@ -32,26 +55,36 @@ export function JoinAsCreatorTwo() {
               name="dancing"
               image="images/dance.png"
               setClickedCategory={setClickedCategory}
+              setFormData={setFormData}
+              formData={formData}
             />
             <CategoryCard
               name="Social Influencer"
               image="images/influencer.png"
               setClickedCategory={setClickedCategory}
+              setFormData={setFormData}
+              formData={formData}
             />
             <CategoryCard
               name="Comedy"
               image="images/masks.png"
               setClickedCategory={setClickedCategory}
+              setFormData={setFormData}
+              formData={formData}
             />
             <CategoryCard
               name="Vlogging"
               image="images/camera.png"
               setClickedCategory={setClickedCategory}
+              setFormData={setFormData}
+              formData={formData}
             />
             <CategoryCard
               name="Music"
               image="images/music-note.png"
               setClickedCategory={setClickedCategory}
+              setFormData={setFormData}
+              formData={formData}
             />
           </div>
         ) : (
@@ -61,9 +94,20 @@ export function JoinAsCreatorTwo() {
                 Upload a passport of yourself
               </div>
               <div className="passport-section">
-                <input type="file" accept="image/*" />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    setUpload(e.target.files[0]);
+                  }}
+                />
               </div>
-            <button className="submit-button-join2">Submit</button>
+              <button
+                className="submit-button-join2"
+                onClick={() => finishUpload()}
+              >
+                Finish
+              </button>
             </div>
             <DevTools />
           </div>

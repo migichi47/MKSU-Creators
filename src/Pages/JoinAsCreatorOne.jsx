@@ -7,20 +7,24 @@ import "./JoinAsCreatorCss/media.css";
 import { useState } from "react";
 
 export function JoinAsCreatorOne() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    username: "",
-    admission: "",
-    phoneNumber: "",
-    year: "",
-    platform: "",
-    followers: "",
-  });
+  const [formData, setFormData] = useState(
+    JSON.parse(localStorage.getItem("formData")) || {
+      fullName: "",
+      username: "",
+      admission: "",
+      phoneNumber: "",
+      year: "",
+      platform: "",
+      followers: "",
+      category: "",
+      upload: ""
+    },
+  );
 
   const navigate = useNavigate();
   function submitCreatorDetails() {
-    // navigate("/join-as-creator-two");
-    console.log(formData);
+    navigate("/join-as-creator-two");
+    localStorage.setItem("formData", JSON.stringify(formData));
   }
 
   const handleChange = (e) => {
