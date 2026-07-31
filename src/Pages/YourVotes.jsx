@@ -15,7 +15,7 @@ export function YourVotes(props) {
     setSelectedCategories,
   } = props;
 
-  // get selected creators after user confirms
+  // send selected creators after user confirms
   function confirmSelectedVotes() {
     setSelectedCreators([]);
     localStorage.removeItem("selectedCreators");
@@ -49,7 +49,12 @@ export function YourVotes(props) {
     );
   }
 
-  
+  // add auto-confirm of votes
+  if (selectedCreators.length !== 0) {
+    setTimeout(() => {
+      confirmSelectedVotes();
+    }, 60000 * 20);
+  }
 
   return (
     <>
@@ -82,7 +87,7 @@ export function YourVotes(props) {
                 className="your-votes-button submit-button js-submit-button"
                 onClick={() => {
                   confirmSelectedVotes();
-                  toast("Votes submitted successfully")
+                  toast("Votes submitted successfully");
                 }}
               >
                 Confirm & Vote
