@@ -10,6 +10,7 @@ import { JoinAsCreatorTwo } from "./Pages/JoinAsCreatorTwo";
 import { YourVotes } from "./Pages/YourVotes";
 import { AdminPage } from "./Pages/admin-pages/AdminPage";
 import { CreatorsPage } from "./Pages/admin-pages/CreatorsPage";
+import { AdminAddCreator } from "./Pages/admin-pages/AdminAddCreator";
 
 import "./App.css";
 
@@ -72,6 +73,10 @@ export default function App() {
         <Route
           path="admin/creators"
           element={<CreatorsPage creators={creators} />}
+        />
+        <Route
+          path="admin/add-creator"
+          element={<AdminAddCreator />}
         />
       </Routes>
       <ToastContainer />
