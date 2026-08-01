@@ -86,6 +86,8 @@ app.post("/creators", upload.single("image"), async (request, response) => {
   }
 });
 
+
+// admin delete creator
 app.delete("/creators/:id", async (request, response) => {
   try {
     const {
@@ -119,7 +121,7 @@ app.get("/creators/pending", async (request, response) => {
   response.json(creators);
 });
 
-// admin approves creatos
+// admin approves creators
 app.patch("/creators/:id/approve", async (request, response) => {
   const { id } = request.params;
 

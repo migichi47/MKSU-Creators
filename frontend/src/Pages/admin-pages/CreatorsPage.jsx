@@ -33,6 +33,22 @@ export function CreatorsPage(props) {
         ? creators
         : allCreators.filter((creator) => creator.status === "pending");
 
+  async function verifyCreator(id) {
+    try {
+      const response = await fetch(`http://localhost:3000/creators/${id}/approve`, {
+        method: "PATCH",
+      });
+
+      const data = await response.json();
+
+      setAllCreators((prev) =>
+        prev.map((creator) => (creator._id === id ? data.creator : creator)),
+      );
+    } catch (err) {
+      console.error("Error approving creator:", err);
+    }
+  }
+
   return (
     <>
       <AdminSidebar />
@@ -49,8 +65,8 @@ export function CreatorsPage(props) {
               }}
             >
               <option value="all">all</option>
-              <option value="pending">pending</option>
               <option value="approved">approved</option>
+              <option value="pending">pending</option>
             </select>
           </div>
           <div
@@ -92,13 +108,13 @@ export function CreatorsPage(props) {
                   <td>{category}</td>
                   <td>{platform}</td>
                   <td>{followers}</td>
-                  {status === "pending" ? (
-                    <td>
-                      <button>verify</button>
-                    </td>
-                  ) : (
-                    <div className="verified-check">✔️</div>
-                  )}
+                  <td>
+                    {status === "pending" ? (
+                      <button onClick={() => verifyCreator(id)}>verify</button>
+                    ) : (
+                      <span className="verified-check">✔️</span>
+                    )}
+                  </td>
 
                   <td
                     className="delete-creator-btn"
