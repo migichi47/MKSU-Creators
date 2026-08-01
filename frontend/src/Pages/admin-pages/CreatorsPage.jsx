@@ -7,6 +7,8 @@ import "./creator-page.css";
 
 export function CreatorsPage(props) {
   const [allCreators, setAllCreators] = useState([]);
+  const [filterStatus, setFilterStatus] = useState("all");
+
   const { creators, setCreators } = props;
   const navigate = useNavigate();
 
@@ -24,6 +26,13 @@ export function CreatorsPage(props) {
     setCreators((prev) => prev.filter((creator) => creator._id !== id));
   }
 
+  const filteredCreators =
+    filterStatus === "all"
+      ? allCreators
+      : filterStatus === "approved"
+        ? creators
+        : allCreators.filter((creator) => creator.status === "pending");
+
   return (
     <>
       <AdminSidebar />
@@ -32,7 +41,13 @@ export function CreatorsPage(props) {
         <div className="creator-table-title">
           Creators
           <div className="select-status">
-            <select name="" id="">
+            <select
+              name=""
+              id=""
+              onChange={(e) => {
+                setFilterStatus(e.target.value);
+              }}
+            >
               <option value="all">all</option>
               <option value="pending">pending</option>
               <option value="approved">approved</option>
@@ -58,7 +73,7 @@ export function CreatorsPage(props) {
             </tr>
           </thead>
           <tbody>
-            {allCreators.map((user) => {
+            {filteredCreators.map((user) => {
               const {
                 fullName,
                 username,
