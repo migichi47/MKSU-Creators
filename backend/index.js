@@ -52,27 +52,31 @@ app.get("/creators", async (request, response) => {
   }
 });
 
+// create user request
 app.post("/creators", upload.single("image"), async (request, response) => {
   try {
     const creator = new Creator({
       ...request.body,
-      image: request.file.filename,
+      // image: request.file.filename,
+      status: "pending",
     });
     await creator.save();
 
-    response.status(201).json(creator);
+    response.status(201).json({
+      msg: "Creator submitted for approval",
+      creator,
+    });
   } catch (err) {
     response.status(500).json({ error: err.message });
   }
 });
 
 app.delete("/creators/:id", async (request, response) => {
-  
   try {
     const {
       params: { id },
     } = request;
-    
+
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return response.status(400).send({ msg: "Invalid ID" });
     }
@@ -88,6 +92,14 @@ app.delete("/creators/:id", async (request, response) => {
       creator: deletedCreator,
     });
   } catch (error) {
-    response.status(500).send({ msg: "Error deleting creator", Error: error.message });
+    response
+      .status(500)
+      .send({ msg: "Error deleting creator", Error: error.message });
   }
+});
+
+// admin gets pending users
+app.get("/creators/pending", async (request, response) => {
+  const creators = await Creator.find({ status: "pending" });
+  response.json(creators);
 });
