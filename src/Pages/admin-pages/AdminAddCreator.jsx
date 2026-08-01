@@ -1,7 +1,41 @@
+import { useState } from "react";
+
 import { Header } from "../components/Header";
 import { AdminSidebar } from "../utils/AdminSidebar";
 
 export function AdminAddCreator() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    username: "",
+    admission: "",
+    phoneNumber: "",
+    year: "1",
+    platform: "tiktok",
+    followers: "",
+    category: "dancer",
+    image: null,
+  });
+
+  function handleChange(e) {
+    const { name, value, files } = e.target;
+
+    if (name === "image") {
+      setFormData((prev) => ({
+        ...prev,
+        image: files[0],
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  }
+
+  function submitCreatorDetails() {
+    console.log(formData);
+  }
+
   return (
     <>
       <AdminSidebar />
@@ -17,7 +51,8 @@ export function AdminAddCreator() {
             type="text"
             placeholder="Full Name"
             name="fullName"
-            // onChange={handleChange}
+            onChange={handleChange}
+            value={formData.fullName}
           />
         </div>
 
@@ -28,7 +63,8 @@ export function AdminAddCreator() {
             type="text"
             placeholder="username eg. mutiso123"
             name="username"
-            // onChange={handleChange}
+            onChange={handleChange}
+            value={formData.username}
           />
         </div>
 
@@ -39,7 +75,8 @@ export function AdminAddCreator() {
             type="text"
             placeholder="Adm. eg. J17-0458-2025"
             name="admission"
-            // onChange={handleChange}
+            onChange={handleChange}
+            value={formData.admission}
           />
         </div>
 
@@ -50,18 +87,18 @@ export function AdminAddCreator() {
             type="text"
             placeholder="Phone no."
             name="phoneNumber"
-            // onChange={handleChange}
+            onChange={handleChange}
+            value={formData.phoneNumber}
           />
         </div>
 
         <div className="academic-year-section">
           <p className="join-tile-text">Academic year</p>
           <select
-            title="year"
             className="join-tile-select"
-            // onChange={handleChange}
+            onChange={handleChange}
             name="year"
-            // value={formData.year}
+            value={formData.year}
           >
             <option value="1">Year 1</option>
             <option value="2">Year 2</option>
@@ -75,11 +112,10 @@ export function AdminAddCreator() {
         <div className="platform-section">
           <p className="join-tile-text">Platform</p>
           <select
-            title="platform"
             className="join-tile-select"
-            // onChange={handleChange}
+            onChange={handleChange}
             name="platform"
-            // value={formData.platform}
+            value={formData.platform}
           >
             <option value="tiktok">TikTok</option>
             <option value="instagram">Instagram</option>
@@ -93,13 +129,19 @@ export function AdminAddCreator() {
             type="text"
             placeholder="Followers eg. 6700"
             name="followers"
-            // onChange={handleChange}
+            onChange={handleChange}
+            value={formData.followers}
           />
         </div>
 
-        <div className="followers-section">
+        <div>
           <p className="join-tile-text">category</p>
-          <select name="category" title="category" className="join-tile-select">
+          <select
+            name="category"
+            className="join-tile-select"
+            onChange={handleChange}
+            value={formData.category}
+          >
             <option value="dancer">dancer</option>
             <option value="vlogger">vlogger</option>
             <option value="musician">musician</option>
@@ -108,12 +150,15 @@ export function AdminAddCreator() {
           </select>
         </div>
 
-        <input type="file" accept="image/*" className="upload-image" />
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
+          className="upload-image"
+          onChange={handleChange}
+        />
 
-        <button
-          className="lets-go-btn"
-          // onClick={() => submitCreatorDetails()}
-        >
+        <button className="lets-go-btn" onClick={() => submitCreatorDetails()}>
           Let's Go
         </button>
       </div>
