@@ -36,6 +36,10 @@
   font-size: 12px;
 } 
 
+.creator-table tr button:hover {
+  background-color: bisque;
+} 
+
 .creator-table-title {
   font-size: 30px;
   width: 150px;
