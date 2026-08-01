@@ -7,7 +7,7 @@
   gap: 20px;
   top: 70px;
   z-index: 300;
-  height: 40vh;
+  height: 30vh;
   width: 130px;
   background-color: rgba(0, 0, 0, 0.759);
 }
@@ -28,8 +28,22 @@
   width: 50px;
 }
 
+.admin-sidebar-inactive {
+  max-height: 5vh;
+}
+
 .hambugger-menu {
   position: absolute;
   top: 0;
   padding: 1px 8px;
+}
+
+.sidebar-arrow {
+  margin: 0 auto;
+}
+
+.sidebar-arrow-down {
+  position: absolute;
+  top: 50px;
+  left: 15px;
 }

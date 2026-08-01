@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./admin-sidebar.css";
 
 export function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState(true);
+
   const navigate = useNavigate();
 
-  function toggleMenu() {
-    setIsOpen(!isOpen);
-  }
-
   return (
-    <div className={`admin-sidebar ${!isOpen && "admin-sidebar-closed"}`}>
-      <button className={"hambugger-menu"} onClick={toggleMenu}>
+    <div
+      className={`admin-sidebar ${!isOpen && "admin-sidebar-closed"} ${!active && "admin-sidebar-inactive"}`}
+    >
+      <button className={"hambugger-menu"} onClick={() => setIsOpen(!isOpen)}>
         &#9776;
       </button>
       <div
@@ -19,29 +20,37 @@ export function AdminSidebar() {
           navigate("/admin");
         }}
       >
-        {isOpen ? "Dashboard" : "🏠"}
+        {isOpen ? "Dashboard" : active ? "🏠" : ""}
       </div>
       <div
         onClick={() => {
           navigate("/admin/creators");
         }}
       >
-        {isOpen ? "Creators" : "👥"}
+        {isOpen ? "Creators" : active ? "👥" : ""}
       </div>
       <div
         onClick={() => {
           navigate("/admin/analytics");
         }}
       >
-        {isOpen ? "Analytics" : "📈"}
+        {isOpen ? "Analytics" : active ? "📈" : ""}
       </div>
       <div
         onClick={() => {
           navigate("/admin/add-creator");
         }}
       >
-        {isOpen ? "Add a Creator" : "➕"}
+        {isOpen ? "Add a Creator" : active ? "➕" : ""}
       </div>
+      {!isOpen && (
+        <div
+          className={`sidebar-arrow ${!active && "sidebar-arrow-down"}`}
+          onClick={() => setActive(!active)}
+        >
+          {active ? "⩓" : "⩖"}
+        </div>
+      )}
     </div>
   );
 }
