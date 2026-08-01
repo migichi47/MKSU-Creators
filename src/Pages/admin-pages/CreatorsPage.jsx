@@ -7,13 +7,13 @@ import "./creator-page.css";
 export function CreatorsPage(props) {
   const { creators } = props;
   const navigate = useNavigate();
-
+  
   return (
     <>
       <AdminSidebar />
       <Header />
       <div className="creator-table-container">
-        <p className="creator-table-title">
+        <div className="creator-table-title">
           Creators{" "}
           <div
             className="add-creator"
@@ -21,7 +21,7 @@ export function CreatorsPage(props) {
           >
             ➕
           </div>
-        </p>
+        </div>
         <hr />
         <table className="creator-table">
           <thead>
@@ -35,10 +35,10 @@ export function CreatorsPage(props) {
           </thead>
           <tbody>
             {creators.map((user) => {
-              const { name, username, category, followers, platform } = user;
+              const { fullName, username, category, followers, platform, _id } = user;
               return (
-                <tr key={username}>
-                  <td>{name}</td>
+                <tr key={_id}>
+                  <td>{fullName}</td>
                   <td>{username}</td>
                   <td>{category}</td>
                   <td>{platform}</td>
