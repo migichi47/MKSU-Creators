@@ -14,7 +14,6 @@ export function CreatorCard(props) {
     removeSelectedCreator,
   } = props;
 
-
   const isSelected = (selectedCreators || []).some(
     (creator) => creator.name === name,
   );

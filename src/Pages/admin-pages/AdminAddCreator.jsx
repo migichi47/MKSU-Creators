@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 import { Header } from "../components/Header";
 import { AdminSidebar } from "../utils/AdminSidebar";
@@ -49,10 +50,19 @@ export function AdminAddCreator() {
     const data = await response.json();
     console.log(data);
 
-    // toast("Details uploaded and are under review");
-    // setTimeout(() => {
-    //   navigate("/");
-    // }, 1000);
+    toast("Creator added successfully");
+    setTimeout(() => {
+      setFormData({
+        fullName: "",
+        username: "",
+        admission: "",
+        phoneNumber: "",
+        year: "1",
+        platform: "tiktok",
+        followers: "",
+        category: "dancer",
+      });
+    }, 1000);
   }
 
   return (
