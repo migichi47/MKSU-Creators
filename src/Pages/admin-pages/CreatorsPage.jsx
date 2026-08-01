@@ -58,7 +58,6 @@ export function CreatorsPage(props) {
                     className="delete-creator-btn"
                     onClick={() => {
                       const isConfirmed = confirm(`Delete ${username} ??`);
-                      console.log(confirm);
                       if (isConfirmed) {
                         deleteCreator(username, id);
                       } else return;

@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
 
 const creatorSchema = new mongoose.Schema({
-  image: String,
-  followers: String,
-  category: String,
-  platform: String,
-  username: String,
-  admission: String,
-  fullName: String,
-  year: String,
-  phoneNumber: String,
+  image: { type: String, required: true },
+  followers: { type: String, required: true },
+  category: { type: String, required: true },
+  platform: { type: String, required: true },
+  username: { type: String, required: true, unique: true },
+  admission: { type: String, required: true },
+  fullName: { type: String, required: true },
+  year: { type: String, required: true },
+  phoneNumber: { type: String, required: true },
 });
 
 export const Creator = mongoose.model("Creator", creatorSchema);
