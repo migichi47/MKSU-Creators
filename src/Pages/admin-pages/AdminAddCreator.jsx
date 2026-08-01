@@ -13,8 +13,9 @@ export function AdminAddCreator() {
     platform: "tiktok",
     followers: "",
     category: "dancer",
-    image: null,
   });
+
+  const [upload, setUpload] = useState();
 
   function handleChange(e) {
     const { name, value, files } = e.target;
@@ -32,8 +33,26 @@ export function AdminAddCreator() {
     }
   }
 
-  function submitCreatorDetails() {
-    console.log(formData);
+  async function finishUpload() {
+    const form = new FormData();
+
+    Object.keys(formData).forEach((key) => {
+      form.append(key, formData[key]);
+    });
+
+    form.append("image", upload);
+    const response = await fetch("http://localhost:3000/creators", {
+      method: "POST",
+      body: form,
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    // toast("Details uploaded and are under review");
+    // setTimeout(() => {
+    //   navigate("/");
+    // }, 1000);
   }
 
   return (
@@ -155,11 +174,11 @@ export function AdminAddCreator() {
           name="image"
           accept="image/*"
           className="upload-image"
-          onChange={handleChange}
+          onChange={(e) => setUpload(e.target.files[0])}
         />
 
-        <button className="lets-go-btn" onClick={() => submitCreatorDetails()}>
-          Let's Go
+        <button className="lets-go-btn" onClick={() => finishUpload()}>
+          Finish
         </button>
       </div>
     </>
