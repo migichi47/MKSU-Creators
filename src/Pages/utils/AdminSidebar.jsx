@@ -35,6 +35,13 @@ export function AdminSidebar() {
       >
         {isOpen ? "Analytics" : "📈"}
       </div>
+      <div
+        onClick={() => {
+          navigate("/admin/add-creator");
+        }}
+      >
+        {isOpen ? "Add a Creator" : "➕"}
+      </div>
     </div>
   );
 }

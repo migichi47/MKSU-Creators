@@ -102,3 +102,11 @@ body {
   bottom: 50px;
   padding: 10px;
 }
+
+.join-tile-text {
+  font-size: 15px;
+}
+
+.upload-image {
+  width: 50%;
+}
