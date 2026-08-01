@@ -41,10 +41,10 @@ app.get("/creators", async (request, response) => {
   try {
     const creators = await Creator.find();
 
-    const formattedCreators = creators.map(creator => ({
+    const formattedCreators = creators.map((creator) => ({
       ...creator._doc,
-      image: `http://localhost:3000/uploads/${creator.image}`
-    }))
+      image: `http://localhost:3000/uploads/${creator.image}`,
+    }));
 
     response.status(200).json(formattedCreators);
   } catch (err) {
@@ -63,5 +63,31 @@ app.post("/creators", upload.single("image"), async (request, response) => {
     response.status(201).json(creator);
   } catch (err) {
     response.status(500).json({ error: err.message });
+  }
+});
+
+app.delete("/creators/:id", async (request, response) => {
+  
+  try {
+    const {
+      params: { id },
+    } = request;
+    
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return response.status(400).send({ msg: "Invalid ID" });
+    }
+
+    const deletedCreator = await Creator.findByIdAndDelete(id);
+
+    if (!deletedCreator) {
+      return response.status(404).send({ msg: "Creator not found" });
+    }
+
+    response.send({
+      msg: "Creator deleted successfully",
+      creator: deletedCreator,
+    });
+  } catch (error) {
+    response.status(500).send({ msg: "Error deleting creator", Error: error.message });
   }
 });

@@ -5,9 +5,17 @@ import { AdminSidebar } from "../utils/AdminSidebar";
 import "./creator-page.css";
 
 export function CreatorsPage(props) {
-  const { creators } = props;
+  const { creators, setCreators } = props;
   const navigate = useNavigate();
-  
+
+  async function deleteCreator(username, id) {
+    await fetch(`http://localhost:3000/creators/${id}`, {
+      method: "DELETE",
+    });
+
+    setCreators((prev) => prev.filter((creator) => creator._id !== id));
+  }
+
   return (
     <>
       <AdminSidebar />
@@ -35,14 +43,29 @@ export function CreatorsPage(props) {
           </thead>
           <tbody>
             {creators.map((user) => {
-              const { fullName, username, category, followers, platform, _id } = user;
+              const { fullName, username, category, followers, platform, _id } =
+                user;
+
+              const id = _id;
               return (
-                <tr key={_id}>
+                <tr key={id}>
                   <td>{fullName}</td>
                   <td>{username}</td>
                   <td>{category}</td>
                   <td>{platform}</td>
                   <td>{followers}</td>
+                  <td
+                    className="delete-creator-btn"
+                    onClick={() => {
+                      const isConfirmed = confirm(`Delete ${username} ??`);
+                      console.log(confirm);
+                      if (isConfirmed) {
+                        deleteCreator(username, id);
+                      } else return;
+                    }}
+                  >
+                    ❌
+                  </td>
                 </tr>
               );
             })}
