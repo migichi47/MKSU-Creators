@@ -37,9 +37,25 @@ app.listen(PORT, () => {
   console.log(`Server running on Port ${PORT}`);
 });
 
+// get approved creators
 app.get("/creators", async (request, response) => {
   try {
     const creators = await Creator.find({ status: "approved" });
+    const formattedCreators = creators.map((creator) => ({
+      ...creator._doc,
+      image: `http://localhost:3000/uploads/${creator.image}`,
+    }));
+
+    response.status(200).json(formattedCreators);
+  } catch (err) {
+    response.status(500).json({ error: err.message });
+  }
+});
+
+// get all creeators (approved, pending, rejected)
+app.get("/creators/all", async (request, response) => {
+  try {
+    const creators = await Creator.find();
     const formattedCreators = creators.map((creator) => ({
       ...creator._doc,
       image: `http://localhost:3000/uploads/${creator.image}`,
