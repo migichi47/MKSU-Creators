@@ -1,4 +1,4 @@
-import express from "express";
+import express, { request, response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import multer from "multer";
@@ -98,8 +98,21 @@ app.delete("/creators/:id", async (request, response) => {
   }
 });
 
-// admin gets pending users
+// admin gets pending creators
 app.get("/creators/pending", async (request, response) => {
   const creators = await Creator.find({ status: "pending" });
   response.json(creators);
+});
+
+// admin approves creatos
+app.patch("/creators/:id/approve", async (request, response) => {
+  const { id } = request.params;
+
+  const creator = await Creator.findByIdAndUpdate(
+    id,
+    { status: "approved" },
+    { new: true },
+  );
+
+  response.json({ msg: "Creator approved", creator });
 });
