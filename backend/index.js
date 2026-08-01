@@ -39,8 +39,7 @@ app.listen(PORT, () => {
 
 app.get("/creators", async (request, response) => {
   try {
-    const creators = await Creator.find();
-
+    const creators = await Creator.find({ status: "approved" });
     const formattedCreators = creators.map((creator) => ({
       ...creator._doc,
       image: `http://localhost:3000/uploads/${creator.image}`,
