@@ -35,13 +35,52 @@ export function AdminAddCreator() {
   }
 
   async function finishUpload() {
-    const form = new FormData();
+    // form validation
+    function validateForm() {
+      if (!formData.fullName.trim()) {
+        return "Full name is required";
+      }
+      if (!formData.username.trim()) {
+        return "Username is required";
+      }
 
+      if (!formData.admission.trim()) {
+        return "Admission number is required";
+      }
+
+      if (!formData.phoneNumber.trim()) {
+        return "Phone number is required";
+      }
+
+      if (isNaN(formData.phoneNumber)) {
+        return "phone number must be a number";
+      }
+
+      if (!formData.followers.trim()) {
+        return "followers required";
+      }
+
+      if (isNaN(formData.followers)) {
+        return "Followers must be a number";
+      }
+      if (!upload) {
+        return "upload your photo";
+      }
+    }
+
+    const error = validateForm();
+    if (error) {
+      alert(error);
+      return;
+    }
+
+    const form = new FormData();
     Object.keys(formData).forEach((key) => {
       form.append(key, formData[key]);
     });
 
     form.append("image", upload);
+
     const response = await fetch("http://localhost:3000/creators", {
       method: "POST",
       body: form,
