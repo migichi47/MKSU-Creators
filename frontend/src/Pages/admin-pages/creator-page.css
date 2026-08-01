@@ -12,6 +12,7 @@
   height: 60vh;
   padding: 20px;
   overflow: auto;
+  border-radius: 40px;
 }
 
 ::-webkit-scrollbar {
@@ -26,8 +27,14 @@
 .creator-table tr {
   background-color: rgba(0, 74, 101, 0.277);
   height: 40px;
-  font-size: 14px;
+  font-size: 12px;
 }
+
+.creator-table tr button {
+  background-color: rgba(0, 74, 101, 0.277);
+  padding: 5px 10px;
+  font-size: 12px;
+} 
 
 .creator-table-title {
   font-size: 30px;
@@ -62,4 +69,9 @@
   position: absolute;
   right: 20px;
   top: 15px;
+}
+
+.verified-check {
+  padding-top: 4px;
+  font-size: 20px;
 }

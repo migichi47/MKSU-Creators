@@ -92,7 +92,14 @@ export function CreatorsPage(props) {
                   <td>{category}</td>
                   <td>{platform}</td>
                   <td>{followers}</td>
-                  <td>{status}</td>
+                  {status === "pending" ? (
+                    <td>
+                      <button>verify</button>
+                    </td>
+                  ) : (
+                    <div className="verified-check">✔️</div>
+                  )}
+
                   <td
                     className="delete-creator-btn"
                     onClick={() => {
