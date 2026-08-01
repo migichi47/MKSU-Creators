@@ -37,7 +37,7 @@
 
 .add-creator {
   position: absolute;
-  right: 40px;
+  left: 40px;
   top: 20px;
   font-size: 25px;
 }
@@ -51,4 +51,10 @@
 
 .delete-creator-btn {
   cursor: pointer;
+}
+
+.select-status {
+  position: absolute;
+  right: 20px;
+  top: 15px;
 }

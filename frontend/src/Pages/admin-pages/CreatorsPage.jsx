@@ -30,7 +30,14 @@ export function CreatorsPage(props) {
       <Header />
       <div className="creator-table-container">
         <div className="creator-table-title">
-          Creators{" "}
+          Creators
+          <div className="select-status">
+            <select name="" id="">
+              <option value="all">all</option>
+              <option value="pending">pending</option>
+              <option value="approved">approved</option>
+            </select>
+          </div>
           <div
             className="add-creator"
             onClick={() => navigate("/admin/add-creator")}
@@ -52,8 +59,15 @@ export function CreatorsPage(props) {
           </thead>
           <tbody>
             {allCreators.map((user) => {
-              const { fullName, username, category, followers, platform, _id, status } =
-                user;
+              const {
+                fullName,
+                username,
+                category,
+                followers,
+                platform,
+                _id,
+                status,
+              } = user;
 
               const id = _id;
               return (
