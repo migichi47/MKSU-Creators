@@ -70,7 +70,7 @@ export function AdminPage() {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="voters" fill="#4f46e5" radius={[5, 5, 0, 0]} />
+          <Bar dataKey="voters" fill="#fff1b8b3" radius={[5, 5, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </>
