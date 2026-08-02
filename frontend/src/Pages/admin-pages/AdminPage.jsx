@@ -30,9 +30,9 @@ export function AdminPage() {
           <p>Registered creators</p>
           <p>23</p>
         </div>
-        <div className="dashboard-card most-voted-card">
-          <p>Most voted</p>
-          <p>Mukeli 6 votes</p>
+        <div className="dashboard-card pending-creators-card">
+          <p>Pending Creators</p>
+          <p>6</p>
         </div>
         <div className="dashboard-card total-votes-card">
           <p>Total votes</p>
@@ -40,7 +40,12 @@ export function AdminPage() {
         </div>
       </div>
 
-      <ResponsiveContainer width="70%" height={350} className={"bar-chart-container"}>
+      {/* add a bar chart - summary analytics */}
+      <ResponsiveContainer
+        width="70%"
+        height={350}
+        className={"bar-chart-container"}
+      >
         <div className="leaderboard-text">LeaderBoard</div>
         <BarChart height={300} data={data} className="bar-chart">
           <CartesianGrid strokeDasharray="3 3" />
