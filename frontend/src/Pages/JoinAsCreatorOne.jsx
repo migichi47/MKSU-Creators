@@ -20,6 +20,47 @@ function StepOne(props) {
     });
   }
 
+  function completeStepOne() {
+    // form validation
+    function validateForm() {
+      if (!formData.fullName.trim()) {
+        return "Full name is required";
+      }
+      if (!formData.username.trim()) {
+        return "Username is required";
+      }
+
+      if (!formData.admission.trim()) {
+        return "Admission number is required";
+      }
+
+      if (!formData.phoneNumber.trim()) {
+        return "Phone number is required";
+      }
+
+      if (isNaN(formData.phoneNumber)) {
+        return "phone number must be a number";
+      }
+
+      if (!formData.followers.trim()) {
+        return "followers required";
+      }
+
+      if (isNaN(formData.followers)) {
+        return "Followers must be a number";
+      }
+    }
+
+    const error = validateForm();
+    if (error) {
+      alert(error);
+      return;
+    }
+
+    // after validation
+    setStep(2);
+  }
+
   return (
     <>
       <div className="intro">
@@ -121,7 +162,7 @@ function StepOne(props) {
         <button
           className="lets-go-btn"
           onClick={() => {
-            setStep(2);
+            completeStepOne()
           }}
         >
           Let's Go
@@ -200,7 +241,6 @@ function StepThree(props) {
     });
 
     form.append("image", upload);
-    console.log(form);
     
     const response = await fetch("http://localhost:3000/creators", {
       method: "POST",
