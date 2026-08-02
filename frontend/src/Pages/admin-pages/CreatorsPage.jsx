@@ -61,8 +61,7 @@ export function CreatorsPage() {
           Creators
           <div className="select-status">
             <select
-              name=""
-              id=""
+              className="select-category-dropdown"
               onChange={(e) => {
                 setFilterStatus(e.target.value);
               }}
