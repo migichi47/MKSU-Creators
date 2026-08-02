@@ -67,13 +67,33 @@ app.get("/creators/all", async (request, response) => {
   }
 });
 
-// create user request
+// create a creator request
 app.post("/creators", upload.single("image"), async (request, response) => {
   try {
     const creator = new Creator({
       ...request.body,
       // image: request.file.filename,
       status: "pending",
+    });
+    await creator.save();
+
+    response.status(201).json({
+      msg: "Creator submitted for approval",
+      creator,
+    });
+  } catch (err) {
+    response.status(500).json({ error: err.message });
+  }
+});
+
+
+// admin create a creator
+app.post("/creators/add", upload.single("image"), async (request, response) => {
+  try {
+    const creator = new Creator({
+      ...request.body,
+      // image: request.file.filename,
+      status: "approved",
     });
     await creator.save();
 

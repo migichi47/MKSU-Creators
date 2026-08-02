@@ -81,7 +81,7 @@ export function AdminAddCreator() {
 
     form.append("image", upload);
 
-    const response = await fetch("http://localhost:3000/creators", {
+    const response = await fetch("http://localhost:3000/creators/add", {
       method: "POST",
       body: form,
     });
