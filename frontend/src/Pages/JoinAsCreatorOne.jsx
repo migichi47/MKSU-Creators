@@ -1,43 +1,27 @@
 import { Header } from "./components/Header";
-import { useNavigate } from "react-router-dom";
 import Back from "./components/Back";
 
 import "./JoinAsCreatorCss/1.css";
 import "./JoinAsCreatorCss/media.css";
 import { useState } from "react";
 
-export function JoinAsCreatorOne() {
-  const [formData, setFormData] = useState({
-      fullName: "",
-      username: "",
-      admission: "",
-      phoneNumber: "",
-      year: "1",
-      platform: "tiktok",
-      followers: "",
-      category: "",
-      upload: ""
-    },
-  );
+function StepOne(props) {
+  const { formData, setFormData, setStep } = props;
 
-  const navigate = useNavigate();
-  function submitCreatorDetails() {
-    navigate("/join-as-creator-two");
-    localStorage.setItem("formData", JSON.stringify(formData));
-  }
-
-  const handleChange = (e) => {
+  function handleChange(e) {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
+  }
+
+  function submitCreatorDetails() {
+    localStorage.setItem("formData", JSON.stringify(formData));
+    setStep(2);
+  }
 
   return (
     <>
-      <Back navigate="/" />
-      <Header />
-
       <div className="intro">
         <div>Join as a creator</div>
         <div>Get votes from your followers</div>
@@ -138,6 +122,37 @@ export function JoinAsCreatorOne() {
           Let's Go
         </button>
       </div>
+    </>
+  );
+}
+
+export function JoinAsCreatorOne() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    username: "",
+    admission: "",
+    phoneNumber: "",
+    year: "1",
+    platform: "tiktok",
+    followers: "",
+    category: "",
+    upload: "",
+  });
+  const [step, setStep] = useState(1);
+
+  return (
+    <>
+      <Back navigate="/" />
+      <Header />
+      {step === 1 ? (
+        <StepOne
+          formData={formData}
+          setFormData={setFormData}
+          setStep={setStep}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }
