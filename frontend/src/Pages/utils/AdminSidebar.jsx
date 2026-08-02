@@ -6,7 +6,8 @@ import { FaChartSimple } from "react-icons/fa6";
 import { IoMdPersonAdd } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import "./admin-sidebar.css";
 
 export function AdminSidebar() {
@@ -14,10 +15,13 @@ export function AdminSidebar() {
   const [active, setActive] = useState(true);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div
-      className={`admin-sidebar ${!isOpen && "admin-sidebar-closed"} ${!active && "admin-sidebar-inactive"}`}
+      className={`admin-sidebar ${!isOpen && "admin-sidebar-closed"} 
+        ${!active && "admin-sidebar-inactive"}
+        `}
     >
       <button className="hamburger-menu" onClick={() => setIsOpen(!isOpen)}>
         <GiHamburgerMenu />
@@ -26,6 +30,7 @@ export function AdminSidebar() {
         onClick={() => {
           navigate("/admin");
         }}
+        className={location.pathname === "/admin" && active ? "active-tab" : ""}
       >
         {isOpen ? "Dashboard" : active ? <FaHome /> : ""}
       </div>
@@ -33,6 +38,9 @@ export function AdminSidebar() {
         onClick={() => {
           navigate("/admin/creators");
         }}
+        className={
+          location.pathname === "/admin/creators" && active ? "active-tab" : ""
+        }
       >
         {isOpen ? "Creators" : active ? <FaUsers /> : ""}
       </div>
@@ -40,6 +48,9 @@ export function AdminSidebar() {
         onClick={() => {
           navigate("/admin/analytics");
         }}
+        className={
+          location.pathname === "/admin/analytics" && active ? "active-tab" : ""
+        }
       >
         {isOpen ? "Analytics" : active ? <FaChartSimple /> : ""}
       </div>
@@ -47,7 +58,11 @@ export function AdminSidebar() {
         onClick={() => {
           navigate("/admin/add-creator");
         }}
-        className={!isOpen && "add-creator-sidebar"}
+        className={
+          location.pathname === "/admin/add-creator" && active
+            ? "active-tab"
+            : ""
+        }
       >
         {isOpen ? "Add a Creator" : active ? <IoMdPersonAdd /> : ""}
       </div>
