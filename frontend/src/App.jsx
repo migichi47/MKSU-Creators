@@ -72,7 +72,7 @@ export default function App() {
         <Route path="admin" element={<AdminPage />} />
         <Route
           path="admin/creators"
-          element={<CreatorsPage creators={creators} setCreators={setCreators} />}
+          element={<CreatorsPage />}
         />
         <Route
           path="admin/add-creator"

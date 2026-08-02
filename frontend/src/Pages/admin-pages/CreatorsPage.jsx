@@ -5,11 +5,11 @@ import { AdminSidebar } from "../utils/AdminSidebar";
 
 import "./creator-page.css";
 
-export function CreatorsPage(props) {
+export function CreatorsPage() {
   const [allCreators, setAllCreators] = useState([]);
   const [filterStatus, setFilterStatus] = useState("all");
 
-  const { creators, setCreators } = props;
+  // const { creators, setCreators } = props;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,21 +23,24 @@ export function CreatorsPage(props) {
       method: "DELETE",
     });
 
-    setCreators((prev) => prev.filter((creator) => creator._id !== id));
+    setAllCreators((prev) => prev.filter((creator) => creator._id !== id));
   }
 
   const filteredCreators =
     filterStatus === "all"
       ? allCreators
       : filterStatus === "approved"
-        ? creators
+        ? allCreators.filter((creator) => creator.status === "approved")
         : allCreators.filter((creator) => creator.status === "pending");
 
   async function verifyCreator(id) {
     try {
-      const response = await fetch(`http://localhost:3000/creators/${id}/approve`, {
-        method: "PATCH",
-      });
+      const response = await fetch(
+        `http://localhost:3000/creators/${id}/approve`,
+        {
+          method: "PATCH",
+        },
+      );
 
       const data = await response.json();
 
@@ -119,10 +122,7 @@ export function CreatorsPage(props) {
                   <td
                     className="delete-creator-btn"
                     onClick={() => {
-                      const isConfirmed = confirm(`Delete ${username} ??`);
-                      if (isConfirmed) {
-                        deleteCreator(username, id);
-                      } else return;
+                      deleteCreator(username, id);
                     }}
                   >
                     ❌
