@@ -29,17 +29,20 @@ export function AdminPage() {
       <Header description="Admin Dashboard" />
       <AdminSidebar />
       <div className="dashboard-card-container">
-        <div className="dashboard-card sign-ups-card">
-          <p className="dashboard-card-title">Registered creators</p>
+        <div className="dashboard-card">
+          <p className="dashboard-card-title">Verified creators</p>
           <p className="dashboard-card-value">23</p>
         </div>
-        <div className="dashboard-card pending-creators-card" onClick={() => {
-          navigate("/admin/analytics")
-        }}>
+        <div className="dashboard-card">
           <p className="dashboard-card-title">Pending Creators</p>
           <p className="dashboard-card-value">6</p>
         </div>
-        <div className="dashboard-card total-votes-card">
+        <div
+          className="dashboard-card"
+          onClick={() => {
+            navigate("/admin/analytics");
+          }}
+        >
           <p className="dashboard-card-title">Total votes</p>
           <p className="dashboard-card-value">35</p>
         </div>
