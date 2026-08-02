@@ -52,7 +52,7 @@ export function CreatorsPage(props) {
   return (
     <>
       <AdminSidebar />
-      <Header />
+      <Header description="View Creators" />
       <div className="creator-table-container">
         <div className="creator-table-title">
           Creators

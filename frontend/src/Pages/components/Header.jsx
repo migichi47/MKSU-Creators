@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-export function Header() {
+export function Header(props) {
+  const { description } = props;
   const navigate = useNavigate();
   return (
     <div className="header">
@@ -13,6 +14,7 @@ export function Header() {
           onClick={() => navigate("/")}
         />
         <h1 className="header-title">MKSU CREATORS AWARDS</h1>
+        <h6 className="header-description">{description}</h6>
       </div>
       <hr className="header-hr" />
     </div>

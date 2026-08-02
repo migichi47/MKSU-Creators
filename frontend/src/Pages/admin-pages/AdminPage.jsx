@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import { useNavigate } from "react-router-dom";
 
 import { Header } from "../components/Header";
 import { AdminSidebar } from "../utils/AdminSidebar";
@@ -21,16 +22,20 @@ export function AdminPage() {
     { name: "daisy", voters: 20 },
   ];
 
+  const navigate = useNavigate();
+
   return (
     <>
-      <Header />
+      <Header description="Admin Dashboard" />
       <AdminSidebar />
       <div className="dashboard-card-container">
         <div className="dashboard-card sign-ups-card">
           <p>Registered creators</p>
           <p>23</p>
         </div>
-        <div className="dashboard-card pending-creators-card">
+        <div className="dashboard-card pending-creators-card" onClick={() => {
+          navigate("/admin/analytics")
+        }}>
           <p>Pending Creators</p>
           <p>6</p>
         </div>

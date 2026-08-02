@@ -107,7 +107,7 @@ export function AdminAddCreator() {
   return (
     <>
       <AdminSidebar />
-      <Header />
+      <Header description="Admin Add Creator" />
 
       <div className="join-tile join-tile-admin">
         <h1 className="join-tile-title">Add Creator details</h1>
