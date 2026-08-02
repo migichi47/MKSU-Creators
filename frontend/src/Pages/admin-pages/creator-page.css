@@ -25,13 +25,12 @@
 
 
 .creator-table tr {
-  background-color: rgba(0, 74, 101, 0.277);
+  background-color: rgba(2, 24, 120, 0.711);
   height: 40px;
   font-size: 12px;
 }
 
 .creator-table tr button {
-  background-color: rgba(0, 74, 101, 0.277);
   padding: 5px 10px;
   font-size: 12px;
 } 
@@ -53,16 +52,11 @@
 
 .add-creator {
   position: absolute;
+  border: none;
   left: 40px;
   top: 20px;
   font-size: 25px;
-}
-
-.add-creator:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.312);
-  border-radius: 50%;
-  font-size: 27px;
+  width: 40px;
 }
 
 .delete-creator-btn {

@@ -40,8 +40,9 @@ export function AdminSidebar() {
         onClick={() => {
           navigate("/admin/add-creator");
         }}
+        className="add-creator-sidebar"
       >
-        {isOpen ? "Add a Creator" : active ? "➕" : ""}
+        {isOpen ? "Add a Creator" : active ? "+" : ""}
       </div>
       {!isOpen && (
         <div

@@ -72,12 +72,12 @@ export function CreatorsPage() {
               <option value="pending">pending</option>
             </select>
           </div>
-          <div
+          <button
             className="add-creator"
             onClick={() => navigate("/admin/add-creator")}
           >
-            ➕
-          </div>
+            +
+          </button>
         </div>
         <hr />
         <table className="creator-table">
