@@ -7,10 +7,12 @@
   gap: 20px;
   top: 70px;
   z-index: 300;
-  height: 30vh;
+  height: 32vh;
   width: 130px;
   background-color: rgba(0, 0, 0, 0.759);
+  border-bottom-right-radius: 20px;
 }
+
 
 .admin-sidebar div {
   border-radius: 10px;
@@ -36,6 +38,7 @@
   position: absolute;
   top: 0;
   padding: 1px 8px;
+  border: none;
 }
 
 .sidebar-arrow {

@@ -12,7 +12,7 @@ export function AdminSidebar() {
     <div
       className={`admin-sidebar ${!isOpen && "admin-sidebar-closed"} ${!active && "admin-sidebar-inactive"}`}
     >
-      <button className={"hambugger-menu"} onClick={() => setIsOpen(!isOpen)}>
+      <button className="hambugger-menu" onClick={() => setIsOpen(!isOpen)}>
         &#9776;
       </button>
       <div
@@ -40,7 +40,7 @@ export function AdminSidebar() {
         onClick={() => {
           navigate("/admin/add-creator");
         }}
-        className="add-creator-sidebar"
+        className={!isOpen && "add-creator-sidebar"}
       >
         {isOpen ? "Add a Creator" : active ? "+" : ""}
       </div>
