@@ -30,8 +30,6 @@ export function JoinAsCreatorTwo() {
       form.append(key, formData[key]);
     });
 
-    console.log(formData)
-
     form.append("image", upload);
     const response = await fetch("http://localhost:3000/creators", {
       method: "POST",

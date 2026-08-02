@@ -52,7 +52,7 @@ app.get("/creators", async (request, response) => {
   }
 });
 
-// get all creeators (approved, pending, rejected)
+// get all creators (approved, pending, rejected)
 app.get("/creators/all", async (request, response) => {
   try {
     const creators = await Creator.find();
@@ -72,7 +72,7 @@ app.post("/creators", upload.single("image"), async (request, response) => {
   try {
     const creator = new Creator({
       ...request.body,
-      // image: request.file.filename,
+      image: request.file.filename,
       status: "pending",
     });
     await creator.save();
@@ -92,13 +92,13 @@ app.post("/creators/add", upload.single("image"), async (request, response) => {
   try {
     const creator = new Creator({
       ...request.body,
-      // image: request.file.filename,
+      image: request.file.filename,
       status: "approved",
     });
     await creator.save();
 
     response.status(201).json({
-      msg: "Creator submitted for approval",
+      msg: "Creator submitted and is verified",
       creator,
     });
   } catch (err) {

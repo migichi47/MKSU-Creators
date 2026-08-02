@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const creatorSchema = new mongoose.Schema({
-  // image: { type: String, required: true },
+  image: { type: String, required: true },
   followers: { type: String, required: true },
   category: { type: String, required: true },
   platform: { type: String, required: true },
