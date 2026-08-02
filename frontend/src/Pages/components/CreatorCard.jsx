@@ -92,7 +92,7 @@ export function CreatorCard(props) {
           ) : (
             <button
               className="selected-remove-btn"
-              onClick={() => removeSelectedCreator(name, category)}
+              onClick={() => removeSelectedCreator(id, category)}
             >
               remove
             </button>

@@ -15,7 +15,7 @@ export function YourVotes(props) {
     setSelectedCategories,
   } = props;
 
-  conso
+  console.log(selectedCreators);
 
   // send selected creators after user confirms
   function confirmSelectedVotes() {
@@ -32,9 +32,9 @@ export function YourVotes(props) {
     localStorage.removeItem("selectedCategories");
   }
 
-  function removeSelectedCreator(name, category) {
+  function removeSelectedCreator(id, category) {
     const updatedCreators = selectedCreators.filter((creator) => {
-      return creator.name !== name;
+      return creator.id !== id;
     });
 
     const updatedCategories = selectedCategories.filter(
@@ -64,6 +64,7 @@ export function YourVotes(props) {
                   Best {creator.category}
                 </div>
                 <CreatorCard
+                  id={creator.id}
                   name={creator.name}
                   image={creator.image}
                   followers={creator.followers}
