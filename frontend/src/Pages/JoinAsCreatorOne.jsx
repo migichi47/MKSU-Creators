@@ -239,14 +239,18 @@ function StepThree(props) {
     Object.keys(formData).forEach((key) => {
       form.append(key, formData[key]);
     });
-
     form.append("image", upload);
+
+    // image upload validation
+    if (!upload) {
+      alert( "upload your photo");
+      return
+    }
     
     const response = await fetch("http://localhost:3000/creators", {
       method: "POST",
       body: form,
     });
-
     const data = await response.json();
     console.log(data);
 
