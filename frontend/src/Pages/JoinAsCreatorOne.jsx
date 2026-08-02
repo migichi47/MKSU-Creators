@@ -7,14 +7,13 @@ import "./JoinAsCreatorCss/media.css";
 import { useState } from "react";
 
 export function JoinAsCreatorOne() {
-  const [formData, setFormData] = useState(
-    JSON.parse(localStorage.getItem("formData")) || {
+  const [formData, setFormData] = useState({
       fullName: "",
       username: "",
       admission: "",
       phoneNumber: "",
-      year: "",
-      platform: "",
+      year: "1",
+      platform: "tiktok",
       followers: "",
       category: "",
       upload: ""
