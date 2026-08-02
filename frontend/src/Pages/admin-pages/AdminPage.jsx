@@ -30,18 +30,18 @@ export function AdminPage() {
       <AdminSidebar />
       <div className="dashboard-card-container">
         <div className="dashboard-card sign-ups-card">
-          <p>Registered creators</p>
-          <p>23</p>
+          <p className="dashboard-card-title">Registered creators</p>
+          <p className="dashboard-card-value">23</p>
         </div>
         <div className="dashboard-card pending-creators-card" onClick={() => {
           navigate("/admin/analytics")
         }}>
-          <p>Pending Creators</p>
-          <p>6</p>
+          <p className="dashboard-card-title">Pending Creators</p>
+          <p className="dashboard-card-value">6</p>
         </div>
         <div className="dashboard-card total-votes-card">
-          <p>Total votes</p>
-          <p>35</p>
+          <p className="dashboard-card-title">Total votes</p>
+          <p className="dashboard-card-value">35</p>
         </div>
       </div>
 
