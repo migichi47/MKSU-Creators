@@ -1,17 +1,11 @@
 export function CategoryCard(props) {
-  const { name, image, setClickedCategory, setFormData, formData } = props;
+  const { name, image, setFormData, formData, setStep } = props;
   return (
     <div
       className="category-card js-category-card"
       onClick={() => {
-        setClickedCategory("true");
-        localStorage.setItem("clickedCategory", JSON.stringify("true"));
-
         setFormData({ ...formData, category: name });
-        localStorage.setItem(
-          "formData",
-          JSON.stringify({ ...formData, category: name }),
-        );
+        setStep(3);
       }}
     >
       <img src={image} alt="image" />

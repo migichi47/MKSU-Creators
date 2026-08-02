@@ -121,7 +121,6 @@ function StepOne(props) {
         <button
           className="lets-go-btn"
           onClick={() => {
-            console.log(formData);
             setStep(2);
           }}
         >
@@ -133,7 +132,7 @@ function StepOne(props) {
 }
 
 function StepTwo(props) {
-  const { formData, setFormData } = props;
+  const { formData, setFormData, setStep } = props;
 
   return (
     <>
@@ -152,30 +151,35 @@ function StepTwo(props) {
             image="images/dance.png"
             setFormData={setFormData}
             formData={formData}
+            setStep={setStep}
           />
           <CategoryCard
             name="influencer"
             image="images/influencer.png"
             setFormData={setFormData}
             formData={formData}
+            setStep={setStep}
           />
           <CategoryCard
             name="comedian"
             image="images/masks.png"
             setFormData={setFormData}
             formData={formData}
+            setStep={setStep}
           />
           <CategoryCard
             name="vlogger"
             image="images/camera.png"
             setFormData={setFormData}
             formData={formData}
+            setStep={setStep}
           />
           <CategoryCard
             name="musician"
             image="images/music-note.png"
             setFormData={setFormData}
             formData={formData}
+            setStep={setStep}
           />
         </div>
       </div>
@@ -196,6 +200,8 @@ function StepThree(props) {
     });
 
     form.append("image", upload);
+    console.log(form);
+    
     const response = await fetch("http://localhost:3000/creators", {
       method: "POST",
       body: form,
@@ -244,7 +250,6 @@ export function JoinAsCreatorOne() {
     platform: "tiktok",
     followers: "",
     category: "",
-    upload: "",
   });
   const [step, setStep] = useState(1);
 
@@ -259,7 +264,11 @@ export function JoinAsCreatorOne() {
           setStep={setStep}
         />
       ) : step === 2 ? (
-        <StepTwo formData={formData} setFormData={setFormData} />
+        <StepTwo
+          formData={formData}
+          setFormData={setFormData}
+          setStep={setStep}
+        />
       ) : step === 3 ? (
         <StepThree formData={formData} />
       ) : (
