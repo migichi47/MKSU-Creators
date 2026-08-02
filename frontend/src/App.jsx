@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { HomePage } from "./Pages/HomePage";
 import { VotingPage } from "./Pages/VotingPage";
 import { JoinAsCreatorOne } from "./Pages/JoinAsCreatorOne";
-import { JoinAsCreatorTwo } from "./Pages/JoinAsCreatorTwo";
 import { YourVotes } from "./Pages/YourVotes";
 import { AdminPage } from "./Pages/admin-pages/AdminPage";
 import { CreatorsPage } from "./Pages/admin-pages/CreatorsPage";
@@ -57,7 +56,6 @@ export default function App() {
           }
         />
         <Route path="join-as-creator-one" element={<JoinAsCreatorOne />} />
-        <Route path="join-as-creator-two" element={<JoinAsCreatorTwo />} />
         <Route
           path="your-votes"
           element={
