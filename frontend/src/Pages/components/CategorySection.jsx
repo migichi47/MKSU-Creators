@@ -30,6 +30,7 @@ export function CategorySection(props) {
           if (creator.username && category.includes(creator.category)) {
             return (
               <CreatorCard
+                id={creator._id}
                 image={creator.image}
                 name={creator.username}
                 followers={Number(creator.followers / 1000)}

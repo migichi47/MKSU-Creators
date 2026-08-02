@@ -3,6 +3,7 @@ import "./CreatorCard.css";
 export function CreatorCard(props) {
   const {
     name,
+    id,
     followers,
     image,
     selectedCreators,
@@ -15,28 +16,27 @@ export function CreatorCard(props) {
   } = props;
 
   const isSelected = (selectedCreators || []).some(
-    (creator) => creator.name === name,
+    (creator) => creator.id === id,
   );
 
+  console.log(selectedCreators);
   function selectCreator() {
-    if ((selectedCategories || []).includes(category)) {
-      alert("Already voted in this category");
-      return;
-    }
-
     // update useState
+    const currentCreators = selectedCreators || [];
+    const currentCategories = selectedCategories || [];
+
     setSelectedCreators([
-      ...selectedCreators,
-      { image, name, followers, category },
+      ...currentCreators,
+      { image, name, followers, category, id },
     ]);
-    setSelectedCategories([...selectedCategories, category]);
+    setSelectedCategories([...currentCategories, category]);
 
     // update local storage on categories
     localStorage.setItem(
       "selectedCreators",
       JSON.stringify([
         ...selectedCreators,
-        { image, name, followers, category },
+        { image, name, followers, category, id },
       ]),
     );
     localStorage.setItem(
@@ -47,7 +47,7 @@ export function CreatorCard(props) {
 
   function removeCreator() {
     const updatedCreators = selectedCreators.filter(
-      (creator) => creator.name !== name,
+      (creator) => creator.id !== id,
     );
     const updatedCategories = selectedCategories.filter(
       (cat) => cat !== category,

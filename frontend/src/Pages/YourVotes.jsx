@@ -15,6 +15,8 @@ export function YourVotes(props) {
     setSelectedCategories,
   } = props;
 
+  conso
+
   // send selected creators after user confirms
   function confirmSelectedVotes() {
     setSelectedCreators([]);
