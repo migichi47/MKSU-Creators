@@ -20,11 +20,6 @@ function StepOne(props) {
     });
   }
 
-  function submitCreatorDetails() {
-    localStorage.setItem("formData", JSON.stringify(formData));
-    setStep(2);
-  }
-
   return (
     <>
       <div className="intro">
@@ -38,7 +33,7 @@ function StepOne(props) {
         <div className="name-section">
           {"\u2022"}
           <input
-            className="join-tile-input js-name"
+            className="join-tile-input"
             type="text"
             placeholder="Full Name"
             name="fullName"
@@ -49,7 +44,7 @@ function StepOne(props) {
         <div className="handle-section">
           {"\u2022"}
           <input
-            className="join-tile-input js-handle"
+            className="join-tile-input"
             type="text"
             placeholder="username eg. mutiso123"
             name="username"
@@ -60,7 +55,7 @@ function StepOne(props) {
         <div className="admission-section">
           {"\u2022"}
           <input
-            className="join-tile-input js-admission"
+            className="join-tile-input"
             type="text"
             placeholder="Adm. eg. J17-0458-2025"
             name="admission"
@@ -71,7 +66,7 @@ function StepOne(props) {
         <div className="contact-section">
           {"\u2022"}
           <input
-            className="join-tile-input js-contact"
+            className="join-tile-input"
             type="text"
             placeholder="Phone no."
             name="phoneNumber"
@@ -83,7 +78,7 @@ function StepOne(props) {
           <p className="join-tile-text">{"\u2022"} Academic year</p>
           <select
             title="year"
-            className="join-tile-select js-year"
+            className="join-tile-select"
             onChange={handleChange}
             name="year"
             value={formData.year}
@@ -102,7 +97,7 @@ function StepOne(props) {
           <p className="join-tile-text">Platform</p>
           <select
             title="year"
-            className="join-tile-select js-platform"
+            className="join-tile-select"
             onChange={handleChange}
             name="platform"
             value={formData.platform}
@@ -115,7 +110,7 @@ function StepOne(props) {
         <div className="followers-section">
           {"\u2022"}
           <input
-            className="join-tile-input js-followers"
+            className="join-tile-input"
             type="text"
             placeholder="Followers eg. 6700"
             name="followers"
@@ -123,7 +118,13 @@ function StepOne(props) {
           />
         </div>
 
-        <button className="lets-go-btn" onClick={() => submitCreatorDetails()}>
+        <button
+          className="lets-go-btn"
+          onClick={() => {
+            console.log(formData);
+            setStep(2);
+          }}
+        >
           Let's Go
         </button>
       </div>
@@ -131,15 +132,60 @@ function StepOne(props) {
   );
 }
 
-function StepTwo() {
-  const [upload, setUpload] = useState();
-  const [formData, setFormData] = useState(
-    JSON.parse(localStorage.getItem("formData")) || {},
-  );
-  const [clickedCategory, setClickedCategory] = useState(
-    JSON.parse(localStorage.getItem("clickedCategory")) || "false",
-  );
+function StepTwo(props) {
+  const { formData, setFormData } = props;
 
+  return (
+    <>
+      <div className="js-container">
+        <div className="join-as-creator-description">
+          <h1 className="choose-your-category-title">Click your Category</h1>
+          <p className="choose-your-category-text">
+            Pick your content category. Make sure you choose carefully, to avoid
+            any future inconveniences
+          </p>
+        </div>
+
+        <div className="category-card-container">
+          <CategoryCard
+            name="dancer"
+            image="images/dance.png"
+            setFormData={setFormData}
+            formData={formData}
+          />
+          <CategoryCard
+            name="influencer"
+            image="images/influencer.png"
+            setFormData={setFormData}
+            formData={formData}
+          />
+          <CategoryCard
+            name="comedian"
+            image="images/masks.png"
+            setFormData={setFormData}
+            formData={formData}
+          />
+          <CategoryCard
+            name="vlogger"
+            image="images/camera.png"
+            setFormData={setFormData}
+            formData={formData}
+          />
+          <CategoryCard
+            name="musician"
+            image="images/music-note.png"
+            setFormData={setFormData}
+            formData={formData}
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
+function StepThree(props) {
+  const { formData } = props;
+  const [upload, setUpload] = useState();
   const navigate = useNavigate();
 
   async function finishUpload() {
@@ -165,81 +211,26 @@ function StepTwo() {
   }
 
   return (
-    <>
-      <div className="js-container">
-        <div className="join-as-creator-description">
-          <h1 className="choose-your-category-title">Click your Category</h1>
-          <p className="choose-your-category-text">
-            Pick your content category. Make sure you choose carefully, to avoid
-            any future inconveniences
-          </p>
+    <div className="upload-section-container">
+      <div className="join-tile upload-section">
+        <div className="upload-section-title">
+          Upload a passport of yourself
         </div>
-
-        {clickedCategory === "false" ? (
-          <div className="category-card-container">
-            <CategoryCard
-              name="dancer"
-              image="images/dance.png"
-              setClickedCategory={setClickedCategory}
-              setFormData={setFormData}
-              formData={formData}
-            />
-            <CategoryCard
-              name="influencer"
-              image="images/influencer.png"
-              setClickedCategory={setClickedCategory}
-              setFormData={setFormData}
-              formData={formData}
-            />
-            <CategoryCard
-              name="comedian"
-              image="images/masks.png"
-              setClickedCategory={setClickedCategory}
-              setFormData={setFormData}
-              formData={formData}
-            />
-            <CategoryCard
-              name="vlogger"
-              image="images/camera.png"
-              setClickedCategory={setClickedCategory}
-              setFormData={setFormData}
-              formData={formData}
-            />
-            <CategoryCard
-              name="musician"
-              image="images/music-note.png"
-              setClickedCategory={setClickedCategory}
-              setFormData={setFormData}
-              formData={formData}
-            />
-          </div>
-        ) : (
-          <div className="upload-section-container">
-            <div className="join-tile upload-section">
-              <div className="upload-section-title">
-                Upload a passport of yourself
-              </div>
-              <div className="passport-section">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => {
-                    setUpload(e.target.files[0]);
-                  }}
-                />
-              </div>
-              <button
-                className="submit-button-join2"
-                onClick={() => finishUpload()}
-              >
-                Finish
-              </button>
-            </div>
-            <DevTools />
-          </div>
-        )}
+        <div className="passport-section">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              setUpload(e.target.files[0]);
+            }}
+          />
+        </div>
+        <button className="submit-button-join2" onClick={() => finishUpload()}>
+          Finish
+        </button>
       </div>
-    </>
+      <DevTools />
+    </div>
   );
 }
 
@@ -268,7 +259,9 @@ export function JoinAsCreatorOne() {
           setStep={setStep}
         />
       ) : step === 2 ? (
-        <StepTwo />
+        <StepTwo formData={formData} setFormData={setFormData} />
+      ) : step === 3 ? (
+        <StepThree formData={formData} />
       ) : (
         ""
       )}
