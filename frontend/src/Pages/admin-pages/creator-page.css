@@ -7,7 +7,7 @@
   text-align: center;
   width: 90%;
   left: 5%;
-  position: absolute;
+  position: relative;
   top: 200px;
   height: 60vh;
   padding: 20px;
@@ -21,6 +21,7 @@
 
 .creator-table {
   width: 100%;
+  padding-top: 30px;
 }
 
 
@@ -40,9 +41,17 @@
 } 
 
 .creator-table-title {
+  background-color: rgba(0, 0, 0, 0.759);
+  position: fixed;
+  top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
-  width: 150px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 150px 20% 1fr;
+  width: inherit;
+  padding-left: 10%;
 }
 
 .creator-table-container hr {
@@ -51,22 +60,13 @@
 }
 
 .add-creator {
-  position: absolute;
   border: none;
-  left: 40px;
-  top: 20px;
   font-size: 25px;
-  width: 40px;
+  min-width: 40px;
 }
 
 .delete-creator-btn {
   cursor: pointer;
-}
-
-.select-status {
-  position: absolute;
-  right: 20px;
-  top: 15px;
 }
 
 .verified-check {
@@ -80,6 +80,7 @@
   border-radius: 30px;
   padding-left: 5px;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
 .select-category-dropdown option {
