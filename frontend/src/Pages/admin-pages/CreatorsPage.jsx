@@ -1,3 +1,5 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
@@ -13,13 +15,13 @@ export function CreatorsPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/creators/all")
+    fetch(`${API_BASE_URL}/creators`)
       .then((response) => response.json())
       .then((data) => setAllCreators(data));
   }, []);
 
   async function deleteCreator(username, id) {
-    await fetch(`http://localhost:3000/creators/${id}`, {
+    await fetch(`${API_BASE_URL}/creators/${id}`, {
       method: "DELETE",
     });
 
@@ -36,7 +38,7 @@ export function CreatorsPage() {
   async function verifyCreator(id) {
     try {
       const response = await fetch(
-        `http://localhost:3000/creators/${id}/approve`,
+        `${API_BASE_URL}/creators/${id}/approve`,
         {
           method: "PATCH",
         },

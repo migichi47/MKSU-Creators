@@ -1,3 +1,5 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -247,7 +249,7 @@ function StepThree(props) {
       return
     }
     
-    const response = await fetch("http://localhost:3000/creators", {
+    const response = await fetch(`${API_BASE_URL}/creators`, {
       method: "POST",
       body: form,
     });

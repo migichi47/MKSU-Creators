@@ -1,3 +1,5 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
@@ -26,7 +28,7 @@ export default function App() {
   const [creators, setCreators] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/creators")
+    fetch(`${API_BASE_URL}/creators`)
       .then((response) => response.json())
       .then((data) => setCreators(data));
   }, []);

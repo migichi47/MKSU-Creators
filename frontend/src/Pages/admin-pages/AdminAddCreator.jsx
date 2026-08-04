@@ -1,3 +1,5 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -81,7 +83,7 @@ export function AdminAddCreator() {
 
     form.append("image", upload);
 
-    const response = await fetch("http://localhost:3000/creators/add", {
+    const response = await fetch(`${API_BASE_URL}/creators/add`, {
       method: "POST",
       body: form,
     });
