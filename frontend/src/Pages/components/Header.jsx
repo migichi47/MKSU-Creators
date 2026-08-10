@@ -41,7 +41,7 @@ export function Header() {
           </div>
 
           <div>
-            <FaRegMoon className="hover:text-secondary w-7 h-7" />
+            <FaRegMoon className="hover:text-secondary w-7 h-7 md:w-5 md:h-5" />
           </div>
         </div>
       </div>
@@ -49,19 +49,39 @@ export function Header() {
         /* separate menu */
         showMenu && (
           <div className="fixed bg-neutral/50 text-xl gap-2 right-10 top-24  backdrop-blur-xs z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl">
-            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+            <a
+              href="#"
+              className="hover:text-secondary"
+              onClick={() => setShowMenu(false)}
+            >
               Dancers
             </a>
-            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+            <a
+              href="#"
+              className="hover:text-secondary"
+              onClick={() => setShowMenu(false)}
+            >
               Vloggers
             </a>
-            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+            <a
+              href="#"
+              className="hover:text-secondary"
+              onClick={() => setShowMenu(false)}
+            >
               Influencers
             </a>
-            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+            <a
+              href="#"
+              className="hover:text-secondary"
+              onClick={() => setShowMenu(false)}
+            >
               Comedians
             </a>
-            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+            <a
+              href="#"
+              className="hover:text-secondary"
+              onClick={() => setShowMenu(false)}
+            >
               Musicians
             </a>
           </div>
