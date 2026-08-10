@@ -6,7 +6,7 @@ export function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="text-tertiary">
+    <div className="">
       <Header />
 
       {/* hero section */}

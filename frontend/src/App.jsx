@@ -12,7 +12,7 @@ import { AdminAddCreator } from "./Pages/admin-pages/AdminAddCreator";
 export default function App() {
 
   return (
-    <>
+    <div className="text-tertiary dark:text-neutral dark:bg-tertiary transition-colors">
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -21,6 +21,6 @@ export default function App() {
         <Route path="admin/add-creator" element={<AdminAddCreator />} />
       </Routes>
       <ToastContainer />
-    </>
+    </div>
   );
 }

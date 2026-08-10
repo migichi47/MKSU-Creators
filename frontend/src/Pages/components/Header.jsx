@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { FaRegMoon } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { CiLight } from "react-icons/ci";
 
 export function Header() {
   const [showMenu, setShowMenu] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  function toggleDarkMode() {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark");
+  }
 
   return (
     <>
@@ -40,8 +47,18 @@ export function Header() {
             />
           </div>
 
-          <div>
-            <FaRegMoon className="hover:text-secondary w-7 h-7 md:w-5 md:h-5" />
+          <div className="w-fit">
+            {darkMode ? (
+              <FaRegMoon
+                className="hover:text-secondary w-7 h-7 md:w-5 md:h-5"
+                onClick={toggleDarkMode}
+              />
+            ) : (
+              <CiLight
+                className="hover:text-secondary w-7 h-7 md:w-5 md:h-5"
+                onClick={toggleDarkMode}
+              />
+            )}
           </div>
         </div>
       </div>
