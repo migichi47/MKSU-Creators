@@ -12,18 +12,20 @@ export function CreatorCard({ creator }) {
         className="rounded-[inherit] min-w-[inherit] h-[inherit]"
       />
       {/* overlay */}
-      <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-black/50" />
+      <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/80" />
 
       <div className="absolute flex flex-col gap-4 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
         <div className="flex flex-col">
           <span className="font-semibold text-4xl">{name}</span>
-          <div className="flex gap-3 text-sm">
+          <div className="flex gap-3 text-xs">
             <span>{followers}</span>
             <span>&#8226;</span>
             <span>Year {year}</span>
           </div>
         </div>
-        <button className="border border-primary rounded-sm h-10 hover:bg-primary transition-colors backdrop-blur-sm ">Vote Now</button>
+        <button className="border border-primary rounded-sm h-10 hover:bg-primary transition-colors">
+          Vote Now
+        </button>
       </div>
     </div>
   );
