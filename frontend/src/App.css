@@ -2,22 +2,3 @@
 html{
   scroll-behavior: smooth;
 }
-
-button {
-  color: white;
-  flex: 1;
-  max-width: 350px;
-  max-height: 200px;
-  font-size: 15px;
-  font-weight: 600;
-  background: none;
-  border: #FFF1B8 solid 1px;
-  border-radius: 8px;
-}
-
-button:hover {
-  background-color: #FFF1B8;
-  color: black;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
