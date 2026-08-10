@@ -33,15 +33,15 @@ export function Header() {
           </div>
 
           <div>
+            {/* hamburger menu */}
             <GiHamburgerMenu
-              className="md:hidden hover:text-secondary"
+              className="md:hidden hover:text-secondary w-7 h-7"
               onClick={() => setShowMenu((prev) => !prev)}
             />
           </div>
 
-          {/* hamburger menu */}
           <div>
-            <FaRegMoon className="hover:text-secondary w-5 h-5" />
+            <FaRegMoon className="hover:text-secondary w-7 h-7" />
           </div>
         </div>
       </div>

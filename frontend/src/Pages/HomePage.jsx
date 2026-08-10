@@ -9,11 +9,11 @@ export function HomePage() {
       <Header />
       <div className="flex flex-col relative top-22 min-h-screen text-2xl text-center justify-center gap-20">
         <div className="flex flex-col gap-5">
-          <p className="text-3xl font-bold">
+          <p className="md:text-5xl xs:text-3xl text-2xl font-bold sm:max-w-100 md:max-w-200 max-w-70 mx-auto">
             Machakos University creators awards are here!
           </p>
-          <p className="text-7xl font-extrabold text-primary">Cast Your Vote</p>
-          <p className="text-lg leading-5 max-w-100 mx-auto">
+          <p className=" font-extrabold text-primary text-6xl md:text-8xl">Cast Your Vote</p>
+          <p className="text-sm sm:text-lg leading-5 max-w-100 mx-auto">
             Celebrate the pinnacle of digital excellence. Honor the creators who
             redefine storytelling, performance, and community in the modern era.
             Your voice decides the elite.
@@ -22,7 +22,7 @@ export function HomePage() {
 
         <div>
           <button
-            className="border border-primary/50 text-tertiary px-6 py-2 rounded-full hover:bg-primary/50 transition-colors"
+            className="border border-primary/50 text-tertiary px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full hover:bg-primary/50 transition-colors"
             onClick={() => navigate("voting")}
           >
             Vote Now
