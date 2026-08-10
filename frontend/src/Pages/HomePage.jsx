@@ -7,14 +7,19 @@ export function HomePage() {
   return (
     <div className="text-tertiary">
       <Header />
-      <div className="relative top-22 min-h-screen border text-2xl">
-        <p className="">Machakos University creators awards are here!</p>
-        <p className="">Cast Your Vote</p>
-        <div className="">
-          <button className="" onClick={() => navigate("voting")}>
-            Vote Now
-          </button>
-        </div>
+      <div className="flex flex-col relative top-22 min-h-screen border text-2xl text-center justify-center">
+        <p className="text-3xl font-bold">
+          Machakos University creators awards are here!
+        </p>
+        <p className="text-7xl font-extrabold text-primary">Cast Your Vote</p>
+        <button className="" onClick={() => navigate("voting")}>
+          Vote Now
+        </button>
+        <p>
+          Celebrate the pinnacle of digital excellence. Honor the creators who
+          redefine storytelling, performance, and community in the modern era.
+          Your voice decides the elite.
+        </p>
         <div className="">
           <span className="">Are you a Creator ?</span>
           <button
