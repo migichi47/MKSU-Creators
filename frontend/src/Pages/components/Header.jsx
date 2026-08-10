@@ -1,5 +1,5 @@
-
 import { FaRegMoon } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export function Header() {
   return (
@@ -10,7 +10,7 @@ export function Header() {
       </div>
 
       <div className="flex space-x-8 items-center">
-        <div className="flex space-x-3 text-tertiary eac">
+        <div className="hidden space-x-3 md:flex">
           <a href="" className="hover:text-secondary">
             Dancers
           </a>
@@ -29,7 +29,11 @@ export function Header() {
         </div>
 
         <div>
-          <FaRegMoon />
+          <GiHamburgerMenu className="md:hidden" />
+        </div>
+
+        <div>
+          <FaRegMoon className="hover:text-secondary w-5 h-5" />
         </div>
       </div>
     </div>
