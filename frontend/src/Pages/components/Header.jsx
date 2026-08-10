@@ -1,41 +1,72 @@
+import { useState } from "react";
 import { FaRegMoon } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 export function Header() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs border-b border-neutral/20 px-6">
-      <div className="text-2xl cursor-pointer">
-        <span className="text-tertiary">MKSU</span>
-        <span className="text-primary">grammys</span>
+    <>
+      <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg px-6">
+        <div className="text-2xl cursor-pointer">
+          <span className="text-tertiary">MKSU</span>
+          <span className="text-primary">grammys</span>
+        </div>
+
+        <div className="flex space-x-8 items-center">
+          <div className="hidden space-x-3 md:flex">
+            <a href="#" className="hover:text-secondary">
+              Dancers
+            </a>
+            <a href="#" className="hover:text-secondary">
+              Vloggers
+            </a>
+            <a href="#" className="hover:text-secondary">
+              Influencers
+            </a>
+            <a href="#" className="hover:text-secondary">
+              Comedians
+            </a>
+            <a href="#" className="hover:text-secondary">
+              Musicians
+            </a>
+          </div>
+
+          <div>
+            <GiHamburgerMenu
+              className="md:hidden hover:text-secondary"
+              onClick={() => setShowMenu((prev) => !prev)}
+            />
+          </div>
+
+          {/* hamburger menu */}
+          <div>
+            <FaRegMoon className="hover:text-secondary w-5 h-5" />
+          </div>
+        </div>
       </div>
-
-      <div className="flex space-x-8 items-center">
-        <div className="hidden space-x-3 md:flex">
-          <a href="" className="hover:text-secondary">
-            Dancers
-          </a>
-          <a href="" className="hover:text-secondary">
-            Vloggers
-          </a>
-          <a href="" className="hover:text-secondary">
-            Influencers
-          </a>
-          <a href="" className="hover:text-secondary">
-            Comedians
-          </a>
-          <a href="" className="hover:text-secondary">
-            Musicians
-          </a>
-        </div>
-
-        <div>
-          <GiHamburgerMenu className="md:hidden" />
-        </div>
-
-        <div>
-          <FaRegMoon className="hover:text-secondary w-5 h-5" />
-        </div>
-      </div>
-    </div>
+      {
+        /* separate menu */
+        showMenu && (
+          <div className="fixed right-10 top-24  backdrop-blur-xs z-10 flex flex-col border border-tertiary/20 shadow-lg px-6 py-3 rounded-2xl">
+            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+              Dancers
+            </a>
+            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+              Vloggers
+            </a>
+            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+              Influencers
+            </a>
+            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+              Comedians
+            </a>
+            <a href="#" className="hover:text-secondary" onClick={() => setShowMenu(false)}>
+              Musicians
+            </a>
+          </div>
+        )
+      }
+    </>
   );
 }

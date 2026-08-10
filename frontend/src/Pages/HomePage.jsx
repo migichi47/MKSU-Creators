@@ -14,11 +14,7 @@ export function HomePage() {
     <>
       <Header />
       <div className="main">
-        <img
-          className="cover-photo"
-          src="images/Machakos_University.jpg"
-          alt=""
-        />
+        
         <div className="overlay"></div>
 
         <div id="top" className="hero">
