@@ -65,7 +65,7 @@ export function Header() {
       {
         /* separate menu */
         showMenu && (
-          <div className="fixed bg-neutral/50 text-xl gap-2 right-10 top-24  backdrop-blur-xs z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl">
+          <div className="fixed bg-neutral/50 dark:bg-tertiary/0 dark:border dark:border-neutral/20 dark:backdrop-blur-xs/0 text-xl gap-2 right-10 top-24  backdrop-blur-xs z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl">
             <a
               href="#"
               className="hover:text-secondary"
