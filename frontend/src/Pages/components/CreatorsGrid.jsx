@@ -17,7 +17,7 @@ export function CreatorsGrid() {
           </h1>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-4 flex overflow-scroll gap-6">
           {categoryCreators.map((creator) => {
             return <CreatorCard key={creator.name} creator={creator} />;
           })}
