@@ -23,7 +23,7 @@ export function CreatorCard({ creator }) {
             <span>Year {year}</span>
           </div>
         </div>
-        <button className="border border-primary rounded-sm h-10 hover:bg-primary transition-colors">
+        <button className=" rounded-sm h-10">
           Vote Now
         </button>
       </div>

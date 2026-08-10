@@ -25,7 +25,7 @@ export function HomePage() {
 
         <div>
           <button
-            className="border border-primary/50 text-tertiary px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full hover:bg-primary/50 transition-colors"
+            className="bg-amber-50/0 dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors"
             onClick={() => navigate("voting")}
           >
             Vote Now
