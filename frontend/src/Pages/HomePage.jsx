@@ -1,3 +1,4 @@
+import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +8,8 @@ export function HomePage() {
   return (
     <div className="text-tertiary">
       <Header />
+
+      {/* hero section */}
       <div className="flex flex-col relative top-22 min-h-screen text-2xl text-center justify-center gap-20">
         <div className="flex flex-col gap-5">
           <p className="md:text-5xl xs:text-3xl text-2xl font-bold sm:max-w-100 md:max-w-200 max-w-70 mx-auto">
@@ -41,10 +44,12 @@ export function HomePage() {
         </div>
       </div>
 
+      {/* creators grid */}
+      <CreatorsGrid />
+
       {/* footer-section */}
       <div className="border-t border-tertiary/20 text-center pt-4 pb-8 flex flex-col gap-2">
-        <h1 className="text-2xl font-bold text-primary">MKSU grammys</h1>
-        <div className="text-secondary flex gap-2 mx-auto ">
+        <div className="text-secondary/60 flex gap-2 mx-auto ">
           <a href="#" className="">
             Privacy Policy
           </a>
