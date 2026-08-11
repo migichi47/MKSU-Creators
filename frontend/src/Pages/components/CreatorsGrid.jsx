@@ -1,10 +1,9 @@
-
-import { FaAngleDoubleRight  } from "react-icons/fa";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 import { CreatorCard } from "./CreatorCard";
 import { creators } from "../../../data/creators";
 
-export function CreatorsGrid() {
+export function CreatorsGrid({ selectedCreators, setSelectedCreators }) {
   const categories = [...new Set(creators.map((creator) => creator.category))];
 
   return (
@@ -26,13 +25,20 @@ export function CreatorsGrid() {
               </h1>
 
               <span className="w-fit pr-10 absolute bottom-0 right-0 flex items-baseline gap-1 dark:text-neutral/70 text-tertiary/70">
-                scroll <FaAngleDoubleRight className="text-xs"/>
+                scroll <FaAngleDoubleRight className="text-xs" />
               </span>
             </div>
 
             <div className="mt-4 flex overflow-scroll gap-6 pl-1">
               {categoryCreators.map((creator) => {
-                return <CreatorCard key={creator.name} creator={creator} />;
+                return (
+                  <CreatorCard
+                    key={creator.name}
+                    creator={creator}
+                    setSelectedCreators={setSelectedCreators}
+                    selectedCreators={selectedCreators}
+                  />
+                );
               })}
             </div>
           </section>

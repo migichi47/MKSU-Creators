@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -5,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export function HomePage() {
   const navigate = useNavigate();
+  const [selectedCreators, setSelectedCreators] = useState([]);
 
   return (
     <div className="">
@@ -52,7 +54,7 @@ export function HomePage() {
         </div>
       </div>
 
-      <CreatorsGrid />
+      <CreatorsGrid setSelectedCreators={setSelectedCreators} selectedCreators={selectedCreators} />
       <Footer />
 
       {/* confirm votes section */}
@@ -60,7 +62,9 @@ export function HomePage() {
         <span>
           Your pick: <span className="text-2xl font-bold ">2</span>
         </span>
-        <button className="bg-amber-50/0 hover:bg-primary hover:text-neutral">Confirm</button>
+        <button className="bg-amber-50/0 hover:bg-primary hover:text-neutral">
+          Confirm
+        </button>
       </div>
     </div>
   );
