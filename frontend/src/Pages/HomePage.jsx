@@ -52,10 +52,7 @@ export function HomePage() {
         </div>
       </div>
 
-      {/* creators grid */}
       <CreatorsGrid />
-
-      {/* footer-section */}
       <Footer />
 
       {/* confirm votes section */}
