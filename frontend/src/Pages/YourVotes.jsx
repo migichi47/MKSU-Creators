@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { IoArrowBack } from "react-icons/io5";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -12,6 +13,10 @@ export function YourVotes({ selectedCreators, setSelectedCreators }) {
       <Header />
 
       <div className="mt-30 max-w-200 mx-auto flex flex-col gap-4 border border-tertiary/20 dark:border-neutral/20 pt-2 pb-6 rounded-2xl">
+        <div className="absolute left-3 flex gap-1 transition-transform hover:-translate-x-2 items-center hover:text-secondary cursor-pointer">
+          <IoArrowBack className="inline" />
+          <span>back</span>
+        </div>
         <p className="font-bold mx-auto border-b leading-8 border-inherit">
           Confirm the creators you picked
         </p>
