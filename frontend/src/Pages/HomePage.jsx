@@ -53,9 +53,7 @@ export function HomePage() {
       </div>
 
       {/* creators grid */}
-      <div>
-        <CreatorsGrid />
-      </div>
+      <CreatorsGrid />
 
       {/* footer-section */}
       <Footer />
