@@ -57,7 +57,7 @@ export function HomePage() {
       </div>
 
       {/* footer-section */}
-      <div className="border-t border-tertiary/20 text-center pt-4 pb-8 flex flex-col gap-2">
+      <div className="border-t border-tertiary/20 text-center pt-6 pb-8 flex flex-col gap-2 mt-30">
         <div className="text-secondary/60 flex gap-2 mx-auto ">
           <a href="#" className="">
             Privacy Policy
@@ -72,6 +72,14 @@ export function HomePage() {
         <span className="text-primary/90">
           &copy;2026 MKSU Creators Awards. All rights reserved
         </span>
+      </div>
+
+      {/* confirm votes section */}
+      <div className="fixed top-24 flex flex-col gap-2 left-4 bg-neutral/80 backdrop-blur-2xl px-3 py-1 rounded-2xl">
+        <span>
+          Your pick: <span className="text-2xl font-bold ">2</span>
+        </span>
+        <button>Confirm</button>
       </div>
     </div>
   );
