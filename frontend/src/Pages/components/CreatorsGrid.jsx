@@ -18,7 +18,7 @@ export function CreatorsGrid() {
             className="border border-secondary/50 dark:border-neutral/50 rounded-2xl w-[98%] mx-auto max-w-7xl"
           >
             <div className=" border-b border-secondary/50 dark:border-neutral/50 py-3 relative">
-              <h1 className="text-tertiary text-3xl w-fit mx-auto uppercase font-bold">
+              <h1 className="text-tertiary dark:text-neutral text-3xl w-fit mx-auto uppercase font-bold">
                 {category}s
               </h1>
 
