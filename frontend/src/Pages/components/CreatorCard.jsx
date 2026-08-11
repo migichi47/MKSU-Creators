@@ -4,7 +4,7 @@ export function CreatorCard({ creator }) {
   return (
     <div
       key={`${name}-${category}`}
-      className="relative h-90 min-w-70 rounded-lg"
+      className="relative h-90 min-w-60 rounded-lg"
     >
       <img
         src={image ? image : "default.png"}
@@ -12,7 +12,7 @@ export function CreatorCard({ creator }) {
         className="rounded-[inherit] min-w-[inherit] h-[inherit]"
       />
       {/* overlay */}
-      <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/80" />
+      <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
 
       <div className="absolute flex flex-col gap-4 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
         <div className="flex flex-col space-y-2">
