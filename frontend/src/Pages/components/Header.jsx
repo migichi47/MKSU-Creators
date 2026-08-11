@@ -22,19 +22,19 @@ export function Header() {
 
         <div className="flex space-x-8 items-center">
           <div className="hidden space-x-3 md:flex">
-            <a href="#" className="hover:text-secondary">
+            <a href="#dancer" className="hover:text-secondary">
               Dancers
             </a>
-            <a href="#" className="hover:text-secondary">
+            <a href="#vlogger" className="hover:text-secondary">
               Vloggers
             </a>
-            <a href="#" className="hover:text-secondary">
+            <a href="#influencer" className="hover:text-secondary">
               Influencers
             </a>
-            <a href="#" className="hover:text-secondary">
+            <a href="#comedian" className="hover:text-secondary">
               Comedians
             </a>
-            <a href="#" className="hover:text-secondary">
+            <a href="#musician" className="hover:text-secondary">
               Musicians
             </a>
           </div>
@@ -65,37 +65,37 @@ export function Header() {
       {
         /* separate menu */
         showMenu && (
-          <div className="fixed bg-neutral/50 dark:bg-tertiary/0 dark:border dark:border-neutral/20 dark:backdrop-blur-xs/0 text-xl gap-2 right-10 top-24  backdrop-blur-xs z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl">
+          <div className="fixed bg-neutral/80 md:hidden dark:bg-tertiary/0 dark:border dark:border-neutral/20 text-xl gap-2 right-10 top-24  backdrop-blur- z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl">
             <a
-              href="#"
+              href="#dancer"
               className="hover:text-secondary"
               onClick={() => setShowMenu(false)}
             >
               Dancers
             </a>
             <a
-              href="#"
+              href="#vlogger"
               className="hover:text-secondary"
               onClick={() => setShowMenu(false)}
             >
               Vloggers
             </a>
             <a
-              href="#"
+              href="#influencer"
               className="hover:text-secondary"
               onClick={() => setShowMenu(false)}
             >
               Influencers
             </a>
             <a
-              href="#"
+              href="#comedian"
               className="hover:text-secondary"
               onClick={() => setShowMenu(false)}
             >
               Comedians
             </a>
             <a
-              href="#"
+              href="#musician"
               className="hover:text-secondary"
               onClick={() => setShowMenu(false)}
             >

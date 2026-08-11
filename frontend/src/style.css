@@ -14,3 +14,8 @@
     @apply border dark:bg-primary border-primary/50 hover:bg-primary dark:hover:text-tertiary transition-colors dark:hover:bg-neutral
   }
 }
+
+/* to allow smooth navigation on clicking <a> tags */
+html {
+  scroll-behavior: smooth;
+}
