@@ -18,9 +18,9 @@ export function CreatorCard({
       {/* overlay */}
       <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
 
-      <div className="absolute flex flex-col gap-4 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
-        <div className="flex flex-col space-y-2">
-          <span className="font-semibold text-4xl">{name}</span>
+      <div className="absolute flex flex-col gap-2 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
+        <div className="flex flex-col items-center ">
+          <span className="font-semibold text-xl md:text-2xl">{name}</span>
           <div className="flex gap-3 text-xs text-neutral/80">
             <span>{followers}</span>
             <span>&#8226;</span>
