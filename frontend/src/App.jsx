@@ -35,7 +35,7 @@ export default function App() {
   ]);
 
   return (
-    <div className="text-tertiary dark:text-neutral dark:bg-tertiary transition-colors">
+    <div className="">
       <Routes>
         <Route
           path="/"

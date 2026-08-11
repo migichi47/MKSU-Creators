@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";

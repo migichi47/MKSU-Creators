@@ -1,42 +1,52 @@
-
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
 export function YourVotes({ selectedCreators, setSelectedCreators }) {
-  console.log(selectedCreators);
-
   return (
     <div>
       <Header />
 
-      {selectedCreators.map((creator) => {
-        const { name, image, category } = creator;
+      <div className="mt-30 max-w-200 mx-auto flex flex-col gap-4 border border-tertiary/20 dark:border-neutral/20 pt-2 pb-6 rounded-2xl">
+        <p className="font-bold mx-auto border-b leading-8 border-inherit">
+          Confirm the creators you picked
+        </p>
 
-        return (
-          <div
-            key={`${name}-${category}`}
-            className="relative h-90 min-w-60 rounded-lg"
-          >
-            <img
-              src={image ? image : "default.png"}
-              alt="creator image"
-              className="rounded-[inherit] min-w-[inherit] h-[inherit]"
-            />
-            {/* overlay */}
-            <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
+        {/* creators */}
+        <div className="grid space-y-4 grid-cols-2 sm:grid-cols-3">
+          {selectedCreators.map((creator) => {
+            const { name, image, category } = creator;
 
-            <div className="absolute flex flex-col gap-4 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
-              <div className="flex flex-col space-y-2">
-                <span className="font-semibold text-4xl">{name}</span>
-                <div className="flex gap-3 text-xs text-neutral/80">
-                  {category}
+            return (
+              <div
+                key={`${name}-${category}`}
+                className="relative md:h-90 md:w-60 h-70 w-45 rounded-lg mx-auto"
+              >
+                <img
+                  src={image ? image : "default.png"}
+                  alt="creator image"
+                  className="rounded-[inherit] w-[inherit] h-[inherit]"
+                />
+                {/* overlay */}
+                <div className=" absolute top-0 rounded-[inherit] w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
+
+                <div className="absolute flex flex-col gap-2 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
+                  <div className="flex flex-col text-center items-center">
+                    <span className="font-semibold text-xl md:text-2xl">
+                      {name}
+                    </span>
+                    <div className="flex gap-3 text-xs text-neutral/80">
+                      {category}
+                    </div>
+                  </div>
+                  <button className="w-full">Remove</button>
                 </div>
               </div>
-              <button>Remove</button>
-            </div>
-          </div>
-        );
-      })}
+            );
+          })}
+        </div>
+
+        {/* action buttons */}
+      </div>
 
       <Footer />
     </div>
