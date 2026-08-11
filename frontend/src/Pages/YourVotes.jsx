@@ -1,10 +1,12 @@
 import { toast } from "react-toastify";
 import { IoArrowBack } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
 export function YourVotes({ selectedCreators, setSelectedCreators }) {
+  const navigate = useNavigate();
   function clearCreators() {
     setSelectedCreators([]);
   }
@@ -12,13 +14,17 @@ export function YourVotes({ selectedCreators, setSelectedCreators }) {
     <div>
       <Header />
 
-      <div className="mt-30 max-w-200 mx-auto flex flex-col gap-4 border border-tertiary/20 dark:border-neutral/20 pt-2 pb-6 rounded-2xl">
-        <div className="absolute left-3 flex gap-1 transition-transform hover:-translate-x-2 items-center hover:text-secondary cursor-pointer">
+      <div className="relative mt-30 max-w-200 mx-auto flex flex-col gap-4 border border-tertiary/20 dark:border-neutral/20 pt-2 pb-6 rounded-2xl">
+        <div
+          onClick={() => navigate("/")}
+          className="absolute left-6 top-3 text-tertiary/80 dark:text-neutral/80 text-sm flex gap-1 transition-transform hover:-translate-x-1 items-center hover:text-secondary cursor-pointer"
+        >
+          {" "}
           <IoArrowBack className="inline" />
           <span>back</span>
         </div>
         <p className="font-bold mx-auto border-b leading-8 border-inherit">
-          Confirm the creators you picked
+          Confirm your votes
         </p>
 
         {/* creators */}
