@@ -4,9 +4,8 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
 
-export function HomePage() {
+export function HomePage({selectedCreators, setSelectedCreators}) {
   const navigate = useNavigate();
-  const [selectedCreators, setSelectedCreators] = useState([]);
 
   return (
     <div className="">
@@ -69,7 +68,10 @@ export function HomePage() {
               {selectedCreators.length}
             </span>
           </span>
-          <button className="bg-amber-50/0 hover:bg-primary hover:text-neutral">
+          <button
+            className="bg-amber-50/0 hover:bg-primary hover:text-neutral"
+            onClick={() => navigate("/your-votes")}
+          >
             Confirm
           </button>
         </div>
