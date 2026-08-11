@@ -28,7 +28,7 @@ export function HomePage() {
 
         <div>
           <button
-            className="bg-amber-50/0 dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors"
+            className="bg-amber-50/0 hover:bg-primary hover:text-neutral dark:hover:text-tertiary dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors"
             onClick={() => {
               document.getElementById("voting-grid").scrollIntoView({
                 behavior: "smooth",
@@ -56,11 +56,11 @@ export function HomePage() {
       <Footer />
 
       {/* confirm votes section */}
-      <div className="fixed top-24 flex flex-col gap-2 left-4 md:left-10 bg-neutral/80 backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60">
+      <div className="fixed top-24 flex flex-col gap-2 left-4 md:left-10 bg-neutral/80 backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
         <span>
           Your pick: <span className="text-2xl font-bold ">2</span>
         </span>
-        <button>Confirm</button>
+        <button className="bg-amber-50/0 hover:bg-primary hover:text-neutral">Confirm</button>
       </div>
     </div>
   );
