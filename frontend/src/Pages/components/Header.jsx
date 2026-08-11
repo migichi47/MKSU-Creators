@@ -14,7 +14,7 @@ export function Header() {
 
   return (
     <>
-      <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg px-6">
+      <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg px-6 dark:bg-tertiary/50">
         <div className="text-2xl cursor-pointer">
           <span className="text-tertiary dark:text-neutral">MKSU</span>
           <span className="text-primary">grammys</span>
