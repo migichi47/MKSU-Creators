@@ -38,14 +38,18 @@ export function YourVotes({ selectedCreators, setSelectedCreators }) {
                       {category}
                     </div>
                   </div>
-                  <button className="w-full">Remove</button>
+                  <button className="w-[80%] mx-auto">Remove</button>
                 </div>
               </div>
             );
           })}
         </div>
+      </div>
 
-        {/* action buttons */}
+      {/* action buttons */}
+      <div className="mx-auto w-fit mt-10 flex gap-6 [&>a]:px-6 [&>a]:py-2 [&>a]:rounded-full [&>a]:cursor-pointer [&>a]:hover:scale-110 [&>a]:transition-all duration-200 [&>a]:hover:shadow-lg">
+        <a className="bg-green-500/80">Confirm Votes</a>
+        <a className="bg-red-500/80">Clear All</a>
       </div>
 
       <Footer />
