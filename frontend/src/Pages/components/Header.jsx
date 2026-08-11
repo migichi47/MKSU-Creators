@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaRegMoon } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiLight } from "react-icons/ci";
@@ -6,11 +6,17 @@ import { LiaAwardSolid } from "react-icons/lia";
 
 export function Header() {
   const [showMenu, setShowMenu] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   function toggleDarkMode() {
     setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
   }
 
   return (
