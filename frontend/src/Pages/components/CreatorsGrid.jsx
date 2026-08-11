@@ -1,3 +1,6 @@
+
+import { FaAngleDoubleRight  } from "react-icons/fa";
+
 import { CreatorCard } from "./CreatorCard";
 import { creators } from "../../../data/creators";
 
@@ -22,8 +25,8 @@ export function CreatorsGrid() {
                 {category}s
               </h1>
 
-              <span className="w-fit pr-10 absolute top-4 right-0">
-                View More
+              <span className="w-fit pr-10 absolute bottom-0 right-0 flex items-baseline gap-1 text-neutral/70">
+                scroll <FaAngleDoubleRight className="text-xs"/>
               </span>
             </div>
 
