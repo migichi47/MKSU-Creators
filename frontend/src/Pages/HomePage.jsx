@@ -33,7 +33,7 @@ export function HomePage() {
           <div className="mt-4 flex gap-4 mx-auto w-fit">
             <span className="text-lg">Are you a Creator ?</span>
             <span
-              className="text-lg hover:text-primary hover:underline cursor-pointer transition-colors"
+              className="text-lg hover:text-secondary underline cursor-pointer transition-colors"
               onClick={() => {
                 navigate("join-as-creator-one");
               }}
