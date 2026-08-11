@@ -15,7 +15,9 @@ export function HomePage() {
           <p className="md:text-5xl xs:text-3xl text-2xl font-bold sm:max-w-100 md:max-w-200 max-w-70 mx-auto">
             Machakos University creators awards are here!
           </p>
-          <p className=" font-extrabold text-primary text-6xl md:text-8xl">Cast Your Vote</p>
+          <p className=" font-extrabold text-primary text-6xl md:text-8xl">
+            Cast Your Vote
+          </p>
           <p className="text-sm sm:text-lg leading-5 max-w-100 mx-auto">
             Celebrate the pinnacle of digital excellence. Honor the creators who
             redefine storytelling, performance, and community in the modern era.
@@ -26,7 +28,12 @@ export function HomePage() {
         <div>
           <button
             className="bg-amber-50/0 dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors"
-            onClick={() => navigate("voting")}
+            onClick={() => {
+              document.getElementById("voting-grid").scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            id="voting-grid"
           >
             Vote Now
           </button>
@@ -45,7 +52,9 @@ export function HomePage() {
       </div>
 
       {/* creators grid */}
-      <CreatorsGrid />
+      <div>
+        <CreatorsGrid />
+      </div>
 
       {/* footer-section */}
       <div className="border-t border-tertiary/20 text-center pt-4 pb-8 flex flex-col gap-2">
@@ -60,7 +69,9 @@ export function HomePage() {
             Sponsors
           </a>
         </div>
-        <span className="text-primary/90">&copy;2026 MKSU Creators Awards. All rights reserved</span>
+        <span className="text-primary/90">
+          &copy;2026 MKSU Creators Awards. All rights reserved
+        </span>
       </div>
     </div>
   );
