@@ -25,7 +25,7 @@ export function CreatorsGrid() {
                 {category}s
               </h1>
 
-              <span className="w-fit pr-10 absolute bottom-0 right-0 flex items-baseline gap-1 text-neutral/70">
+              <span className="w-fit pr-10 absolute bottom-0 right-0 flex items-baseline gap-1 dark:text-neutral/70 text-tertiary/70">
                 scroll <FaAngleDoubleRight className="text-xs"/>
               </span>
             </div>

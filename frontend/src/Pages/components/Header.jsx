@@ -49,13 +49,13 @@ export function Header() {
 
           <div className="w-fit">
             {darkMode ? (
-              <FaRegMoon
+              <CiLight
                 className="hover:text-secondary w-7 h-7 md:w-5 md:h-5"
                 onClick={toggleDarkMode}
               />
             ) : (
-              <CiLight
-                className="hover:text-secondary w-7 h-7 md:w-5 md:h-5"
+              <FaRegMoon
+                className="hover:text-secondary w-5 h-5 md:w-5 md:h-5"
                 onClick={toggleDarkMode}
               />
             )}
