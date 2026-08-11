@@ -1,3 +1,4 @@
+
 import { CreatorCard } from "./CreatorCard";
 import { creators } from "../../../data/creators";
 
@@ -16,10 +17,12 @@ export function CreatorsGrid() {
             key={category}
             className="border border-secondary/50 rounded-2xl w-[98%] mx-auto max-w-7xl"
           >
-            <div className=" border-b border-secondary/50 py-3">
+            <div className=" border-b border-secondary/50 py-3 relative">
               <h1 className="text-tertiary text-3xl w-fit mx-auto uppercase font-bold">
                 {category}s
               </h1>
+
+              <span className="w-fit pr-10 absolute top-4 right-0">View More</span>
             </div>
 
             <div className="mt-4 flex overflow-scroll gap-6 pl-1">
