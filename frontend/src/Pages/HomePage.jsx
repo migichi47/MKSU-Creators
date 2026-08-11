@@ -54,18 +54,26 @@ export function HomePage() {
         </div>
       </div>
 
-      <CreatorsGrid setSelectedCreators={setSelectedCreators} selectedCreators={selectedCreators} />
+      <CreatorsGrid
+        setSelectedCreators={setSelectedCreators}
+        selectedCreators={selectedCreators}
+      />
       <Footer />
 
       {/* confirm votes section */}
-      <div className="fixed top-24 flex flex-col gap-2 left-4 md:left-10 bg-neutral/80 backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
-        <span>
-          Your pick: <span className="text-2xl font-bold ">2</span>
-        </span>
-        <button className="bg-amber-50/0 hover:bg-primary hover:text-neutral">
-          Confirm
-        </button>
-      </div>
+      {selectedCreators?.length > 0 && (
+        <div className="fixed top-24 flex flex-col gap-2 left-4 md:left-10 bg-neutral/80 backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
+          <span>
+            Your pick:{" "}
+            <span className="text-2xl font-bold ">
+              {selectedCreators.length}
+            </span>
+          </span>
+          <button className="bg-amber-50/0 hover:bg-primary hover:text-neutral">
+            Confirm
+          </button>
+        </div>
+      )}
     </div>
   );
 }
