@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -9,6 +11,14 @@ export function HomePage({
   selectedCategories,
   setSelectedCategories,
 }) {
+  const [isClicked, setIsClicked] = useState(
+    JSON.parse(localStorage.getItem("isClicked")) || [],
+  );
+
+  useEffect(() => {
+    localStorage.setItem("isClicked", JSON.stringify(isClicked));
+  }, [isClicked]);
+
   const navigate = useNavigate();
 
   return (
@@ -62,6 +72,8 @@ export function HomePage({
         selectedCreators={selectedCreators}
         selectedCategories={selectedCategories}
         setSelectedCategories={setSelectedCategories}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
       />
       <Footer />
 

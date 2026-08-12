@@ -8,6 +8,8 @@ export function CreatorsGrid({
   setSelectedCreators,
   selectedCategories,
   setSelectedCategories,
+  isClicked,
+  setIsClicked,
 }) {
   const categories = [...new Set(creators.map((creator) => creator.category))];
 
@@ -44,6 +46,8 @@ export function CreatorsGrid({
                     selectedCreators={selectedCreators}
                     selectedCategories={selectedCategories}
                     setSelectedCategories={setSelectedCategories}
+                    isClicked={isClicked}
+                    setIsClicked={setIsClicked}
                   />
                 );
               })}

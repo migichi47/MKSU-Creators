@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
-
 export function CreatorCard({
   creator,
   selectedCreators,
   setSelectedCreators,
   selectedCategories,
   setSelectedCategories,
+  isClicked,
+  setIsClicked,
 }) {
   const { name, image, followers, year, category } = creator;
-  const [isClicked, setIsClicked] = useState(
-    JSON.parse(localStorage.getItem("isClicked")) || [],
-  );
-
-  useEffect(() => {
-    localStorage.setItem("isClicked", JSON.stringify(isClicked));
-  }, [isClicked]);
 
   function selectCreator() {
     setSelectedCreators([...selectedCreators, creator]);
@@ -29,7 +22,6 @@ export function CreatorCard({
     const newSelectedCategories = selectedCategories.filter(
       (cat) => cat !== category,
     );
-
     const newIsClicked = isClicked.filter((value) => value !== creator.name);
 
     setSelectedCreators(newSelectedCreators);
@@ -63,7 +55,12 @@ export function CreatorCard({
             Vote Now
           </button>
         ) : isClicked.includes(name) ? (
-          <button onClick={discardCreator} className="w-20 mx-auto border-secondary bg-amber-50/0 hover:text-tertiary hover:bg-neutral">Discard</button>
+          <button
+            onClick={discardCreator}
+            className="w-20 mx-auto border-secondary bg-amber-50/0 hover:text-tertiary hover:bg-neutral"
+          >
+            Discard
+          </button>
         ) : (
           ""
         )}
