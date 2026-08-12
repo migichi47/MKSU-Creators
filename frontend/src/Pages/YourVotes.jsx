@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { useEffect } from "react";
 
 export function YourVotes({
   selectedCreators,
@@ -14,10 +15,20 @@ export function YourVotes({
   setIsClicked,
 }) {
   const navigate = useNavigate();
+
   function clearCreators() {
     setSelectedCreators([]);
     setSelectedCategories([]);
+    setIsClicked([]);
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (selectedCreators.length === 0) {
+        navigate("/");
+      }
+    }, 500);
+  }, [navigate, selectedCreators]);
 
   return (
     <div>
