@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
-export function YourVotes({ selectedCreators, setSelectedCreators }) {
+export function YourVotes({ selectedCreators, setSelectedCreators, setSelectedCategories }) {
   const navigate = useNavigate();
   function clearCreators() {
     setSelectedCreators([]);
+    setSelectedCategories([]);
   }
   return (
     <div>

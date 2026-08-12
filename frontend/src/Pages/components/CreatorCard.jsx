@@ -34,9 +34,13 @@ export function CreatorCard({
             <span>Year {year}</span>
           </div>
         </div>
-        <button className=" rounded-sm h-10" onClick={selectCreator}>
-          Vote Now
-        </button>
+        {!selectedCategories.includes(category) ? (
+          <button className=" rounded-sm h-10" onClick={selectCreator}>
+            Vote Now
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

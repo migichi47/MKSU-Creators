@@ -45,6 +45,7 @@ export default function App() {
             <YourVotes
               setSelectedCreators={setSelectedCreators}
               selectedCreators={selectedCreators}
+              setSelectedCategories={setSelectedCategories}
             />
           }
         />
