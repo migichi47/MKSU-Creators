@@ -35,7 +35,7 @@ export function HomePage({
 
         <div>
           <button
-            className="bg-amber-50/0 hover:bg-primary hover:text-neutral dark:hover:text-tertiary dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors slide-from-top duration-1000 delay-400"
+            className="bg-amber-50/0 hover:bg-primary hover:text-neutral dark:hover:text-tertiary dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors slide-from-top duration-1100 delay-400"
             onClick={() => {
               document.getElementById("voting-grid").scrollIntoView({
                 behavior: "smooth",
@@ -45,7 +45,7 @@ export function HomePage({
           >
             Vote Now
           </button>
-          <div className="mt-4 flex gap-4 mx-auto w-fit ">
+          <div className="mt-4 flex gap-4 mx-auto w-fit fade-in duration-1000 delay-400">
             <span className="text-lg">Are you a Creator ?</span>
             <span
               className="text-lg hover:text-secondary underline cursor-pointer transition-colors"

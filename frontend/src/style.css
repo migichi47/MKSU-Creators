@@ -33,8 +33,22 @@ html {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .slide-from-top {
   animation-name: slideFromTop;
+}
+
+.fade-in {
+  animation-name: fadeIn;
 }
 
 @layer utilities {
@@ -46,6 +60,19 @@ html {
     animation-duration: 200ms;
   }
 
+  .duration-300 {
+    animation-duration: 300ms;
+  }
+
+  .duration-400 {
+    animation-duration: 400ms;
+  }
+
+  .duration-1100 {
+    animation-duration: 1100ms;
+  }
+
+  /* delays */
   .delay-200 {
     animation-delay: 200ms;
   }
@@ -57,5 +84,6 @@ html {
   .delay-400 {
     animation-delay: 400ms;
   }
+
 
 }
