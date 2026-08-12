@@ -5,12 +5,20 @@ import { useNavigate } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
-export function YourVotes({ selectedCreators, setSelectedCreators, setSelectedCategories }) {
+export function YourVotes({
+  selectedCreators,
+  selectedCategories,
+  setSelectedCreators,
+  setSelectedCategories,
+  isClicked,
+  setIsClicked,
+}) {
   const navigate = useNavigate();
   function clearCreators() {
     setSelectedCreators([]);
     setSelectedCategories([]);
   }
+
   return (
     <div>
       <Header />
@@ -32,6 +40,22 @@ export function YourVotes({ selectedCreators, setSelectedCreators, setSelectedCa
         <div className="grid space-y-4 grid-cols-2 sm:grid-cols-3">
           {selectedCreators.map((creator) => {
             const { name, image, category } = creator;
+
+            function discardCreator() {
+              const newSelectedCreators = selectedCreators.filter(
+                (creator) => creator.name !== name,
+              );
+              const newSelectedCategories = selectedCategories.filter(
+                (cat) => cat !== category,
+              );
+              const newIsClicked = isClicked.filter(
+                (value) => value !== creator.name,
+              );
+
+              setSelectedCreators(newSelectedCreators);
+              setSelectedCategories(newSelectedCategories);
+              setIsClicked(newIsClicked);
+            }
 
             return (
               <div
@@ -55,7 +79,9 @@ export function YourVotes({ selectedCreators, setSelectedCreators, setSelectedCa
                       {category}
                     </div>
                   </div>
-                  <button className="w-[80%] mx-auto">Remove</button>
+                  <button className="w-[80%] mx-auto" onClick={discardCreator}>
+                    Remove
+                  </button>
                 </div>
               </div>
             );

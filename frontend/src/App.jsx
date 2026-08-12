@@ -16,6 +16,13 @@ export default function App() {
   const [selectedCategories, setSelectedCategories] = useState(
     JSON.parse(localStorage.getItem("selectedCategories")) || [],
   );
+  const [isClicked, setIsClicked] = useState(
+    JSON.parse(localStorage.getItem("isClicked")) || [],
+  );
+
+  useEffect(() => {
+    localStorage.setItem("isClicked", JSON.stringify(isClicked));
+  }, [isClicked]);
 
   useEffect(() => {
     localStorage.setItem("selectedCreators", JSON.stringify(selectedCreators));
@@ -36,6 +43,8 @@ export default function App() {
               selectedCreators={selectedCreators}
               selectedCategories={selectedCategories}
               setSelectedCategories={setSelectedCategories}
+              isClicked={isClicked}
+              setIsClicked={setIsClicked}
             />
           }
         />
@@ -46,6 +55,9 @@ export default function App() {
               setSelectedCreators={setSelectedCreators}
               selectedCreators={selectedCreators}
               setSelectedCategories={setSelectedCategories}
+              selectedCategories={selectedCategories}
+              isClicked={isClicked}
+              setIsClicked={setIsClicked}
             />
           }
         />
