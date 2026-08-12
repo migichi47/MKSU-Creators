@@ -1,9 +1,14 @@
+
 export function CreatorCard({
   creator,
   selectedCreators,
   setSelectedCreators,
 }) {
   const { name, image, followers, year, category } = creator;
+
+  function selectCreator() {
+    setSelectedCreators([...selectedCreators, creator]);
+  }
 
   return (
     <div
@@ -27,12 +32,7 @@ export function CreatorCard({
             <span>Year {year}</span>
           </div>
         </div>
-        <button
-          className=" rounded-sm h-10"
-          onClick={() => {
-            setSelectedCreators([...selectedCreators, creator]);
-          }}
-        >
+        <button className=" rounded-sm h-10" onClick={selectCreator}>
           Vote Now
         </button>
       </div>

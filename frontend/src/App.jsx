@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,29 +10,20 @@ import { AdminAddCreator } from "./Pages/admin-pages/AdminAddCreator";
 import { YourVotes } from "./Pages/YourVotes";
 
 export default function App() {
-  const [selectedCreators, setSelectedCreators] = useState([
-    {
-      image: "/images/heismaema.png",
-      name: "Heismaema",
-      followers: "27100",
-      category: "influencer",
-      year: 4,
-    },
-    {
-      image: "images/gym reaper.jpg",
-      name: "Gym Reaper",
-      followers: "2300",
-      category: "influencer",
-      year: 4,
-    },
-    {
-      image: "images/_opiri.jpg",
-      name: "_opiri",
-      followers: "3300",
-      category: "influencer",
-      year: 4,
-    },
-  ]);
+  const [selectedCreators, setSelectedCreators] = useState(
+    JSON.parse(localStorage.getItem("selectedCreators")) || [],
+  );
+  const [selectedCategories, setSelectedCategories] = useState(
+    JSON.parse(localStorage.getItem("selectedCategories")) || [],
+  );
+
+  useEffect(() => {
+    localStorage.setItem("selectedCreators", JSON.stringify(selectedCreators));
+    localStorage.setItem(
+      "selectedCategories",
+      JSON.stringify(selectedCategories),
+    );
+  }, [selectedCreators, selectedCategories]);
 
   return (
     <div className="">
