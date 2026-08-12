@@ -3,7 +3,12 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import { CreatorCard } from "./CreatorCard";
 import { creators } from "../../../data/creators";
 
-export function CreatorsGrid({ selectedCreators, setSelectedCreators }) {
+export function CreatorsGrid({
+  selectedCreators,
+  setSelectedCreators,
+  selectedCategories,
+  setSelectedCategories,
+}) {
   const categories = [...new Set(creators.map((creator) => creator.category))];
 
   return (
@@ -37,6 +42,8 @@ export function CreatorsGrid({ selectedCreators, setSelectedCreators }) {
                     creator={creator}
                     setSelectedCreators={setSelectedCreators}
                     selectedCreators={selectedCreators}
+                    selectedCategories={selectedCategories}
+                    setSelectedCategories={setSelectedCategories}
                   />
                 );
               })}

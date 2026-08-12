@@ -34,6 +34,8 @@ export default function App() {
             <HomePage
               setSelectedCreators={setSelectedCreators}
               selectedCreators={selectedCreators}
+              selectedCategories={selectedCategories}
+              setSelectedCategories={setSelectedCategories}
             />
           }
         />

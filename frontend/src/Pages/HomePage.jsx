@@ -1,10 +1,14 @@
-
 import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
 
-export function HomePage({selectedCreators, setSelectedCreators}) {
+export function HomePage({
+  selectedCreators,
+  setSelectedCreators,
+  selectedCategories,
+  setSelectedCategories,
+}) {
   const navigate = useNavigate();
 
   return (
@@ -56,6 +60,8 @@ export function HomePage({selectedCreators, setSelectedCreators}) {
       <CreatorsGrid
         setSelectedCreators={setSelectedCreators}
         selectedCreators={selectedCreators}
+        selectedCategories={selectedCategories}
+        setSelectedCategories={setSelectedCategories}
       />
       <Footer />
 

@@ -1,13 +1,15 @@
-
 export function CreatorCard({
   creator,
   selectedCreators,
   setSelectedCreators,
+  selectedCategories,
+  setSelectedCategories,
 }) {
   const { name, image, followers, year, category } = creator;
 
   function selectCreator() {
     setSelectedCreators([...selectedCreators, creator]);
+    setSelectedCategories([...selectedCategories, category]);
   }
 
   return (
