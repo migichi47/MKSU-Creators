@@ -32,7 +32,7 @@ export function CreatorCard({
   return (
     <div
       key={`${name}-${category}`}
-      className="relative h-90 min-w-60 flex-0 rounded-lg"
+      className="relative h-75 min-w-60 flex-0 rounded-lg"
     >
       <div className="rounded-[inherit] min-w-[inherit] h-[inherit] overflow-hidden">
         <img
