@@ -34,11 +34,13 @@ export function CreatorCard({
       key={`${name}-${category}`}
       className="relative h-90 min-w-60 flex-0 rounded-lg"
     >
-      <img
-        src={image ? image : "default.png"}
-        alt="creator image"
-        className="rounded-[inherit] min-w-[inherit] h-[inherit]"
-      />
+      <div className="rounded-[inherit] min-w-[inherit] h-[inherit] overflow-hidden">
+        <img
+          src={image ? image : "default.png"}
+          alt="creator image"
+          className=" object-cover min-w-[inherit] h-[inherit]"
+        />
+      </div>
       {/* overlay */}
       <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
       <div className="absolute flex flex-col gap-2 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
