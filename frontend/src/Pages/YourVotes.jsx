@@ -37,7 +37,7 @@ export function YourVotes({
       <div className="relative mt-30 max-w-200 mx-auto flex flex-col gap-4 border border-tertiary/20 dark:border-neutral/20 pt-2 pb-6 rounded-2xl">
         <div
           onClick={() => navigate("/")}
-          className="absolute left-6 top-3 text-tertiary/80 dark:text-neutral/80 text-sm flex gap-1 transition-transform hover:-translate-x-1 items-center hover:text-secondary cursor-pointer"
+          className="fixed left-6 top-33 z-1 text-tertiary/80 dark:text-neutral/80 text-sm flex gap-1 transition-transform hover:-translate-x-1 items-center hover:text-secondary cursor-pointer"
         >
           {" "}
           <IoArrowBack className="inline" />

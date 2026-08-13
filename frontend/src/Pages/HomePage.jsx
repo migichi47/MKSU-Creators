@@ -35,7 +35,7 @@ export function HomePage({
 
         <div>
           <button
-            className="bg-amber-50/0 hover:bg-primary hover:text-neutral dark:hover:text-tertiary dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors slide-from-top duration-1100 delay-400"
+            className="bg-amber-50/0 hover:bg-primary hover:text-neutral dark:hover:text-tertiary dark:hover:bg-neutral px-6 py-2 md:text-3xl md:px-10 md:py-4 rounded-full transition-colors"
             onClick={() => {
               document.getElementById("voting-grid").scrollIntoView({
                 behavior: "smooth",
@@ -45,7 +45,7 @@ export function HomePage({
           >
             Vote Now
           </button>
-          <div className="mt-4 flex gap-4 mx-auto w-fit fade-in duration-1000 delay-400">
+          <div className="mt-4 flex gap-4 mx-auto w-fit">
             <span className="text-lg">Are you a Creator ?</span>
             <span
               className="text-lg hover:text-secondary underline cursor-pointer transition-colors"
@@ -67,8 +67,26 @@ export function HomePage({
         isClicked={isClicked}
         setIsClicked={setIsClicked}
       />
-      <Footer />
+      {/* your votes section near the footer */}
+      {selectedCreators?.length > 0 && (
+        <div className="flex flex-col gap-2 mt-10 w-fit mx-auto items-center">
+          <span>
+            You picked
+            <span className="text-xl mx-1">
+              {selectedCreators.length}
+            </span>
+            creator. Confirm your votes below.
+          </span>
+          <button
+            className="bg-amber-50/0 hover:bg-primary hover:text-neutral w-30"
+            onClick={() => navigate("/your-votes")}
+          >
+            Confirm
+          </button>
+        </div>
+      )}
 
+      <Footer />
       {/* confirm votes section */}
       {selectedCreators?.length > 0 && (
         <div className="fixed top-24 flex flex-col gap-2 left-4 md:left-10 bg-neutral/80 backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
