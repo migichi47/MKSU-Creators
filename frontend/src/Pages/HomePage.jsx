@@ -89,7 +89,7 @@ export function HomePage({
       <Footer />
       {/* confirm votes section */}
       {selectedCreators?.length > 0 && (
-        <div className="fixed top-24 flex flex-col gap-2 left-4 md:left-10 bg-neutral/80 backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
+        <div className="fixed sm:top-24 top-0 bg-amber-50/0 z-10 left-50 flex flex-col gap-2 sm:gap-2 sm:left-4 md:left-10 sm:bg-neutral/80 sm:backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
           <span>
             Your pick:{" "}
             <span className="text-2xl font-bold ">
@@ -97,7 +97,7 @@ export function HomePage({
             </span>
           </span>
           <button
-            className="bg-amber-50/0 hover:bg-primary hover:text-neutral"
+            className="bg-amber-50/0 hover:bg-primary hover:text-neutral px-2"
             onClick={() => navigate("/your-votes")}
           >
             Confirm
