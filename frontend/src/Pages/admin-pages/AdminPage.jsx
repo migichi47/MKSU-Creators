@@ -10,7 +10,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import { Header } from "../components/Header";
-import { AdminSidebar } from "../utils/AdminSidebar";
 
 export function AdminPage() {
   const data = [
@@ -25,7 +24,6 @@ export function AdminPage() {
   return (
     <>
       <Header description="Admin Dashboard" />
-      <AdminSidebar />
       <div className="dashboard-card-container">
         <div
           className="dashboard-card"

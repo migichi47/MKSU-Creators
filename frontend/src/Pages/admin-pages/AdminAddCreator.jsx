@@ -4,7 +4,6 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 import { Header } from "../components/Header";
-import { AdminSidebar } from "../utils/AdminSidebar";
 
 export function AdminAddCreator() {
   const [formData, setFormData] = useState({
@@ -108,7 +107,6 @@ export function AdminAddCreator() {
 
   return (
     <>
-      <AdminSidebar />
       <Header description="Add Creator" />
 
       <div className="join-tile join-tile-admin">
