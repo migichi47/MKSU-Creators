@@ -7,22 +7,23 @@ export function CreatorCard({
   isClicked,
   setIsClicked,
 }) {
-  const { name, image, followers, year, category } = creator;
+  const { name, image, followers, year, category, _id } = creator;
+  const id = _id;
 
   function selectCreator() {
     setSelectedCreators([...selectedCreators, creator]);
     setSelectedCategories([...selectedCategories, category]);
-    setIsClicked([...isClicked, name]);
+    setIsClicked([...isClicked, id]);
   }
 
   function discardCreator() {
     const newSelectedCreators = selectedCreators.filter(
-      (creator) => creator.name !== name,
+      (creator) => creator._id !== id,
     );
     const newSelectedCategories = selectedCategories.filter(
       (cat) => cat !== category,
     );
-    const newIsClicked = isClicked.filter((value) => value !== creator.name);
+    const newIsClicked = isClicked.filter((value) => value !== creator._id);
 
     setSelectedCreators(newSelectedCreators);
     setSelectedCategories(newSelectedCategories);
@@ -31,7 +32,7 @@ export function CreatorCard({
 
   return (
     <div
-      key={`${name}-${category}`}
+      key={id}
       className="relative h-75 min-w-60 flex-0 rounded-lg group"
     >
       <div className="rounded-[inherit] min-w-[inherit] h-[inherit] overflow-hidden">
@@ -56,7 +57,7 @@ export function CreatorCard({
           <button className=" rounded-sm h-10" onClick={selectCreator}>
             Vote Now
           </button>
-        ) : isClicked.includes(name) ? (
+        ) : isClicked.includes(id) ? (
           <button
             onClick={discardCreator}
             className="w-20 mx-auto border-secondary bg-amber-50/0 hover:text-tertiary hover:bg-neutral"
