@@ -107,41 +107,42 @@ export function AdminPage() {
       {
         /* separate menu */
         showMenu && (
-          <div className="fixed bg-neutral/80 md:hidden dark:bg-tertiary/30 dark:border dark:border-neutral/20 text-xl gap-2 right-10 top-24  dark:backdrop-blur-sm z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl slide-from-top duration-400">
+          <div className="fixed [&>a]:cursor-pointer bg-neutral/80 md:hidden dark:bg-tertiary/30 dark:border dark:border-neutral/20 text-xl gap-2 right-10 top-24  dark:backdrop-blur-sm z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl slide-from-top duration-400">
             <a
-              href="#dancer"
+              onClick={() => {
+                setShowMenu(false);
+                navigate("/admin");
+              }}
               className="hover:text-secondary"
-              onClick={() => setShowMenu(false)}
             >
-              Dancers
+              Dashboard
             </a>
             <a
-              href="#vlogger"
+              onClick={() => {
+                setShowMenu(false);
+                navigate("/admin/creators");
+              }}
               className="hover:text-secondary"
-              onClick={() => setShowMenu(false)}
             >
-              Vloggers
+              View Creators
             </a>
             <a
-              href="#influencer"
+              onClick={() => {
+                setShowMenu(false);
+                navigate("admin/add-creator");
+              }}
               className="hover:text-secondary"
-              onClick={() => setShowMenu(false)}
             >
-              Influencers
+              Add Creator
             </a>
             <a
-              href="#comedian"
+              onClick={() => {
+                setShowMenu(false);
+                navigate("/admin/analytics");
+              }}
               className="hover:text-secondary"
-              onClick={() => setShowMenu(false)}
             >
-              Comedians
-            </a>
-            <a
-              href="#musician"
-              className="hover:text-secondary"
-              onClick={() => setShowMenu(false)}
-            >
-              Musicians
+              Analytics
             </a>
           </div>
         )
