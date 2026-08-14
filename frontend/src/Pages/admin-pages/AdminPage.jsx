@@ -23,7 +23,7 @@ export function AdminPage() {
 
   return (
     <>
-      <Header description="Admin Dashboard" />
+      <Header />
       <div className="dashboard-card-container">
         <div
           className="dashboard-card"

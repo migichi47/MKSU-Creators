@@ -55,7 +55,7 @@ export function CreatorsPage() {
 
   return (
     <>
-      <Header description="View Creators" />
+      <Header />
       <div className="creator-table-container">
         <div className="creator-table-title">
           Creators
