@@ -1,7 +1,6 @@
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 import { CreatorCard } from "./CreatorCard";
-import { creators } from "../../../data/creators";
 
 export function CreatorsGrid({
   selectedCreators,
@@ -10,6 +9,7 @@ export function CreatorsGrid({
   setSelectedCategories,
   isClicked,
   setIsClicked,
+  creators
 }) {
   const categories = [...new Set(creators.map((creator) => creator.category))];
 

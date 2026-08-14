@@ -2,6 +2,8 @@ import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { api } from "../axios";
 
 export function HomePage({
   selectedCreators,
@@ -11,6 +13,20 @@ export function HomePage({
   isClicked,
   setIsClicked,
 }) {
+  
+  const [creators, setCreators] = useState([]);
+  useEffect(() => {
+    async function getCreators() {
+      try {
+        const response = await api.get("/creators");
+        setCreators(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getCreators();
+  }, []);
+
   const navigate = useNavigate();
 
   return (
@@ -66,15 +82,14 @@ export function HomePage({
         setSelectedCategories={setSelectedCategories}
         isClicked={isClicked}
         setIsClicked={setIsClicked}
+        creators={creators}
       />
       {/* your votes section near the footer */}
       {selectedCreators?.length > 0 && (
         <div className="flex flex-col gap-2 mt-10 w-fit mx-auto items-center">
           <span>
             You picked
-            <span className="text-xl mx-1">
-              {selectedCreators.length}
-            </span>
+            <span className="text-xl mx-1">{selectedCreators.length}</span>
             creator. Confirm your votes below.
           </span>
           <button
