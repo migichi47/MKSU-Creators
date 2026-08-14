@@ -15,6 +15,7 @@ import {
 
 import { AdminHeader } from "./components/AdminHeader";
 import { DashboardCard } from "./components/DashboardCard";
+import {Footer} from "../components/Footer"
 
 export function AdminPage() {
   const data = [
@@ -56,7 +57,7 @@ export function AdminPage() {
         </div>
 
         {/* add a bar chart - summary analytics */}
-        <div className="border border-tertiary/20 max-w-200">
+        <div className="border border-tertiary/20 max-w-200 mb-50">
           <div className="w-inherit border-b border-tertiary/20 py-4 pl-15 font-semibold">Creators with Most votes</div>
           <ResponsiveContainer width="100%" height={350}>
             <BarChart height={300} data={data} className="">
@@ -69,6 +70,7 @@ export function AdminPage() {
           </ResponsiveContainer>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
