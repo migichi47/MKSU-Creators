@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegMoon } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -12,7 +11,11 @@ export function AdminHeader() {
   });
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
-  
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   function toggleDarkMode() {
     setDarkMode(!darkMode);

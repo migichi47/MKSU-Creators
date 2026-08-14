@@ -31,7 +31,7 @@ export function AdminPage() {
 
       <div className="relative top-22 px-10 lg:px-40 pt-6 space-y-10">
         <div className="space-y-2">
-          <h1 className="font-bold text-3xl">Dashboard Overview</h1>
+          <h1 className="font-bold text-3xl dark:text-neutral">Dashboard Overview</h1>
           <p>Monitor real-time election statistics and creator performance.</p>
         </div>
 
@@ -57,9 +57,9 @@ export function AdminPage() {
         </div>
 
         {/* add a bar chart - summary analytics */}
-        <div className="border border-tertiary/20 max-w-200 mb-50">
-          <div className="w-inherit border-b border-tertiary/20 py-4 pl-15 font-semibold">Creators with Most votes</div>
-          <ResponsiveContainer width="100%" height={350}>
+        <div className="border border-tertiary/20 dark:border-neutral/50  max-w-200 mb-50 rounded-xl">
+          <div className="w-inherit border-b border-tertiary/20 dark:border-neutral/50  py-4 pl-15 font-semibold">Creators with Most votes</div>
+          <ResponsiveContainer width="100%" height={450}>
             <BarChart height={300} data={data} className="">
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
