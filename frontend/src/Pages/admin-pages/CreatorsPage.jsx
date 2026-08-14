@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Header } from "../components/Header";
 import { api } from "../../axios.js";
 
 export function CreatorsPage() {
@@ -55,7 +54,6 @@ export function CreatorsPage() {
 
   return (
     <>
-      <Header />
       <div className="creator-table-container">
         <div className="creator-table-title">
           Creators

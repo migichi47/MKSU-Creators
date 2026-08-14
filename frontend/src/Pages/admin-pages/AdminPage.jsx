@@ -9,8 +9,6 @@ import {
 } from "recharts";
 import { useNavigate } from "react-router-dom";
 
-import { Header } from "../components/Header";
-
 export function AdminPage() {
   const data = [
     { name: "Mukeli", voters: 40 },
@@ -23,7 +21,6 @@ export function AdminPage() {
 
   return (
     <>
-      <Header />
       <div className="dashboard-card-container">
         <div
           className="dashboard-card"
