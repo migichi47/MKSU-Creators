@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
 
 export function CreatorsPage() {
@@ -54,31 +55,32 @@ export function CreatorsPage() {
 
   return (
     <>
-      <div className="creator-table-container">
-        <div className="creator-table-title">
-          Creators
-          <div className="select-status">
+      <AdminHeader />
+      <div className="relative top-22">
+        <div className="flex py-5 items-center justify-between px-10">
+          <div>
+            <h1 className="font-bold text-xl">Manage Creators</h1>
+            <p className="text-xs">
+              View and manage all registered content creators in the system.
+            </p>
+          </div>
+          <div className="space-x-2">
             <select
-              className="select-category-dropdown"
+              className="shadow-xl border border-tertiary/20 rounded-sm px-2 py-1"
               onChange={(e) => {
                 setFilterStatus(e.target.value);
               }}
             >
               <option value="all">all</option>
               <option value="approved">approved</option>
-              <option value="pending">pending</option>
+              <option value="pending">pending</option>.
             </select>
-          </div>
-          <div>
-            <button
-              className="add-creator"
-              onClick={() => navigate("/admin/add-creator")}
-            >
-              +
+            <button className="border-0 bg-tertiary text-neutral text-xs font-bold px-3 pb-1" onClick={() => navigate("/admin/add-creator")}>
+              <span className="text-xl">+</span> New Creator
             </button>
           </div>
         </div>
-        <table className="creator-table">
+        <table className="">
           <thead>
             <tr>
               <th>Name</th>

@@ -57,7 +57,7 @@ export function AdminPage() {
         </div>
 
         {/* add a bar chart - summary analytics */}
-        <div className="border border-tertiary/20 dark:border-neutral/50  max-w-200 mb-50 rounded-xl">
+        <div className="border border-tertiary/20 dark:border-neutral/50  max-w-120 md:ml-20 mb-50 rounded-xl">
           <div className="w-inherit border-b border-tertiary/20 dark:border-neutral/50  py-4 pl-15 font-semibold">Creators with Most votes</div>
           <ResponsiveContainer width="100%" height={450}>
             <BarChart height={300} data={data} className="">
