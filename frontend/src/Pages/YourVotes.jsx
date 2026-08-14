@@ -50,17 +50,18 @@ export function YourVotes({
         {/* creators */}
         <div className="grid space-y-4 grid-cols-2 sm:grid-cols-3">
           {selectedCreators.map((creator) => {
-            const { name, image, category } = creator;
+            const { name, _id, image, category } = creator;
+            const id = _id;
 
             function discardCreator() {
               const newSelectedCreators = selectedCreators.filter(
-                (creator) => creator.name !== name,
+                (creator) => creator._id !== id,
               );
               const newSelectedCategories = selectedCategories.filter(
                 (cat) => cat !== category,
               );
               const newIsClicked = isClicked.filter(
-                (value) => value !== creator.name,
+                (value) => value !== creator._id,
               );
 
               setSelectedCreators(newSelectedCreators);

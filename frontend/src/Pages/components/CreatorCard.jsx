@@ -7,7 +7,7 @@ export function CreatorCard({
   isClicked,
   setIsClicked,
 }) {
-  const { name, image, followers, year, category, _id } = creator;
+  const { username, image, followers, year, category, _id } = creator;
   const id = _id;
 
   function selectCreator() {
@@ -24,6 +24,7 @@ export function CreatorCard({
       (cat) => cat !== category,
     );
     const newIsClicked = isClicked.filter((value) => value !== creator._id);
+    console.log(newSelectedCreators);
 
     setSelectedCreators(newSelectedCreators);
     setSelectedCategories(newSelectedCategories);
@@ -31,10 +32,7 @@ export function CreatorCard({
   }
 
   return (
-    <div
-      key={id}
-      className="relative h-75 min-w-60 flex-0 rounded-lg group"
-    >
+    <div key={id} className="relative h-75 min-w-60 flex-0 rounded-lg group">
       <div className="rounded-[inherit] min-w-[inherit] h-[inherit] overflow-hidden">
         <img
           src={image ? image : "default.png"}
@@ -46,9 +44,9 @@ export function CreatorCard({
       <div className=" absolute top-0 rounded-[inherit] min-w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
       <div className="absolute flex flex-col gap-2 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
         <div className="flex flex-col items-center ">
-          <span className="font-semibold text-xl md:text-2xl">{name}</span>
+          <span className="font-semibold text-xl md:text-2xl">{username}</span>
           <div className="flex gap-3 text-xs text-neutral/80">
-            <span>{followers/1000}k followers</span>
+            <span>{followers / 1000}k followers</span>
             <span>&#8226;</span>
             <span>Year {year}</span>
           </div>

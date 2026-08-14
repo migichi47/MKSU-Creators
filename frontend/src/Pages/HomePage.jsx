@@ -4,7 +4,6 @@ import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../axios";
-import { creators } from "../../data/creators";
 
 export function HomePage({
   selectedCreators,
