@@ -5,7 +5,7 @@ export function DashboardCard({ text, value, icon, color }) {
 
   return (
     <div
-      className="relative border border-tertiary/20 flex grow h-25 max-w-60 pt-4 pl-4 rounded-lg hover:bg-secondary/10  hover:border-amber-50/0 transition-colors cursor-pointer"
+      className="relative border border-tertiary/20 flex grow h-25 max-w-60 min-w-50 pt-4 pl-4 rounded-lg hover:bg-secondary/10  hover:border-amber-50/0 transition-colors cursor-pointer"
       onClick={() => {
         navigate("/admin/analytics");
       }}

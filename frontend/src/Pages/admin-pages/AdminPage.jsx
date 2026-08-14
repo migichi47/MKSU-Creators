@@ -28,13 +28,13 @@ export function AdminPage() {
     <>
       <AdminHeader />
 
-      <div className="relative top-22 px-40 pt-6 space-y-10">
+      <div className="relative top-22 px-10 lg:px-40 pt-6 space-y-10">
         <div className="space-y-2">
           <h1 className="font-bold text-3xl">Dashboard Overview</h1>
           <p>Monitor real-time election statistics and creator performance.</p>
         </div>
 
-        <div className="flex gap-10 bg-b">
+        <div className="w-[60%] sm:w-[80%] lg:w-full mx-auto sm:mx-0 grid grid-cols-1 sm:grid-cols-2 lg:flex gap-5 sm:gap-10 bg-b">
           <DashboardCard
             text={"TOTAL VOTES"}
             value={"23"}
