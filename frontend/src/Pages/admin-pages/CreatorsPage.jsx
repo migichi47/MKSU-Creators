@@ -1,11 +1,8 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL;
-
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { AdminSidebar } from "../utils/AdminSidebar";
-
-import "./creator-page.css";
+import { api } from "../../axios.js";
 
 export function CreatorsPage() {
   const [allCreators, setAllCreators] = useState([]);
@@ -15,17 +12,25 @@ export function CreatorsPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/creators`)
-      .then((response) => response.json())
-      .then((data) => setAllCreators(data));
+    async function getAllCreators() {
+      try {
+        const response = await api.get("/creators/all");
+        setAllCreators(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getAllCreators();
   }, []);
 
-  async function deleteCreator(username, id) {
-    await fetch(`${API_BASE_URL}/creators/${id}`, {
-      method: "DELETE",
-    });
+  async function deleteCreator(id) {
+    try {
+      await api.delete(`/creators/${id}`);
 
-    setAllCreators((prev) => prev.filter((creator) => creator._id !== id));
+      setAllCreators((prev) => prev.filter((creator) => creator._id !== id));
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const filteredCreators =
@@ -37,17 +42,12 @@ export function CreatorsPage() {
 
   async function verifyCreator(id) {
     try {
-      const response = await fetch(
-        `${API_BASE_URL}/creators/${id}/approve`,
-        {
-          method: "PATCH",
-        },
-      );
-
-      const data = await response.json();
+      const response = await api.patch(`/creators/${id}/approve`);
 
       setAllCreators((prev) =>
-        prev.map((creator) => (creator._id === id ? data.creator : creator)),
+        prev.map((creator) =>
+          creator._id === id ? response.data.creator : creator,
+        ),
       );
     } catch (err) {
       console.error("Error approving creator:", err);
@@ -124,7 +124,7 @@ export function CreatorsPage() {
                   <td
                     className="delete-creator-btn"
                     onClick={() => {
-                      deleteCreator(username, id);
+                      deleteCreator(id);
                     }}
                   >
                     ❌

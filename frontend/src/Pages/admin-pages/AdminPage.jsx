@@ -12,8 +12,6 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
 import { AdminSidebar } from "../utils/AdminSidebar";
 
-import "./admin-page.css";
-
 export function AdminPage() {
   const data = [
     { name: "Mukeli", voters: 40 },
