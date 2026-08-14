@@ -21,33 +21,33 @@ export function AdminPage() {
 
   return (
     <>
-      <div className="dashboard-card-container">
+      <div className="">
         <div
-          className="dashboard-card"
+          className=""
           onClick={() => {
             navigate("/admin/creators");
           }}
         >
-          <p className="dashboard-card-title">Verified creators</p>
-          <p className="dashboard-card-value">23</p>
+          <p className="">Verified creators</p>
+          <p className="">23</p>
         </div>
         <div
-          className="dashboard-card"
+          className=""
           onClick={() => {
             navigate("/admin/creators");
           }}
         >
-          <p className="dashboard-card-title">Pending Creators</p>
-          <p className="dashboard-card-value">6</p>
+          <p className="">Pending Creators</p>
+          <p className="">6</p>
         </div>
         <div
-          className="dashboard-card"
+          className=""
           onClick={() => {
             navigate("/admin/analytics");
           }}
         >
-          <p className="dashboard-card-title">Total votes</p>
-          <p className="dashboard-card-value">35</p>
+          <p className="">Total votes</p>
+          <p className="">35</p>
         </div>
       </div>
 
@@ -55,10 +55,9 @@ export function AdminPage() {
       <ResponsiveContainer
         width="70%"
         height={350}
-        className={"bar-chart-container"}
       >
-        <div className="leaderboard-text">LeaderBoard</div>
-        <BarChart height={300} data={data} className="bar-chart">
+        <div className="">LeaderBoard</div>
+        <BarChart height={300} data={data} className="">
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
