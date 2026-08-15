@@ -121,19 +121,24 @@ export function AdminAddCreator() {
 
         <div className="border border-tertiary/30 px-5 rounded-xl">
           <div className="space-y-4 border-b border-tertiary/30 py-10">
-            <div className="bg-secondary/20 flex items-center gap-5 px-8 py-4 border border-dashed border-tertiary/30 rounded-xl max-w-150 mx-auto">
-              <label
-                className="border border-secondary/50 rounded-xl min-w-20 h-20 flex items-center justify-center"
-                for="ImageUpload"
-              >
+            <label
+              className="bg-secondary/20 hover:bg-secondary/15 transition-colors cursor-pointer flex items-center gap-5 px-8 py-4 border border-dashed border-tertiary/30 rounded-xl mx-auto"
+              for="ImageUpload"
+            >
+              <h2 className="border cursor-pointer border-secondary/50 rounded-xl min-w-20 h-20 flex items-center justify-center">
                 <RiImageAddFill className="text-2xl text-secondary" />
-              </label>
+              </h2>
               <div className="space-y-2">
                 <h2 className="font-semibold text-xl">Upload Photo</h2>
                 <p className="text-xs flex flex-col md:flex-row gap-1">
-                  {upload
-                    ? <span className="flex items-center gap-1">File uploaded <TiTickOutline className="text-lg fill-secondary" /></span>
-                    : "Choose an image"}
+                  {upload ? (
+                    <span className="flex items-center gap-1">
+                      File uploaded{" "}
+                      <TiTickOutline className="text-lg fill-secondary" />
+                    </span>
+                  ) : (
+                    "Choose an image"
+                  )}
                   <span className="opacity-60">(recommended JPG & PNG)</span>
                 </p>
                 <input
@@ -147,7 +152,7 @@ export function AdminAddCreator() {
                   hidden
                 />
               </div>
-            </div>
+            </label>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-4">
               <div className="space-y-2">
@@ -298,7 +303,9 @@ export function AdminAddCreator() {
           </div>
 
           <div className="[&>button]:border-0 text-sm flex justify-end items-center gap-5 p-5">
-            <button className="hover:text-secondary hover:bg-red-50/0 h-fit">Cancel</button>
+            <button className="hover:text-secondary hover:bg-red-50/0 h-fit">
+              Cancel
+            </button>
             <button
               className="bg-secondary hover:bg-secondary/70 hover:text-tertiary transition-colors text-neutral w-35 flex justify-center items-center gap-2 py-2"
               onClick={() => finishUpload()}
