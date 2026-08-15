@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export function DashboardCard({ text, value, icon, color }) {
+export function DashboardCard({ text, value, icon }) {
   const navigate = useNavigate();
 
   return (
@@ -14,7 +14,7 @@ export function DashboardCard({ text, value, icon, color }) {
         <p className="text-xs">{text}</p>
         <p className="font-bold text-2xl">{value}</p>
       </div>
-      <div className={`absolute right-4 bg-${color} p-1 rounded-lg text-white`}>{icon}</div>
+      <div className={`absolute right-4 bg-secondary/80 p-1 rounded-lg text-white`}>{icon}</div>
     </div>
   );
 }

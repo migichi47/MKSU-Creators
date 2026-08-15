@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { MdOutlineVerified } from "react-icons/md";
 import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
 
@@ -66,7 +68,7 @@ export function CreatorsPage() {
           </div>
           <div className="space-x-2">
             <select
-              className="shadow-xl border border-tertiary/20 rounded-sm px-2 py-1"
+              className="shadow-xl border border-tertiary/30 dark:border-neutral/30 rounded-sm px-2 py-1"
               onChange={(e) => {
                 setFilterStatus(e.target.value);
               }}
@@ -83,11 +85,11 @@ export function CreatorsPage() {
             </button>
           </div>
         </div>
-        <div className="border border-tertiary/30 rounded-2xl">
+        <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl">
           <table className="w-full">
             <thead>
-              <tr className="[&>th]:font-normal bg-tertiary/10 border-b border-tertiary/30 h-8">
-                <th className="rounded-tl-xl">Name</th>
+              <tr className="[&>th]:font-normal bg-tertiary/10 border-b border-tertiary/30 dark:border-neutral/30 h-8">
+                <th className="rounded-tl-xl hidden sm:block">Name</th>
                 <th>handle</th>
                 <th>Category</th>
                 <th>platform</th>
@@ -110,19 +112,24 @@ export function CreatorsPage() {
 
                 const id = _id;
                 return (
-                  <tr key={id} className="h-10 border-t border-tertiary/30 [&>td]:text-center">
-                    <td>{fullName}</td>
+                  <tr
+                    key={id}
+                    className="h-10 border-t border-tertiary/30 [&>td]:text-center text-xs"
+                  >
+                    <td className="hidden sm:block sm:font-normal">
+                      {fullName}
+                    </td>
                     <td className="font-semibold">{username}</td>
                     <td>{category}</td>
                     <td>{platform}</td>
-                    <td>{followers}</td>
+                    <td>{(followers/1000).toFixed(1)} k</td>
                     <td>
                       {status === "pending" ? (
                         <button onClick={() => verifyCreator(id)}>
                           verify
                         </button>
                       ) : (
-                        <span className="verified-check">✔️</span>
+                        <span className="verified-check"><MdOutlineVerified className="text-primary mx-auto" /></span>
                       )}
                     </td>
 
@@ -132,7 +139,7 @@ export function CreatorsPage() {
                         deleteCreator(id);
                       }}
                     >
-                      ❌
+                      <RiDeleteBin6Line className="mx-auto" />
                     </td>
                   </tr>
                 );

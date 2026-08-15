@@ -55,7 +55,7 @@ export function AdminHeader() {
               View Creators
             </a>
             <a
-              onClick={() => navigate("admin/add-creator")}
+              onClick={() => navigate("/admin/add-creator")}
               className="hover:text-secondary"
             >
               Add Creator
@@ -118,7 +118,7 @@ export function AdminHeader() {
             <a
               onClick={() => {
                 setShowMenu(false);
-                navigate("admin/add-creator");
+                navigate("/admin/add-creator");
               }}
               className="hover:text-secondary"
             >
