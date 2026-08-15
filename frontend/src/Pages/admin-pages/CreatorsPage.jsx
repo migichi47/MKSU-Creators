@@ -43,12 +43,15 @@ export function CreatorsPage() {
     }
   }
 
-  const filteredCreators =
-    filterStatus === "all"
-      ? allCreators
-      : filterStatus === "approved"
-        ? allCreators.filter((creator) => creator.status === "approved")
-        : allCreators.filter((creator) => creator.status === "pending");
+  const filteredCreators = allCreators.filter((creator) => {
+    const matchesStatus =
+      filterStatus === "all" || creator.status === filterStatus;
+
+    const matchesSearch =
+      creator.fullName.toLowerCase().includes(search?.toLowerCase()) ||
+      creator.username.toLowerCase().includes(search?.toLowerCase());
+    return matchesSearch && matchesStatus;
+  });
 
   async function verifyCreator(id) {
     try {
@@ -62,10 +65,6 @@ export function CreatorsPage() {
     } catch (err) {
       console.error("Error approving creator:", err);
     }
-  }
-
-  function searchCreator() {
-    console.log(search);
   }
 
   return (
@@ -90,7 +89,7 @@ export function CreatorsPage() {
                 all
               </option>
               <option value="approved">approved</option>
-              <option value="pending">pending</option>.
+              <option value="pending">pending</option>
             </select>
             <button
               className="border-0 bg-tertiary dark:bg-neutral dark:text-tertiary text-neutral text-xs font-semibold px-3 py-0 h-6"
@@ -113,12 +112,6 @@ export function CreatorsPage() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <button
-            className="bg-white/30 px-2 hover:bg-white border-0"
-            onClick={searchCreator}
-          >
-            Search
-          </button>
         </div>
         <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl relative sm:top-6">
           <table className="w-full">
