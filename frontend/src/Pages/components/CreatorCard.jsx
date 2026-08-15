@@ -52,7 +52,7 @@ export function CreatorCard({
           </div>
         </div>
         {!selectedCategories.includes(category) ? (
-          <button className=" rounded-sm h-10" onClick={selectCreator}>
+          <button className=" rounded-sm h-8 w-30 mx-auto" onClick={selectCreator}>
             Vote Now
           </button>
         ) : isClicked.includes(id) ? (
