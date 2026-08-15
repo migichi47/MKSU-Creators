@@ -2,8 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
+import { GrUserAdd } from "react-icons/gr";
 import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
+import { Footer } from "../components/Footer.jsx";
 
 export function CreatorsPage() {
   const [allCreators, setAllCreators] = useState([]);
@@ -58,15 +60,15 @@ export function CreatorsPage() {
   return (
     <>
       <AdminHeader />
-      <div className="relative top-22 px-10">
+      <div className="relative top-22 px-10 mb-50">
         <div className="flex py-5 items-center justify-between">
-          <div>
-            <h1 className="font-bold text-xl">Manage Creators</h1>
+          <div className="sm:max-w-70 max-w-40">
+            <h1 className="font-bold sm:text-xl text-lg">Manage Creators</h1>
             <p className="text-xs">
               View and manage all registered content creators in the system.
             </p>
           </div>
-          <div className="space-x-2">
+          <div className="space-x-2 flex text-xs">
             <select
               className="shadow-xl border border-tertiary/30 dark:border-neutral/30 rounded-sm px-2 py-1"
               onChange={(e) => {
@@ -88,7 +90,7 @@ export function CreatorsPage() {
         <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl">
           <table className="w-full">
             <thead>
-              <tr className="[&>th]:font-normal bg-tertiary/10 border-b border-tertiary/30 dark:border-neutral/30 h-8">
+              <tr className="[&>th]:font-normal bg-tertiary/10 border-b border-tertiary/30 dark:border-neutral/30 h-8 text-sm">
                 <th className="rounded-tl-xl hidden sm:block">Name</th>
                 <th>handle</th>
                 <th>Category</th>
@@ -122,14 +124,17 @@ export function CreatorsPage() {
                     <td className="font-semibold">{username}</td>
                     <td>{category}</td>
                     <td>{platform}</td>
-                    <td>{(followers/1000).toFixed(1)} k</td>
+                    <td>{(followers / 1000).toFixed(1)} k</td>
                     <td>
                       {status === "pending" ? (
-                        <button onClick={() => verifyCreator(id)}>
-                          verify
-                        </button>
+                        <GrUserAdd
+                          onClick={verifyCreator}
+                          className="text-sm mx-auto text-secondary cursor-pointer hover:scale-120 duration-200"
+                        />
                       ) : (
-                        <span className="verified-check"><MdOutlineVerified className="text-primary mx-auto" /></span>
+                        <span className="verified-check">
+                          <MdOutlineVerified className="text-primary mx-auto text-sm" />
+                        </span>
                       )}
                     </td>
 
@@ -139,7 +144,7 @@ export function CreatorsPage() {
                         deleteCreator(id);
                       }}
                     >
-                      <RiDeleteBin6Line className="mx-auto" />
+                      <RiDeleteBin6Line className="mx-auto text-sm hover:text-secondary cursor-pointer" />
                     </td>
                   </tr>
                 );
@@ -148,6 +153,7 @@ export function CreatorsPage() {
           </table>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

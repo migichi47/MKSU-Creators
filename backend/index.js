@@ -93,7 +93,7 @@ app.post("/creators/add", upload.single("image"), async (request, response) => {
     const creator = new Creator({
       ...request.body,
       image: request.file.filename,
-      status: "approved",
+      status: "pending",
     });
     await creator.save();
 
