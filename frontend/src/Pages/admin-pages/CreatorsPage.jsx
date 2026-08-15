@@ -70,7 +70,7 @@ export function CreatorsPage() {
   return (
     <>
       <AdminHeader />
-      <div className="relative top-30 px-10 mb-50 max-w-200 mx-auto">
+      <div className="relative top-30 px-10 mb-50 max-w-200 mx-auto space-y-4 sm:space-y-1">
         <div className="flex py-5 sm:items-center justify-between gap-4 sm:flex-row flex-col">
           <div className="space-y-2">
             <h1 className="font-bold sm:text-xl text-lg">Manage Creators</h1>
@@ -100,30 +100,30 @@ export function CreatorsPage() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-4">
-          <div className="border relative w-50 border-neutral/30 rounded-sm">
+          <div className="border relative w-50 dark:border-neutral/30 border-tertiary/30 rounded-sm">
             <span className="absolute top-1 left-1">
               <CiSearch />
             </span>
             <input
               type="text"
               placeholder="search creator"
-              className="relative left-8 w-42 text-xs outline-0"
+              className="relative left-8 w-42 text-xs outline-0 text-tertiary dark:text-neutral"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
-        <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl relative sm:top-6">
-          <table className="w-full">
+        <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl relative sm:top-6 overflow-x-scroll scrollbar-track-transparent">
+          <table className="w-full min-w-120">
             <thead>
-              <tr className="[&>th]:font-bold bg-tertiary/10 border-b border-tertiary/30 dark:border-neutral/30 h-10 text-xs ">
-                <th className="rounded-tl-xl hidden sm:none">Name</th>
+              <tr className="[&>th]:font-bold bg-tertiary/10 dark:bg-neutral/10 border-b border-tertiary/30 dark:border-neutral/30 h-10 text-xs ">
+                <th>Name</th>
                 <th>Handle</th>
                 <th>Category</th>
                 <th>Platform</th>
                 <th>Followers</th>
                 <th>Status</th>
-                <th className="rounded-tr-xl">Actions</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -144,10 +144,10 @@ export function CreatorsPage() {
                     key={id}
                     className="h-10 border-t border-tertiary/30 dark:border-neutral/30 [&>td]:text-center text-xs"
                   >
-                    <td className="hidden sm:block sm:font-normal">
+                    <td className="">
                       {fullName}
                     </td>
-                    <td className="font-semibold">{username}</td>
+                    <td className="font-semibold text-sm">{username}</td>
                     <td>{category}</td>
                     <td>{platform}</td>
                     <td>{(followers / 1000).toFixed(1)} k</td>

@@ -85,5 +85,12 @@ html {
     animation-delay: 400ms;
   }
 
+  .scrollbar-transparent::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
 }
