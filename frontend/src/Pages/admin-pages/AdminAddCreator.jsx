@@ -5,8 +5,10 @@ import { toast } from "react-toastify";
 import { RiImageAddFill } from "react-icons/ri";
 import { TiUserAddOutline, TiTickOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
+import { IoArrowBack } from "react-icons/io5";
 
 import { AdminHeader } from "./components/AdminHeader";
+import { Footer } from "../components/Footer";
 
 export function AdminAddCreator() {
   const [formData, setFormData] = useState({
@@ -37,7 +39,7 @@ export function AdminAddCreator() {
       }));
     }
   }
-  
+
   function discardForm() {
     setFormData({
       fullName: "",
@@ -129,17 +131,17 @@ export function AdminAddCreator() {
     <>
       <AdminHeader />
 
-      <div className="relative top-30 px-10 space-y-10 max-w-250 mx-auto">
+      <div className="relative top-35 px-10 space-y-10 max-w-150 mx-auto mb-50">
         <div>
           <h1 className="font-bold text-2xl">Register New Creator</h1>
-          <p className="text-sm">
+          <p className="text-xs text-neutral/80">
             Enter the details of the creator to add them to the election monitor
             database. Ensure all information is accurate.
           </p>
         </div>
 
-        <div className="border border-tertiary/30 px-5 rounded-xl">
-          <div className="space-y-4 border-b border-tertiary/30 py-10">
+        <div className="border border-tertiary/30 dark:border-neutral/30 px-5 rounded-xl">
+          <div className="space-y-4 border-b border-tertiary/30 dark:border-neutral/30 py-10">
             <label
               className="bg-secondary/20 hover:bg-secondary/15 transition-colors cursor-pointer flex items-center gap-5 px-8 py-4 border border-dashed border-tertiary/30 rounded-xl mx-auto"
               for="ImageUpload"
@@ -173,11 +175,11 @@ export function AdminAddCreator() {
               </div>
             </label>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto gap-4">
               <div className="space-y-2">
-                <h2 className="text-xs font-semibold">Full Name</h2>
+                <h2 className="text-xs">Full Name</h2>
                 <input
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
+                  className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
                   type="text"
                   placeholder="eg. John Doe"
                   name="fullName"
@@ -187,9 +189,9 @@ export function AdminAddCreator() {
               </div>
 
               <div className="space-y-2">
-                <h2 className="text-xs font-semibold">Username / handle</h2>
+                <h2 className="text-xs">Username / handle</h2>
                 <input
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
+                  className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
                   type="text"
                   placeholder="@johndoe25"
                   name="username"
@@ -199,9 +201,9 @@ export function AdminAddCreator() {
               </div>
 
               <div className="space-y-2">
-                <h2 className="text-xs font-semibold">Admission Number</h2>
+                <h2 className="text-xs">Admission Number</h2>
                 <input
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
+                  className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
                   type="text"
                   placeholder="eg. J17-0458-2025"
                   name="admission"
@@ -211,9 +213,9 @@ export function AdminAddCreator() {
               </div>
 
               <div className="space-y-2">
-                <h2 className="text-xs font-semibold">Phone Number</h2>
+                <h2 className="text-xs">Phone Number</h2>
                 <input
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
+                  className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
                   type="text"
                   placeholder="07XXXXXXXX"
                   name="phoneNumber"
@@ -223,39 +225,59 @@ export function AdminAddCreator() {
               </div>
 
               <div className="space-y-2">
-                <p className="text-xs font-semibold">Academic year</p>
-                <select
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
-                  onChange={handleChange}
-                  name="year"
-                  value={formData.year}
-                >
-                  <option value="1">Year 1</option>
-                  <option value="2">Year 2</option>
-                  <option value="3">Year 3</option>
-                  <option value="4">Year 4</option>
-                  <option value="5">Year 5</option>
-                  <option value="other">other</option>
-                </select>
+                <p className="text-xs">Academic year</p>
+                <div className="border border-tertiary/30 bg-primary/5 w-full px-5 rounded-md sm:w-60 sm:min-w-60 h-10 dark:border-neutral/30">
+                  <select
+                    className="text-sm w-[90%] h-full outline-0 dark:bg-tertiary/5"
+                    onChange={handleChange}
+                    name="year"
+                    value={formData.year}
+                  >
+                    <option className="dark:bg-tertiary/80" value="1">
+                      Year 1
+                    </option>
+                    <option className="dark:bg-tertiary/80" value="2">
+                      Year 2
+                    </option>
+                    <option className="dark:bg-tertiary/80" value="3">
+                      Year 3
+                    </option>
+                    <option className="dark:bg-tertiary/80" value="4">
+                      Year 4
+                    </option>
+                    <option className="dark:bg-tertiary/80" value="5">
+                      Year 5
+                    </option>
+                    <option className="dark:bg-tertiary/80" value="other">
+                      other
+                    </option>
+                  </select>
+                </div>
               </div>
 
               <div className="space-y-2">
-                <p className="text-xs font-semibold">Platform</p>
-                <select
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
-                  onChange={handleChange}
-                  name="platform"
-                  value={formData.platform}
-                >
-                  <option value="tiktok">TikTok</option>
-                  <option value="instagram">Instagram</option>
-                </select>
+                <p className="text-xs">Platform</p>
+                <div className="border border-tertiary/30 bg-primary/5 w-full px-5 rounded-md sm:w-60 sm:min-w-60 h-10 dark:border-neutral/30">
+                  <select
+                    className="text-sm w-[90%] h-full outline-0"
+                    onChange={handleChange}
+                    name="platform"
+                    value={formData.platform}
+                  >
+                    <option className="dark:bg-tertiary/80" value="tiktok">
+                      TikTok
+                    </option>
+                    <option className="dark:bg-tertiary/80" value="instagram">
+                      Instagram
+                    </option>
+                  </select>
+                </div>
               </div>
 
               <div className="space-y-2">
-                <h2 className="text-xs font-semibold">Full Name</h2>
+                <h2 className="text-xs">Followers</h2>
                 <input
-                  className="border border-tertiary/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0"
+                  className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
                   type="text"
                   placeholder="Followers eg. 6723"
                   name="followers"
@@ -266,56 +288,61 @@ export function AdminAddCreator() {
             </div>
 
             <div className="space-y-2">
-              <p className="text-xs font-semibold">Content Category</p>
-              <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5 [&>label]:border [&>label]:border-tertiary/30 [&>label]:px-2 [&>label]:py-2 [&>label]:rounded-sm [&>label]:hover:bg-primary/5 [&>label]:max-w-40 space-x-2 mx-auto">
+              <p className="text-xs">Content Category</p>
+              <div className="grid sm:grid-cols-3 grid-cols-2 gap-5 [&>label]:border [&>label]:border-tertiary/30 [&>label]:dark:border-neutral/30 [&>label]:px-2 [&>label]:py-2 [&>label]:rounded-sm [&>label]:hover:bg-primary/5 [&>label]:flex [&>label]:max-w-40 space-x-2 mx-auto">
                 <label>
                   <input
+                    className="w-2 opacity-80"
                     type="radio"
                     name="category"
                     value="dancer"
                     onChange={handleChange}
                   />
-                  <span className="ml-2">Dancer</span>
+                  <span className="ml-2 text-xs">Dancer</span>
                 </label>
 
                 <label>
                   <input
+                    className="w-2 opacity-80"
                     type="radio"
                     name="category"
                     onChange={handleChange}
                     value="vlogger"
                   />
-                  <span className="ml-2">vlogger</span>
+                  <span className="ml-2 text-xs">vlogger</span>
                 </label>
 
                 <label>
                   <input
+                    className="w-2 opacity-80"
                     type="radio"
                     name="category"
                     onChange={handleChange}
                     value="influencer"
                   />
-                  <span className="ml-2">Influencer</span>
+                  <span className="ml-2 text-xs">Influencer</span>
                 </label>
 
                 <label>
                   <input
+                    className="w-2 opacity-80"
                     type="radio"
                     name="category"
                     onChange={handleChange}
                     value="musician"
                   />
-                  <span className="ml-2">Musician</span>
+                  <span className="ml-2 text-xs">Musician</span>
                 </label>
 
                 <label>
                   <input
+                    className="w-2 opacity-80"
                     type="radio"
                     name="category"
                     onChange={handleChange}
                     value="comedian"
                   />
-                  <span className="ml-2">Comedian</span>
+                  <span className="ml-2 text-xs">Comedian</span>
                 </label>
               </div>
             </div>
@@ -323,13 +350,13 @@ export function AdminAddCreator() {
 
           <div className="[&>button]:border-0 text-sm flex justify-end items-center gap-5 p-5">
             <button
-              className="hover:text-secondary hover:bg-red-50/0 h-fit"
+              className="hover:text-secondary bg-red-50/0 h-fit"
               onClick={discardForm}
             >
               Cancel
             </button>
             <button
-              className="bg-secondary hover:bg-secondary/70 hover:text-tertiary transition-colors text-neutral w-35 flex justify-center items-center gap-2 py-2"
+              className="bg-secondary hover:bg-secondary/50 transition-colors text-neutral w-35 flex justify-center items-center gap-2 py-2"
               onClick={() => finishUpload()}
             >
               <span>
@@ -340,6 +367,16 @@ export function AdminAddCreator() {
           </div>
         </div>
       </div>
+      <div
+        onClick={() => navigate("/admin")}
+        className="absolute left-6 top-25 z-1 text-tertiary/80 dark:text-neutral/80 text-sm flex gap-1 transition-transform hover:-translate-x-1 items-center hover:text-secondary cursor-pointer"
+      >
+        {" "}
+        <IoArrowBack className="inline" />
+        <span>back</span>
+      </div>
+
+      <Footer className="" />
     </>
   );
 }
