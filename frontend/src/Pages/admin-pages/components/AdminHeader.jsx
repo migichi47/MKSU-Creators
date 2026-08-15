@@ -96,7 +96,7 @@ export function AdminHeader() {
       {
         /* separate menu */
         showMenu && (
-          <div className="fixed [&>a]:cursor-pointer bg-neutral/80 md:hidden dark:bg-tertiary/30 dark:border dark:border-neutral/20 text-xl gap-2 right-10 top-24  dark:backdrop-blur-sm z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl slide-from-top duration-400">
+          <div className="fixed [&>a]:cursor-pointer bg-neutral/80 md:hidden dark:bg-tertiary/30 dark:border dark:border-neutral/20 text-sm gap-5 right-10 top-24  dark:backdrop-blur-sm z-10 flex flex-col border border-tertiary/20 shadow-lg px-8 py-4 rounded-2xl slide-from-top duration-400">
             <a
               onClick={() => {
                 setShowMenu(false);

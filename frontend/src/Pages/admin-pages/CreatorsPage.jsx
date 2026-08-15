@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
 import { GrUserAdd } from "react-icons/gr";
+import { IoArrowBack } from "react-icons/io5";
+
 import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
 import { Footer } from "../components/Footer.jsx";
@@ -63,9 +65,9 @@ export function CreatorsPage() {
   return (
     <>
       <AdminHeader />
-      <div className="relative top-22 px-10 mb-50">
-        <div className="flex py-5 items-center justify-between">
-          <div className="sm:max-w-70 max-w-40">
+      <div className="relative top-30 px-10 mb-50 max-w-200 mx-auto">
+        <div className="flex py-5 sm:items-center justify-between gap-4 sm:flex-row flex-col">
+          <div className="space-y-2">
             <h1 className="font-bold sm:text-xl text-lg">Manage Creators</h1>
             <p className="text-xs">
               View and manage all registered content creators in the system.
@@ -73,32 +75,34 @@ export function CreatorsPage() {
           </div>
           <div className="space-x-2 flex text-xs">
             <select
-              className="shadow-xl border border-tertiary/30 dark:border-neutral/30 rounded-sm px-2 py-1"
+              className="shadow-xl border border-tertiary/30 dark:border-neutral/30 rounded-sm px-2 h-6 [&>option]:dark:bg-tertiary outline-0"
               onChange={(e) => {
                 setFilterStatus(e.target.value);
               }}
             >
-              <option value="all">all</option>
+              <option className="" value="all">
+                all
+              </option>
               <option value="approved">approved</option>
               <option value="pending">pending</option>.
             </select>
             <button
-              className="border-0 bg-tertiary text-neutral text-xs font-bold px-3 pb-1"
+              className="border-0 bg-tertiary dark:bg-neutral dark:text-tertiary text-neutral text-xs font-semibold px-3 py-0 h-6"
               onClick={() => navigate("/admin/add-creator")}
             >
-              <span className="text-xl">+</span> New Creator
+              <span className="text-xs">+</span> New Creator
             </button>
           </div>
         </div>
-        <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl">
+        <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl relative sm:top-6">
           <table className="w-full">
             <thead>
-              <tr className="[&>th]:font-normal bg-tertiary/10 border-b border-tertiary/30 dark:border-neutral/30 h-8 text-sm">
-                <th className="rounded-tl-xl hidden sm:block">Name</th>
-                <th>handle</th>
+              <tr className="[&>th]:font-bold bg-tertiary/10 border-b border-tertiary/30 dark:border-neutral/30 h-10 text-xs ">
+                <th className="rounded-tl-xl hidden sm:none">Name</th>
+                <th>Handle</th>
                 <th>Category</th>
-                <th>platform</th>
-                <th>followers</th>
+                <th>Platform</th>
+                <th>Followers</th>
                 <th>Status</th>
                 <th className="rounded-tr-xl">Actions</th>
               </tr>
@@ -119,7 +123,7 @@ export function CreatorsPage() {
                 return (
                   <tr
                     key={id}
-                    className="h-10 border-t border-tertiary/30 [&>td]:text-center text-xs"
+                    className="h-10 border-t border-tertiary/30 dark:border-neutral/30 [&>td]:text-center text-xs"
                   >
                     <td className="hidden sm:block sm:font-normal">
                       {fullName}
@@ -155,6 +159,14 @@ export function CreatorsPage() {
             </tbody>
           </table>
         </div>
+      </div>
+      <div
+        onClick={() => navigate("/admin")}
+        className="absolute left-6 top-25 z-1 text-tertiary/80 dark:text-neutral/80 text-sm flex gap-1 transition-transform hover:-translate-x-1 items-center hover:text-secondary cursor-pointer"
+      >
+        {" "}
+        <IoArrowBack className="inline" />
+        <span>back</span>
       </div>
       <Footer />
     </>
