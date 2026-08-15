@@ -4,6 +4,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
 import { GrUserAdd } from "react-icons/gr";
 import { IoArrowBack } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
 
 import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
@@ -12,6 +13,7 @@ import { Footer } from "../components/Footer.jsx";
 export function CreatorsPage() {
   const [allCreators, setAllCreators] = useState([]);
   const [filterStatus, setFilterStatus] = useState("all");
+  const [search, setSearch] = useState("");
 
   // const { creators, setCreators } = props;
   const navigate = useNavigate();
@@ -62,6 +64,10 @@ export function CreatorsPage() {
     }
   }
 
+  function searchCreator() {
+    console.log(search);
+  }
+
   return (
     <>
       <AdminHeader />
@@ -93,6 +99,26 @@ export function CreatorsPage() {
               <span className="text-xs">+</span> New Creator
             </button>
           </div>
+        </div>
+        <div className="flex items-center justify-center gap-4">
+          <div className="border relative w-50 border-neutral/30 rounded-sm">
+            <span className="absolute top-1 left-1">
+              <CiSearch />
+            </span>
+            <input
+              type="text"
+              placeholder="search creator"
+              className="relative left-8 w-42 text-xs outline-0"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          <button
+            className="bg-white/30 px-2 hover:bg-white border-0"
+            onClick={searchCreator}
+          >
+            Search
+          </button>
         </div>
         <div className="border border-tertiary/30 dark:border-neutral/30 rounded-2xl relative sm:top-6">
           <table className="w-full">
