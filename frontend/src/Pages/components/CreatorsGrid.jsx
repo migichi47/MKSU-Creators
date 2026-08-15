@@ -36,7 +36,7 @@ export function CreatorsGrid({
               </span>
             </div>
 
-            <div className="mt-4 flex overflow-scroll gap-6 pl-1">
+            <div className="mt-4 flex overflow-scroll no-scrollbar gap-6 pl-1 pb-4">
               {categoryCreators.map((creator) => {
                 return (
                   <CreatorCard

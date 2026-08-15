@@ -84,4 +84,8 @@ html {
   .delay-400 {
     animation-delay: 400ms;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

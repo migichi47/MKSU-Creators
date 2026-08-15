@@ -45,7 +45,7 @@ export function CreatorCard({
       <div className="absolute flex flex-col gap-2 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
         <div className="flex flex-col items-center ">
           <span className="font-semibold text-xl md:text-2xl">{username}</span>
-          <div className="flex gap-3 text-xs text-neutral/80">
+          <div className="flex gap-3 text-[10px] text-neutral/60">
             <span>{followers / 1000}k followers</span>
             <span>&#8226;</span>
             <span>Year {year}</span>
