@@ -101,14 +101,12 @@ export function AdminAddCreator() {
     Object.keys(formData).forEach((key) => {
       form.append(key, formData[key]);
     });
-
     form.append("image", upload);
 
     const response = await fetch(`${API_BASE_URL}/creators/add`, {
       method: "POST",
       body: form,
     });
-
     const data = await response.json();
     console.log(data);
 

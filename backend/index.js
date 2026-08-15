@@ -87,7 +87,7 @@ app.post("/creators", upload.single("image"), async (request, response) => {
 });
 
 
-// admin create a creator
+// admin adds a creator
 app.post("/creators/add", upload.single("image"), async (request, response) => {
   try {
     const creator = new Creator({

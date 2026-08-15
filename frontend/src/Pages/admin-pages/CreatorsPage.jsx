@@ -26,13 +26,16 @@ export function CreatorsPage() {
     getAllCreators();
   }, []);
 
-  async function deleteCreator(id) {
-    try {
-      await api.delete(`/creators/${id}`);
+  async function deleteCreator(id, username) {
+    const confirmed = confirm(`delete ${username}?`);
+    if (confirmed) {
+      try {
+        await api.delete(`/creators/${id}`);
 
-      setAllCreators((prev) => prev.filter((creator) => creator._id !== id));
-    } catch (error) {
-      console.error(error);
+        setAllCreators((prev) => prev.filter((creator) => creator._id !== id));
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 
@@ -128,7 +131,7 @@ export function CreatorsPage() {
                     <td>
                       {status === "pending" ? (
                         <GrUserAdd
-                          onClick={verifyCreator}
+                          onClick={() => verifyCreator(id)}
                           className="text-sm mx-auto text-secondary cursor-pointer hover:scale-120 duration-200"
                         />
                       ) : (
@@ -141,7 +144,7 @@ export function CreatorsPage() {
                     <td
                       className="delete-creator-btn"
                       onClick={() => {
-                        deleteCreator(id);
+                        deleteCreator(id, username);
                       }}
                     >
                       <RiDeleteBin6Line className="mx-auto text-sm hover:text-secondary cursor-pointer" />
