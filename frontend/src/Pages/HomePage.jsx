@@ -3,7 +3,6 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { CiSearch } from "react-icons/ci";
 import { api } from "../axios";
 
 export function HomePage({
@@ -74,16 +73,6 @@ export function HomePage({
             </span>
           </div>
         </div>
-      </div>
-      <div className="mx-auto border border-tertiary/30 dark:border-neutral/30 h-8 flex items-center gap-1 mb-10 rounded-sm max-w-100">
-        <div className="border-r border-tertiary/30 dark:border-neutral/30 h-[inherit] w-8 flex items-center justify-center">
-          <CiSearch />
-        </div>
-        <input
-          type="text"
-          placeholder="search"
-          className="dark:placeholder:text-neutral/50 z-10 outline-0 placeholder:text-tertiary/50 pl-5"
-        />
       </div>
 
       <CreatorsGrid
