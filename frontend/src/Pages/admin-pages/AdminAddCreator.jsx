@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { RiImageAddFill } from "react-icons/ri";
 import { TiUserAddOutline, TiTickOutline } from "react-icons/ti";
+import { useNavigate } from "react-router-dom";
 
 import { AdminHeader } from "./components/AdminHeader";
 
@@ -19,6 +20,7 @@ export function AdminAddCreator() {
     category: "dancer",
   });
   const [upload, setUpload] = useState();
+  const navigate = useNavigate();
 
   function handleChange(e) {
     const { name, value, files } = e.target;
@@ -34,6 +36,23 @@ export function AdminAddCreator() {
         [name]: value,
       }));
     }
+  }
+  
+  function discardForm() {
+    setFormData({
+      fullName: "",
+      username: "",
+      admission: "",
+      phoneNumber: "",
+      year: "1",
+      platform: "tiktok",
+      followers: "",
+      category: "dancer",
+    });
+    setUpload(null);
+    setTimeout(() => {
+      navigate("/admin");
+    }, 500);
   }
 
   async function finishUpload() {
@@ -303,7 +322,10 @@ export function AdminAddCreator() {
           </div>
 
           <div className="[&>button]:border-0 text-sm flex justify-end items-center gap-5 p-5">
-            <button className="hover:text-secondary hover:bg-red-50/0 h-fit">
+            <button
+              className="hover:text-secondary hover:bg-red-50/0 h-fit"
+              onClick={discardForm}
+            >
               Cancel
             </button>
             <button
