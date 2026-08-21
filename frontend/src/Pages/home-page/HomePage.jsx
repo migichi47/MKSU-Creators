@@ -5,21 +5,18 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 
 import { CreatorContext } from "../../context/ContextProvider";
-import { CompleteModal } from "../portals/CompleteModal";
+import { Hero } from "./Hero";
+import { RenderModal } from "./RenderModal";
 
 export function HomePage() {
-  const { selectedCreators, creators, categories, votingComplete } =
-    useContext(CreatorContext);
+  const { selectedCreators, creators, categories } = useContext(CreatorContext);
   const [renderModal, setRenderModal] = useState(true);
   const navigate = useNavigate();
 
   return (
     <div className="">
       <Header />
-
-      {/* hero section */}
-      
-
+      <Hero />
       <CreatorsGrid creators={creators} categories={categories} />
       {/* your votes section near the footer */}
       {selectedCreators?.length > 0 && (
@@ -37,49 +34,8 @@ export function HomePage() {
           </button>
         </div>
       )}
-
       <Footer />
-      {/* confirm votes section */}
-      {selectedCreators?.length > 0 && (
-        <div className="fixed sm:top-24 top-0 bg-amber-50/0 z-10 left-50 flex flex-col gap-2 sm:gap-2 sm:left-4 md:left-10 sm:bg-neutral/80 sm:backdrop-blur-2xl p-3 md:p-5 rounded-2xl dark:bg-tertiary/60 ">
-          <span>
-            Your pick:{" "}
-            <span className="text-2xl font-bold ">
-              {selectedCreators.length}
-            </span>
-          </span>
-          <button
-            className="bg-amber-50/0 hover:bg-primary hover:text-neutral px-2"
-            onClick={() => navigate("/your-votes")}
-          >
-            Confirm
-          </button>
-        </div>
-      )}
-
-      {renderModal && (
-        <CompleteModal
-          isOpen={votingComplete}
-          onClose={() => {
-            setRenderModal(false);
-          }}
-        >
-          <div className="">
-            <h2 className="font-semibold text-lg">
-              You voted in all categories
-            </h2>
-            <p className="text-sm text-zinc-800">Confirm your votes</p>
-            <div>
-              <button
-                className="text-xs px-2 py-1 mt-2"
-                onClick={() => navigate("/your-votes")}
-              >
-                Confirm
-              </button>
-            </div>
-          </div>
-        </CompleteModal>
-      )}
+      <RenderModal renderModal={renderModal} setRenderModal={setRenderModal} />
     </div>
   );
 }
