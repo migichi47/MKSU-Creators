@@ -1,11 +1,11 @@
-import { CreatorsGrid } from "./components/CreatorsGrid";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import { CreatorsGrid } from "../components/CreatorsGrid";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 
-import { CreatorContext } from "../context/ContextProvider";
-import { CompleteModal } from "./portals/CompleteModal";
+import { CreatorContext } from "../../context/ContextProvider";
+import { CompleteModal } from "../portals/CompleteModal";
 
 export function HomePage() {
   const { selectedCreators, creators, categories, votingComplete } =
