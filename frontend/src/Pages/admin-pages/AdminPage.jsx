@@ -31,21 +31,25 @@ export function AdminPage() {
       text: "TOTAL VOTES",
       value: 23,
       icon: <MdHowToVote />,
+      destination: "analytics",
     },
     {
       text: "VERIFIED CREATORS",
       value: 20,
       icon: <MdOutlineVerified />,
+      destination: "creators",
     },
     {
       text: "PENDING VERIFICATION",
       value: 3,
       icon: <MdOutlinePendingActions />,
+      destination: "creators",
     },
     {
       text: "ADD CREATOR",
       value: "+",
       icon: <TiUserAddOutline />,
+      destination: "add-creator",
     },
   ];
 
@@ -58,12 +62,14 @@ export function AdminPage() {
           <h1 className="font-bold text-3xl dark:text-neutral">
             Dashboard Overview
           </h1>
-          <p className="text-zinc-400 text-sm">Monitor real-time election statistics and creator performance.</p>
+          <p className="text-zinc-400 text-sm">
+            Monitor real-time election statistics and creator performance.
+          </p>
         </div>
 
         <div className="w-[60%] sm:w-[80%] lg:w-full mx-auto sm:mx-0 grid grid-cols-1 sm:grid-cols-2 lg:flex gap-5 sm:gap-10 bg-b">
           {dashboardCards.map((card) => {
-            return <DashboardCard {...card} />;
+            return <DashboardCard key={card.value} {...card} />;
           })}
         </div>
 

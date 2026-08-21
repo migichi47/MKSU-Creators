@@ -30,7 +30,7 @@ export function CreatorsGrid({ creators }) {
 
             <div className="mt-4 flex overflow-scroll no-scrollbar gap-6 pl-1 pb-4">
               {categoryCreators.map((creator) => {
-                return <CreatorCard key={creator.name} creator={creator} />;
+                return <CreatorCard key={creator._id} creator={creator} />;
               })}
             </div>
           </section>
