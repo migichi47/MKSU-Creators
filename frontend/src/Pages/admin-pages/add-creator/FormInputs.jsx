@@ -3,56 +3,37 @@ import { AddCreatorContext } from "../AdminContextProvider";
 
 export function FormInputs() {
   const { handleChange, formData } = useContext(AddCreatorContext);
+  const inputs = [
+    { title: "Full Name", placeholder: "eg. John Doe", value: "fullName" },
+    {
+      title: "Username / handle",
+      placeholder: "@johndoe25",
+      value: "username",
+    },
+    {
+      title: "Admission Number",
+      placeholder: "@ J17-0458-2025",
+      value: "admission",
+    },
+    { title: "Phone Number", placeholder: "07XXXXXXXX", value: "phoneNumber" },
+    { title: "Followers", placeholder: "eg. 6723", value: "followers" },
+  ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto gap-4">
-      <div className="space-y-2">
-        <h2 className="text-xs">Full Name</h2>
-        <input
-          className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
-          type="text"
-          placeholder="eg. John Doe"
-          name="fullName"
-          onChange={handleChange}
-          value={formData.fullName}
-        />
-      </div>
-
-      <div className="space-y-2">
-        <h2 className="text-xs">Username / handle</h2>
-        <input
-          className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
-          type="text"
-          placeholder="@johndoe25"
-          name="username"
-          onChange={handleChange}
-          value={formData.username}
-        />
-      </div>
-
-      <div className="space-y-2">
-        <h2 className="text-xs">Admission Number</h2>
-        <input
-          className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
-          type="text"
-          placeholder="eg. J17-0458-2025"
-          name="admission"
-          onChange={handleChange}
-          value={formData.admission}
-        />
-      </div>
-
-      <div className="space-y-2">
-        <h2 className="text-xs">Phone Number</h2>
-        <input
-          className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
-          type="text"
-          placeholder="07XXXXXXXX"
-          name="phoneNumber"
-          onChange={handleChange}
-          value={formData.phoneNumber}
-        />
-      </div>
+      {inputs.map((input) => (
+        <div key={input.value} className="space-y-2">
+          <h2 className="text-xs">{input.title}</h2>
+          <input
+            className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
+            type="text"
+            placeholder={input.placeholder}
+            name={input.value}
+            onChange={handleChange}
+            value={formData[input.value]}
+          />
+        </div>
+      ))}
 
       <div className="space-y-2">
         <p className="text-xs">Academic year</p>
@@ -102,18 +83,6 @@ export function FormInputs() {
             </option>
           </select>
         </div>
-      </div>
-
-      <div className="space-y-2">
-        <h2 className="text-xs">Followers</h2>
-        <input
-          className="border border-tertiary/30 dark:border-neutral/30 bg-primary/5 px-5 py-1 rounded-md text-sm w-full sm:w-60 sm:min-w-60 h-10 outline-0 dark:placeholder:text-neutral/50 "
-          type="text"
-          placeholder="Followers eg. 6723"
-          name="followers"
-          onChange={handleChange}
-          value={formData.followers}
-        />
       </div>
     </div>
   );

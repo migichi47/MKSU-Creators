@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
 import { AdminHeader } from "../components/AdminHeader";
 import { AddCreatorForm } from "./AddCreatorForm";
+import { CallToActionButtons } from "./CallToActionButtons";
 
 export function AdminAddCreator() {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ export function AdminAddCreator() {
           </p>
         </div>
         <AddCreatorForm />
+        <CallToActionButtons />
       </div>
       <div
         onClick={() => navigate("/admin")}
