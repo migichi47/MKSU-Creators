@@ -53,6 +53,19 @@ export function ContextProvider({ children }) {
     setIsClicked([...isClicked, id]);
   }
 
+  function discardCreator(id, creator, category) {
+    const newSelectedCreators = selectedCreators.filter(
+      (creator) => creator._id !== id,
+    );
+    const newSelectedCategories = selectedCategories.filter(
+      (cat) => cat !== category,
+    );
+    const newIsClicked = isClicked.filter((value) => value !== creator._id);
+    setSelectedCreators(newSelectedCreators);
+    setSelectedCategories(newSelectedCategories);
+    setIsClicked(newIsClicked);
+  }
+
   return (
     <CreatorContext.Provider
       value={{
@@ -66,6 +79,7 @@ export function ContextProvider({ children }) {
         setIsClicked,
         votingComplete,
         selectCreator,
+        discardCreator,
       }}
     >
       {children}

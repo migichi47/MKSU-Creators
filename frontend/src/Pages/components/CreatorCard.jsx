@@ -5,28 +5,8 @@ export function CreatorCard({ creator }) {
   const { username, image, followers, year, category, _id } = creator;
   const id = _id;
 
-  const {
-    setSelectedCreators,
-    setSelectedCategories,
-    selectedCategories,
-    selectedCreators,
-    setIsClicked,
-    isClicked,
-    selectCreator,
-  } = useContext(CreatorContext);
-
-  function discardCreator() {
-    const newSelectedCreators = selectedCreators.filter(
-      (creator) => creator._id !== id,
-    );
-    const newSelectedCategories = selectedCategories.filter(
-      (cat) => cat !== category,
-    );
-    const newIsClicked = isClicked.filter((value) => value !== creator._id);
-    setSelectedCreators(newSelectedCreators);
-    setSelectedCategories(newSelectedCategories);
-    setIsClicked(newIsClicked);
-  }
+  const { selectedCategories, isClicked, selectCreator, discardCreator } =
+    useContext(CreatorContext);
 
   return (
     <div key={id} className="relative h-75 min-w-60 flex-0 rounded-lg group">
@@ -57,7 +37,7 @@ export function CreatorCard({ creator }) {
           </button>
         ) : isClicked.includes(id) ? (
           <button
-            onClick={discardCreator}
+            onClick={() => discardCreator(id, creator, category)}
             className="w-20 mx-auto border-secondary bg-amber-50/0 hover:text-tertiary hover:bg-neutral"
           >
             Discard
