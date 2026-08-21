@@ -11,6 +11,7 @@ export function ContextProvider({ children }) {
   const [selectedCategories, setSelectedCategories] = useState(
     JSON.parse(localStorage.getItem("selectedCategories")) || [],
   );
+  
   const [isClicked, setIsClicked] = useState(
     JSON.parse(localStorage.getItem("isClicked")) || [],
   );
