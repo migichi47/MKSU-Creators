@@ -4,17 +4,19 @@ import { useNavigate } from "react-router-dom";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { CreatorContext } from "../context/ContextProvider";
 
-export function YourVotes({
-  selectedCreators,
-  selectedCategories,
-  setSelectedCreators,
-  setSelectedCategories,
-  isClicked,
-  setIsClicked,
-}) {
+export function YourVotes() {
   const navigate = useNavigate();
+  const {
+    selectedCreators,
+    selectedCategories,
+    isClicked,
+    setSelectedCreators,
+    setSelectedCategories,
+    setIsClicked,
+  } = useContext(CreatorContext);
 
   function clearCreators() {
     setSelectedCreators([]);

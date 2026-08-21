@@ -2,15 +2,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 
 import { CreatorCard } from "./CreatorCard";
 
-export function CreatorsGrid({
-  selectedCreators,
-  setSelectedCreators,
-  selectedCategories,
-  setSelectedCategories,
-  isClicked,
-  setIsClicked,
-  creators
-}) {
+export function CreatorsGrid({ creators }) {
   const categories = [...new Set(creators.map((creator) => creator.category))];
 
   return (
@@ -38,18 +30,7 @@ export function CreatorsGrid({
 
             <div className="mt-4 flex overflow-scroll no-scrollbar gap-6 pl-1 pb-4">
               {categoryCreators.map((creator) => {
-                return (
-                  <CreatorCard
-                    key={creator.name}
-                    creator={creator}
-                    setSelectedCreators={setSelectedCreators}
-                    selectedCreators={selectedCreators}
-                    selectedCategories={selectedCategories}
-                    setSelectedCategories={setSelectedCategories}
-                    isClicked={isClicked}
-                    setIsClicked={setIsClicked}
-                  />
-                );
+                return <CreatorCard key={creator.name} creator={creator} />;
               })}
             </div>
           </section>

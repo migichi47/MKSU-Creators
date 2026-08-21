@@ -2,18 +2,13 @@ import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { api } from "../axios";
+import { CreatorContext } from "../context/ContextProvider";
 
-export function HomePage({
-  selectedCreators,
-  setSelectedCreators,
-  selectedCategories,
-  setSelectedCategories,
-  isClicked,
-  setIsClicked,
-}) {
+export function HomePage() {
   const [creators, setCreators] = useState([]);
+  const { selectedCreators } = useContext(CreatorContext);
 
   useEffect(() => {
     async function getCreators() {
@@ -42,7 +37,7 @@ export function HomePage({
           <p className=" font-extrabold text-primary text-6xl md:text-8xl slide-from-top duration-1000 delay-200">
             Cast Your Vote
           </p>
-          <p className="text-sm sm:text-lg leading-5 max-w-100 mx-auto slide-from-top duration-1000 delay-300">
+          <p className="text-xs sm:text-lg leading-5 max-w-100 mx-auto slide-from-top duration-1000 delay-300">
             Celebrate the pinnacle of digital excellence. Honor the creators who
             redefine storytelling, performance, and community in the modern era.
             Your voice decides the elite.
@@ -61,10 +56,10 @@ export function HomePage({
           >
             Vote Now
           </button>
-          <div className="mt-4 flex gap-4 mx-auto w-fit">
-            <span className="text-lg">Are you a Creator ?</span>
+          <div className="mt-4 flex gap-4 mx-auto w-fit text-sm text-zinc-300">
+            <span className="">Are you a Creator ?</span>
             <span
-              className="text-lg hover:text-secondary underline cursor-pointer transition-colors"
+              className="hover:text-secondary underline cursor-pointer transition-colors"
               onClick={() => {
                 navigate("join-as-creator-one");
               }}
@@ -75,15 +70,7 @@ export function HomePage({
         </div>
       </div>
 
-      <CreatorsGrid
-        setSelectedCreators={setSelectedCreators}
-        selectedCreators={selectedCreators}
-        selectedCategories={selectedCategories}
-        setSelectedCategories={setSelectedCategories}
-        isClicked={isClicked}
-        setIsClicked={setIsClicked}
-        creators={creators}
-      />
+      <CreatorsGrid creators={creators} />
       {/* your votes section near the footer */}
       {selectedCreators?.length > 0 && (
         <div className="flex flex-col gap-2 mt-10 w-fit mx-auto items-center">

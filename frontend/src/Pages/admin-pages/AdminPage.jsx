@@ -26,6 +26,8 @@ export function AdminPage() {
     { name: "daisy", voters: 20 },
   ];
 
+  
+
   return (
     <>
       <AdminHeader />
