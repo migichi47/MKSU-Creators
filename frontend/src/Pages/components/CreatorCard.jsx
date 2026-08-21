@@ -2,9 +2,7 @@ import { useContext } from "react";
 import { CreatorContext } from "../../context/ContextProvider";
 
 export function CreatorCard({ creator }) {
-  const { username, image, followers, year, category, _id } = creator;
-  const id = _id;
-
+  const { username, image, followers, year, category, _id: id } = creator;
   const { selectedCategories, isClicked, selectCreator, discardCreator } =
     useContext(CreatorContext);
 
