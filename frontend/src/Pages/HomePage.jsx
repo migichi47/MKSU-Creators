@@ -2,31 +2,14 @@ import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { api } from "../axios";
+import { useContext } from "react";
+
 import { CreatorContext } from "../context/ContextProvider";
 import { CompleteModal } from "./portals/CompleteModal";
 
 export function HomePage() {
-  const [creators, setCreators] = useState([]);
-  const { selectedCreators, selectedCategories } = useContext(CreatorContext);
-  const [categories, setCategories] = useState([]);
-  const [openModal, setOpenModal] = useState(true);
-
-  useEffect(() => {
-    async function getCreators() {
-      try {
-        const response = await api.get("/creators");
-        setCreators(response.data);
-        setCategories([
-          ...new Set(response.data.map((creator) => creator.category)),
-        ]);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getCreators();
-  }, []);
+  const { selectedCreators, creators, categories } =
+    useContext(CreatorContext);
 
   const navigate = useNavigate();
 
@@ -113,7 +96,7 @@ export function HomePage() {
         </div>
       )}
 
-      <CompleteModal openModal={openModal} onClose={() => setOpenModal(false)}>
+      <CompleteModal onClose={() => {}}>
         <h2>Modal rendered</h2>
       </CompleteModal>
     </div>
