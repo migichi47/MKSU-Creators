@@ -26,7 +26,28 @@ export function AdminPage() {
     { name: "daisy", voters: 20 },
   ];
 
-  
+  const dashboardCards = [
+    {
+      text: "TOTAL VOTES",
+      value: 23,
+      icon: <MdHowToVote />,
+    },
+    {
+      text: "VERIFIED CREATORS",
+      value: 20,
+      icon: <MdOutlineVerified />,
+    },
+    {
+      text: "PENDING VERIFICATION",
+      value: 3,
+      icon: <MdOutlinePendingActions />,
+    },
+    {
+      text: "ADD CREATOR",
+      value: "+",
+      icon: <TiUserAddOutline />,
+    },
+  ];
 
   return (
     <>
@@ -37,30 +58,13 @@ export function AdminPage() {
           <h1 className="font-bold text-3xl dark:text-neutral">
             Dashboard Overview
           </h1>
-          <p>Monitor real-time election statistics and creator performance.</p>
+          <p className="text-zinc-400 text-sm">Monitor real-time election statistics and creator performance.</p>
         </div>
 
         <div className="w-[60%] sm:w-[80%] lg:w-full mx-auto sm:mx-0 grid grid-cols-1 sm:grid-cols-2 lg:flex gap-5 sm:gap-10 bg-b">
-          <DashboardCard
-            text={"TOTAL VOTES"}
-            value={"23"}
-            icon={<MdHowToVote />}
-          />
-          <DashboardCard
-            text={"VERIFIED CREATORS"}
-            value={"20"}
-            icon={<MdOutlineVerified />}
-          />
-          <DashboardCard
-            text={"PENDING VERIFICATION"}
-            value={"3"}
-            icon={<MdOutlinePendingActions />}
-          />
-          <DashboardCard
-            text={"ADD CREATOR"}
-            value={"+"}
-            icon={<TiUserAddOutline />}
-          />
+          {dashboardCards.map((card) => {
+            return <DashboardCard {...card} />;
+          })}
         </div>
 
         {/* add a bar chart - summary analytics */}
