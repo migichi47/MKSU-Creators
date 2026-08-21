@@ -2,7 +2,7 @@ import { CreatorsGrid } from "./components/CreatorsGrid";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { CreatorContext } from "../context/ContextProvider";
 import { CompleteModal } from "./portals/CompleteModal";
@@ -10,9 +10,7 @@ import { CompleteModal } from "./portals/CompleteModal";
 export function HomePage() {
   const { selectedCreators, creators, categories, votingComplete } =
     useContext(CreatorContext);
-
-  console.log(votingComplete);
-
+  const [renderModal, setRenderModal] = useState(true);
   const navigate = useNavigate();
 
   return (
@@ -98,9 +96,16 @@ export function HomePage() {
         </div>
       )}
 
-      <CompleteModal isOpen={votingComplete} onClose={() => {}}>
-        <h2>Modal rendered</h2>
-      </CompleteModal>
+      {renderModal && (
+        <CompleteModal
+          isOpen={votingComplete}
+          onClose={() => {
+            setRenderModal(false);
+          }}
+        >
+          <h2>Modal rendered</h2>
+        </CompleteModal>
+      )}
     </div>
   );
 }
