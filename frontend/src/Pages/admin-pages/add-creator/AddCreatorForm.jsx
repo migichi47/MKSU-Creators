@@ -1,14 +1,18 @@
+import { useContext } from "react";
 import { RiImageAddFill } from "react-icons/ri";
 import { TiTickOutline, TiUserAddOutline } from "react-icons/ti";
+import { AddCreatorContext } from "../AdminContextProvider";
 
-export function AddCreatorForm({
-  upload,
-  setUpload,
-  handleChange,
-  formData,
-  discardForm,
-  finishUpload,
-}) {
+export function AddCreatorForm() {
+  const {
+    upload,
+    setUpload,
+    handleChange,
+    formData,
+    discardForm,
+    finishUpload,
+  } = useContext(AddCreatorContext);
+
   return (
     <div className="border border-tertiary/30 dark:border-neutral/30 px-5 rounded-xl">
       <div className="space-y-4 border-b border-tertiary/30 dark:border-neutral/30 py-10">

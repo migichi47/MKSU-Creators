@@ -1,21 +1,9 @@
-
-
 import { IoArrowBack } from "react-icons/io5";
 import { AdminHeader } from "../components/AdminHeader";
 import { AddCreatorForm } from "./AddCreatorForm";
-import { useContext } from "react";
-import { AddCreatorContext } from "../AdminContextProvider";
 import { useNavigate } from "react-router-dom";
 
 export function AdminAddCreator() {
-  const {
-    upload,
-    setUpload,
-    handleChange,
-    formData,
-    discardForm,
-    finishUpload,
-  } = useContext(AddCreatorContext);
   const navigate = useNavigate();
 
   return (
@@ -31,14 +19,7 @@ export function AdminAddCreator() {
           </p>
         </div>
 
-        <AddCreatorForm
-          upload={upload}
-          setUpload={setUpload}
-          handleChange={handleChange}
-          formData={formData}
-          discardForm={discardForm}
-          finishUpload={finishUpload}
-        />
+        <AddCreatorForm />
       </div>
       <div
         onClick={() => navigate("/admin")}
