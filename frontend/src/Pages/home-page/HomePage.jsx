@@ -1,8 +1,7 @@
+import { useContext, useState } from "react";
 import { CreatorsGrid } from "../components/CreatorsGrid";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { useContext, useState } from "react";
-
 import { CreatorContext } from "../../context/ContextProvider";
 import { Hero } from "./Hero";
 import { RenderModal } from "./RenderModal";

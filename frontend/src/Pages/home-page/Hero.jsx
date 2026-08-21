@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Hero() {
   const navigate = useNavigate();
+  
   return (
     <div className="flex flex-col relative top-22 min-h-screen text-2xl text-center justify-center gap-20">
       <div className="flex flex-col gap-5">
