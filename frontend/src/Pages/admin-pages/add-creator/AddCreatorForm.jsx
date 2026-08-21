@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { RiImageAddFill } from "react-icons/ri";
 import { TiTickOutline, TiUserAddOutline } from "react-icons/ti";
 import { AddCreatorContext } from "../AdminContextProvider";
+import { contentCategories, ContentCategory } from "./ContentCategory";
 
 export function AddCreatorForm() {
   const {
@@ -164,60 +165,13 @@ export function AddCreatorForm() {
         <div className="space-y-2">
           <p className="text-xs">Content Category</p>
           <div className="grid sm:grid-cols-3 grid-cols-2 gap-5 [&>label]:border [&>label]:border-tertiary/30 [&>label]:dark:border-neutral/30 [&>label]:px-2 [&>label]:py-2 [&>label]:rounded-sm [&>label]:hover:bg-primary/5 [&>label]:flex [&>label]:max-w-40 space-x-2 mx-auto">
-            <label>
-              <input
-                className="w-2 opacity-80"
-                type="radio"
-                name="category"
-                value="dancer"
-                onChange={handleChange}
+            {contentCategories.map((category) => (
+              <ContentCategory
+                key={category.value}
+                value={category.value}
+                name={category.name}
               />
-              <span className="ml-2 text-xs">Dancer</span>
-            </label>
-
-            <label>
-              <input
-                className="w-2 opacity-80"
-                type="radio"
-                name="category"
-                onChange={handleChange}
-                value="vlogger"
-              />
-              <span className="ml-2 text-xs">vlogger</span>
-            </label>
-
-            <label>
-              <input
-                className="w-2 opacity-80"
-                type="radio"
-                name="category"
-                onChange={handleChange}
-                value="influencer"
-              />
-              <span className="ml-2 text-xs">Influencer</span>
-            </label>
-
-            <label>
-              <input
-                className="w-2 opacity-80"
-                type="radio"
-                name="category"
-                onChange={handleChange}
-                value="musician"
-              />
-              <span className="ml-2 text-xs">Musician</span>
-            </label>
-
-            <label>
-              <input
-                className="w-2 opacity-80"
-                type="radio"
-                name="category"
-                onChange={handleChange}
-                value="comedian"
-              />
-              <span className="ml-2 text-xs">Comedian</span>
-            </label>
+            ))}
           </div>
         </div>
       </div>
