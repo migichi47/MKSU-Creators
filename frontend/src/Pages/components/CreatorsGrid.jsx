@@ -2,8 +2,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 
 import { CreatorCard } from "./CreatorCard";
 
-export function CreatorsGrid({ creators }) {
-  const categories = [...new Set(creators.map((creator) => creator.category))];
+export function CreatorsGrid({ creators, categories }) {
 
   return (
     <div className="flex flex-col gap-35">

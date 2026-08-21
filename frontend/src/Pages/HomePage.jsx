@@ -9,12 +9,17 @@ import { CreatorContext } from "../context/ContextProvider";
 export function HomePage() {
   const [creators, setCreators] = useState([]);
   const { selectedCreators } = useContext(CreatorContext);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function getCreators() {
       try {
         const response = await api.get("/creators");
         setCreators(response.data);
+
+        setCategories([
+          ...new Set(response.data.map((creator) => creator.category)),
+        ]);
       } catch (error) {
         console.error(error);
       }
@@ -70,7 +75,7 @@ export function HomePage() {
         </div>
       </div>
 
-      <CreatorsGrid creators={creators} />
+      <CreatorsGrid creators={creators} categories={categories} />
       {/* your votes section near the footer */}
       {selectedCreators?.length > 0 && (
         <div className="flex flex-col gap-2 mt-10 w-fit mx-auto items-center">
