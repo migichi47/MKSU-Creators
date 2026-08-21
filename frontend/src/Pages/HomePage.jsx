@@ -8,8 +8,10 @@ import { CreatorContext } from "../context/ContextProvider";
 import { CompleteModal } from "./portals/CompleteModal";
 
 export function HomePage() {
-  const { selectedCreators, creators, categories } =
+  const { selectedCreators, creators, categories, votingComplete } =
     useContext(CreatorContext);
+
+  console.log(votingComplete);
 
   const navigate = useNavigate();
 
@@ -96,7 +98,7 @@ export function HomePage() {
         </div>
       )}
 
-      <CompleteModal onClose={() => {}}>
+      <CompleteModal isOpen={votingComplete} onClose={() => {}}>
         <h2>Modal rendered</h2>
       </CompleteModal>
     </div>

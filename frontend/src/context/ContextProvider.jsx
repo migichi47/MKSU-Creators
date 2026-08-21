@@ -17,6 +17,9 @@ export function ContextProvider({ children }) {
     JSON.parse(localStorage.getItem("isClicked")) || [],
   );
 
+  const votingComplete =
+    categories.length > 0 && selectedCategories.length === categories.length;
+
   useEffect(() => {
     async function getCreators() {
       try {
@@ -44,6 +47,12 @@ export function ContextProvider({ children }) {
     );
   }, [selectedCreators, selectedCategories]);
 
+  function selectCreator(id, creator, category) {
+    setSelectedCreators([...selectedCreators, creator]);
+    setSelectedCategories([...selectedCategories, category]);
+    setIsClicked([...isClicked, id]);
+  }
+
   return (
     <CreatorContext.Provider
       value={{
@@ -55,6 +64,8 @@ export function ContextProvider({ children }) {
         setSelectedCategories,
         isClicked,
         setIsClicked,
+        votingComplete,
+        selectCreator,
       }}
     >
       {children}

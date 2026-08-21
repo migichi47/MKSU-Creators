@@ -12,13 +12,8 @@ export function CreatorCard({ creator }) {
     selectedCreators,
     setIsClicked,
     isClicked,
+    selectCreator,
   } = useContext(CreatorContext);
-
-  function selectCreator() {
-    setSelectedCreators([...selectedCreators, creator]);
-    setSelectedCategories([...selectedCategories, category]);
-    setIsClicked([...isClicked, id]);
-  }
 
   function discardCreator() {
     const newSelectedCreators = selectedCreators.filter(
@@ -28,7 +23,6 @@ export function CreatorCard({ creator }) {
       (cat) => cat !== category,
     );
     const newIsClicked = isClicked.filter((value) => value !== creator._id);
-
     setSelectedCreators(newSelectedCreators);
     setSelectedCategories(newSelectedCategories);
     setIsClicked(newIsClicked);
@@ -57,7 +51,7 @@ export function CreatorCard({ creator }) {
         {!selectedCategories.includes(category) ? (
           <button
             className=" rounded-sm h-8 w-30 mx-auto"
-            onClick={selectCreator}
+            onClick={() => selectCreator(id, creator, category)}
           >
             Vote Now
           </button>
