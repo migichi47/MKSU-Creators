@@ -66,6 +66,12 @@ export function ContextProvider({ children }) {
     setIsClicked(newIsClicked);
   }
 
+  function clearCreators() {
+    setSelectedCreators([]);
+    setSelectedCategories([]);
+    setIsClicked([]);
+  }
+
   return (
     <CreatorContext.Provider
       value={{
@@ -80,6 +86,7 @@ export function ContextProvider({ children }) {
         votingComplete,
         selectCreator,
         discardCreator,
+        clearCreators,
       }}
     >
       {children}

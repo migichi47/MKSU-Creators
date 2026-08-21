@@ -2,10 +2,10 @@ import { toast } from "react-toastify";
 import { IoArrowBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 import { useContext, useEffect } from "react";
-import { CreatorContext } from "../context/ContextProvider";
+import { CreatorContext } from "../../context/ContextProvider";
 
 export function YourVotes() {
   const navigate = useNavigate();
@@ -16,13 +16,8 @@ export function YourVotes() {
     setSelectedCreators,
     setSelectedCategories,
     setIsClicked,
+    clearCreators,
   } = useContext(CreatorContext);
-
-  function clearCreators() {
-    setSelectedCreators([]);
-    setSelectedCategories([]);
-    setIsClicked([]);
-  }
 
   useEffect(() => {
     setTimeout(() => {

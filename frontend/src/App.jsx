@@ -6,7 +6,7 @@ import { HomePage } from "./Pages/HomePage";
 import { AdminPage } from "./Pages/admin-pages/AdminPage";
 import { CreatorsPage } from "./Pages/admin-pages/CreatorsPage";
 import { AdminAddCreator } from "./Pages/admin-pages/AdminAddCreator";
-import { YourVotes } from "./Pages/YourVotes";
+import { YourVotes } from "./Pages/your votes/YourVotes";
 import { ContextProvider } from "./context/ContextProvider";
 
 export default function App() {
