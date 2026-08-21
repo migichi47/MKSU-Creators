@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { HomePage } from "./Pages/home-page/HomePage";
 import { AdminPage } from "./Pages/admin-pages/AdminPage";
 import { CreatorsPage } from "./Pages/admin-pages/CreatorsPage";
-import { AdminAddCreator } from "./Pages/admin-pages/AdminAddCreator";
+import { AdminAddCreator } from "./Pages/admin-pages/add-creator/AddCreator";
 import { YourVotes } from "./Pages/your-votes/YourVotes";
 import { ContextProvider } from "./context/ContextProvider";
 

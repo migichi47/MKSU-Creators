@@ -6,9 +6,8 @@ import { RiImageAddFill } from "react-icons/ri";
 import { TiUserAddOutline, TiTickOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
-
-import { AdminHeader } from "./components/AdminHeader";
-import { Footer } from "../components/Footer";
+import { AdminHeader } from "../components/AdminHeader";
+import { Footer } from "../../components/Footer";
 
 export function AdminAddCreator() {
   const [formData, setFormData] = useState({
