@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../axios";
@@ -19,6 +19,7 @@ export function AdminContextProvider({ children }) {
     category: "dancer",
   });
   const [upload, setUpload] = useState();
+  const [allCreators, setAllCreators] = useState([]);
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -117,6 +118,18 @@ export function AdminContextProvider({ children }) {
     }, 1000);
   }
 
+  useEffect(() => {
+    async function getAllCreators() {
+      try {
+        const response = await api.get("/creators/all");
+        setAllCreators(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getAllCreators();
+  }, []);
+
   return (
     <AddCreatorContext.Provider
       value={{
@@ -126,6 +139,8 @@ export function AdminContextProvider({ children }) {
         formData,
         discardForm,
         finishUpload,
+        setAllCreators,
+        allCreators,
       }}
     >
       {children}

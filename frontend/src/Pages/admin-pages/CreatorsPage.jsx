@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineVerified } from "react-icons/md";
 import { GrUserAdd } from "react-icons/gr";
@@ -9,26 +9,14 @@ import { CiSearch } from "react-icons/ci";
 import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
 import { Footer } from "../components/Footer.jsx";
+import { AddCreatorContext } from "./AdminContextProvider.jsx";
 
 export function CreatorsPage() {
-  const [allCreators, setAllCreators] = useState([]);
   const [filterStatus, setFilterStatus] = useState("all");
   const [search, setSearch] = useState("");
 
-  // const { creators, setCreators } = props;
+  const { allCreators, setAllCreators } = useContext(AddCreatorContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    async function getAllCreators() {
-      try {
-        const response = await api.get("/creators/all");
-        setAllCreators(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getAllCreators();
-  }, []);
 
   async function deleteCreator(id, username) {
     const confirmed = confirm(`delete ${username}?`);
@@ -144,9 +132,7 @@ export function CreatorsPage() {
                     key={id}
                     className="h-10 border-t border-tertiary/30 dark:border-neutral/30 [&>td]:text-center text-xs"
                   >
-                    <td className="">
-                      {fullName}
-                    </td>
+                    <td className="">{fullName}</td>
                     <td className="font-semibold text-sm">{username}</td>
                     <td>{category}</td>
                     <td>{platform}</td>
