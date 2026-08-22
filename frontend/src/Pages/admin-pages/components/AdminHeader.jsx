@@ -24,9 +24,9 @@ export function AdminHeader() {
     <>
       {/* header */}
       <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg px-6 dark:bg-tertiary/50">
-        <a
+        <div
           className="cursor-pointer flex space-x-2 font-bold text-lg md:text-2xl "
-          href="#top"
+          onClick={() => navigate("/admin")}
         >
           <span className="text-tertiary dark:text-neutral">MKSU</span>
           <span className="text-primary">
@@ -34,7 +34,7 @@ export function AdminHeader() {
             <LiaAwardSolid className="inline w-5" />
             mmys
           </span>
-        </a>
+        </div>
 
         <div className="flex space-x-8 items-center">
           <div className="hidden space-x-3 md:flex [&>a]:cursor-pointer">

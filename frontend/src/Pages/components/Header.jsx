@@ -3,12 +3,14 @@ import { FaRegMoon } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiLight } from "react-icons/ci";
 import { LiaAwardSolid } from "react-icons/lia";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
@@ -22,9 +24,9 @@ export function Header() {
   return (
     <>
       <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg px-6 dark:bg-tertiary/50">
-        <a
+        <div
           className="cursor-pointer flex space-x-2 font-bold text-lg md:text-2xl "
-          href="#top"
+          onClick={() => navigate("/")}
         >
           <span className="text-tertiary dark:text-neutral">MKSU</span>
           <span className="text-primary">
@@ -32,7 +34,7 @@ export function Header() {
             <LiaAwardSolid className="inline w-5" />
             mmys
           </span>
-        </a>
+        </div>
 
         <div className="flex space-x-8 items-center">
           <div className="hidden space-x-3 md:flex">
