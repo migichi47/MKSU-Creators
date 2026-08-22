@@ -5,14 +5,7 @@ import { CreatorContext } from "../../context/ContextProvider";
 
 export function SelectedCreatorsGrid() {
   const navigate = useNavigate();
-  const {
-    selectedCreators,
-    selectedCategories,
-    isClicked,
-    setSelectedCreators,
-    setSelectedCategories,
-    setIsClicked,
-  } = useContext(CreatorContext);
+  const { selectedCreators, discardCreator } = useContext(CreatorContext);
   return (
     <div className="relative mt-30 max-w-200 mx-auto flex flex-col gap-4 border border-tertiary/20 dark:border-neutral/20 pt-2 pb-6 rounded-2xl">
       <div
@@ -30,24 +23,8 @@ export function SelectedCreatorsGrid() {
       {/* creators */}
       <div className="grid space-y-4 grid-cols-2 sm:grid-cols-3">
         {selectedCreators.map((creator) => {
-          const { name, _id, image, category } = creator;
-          const id = _id;
-
-          function discardCreator() {
-            const newSelectedCreators = selectedCreators.filter(
-              (creator) => creator._id !== id,
-            );
-            const newSelectedCategories = selectedCategories.filter(
-              (cat) => cat !== category,
-            );
-            const newIsClicked = isClicked.filter(
-              (value) => value !== creator._id,
-            );
-
-            setSelectedCreators(newSelectedCreators);
-            setSelectedCategories(newSelectedCategories);
-            setIsClicked(newIsClicked);
-          }
+          const { username, _id: id, image, category } = creator;
+          console.log(creator);
 
           return (
             <div
@@ -61,17 +38,19 @@ export function SelectedCreatorsGrid() {
               />
               {/* overlay */}
               <div className=" absolute top-0 rounded-[inherit] w-[inherit] h-[inherit] bg-linear-to-b from-neutral/0 to-tertiary/90" />
-
               <div className="absolute flex flex-col gap-2 bottom-3 px-6 rounded-b-2xl w-full text-neutral">
                 <div className="flex flex-col text-center items-center">
                   <span className="font-semibold text-xl md:text-2xl">
-                    {name}
+                    {username}
                   </span>
                   <div className="flex gap-3 text-xs text-neutral/80">
                     {category}
                   </div>
                 </div>
-                <button className="w-[80%] mx-auto" onClick={discardCreator}>
+                <button
+                  className="w-[80%] mx-auto"
+                  onClick={() => discardCreator(id, creator, category)}
+                >
                   Remove
                 </button>
               </div>
