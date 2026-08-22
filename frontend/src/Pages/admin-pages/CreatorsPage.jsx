@@ -31,7 +31,14 @@ export function CreatorsPage() {
     }
   }
 
-  
+  const filteredCreators = allCreators.filter((creator) => {
+    const matchesStatus =
+      filterStatus === "all" || creator.status === filterStatus;
+    const matchesSearch =
+      creator.fullName.toLowerCase().includes(search?.toLowerCase()) ||
+      creator.username.toLowerCase().includes(search?.toLowerCase());
+    return matchesSearch && matchesStatus;
+  });
 
   async function verifyCreator(id) {
     try {
@@ -89,7 +96,7 @@ export function CreatorsPage() {
               placeholder="search creator"
               className="relative left-8 w-42 text-xs outline-0 text-tertiary dark:text-neutral"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => setSearch(e.target.value.toLowerCase)}
             />
           </div>
         </div>
