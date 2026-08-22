@@ -2,6 +2,7 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { api } from "../../axios";
 
 export const AddCreatorContext = createContext();
 const API_BASE_URL = import.meta.env.VITE_API_URL;
@@ -98,12 +99,8 @@ export function AdminContextProvider({ children }) {
     });
     form.append("image", upload);
 
-    const response = await fetch(`${API_BASE_URL}/creators/add`, {
-      method: "POST",
-      body: form,
-    });
-    const data = await response.json();
-    console.log(data);
+    const response = await api.post(`${API_BASE_URL}/creators/add`, form);
+    console.log(response.data);
 
     toast("Creator added successfully");
     setTimeout(() => {
