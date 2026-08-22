@@ -31,15 +31,7 @@ export function CreatorsPage() {
     }
   }
 
-  const filteredCreators = allCreators.filter((creator) => {
-    const matchesStatus =
-      filterStatus === "all" || creator.status === filterStatus;
-
-    const matchesSearch =
-      creator.fullName.toLowerCase().includes(search?.toLowerCase()) ||
-      creator.username.toLowerCase().includes(search?.toLowerCase());
-    return matchesSearch && matchesStatus;
-  });
+  
 
   async function verifyCreator(id) {
     try {

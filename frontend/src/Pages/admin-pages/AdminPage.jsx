@@ -17,8 +17,11 @@ import { TiUserAddOutline } from "react-icons/ti";
 import { AdminHeader } from "./components/AdminHeader";
 import { DashboardCard } from "./components/DashboardCard";
 import { Footer } from "../components/Footer";
+import { useContext } from "react";
+import { AddCreatorContext } from "./AdminContextProvider";
 
 export function AdminPage() {
+  const { pendingCreators, verifiedCreators } = useContext(AddCreatorContext);
   const data = [
     { name: "Mukeli", voters: 40 },
     { name: "Morin", voters: 30 },
@@ -35,13 +38,13 @@ export function AdminPage() {
     },
     {
       text: "VERIFIED CREATORS",
-      value: 20,
+      value: verifiedCreators.length,
       icon: <MdOutlineVerified />,
       destination: "creators",
     },
     {
       text: "PENDING VERIFICATION",
-      value: 3,
+      value: pendingCreators.length,
       icon: <MdOutlinePendingActions />,
       destination: "creators",
     },

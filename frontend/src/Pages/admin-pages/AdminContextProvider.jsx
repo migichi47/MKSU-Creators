@@ -24,7 +24,6 @@ export function AdminContextProvider({ children }) {
 
   function handleChange(e) {
     const { name, value, files } = e.target;
-
     if (name === "image") {
       setFormData((prev) => ({
         ...prev,
@@ -130,6 +129,13 @@ export function AdminContextProvider({ children }) {
     getAllCreators();
   }, []);
 
+  const pendingCreators = allCreators.filter(
+    (creator) => creator.status === "pending",
+  );
+  const verifiedCreators = allCreators.filter(
+    (creator) => creator.status === "approved",
+  );
+
   return (
     <AddCreatorContext.Provider
       value={{
@@ -141,6 +147,8 @@ export function AdminContextProvider({ children }) {
         finishUpload,
         setAllCreators,
         allCreators,
+        pendingCreators,
+        verifiedCreators,
       }}
     >
       {children}
