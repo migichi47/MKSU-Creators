@@ -5,7 +5,6 @@ import { MdOutlineVerified } from "react-icons/md";
 import { GrUserAdd } from "react-icons/gr";
 import { IoArrowBack } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
-
 import { AdminHeader } from "./components/AdminHeader.jsx";
 import { api } from "../../axios.js";
 import { Footer } from "../components/Footer.jsx";
