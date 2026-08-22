@@ -9,6 +9,7 @@ import { AdminAddCreator } from "./Pages/admin-pages/add-creator/AddCreator";
 import { YourVotes } from "./Pages/your-votes/YourVotes";
 import { ContextProvider } from "./context/ContextProvider";
 import { AdminContextProvider } from "./Pages/admin-pages/AdminContextProvider";
+import { JoinContextProvider } from "./Pages/join/JoinContextProvider";
 import { Join } from "./Pages/join/Join";
 
 export default function App() {
@@ -18,7 +19,14 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/your-votes" element={<YourVotes />} />
-          <Route path="/join" element={<Join />} />
+          <Route
+            path="/join"
+            element={
+              <JoinContextProvider>
+                <Join />
+              </JoinContextProvider>
+            }
+          />
           <Route path="admin" element={<AdminPage />} />
           <Route path="admin/creators" element={<CreatorsPage />} />
           <Route path="admin/add-creator" element={<AdminAddCreator />} />
