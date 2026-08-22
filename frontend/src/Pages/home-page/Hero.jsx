@@ -31,7 +31,7 @@ export function Hero() {
         >
           Vote Now
         </button>
-        <div className="mt-4 flex gap-4 mx-auto w-fit text-sm text-zinc-300">
+        <div className="mt-4 flex gap-4 mx-auto w-fit text-sm dark:text-zinc-300 text-zinc-700/90">
           <span className="">Are you a Creator ?</span>
           <span
             className="hover:text-secondary underline cursor-pointer transition-colors"
