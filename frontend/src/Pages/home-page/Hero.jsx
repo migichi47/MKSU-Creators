@@ -36,7 +36,7 @@ export function Hero() {
           <span
             className="hover:text-secondary underline cursor-pointer transition-colors"
             onClick={() => {
-              navigate("join-as-creator-one");
+              navigate("/join");
             }}
           >
             Join now
