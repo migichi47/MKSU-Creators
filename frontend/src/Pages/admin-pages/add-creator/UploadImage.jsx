@@ -8,7 +8,7 @@ export function UploadImage() {
 
   return (
     <label
-      className="bg-secondary/20 hover:bg-secondary/15 transition-colors cursor-pointer flex items-center gap-5 px-8 py-4 border border-dashed border-tertiary/30 rounded-xl mx-auto"
+      className="bg-secondary/20 hover:bg-secondary/15 transition-colors cursor-pointer flex items-center gap-5 px-8 py-4 border border-dashed border-tertiary/30 dark:border-neutral/30 rounded-xl mx-auto"
       htmlFor="ImageUpload"
     >
       <h2 className="border cursor-pointer border-secondary/50 rounded-xl min-w-20 h-20 flex items-center justify-center">
