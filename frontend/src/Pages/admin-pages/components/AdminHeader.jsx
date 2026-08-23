@@ -23,7 +23,7 @@ export function AdminHeader() {
   return (
     <>
       {/* header */}
-      <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg px-6 dark:bg-tertiary/50">
+      <div className="fixed top-0  min-h-22 w-full flex z-10 items-center justify-between backdrop-blur-xs shadow-lg dark:shadow-sm dark:shadow-neutral/20 px-6 dark:bg-tertiary/50">
         <div
           className="cursor-pointer flex space-x-2 font-bold text-lg md:text-2xl "
           onClick={() => navigate("/admin")}
