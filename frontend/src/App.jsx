@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import { HomePage } from "./Pages/home-page/HomePage";
 import { AdminPage } from "./Pages/admin-pages/AdminPage";
@@ -11,6 +10,8 @@ import { ContextProvider } from "./context/ContextProvider";
 import { AdminContextProvider } from "./Pages/admin-pages/AdminContextProvider";
 import { JoinContextProvider } from "./Pages/join/JoinContextProvider";
 import { Join } from "./Pages/join/Join";
+import { AdminLogin } from "./Pages/admin-pages/auth/Login";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
               </JoinContextProvider>
             }
           />
+          <Route path="admin/login" element={<AdminLogin />} />
           <Route path="admin" element={<AdminPage />} />
           <Route path="admin/creators" element={<CreatorsPage />} />
           <Route path="admin/add-creator" element={<AdminAddCreator />} />
