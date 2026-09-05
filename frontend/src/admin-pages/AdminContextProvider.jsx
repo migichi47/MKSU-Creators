@@ -120,7 +120,7 @@ export function AdminContextProvider({ children }) {
   useEffect(() => {
     async function getAllCreators() {
       try {
-        const response = await api.get("/creators/all");
+        const response = await api.get("api/admin/all");
         setAllCreators(response.data);
       } catch (error) {
         console.error(error);

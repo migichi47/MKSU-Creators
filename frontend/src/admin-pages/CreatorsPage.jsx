@@ -19,8 +19,7 @@ export function CreatorsPage() {
     const confirmed = confirm(`delete ${username}?`);
     if (confirmed) {
       try {
-        await api.delete(`/creators/${id}`);
-
+        await api.delete(`api/admin/creators/${id}`);
         setAllCreators((prev) => prev.filter((creator) => creator._id !== id));
       } catch (error) {
         console.error(error);
@@ -39,7 +38,7 @@ export function CreatorsPage() {
 
   async function verifyCreator(id) {
     try {
-      const response = await api.patch(`/creators/${id}/approve`);
+      const response = await api.patch(`/api/admin/approve/${id}`);
 
       setAllCreators((prev) =>
         prev.map((creator) =>

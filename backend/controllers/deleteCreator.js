@@ -1,15 +1,16 @@
+import mongoose from "mongoose";
+import { Creator } from "../mongoose/schemas.js";
+
 export const deleteCreator = async (request, response) => {
   try {
     const {
       params: { id },
     } = request;
-
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return response.status(400).send({ msg: "Invalid ID" });
     }
 
     const deletedCreator = await Creator.findByIdAndDelete(id);
-
     if (!deletedCreator) {
       return response.status(404).send({ msg: "Creator not found" });
     }

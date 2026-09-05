@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + "-" + file.originalname);
   },
 });
-const upload = multer({ storage });
 
+const upload = multer({ storage });
 router.get("/approved", getApprovedCreators);
-router.post("/creators", upload.single("image"), addCreator);
+router.post("/add", upload.single("image"), addCreator);
 
 export default router;

@@ -17,8 +17,8 @@ const upload = multer({ storage });
 
 router.get("/all", getAllCreators);
 router.post("/add", upload.single("image"), adminAddCreator);
-router.delete("/:id", deleteCreator);
+router.delete("/creators/:id", deleteCreator);
 router.get("/pending", getPendingCreators);
-router.patch("/:id/approve", approveCreator);
+router.patch("/approve/:id", approveCreator);
 
 export default router;
