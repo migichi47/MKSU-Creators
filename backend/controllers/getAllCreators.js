@@ -1,3 +1,5 @@
+import { Creator } from "../mongoose/schemas.js";
+
 export const getAllCreators = async (request, response) => {
   try {
     const creators = await Creator.find();

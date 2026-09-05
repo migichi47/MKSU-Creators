@@ -1,8 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import multer from "multer";
-import { Creator } from "./mongoose/schemas.js";
 import routes from "./routes/index.js";
 
 const app = express();
@@ -27,4 +25,4 @@ app.listen(PORT, () => {
   console.log(`Server running on Port ${PORT}`);
 });
 
-app.use("./routes/index.js", routes);
+app.use("/api", routes);

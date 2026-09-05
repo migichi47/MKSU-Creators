@@ -99,7 +99,7 @@ export function AdminContextProvider({ children }) {
     });
     form.append("image", upload);
 
-    const response = await api.post(`${API_BASE_URL}/creators/add`, form);
+    const response = await api.post(`${API_BASE_URL}/api/admin/add`, form);
     console.log(response.data);
 
     toast("Creator added successfully");

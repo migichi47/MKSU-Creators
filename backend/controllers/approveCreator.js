@@ -1,3 +1,5 @@
+import { Creator } from "../mongoose/schemas.js";
+
 export const approveCreator = async (request, response) => {
   const { id } = request.params;
   const creator = await Creator.findByIdAndUpdate(

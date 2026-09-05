@@ -23,7 +23,7 @@ export function ContextProvider({ children }) {
   useEffect(() => {
     async function getCreators() {
       try {
-        const response = await api.get("/creators");
+        const response = await api.get("/api/creators/approved");
         setCreators(response.data);
         setCategories([
           ...new Set(response.data.map((creator) => creator.category)),

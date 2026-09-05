@@ -1,3 +1,5 @@
+import { Creator } from "../mongoose/schemas.js";
+
 export const getApprovedCreators = async (request, response) => {
   try {
     const creators = await Creator.find({ status: "approved" });
