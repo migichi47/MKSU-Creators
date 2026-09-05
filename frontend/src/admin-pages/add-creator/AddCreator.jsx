@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
-import { AdminHeader } from "../components/AdminHeader";
 import { AddCreatorForm } from "./AddCreatorForm";
 import { CallToActionButtons } from "./CallToActionButtons";
 
@@ -9,7 +8,6 @@ export function AdminAddCreator() {
 
   return (
     <>
-      <AdminHeader />
       <div className="relative top-35 px-10 space-y-10 max-w-150 mx-auto mb-50">
         <div>
           <h1 className="font-bold text-2xl">Register New Creator</h1>

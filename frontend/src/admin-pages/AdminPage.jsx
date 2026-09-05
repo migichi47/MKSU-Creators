@@ -16,7 +16,7 @@ import { TiUserAddOutline } from "react-icons/ti";
 
 import { AdminHeader } from "./components/AdminHeader";
 import { DashboardCard } from "./components/DashboardCard";
-import { Footer } from "../components/Footer";
+import { Footer } from "../Pages/components/Footer";
 import { useContext } from "react";
 import { AddCreatorContext } from "./AdminContextProvider";
 
@@ -58,8 +58,6 @@ export function AdminPage() {
 
   return (
     <>
-      <AdminHeader />
-
       <div className="relative top-22 px-10 lg:px-40 pt-6 space-y-10">
         <div className="space-y-2">
           <h1 className="font-bold text-3xl dark:text-neutral">
@@ -92,7 +90,6 @@ export function AdminPage() {
           </ResponsiveContainer>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

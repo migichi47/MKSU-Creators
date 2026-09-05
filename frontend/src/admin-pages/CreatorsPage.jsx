@@ -6,8 +6,8 @@ import { GrUserAdd } from "react-icons/gr";
 import { IoArrowBack } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { AdminHeader } from "./components/AdminHeader.jsx";
-import { api } from "../../axios.js";
-import { Footer } from "../components/Footer.jsx";
+import { api } from "../axios.js";
+import { Footer } from "../Pages/components/Footer.jsx";
 import { AddCreatorContext } from "./AdminContextProvider.jsx";
 
 export function CreatorsPage() {
@@ -55,7 +55,6 @@ export function CreatorsPage() {
 
   return (
     <>
-      <AdminHeader />
       <div className="relative top-30 px-10 mb-50 max-w-200 mx-auto space-y-4 sm:space-y-1">
         <div className="flex py-5 sm:items-center justify-between gap-4 sm:flex-row flex-col">
           <div className="space-y-2">
@@ -171,7 +170,6 @@ export function CreatorsPage() {
         <IoArrowBack className="inline" />
         <span>back</span>
       </div>
-      <Footer />
     </>
   );
 }

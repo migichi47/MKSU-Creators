@@ -2,17 +2,18 @@ import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import { HomePage } from "./Pages/home-page/HomePage";
-import { AdminPage } from "./Pages/admin-pages/AdminPage";
-import { CreatorsPage } from "./Pages/admin-pages/CreatorsPage";
-import { AdminAddCreator } from "./Pages/admin-pages/add-creator/AddCreator";
+import { AdminPage } from "./admin-pages/AdminPage";
+import { CreatorsPage } from "./admin-pages/CreatorsPage";
+import { AdminAddCreator } from "./admin-pages/add-creator/AddCreator";
 import { YourVotes } from "./Pages/your-votes/YourVotes";
 import { ContextProvider } from "./context/ContextProvider";
-import { AdminContextProvider } from "./Pages/admin-pages/AdminContextProvider";
+import { AdminContextProvider } from "./admin-pages/AdminContextProvider";
 import { JoinContextProvider } from "./Pages/join/JoinContextProvider";
 import { Join } from "./Pages/join/Join";
-import { AdminLogin } from "./Pages/admin-pages/auth/Login";
+import { AdminLogin } from "./admin-pages/auth/Login";
 import "react-toastify/dist/ReactToastify.css";
 import { MainLayout } from "./Pages/MainLayout";
+import { AdminLayout } from "./admin-pages/AdminLayout";
 
 export default function App() {
   return (
@@ -32,10 +33,11 @@ export default function App() {
             }
           />
           <Route path="admin/login" element={<AdminLogin />} />
-
-          <Route path="admin" element={<AdminPage />} />
-          <Route path="admin/creators" element={<CreatorsPage />} />
-          <Route path="admin/add-creator" element={<AdminAddCreator />} />
+          <Route element={<AdminLayout />}>
+            <Route path="admin" element={<AdminPage />} />
+            <Route path="admin/creators" element={<CreatorsPage />} />
+            <Route path="admin/add-creator" element={<AdminAddCreator />} />
+          </Route>
         </Routes>
         <ToastContainer />
       </AdminContextProvider>

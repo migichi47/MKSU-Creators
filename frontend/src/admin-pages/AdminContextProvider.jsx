@@ -2,7 +2,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { api } from "../../axios";
+import { api } from "../axios";
 
 export const AddCreatorContext = createContext();
 const API_BASE_URL = import.meta.env.VITE_API_URL;
