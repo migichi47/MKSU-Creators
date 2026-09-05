@@ -14,9 +14,7 @@ import {
 } from "react-icons/md";
 import { TiUserAddOutline } from "react-icons/ti";
 
-import { AdminHeader } from "./components/AdminHeader";
 import { DashboardCard } from "./components/DashboardCard";
-import { Footer } from "../Pages/components/Footer";
 import { useContext } from "react";
 import { AddCreatorContext } from "./AdminContextProvider";
 
