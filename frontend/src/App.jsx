@@ -12,14 +12,17 @@ import { JoinContextProvider } from "./Pages/join/JoinContextProvider";
 import { Join } from "./Pages/join/Join";
 import { AdminLogin } from "./Pages/admin-pages/auth/Login";
 import "react-toastify/dist/ReactToastify.css";
+import { MainLayout } from "./Pages/MainLayout";
 
 export default function App() {
   return (
     <ContextProvider>
       <AdminContextProvider>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/your-votes" element={<YourVotes />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/your-votes" element={<YourVotes />} />
+          </Route>
           <Route
             path="/join"
             element={
@@ -29,6 +32,7 @@ export default function App() {
             }
           />
           <Route path="admin/login" element={<AdminLogin />} />
+
           <Route path="admin" element={<AdminPage />} />
           <Route path="admin/creators" element={<CreatorsPage />} />
           <Route path="admin/add-creator" element={<AdminAddCreator />} />

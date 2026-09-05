@@ -3,8 +3,6 @@ import { useContext, useEffect } from "react";
 import { CreatorContext } from "../../context/ContextProvider";
 import { SelectedCreatorsGrid } from "./SelectedCreatorsGrid";
 import { CallToActionButtons } from "./CallToActionButtons";
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
 
 export function YourVotes() {
   const navigate = useNavigate();
@@ -20,10 +18,8 @@ export function YourVotes() {
 
   return (
     <>
-      <Header />
       <SelectedCreatorsGrid />
       <CallToActionButtons />
-      <Footer />
     </>
   );
 }
