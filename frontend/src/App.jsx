@@ -11,9 +11,10 @@ import { AdminContextProvider } from "./admin-pages/AdminContextProvider";
 import { JoinContextProvider } from "./Pages/join/JoinContextProvider";
 import { Join } from "./Pages/join/Join";
 import { AdminLogin } from "./admin-pages/auth/Login";
-import "react-toastify/dist/ReactToastify.css";
 import { MainLayout } from "./Pages/MainLayout";
 import { AdminLayout } from "./admin-pages/AdminLayout";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
